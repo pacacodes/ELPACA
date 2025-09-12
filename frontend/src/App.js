@@ -1,5 +1,8 @@
-
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTree, faCloud, faMountain, faThLarge, faLaptop, faList, faEye, faDollarSign, faPaperclip, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { faPagelines } from '@fortawesome/free-brands-svg-icons';
+// Removed duplicate import of faPagelines and faVine
 
 function App() {
   const [popupOpen, setPopupOpen] = useState(false);
@@ -103,13 +106,13 @@ function App() {
             {/* Column of buttons on the left */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginRight: '2rem', alignItems: 'flex-start', pointerEvents: 'auto' }}>
               {[
-                { name: 'ground cover layer', icon: (<svg width="24" height="24" viewBox="0 0 24 24"><ellipse cx="12" cy="18" rx="10" ry="4" fill="white" /></svg>) },
-                { name: 'root layer', icon: (<svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 20 Q10 16 12 12 Q14 16 12 20 Z" fill="white" /><rect x="11" y="8" width="2" height="6" fill="white" /></svg>) },
-                { name: 'herbaceous layer', icon: (<svg width="24" height="24" viewBox="0 0 24 24"><rect x="10" y="12" width="4" height="8" rx="2" fill="white" /><ellipse cx="12" cy="10" rx="3" ry="4" fill="white" /></svg>) },
-                { name: 'shrub layer', icon: (<svg width="24" height="24" viewBox="0 0 24 24"><ellipse cx="12" cy="14" rx="5" ry="4" fill="white" /><rect x="11" y="18" width="2" height="4" fill="white" /></svg>) },
-                { name: 'low tree layer', icon: (<svg width="24" height="24" viewBox="0 0 24 24"><ellipse cx="12" cy="10" rx="4" ry="5" fill="white" /><rect x="11" y="15" width="2" height="7" fill="white" /></svg>) },
-                { name: 'tall tree layer', icon: (<svg width="24" height="24" viewBox="0 0 24 24"><ellipse cx="12" cy="8" rx="5" ry="7" fill="white" /><rect x="11" y="15" width="2" height="7" fill="white" /></svg>) },
-                { name: 'vine layer', icon: (<svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 20 Q12 10 16 20" stroke="white" strokeWidth="2" fill="none" /><ellipse cx="8" cy="20" rx="2" ry="1.5" fill="white" /><ellipse cx="16" cy="20" rx="2" ry="1.5" fill="white" /></svg>) },
+         { name: 'ground cover layer', icon: 'grass' },
+                { name: 'root layer', icon: 'grassroots' },
+                { name: 'herbaceous layer', icon: faPagelines },
+                { name: 'shrub layer', icon: faTree },
+                { name: 'low tree layer', icon: faCloud },
+                { name: 'tall tree layer', icon: faMountain },
+                { name: 'vine layer', icon: faPagelines },
               ].map((layer, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                   <button
@@ -129,7 +132,27 @@ function App() {
                     }}
                     aria-label={layer.name}
                   >
-                    {layer.icon}
+                    {layer.icon === 'grass' ? (
+                      <svg width="32" height="32" viewBox="0 0 64 64" fill="none" style={{display:'block',margin:'0 auto',position:'relative',top:'-12px'}} xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 62 Q12 40 20 62 Q24 48 28 62 Q32 38 36 62 Q40 50 44 62 Q48 44 52 62" stroke="#fff" strokeWidth="3.5" fill="none"/>
+                      </svg>
+                      ) : layer.icon === 'grassroots' ? (
+                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" style={{display:'block',margin:'0 auto',position:'relative',top:'-2px'}} xmlns="http://www.w3.org/2000/svg">
+                          <path d="M8 20 Q12 4 20 20 Q24 8 28 20 Q32 2 36 20 Q40 10 44 20 Q48 6 52 20" stroke="#fff" strokeWidth="3" fill="none"/>
+                          <path d="M32 20 Q30 14 28 20" stroke="#fff" strokeWidth="2" fill="none"/>
+                          <path d="M32 20 Q34 14 36 20" stroke="#fff" strokeWidth="2" fill="none"/>
+                          <path d="M32 20 Q32 12 32 20" stroke="#fff" strokeWidth="2" fill="none"/>
+                          <polygon points="28,22 36,22 32,60" fill="#fff" />
+                          <path d="M32 40 Q30 44 32 48" stroke="#fff" strokeWidth="1.5" fill="none"/>
+                          <path d="M32 44 Q34 48 32 52" stroke="#fff" strokeWidth="1.5" fill="none"/>
+                        </svg>
+                      ) : layer.icon === 'roots' ? (
+                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" style={{display:'block',margin:'0 auto',position:'relative',top:'-2px'}} xmlns="http://www.w3.org/2000/svg">
+                          <path d="M32 8 V32 M32 32 Q28 40 24 32 M32 32 Q36 40 40 32 M32 32 Q20 44 16 32 M32 32 Q44 44 48 32" stroke="#fff" strokeWidth="3.5" fill="none"/>
+                        </svg>
+                    ) : (
+                      <FontAwesomeIcon icon={layer.icon} style={{fontSize:'1.5rem'}} />
+                    )}
                   </button>
                   <span style={{ textTransform: 'capitalize', fontWeight: '500', color: 'white', fontSize: '1rem' }}>{layer.name}</span>
                 </div>
@@ -227,54 +250,70 @@ function App() {
       {/* Layouts category column below top right buttons */}
       <div style={{
         position: 'fixed',
-        right: '2rem',
+        right: '2.5rem',
         top: 'calc(2rem + 180px)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start',
-        gap: '0.75rem',
-        background: 'rgba(60,60,60,0)', // fully transparent
+        gap: '0.35rem',
+        background: 'rgba(60,60,60,0)',
         borderRadius: '8px',
-        padding: '0.5rem 0.75rem',
+        padding: '0.25rem 0.7rem',
         boxShadow: 'none',
-        minWidth: '120px',
+        minWidth: '60px',
+        maxWidth: '140px',
       }}>
-        <span style={{ color: 'white', fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '0.5rem' }}>Layouts</span>
+        <div style={{width:'100%',display:'flex',justifyContent:'center',marginBottom:'0.18rem'}}>
+          <span style={{ color: '#222', fontWeight: 'bold', fontSize: '0.78rem', letterSpacing: '0.04em', textAlign: 'center', textTransform: 'lowercase' }}>layouts</span>
+        </div>
         {/* Worksheets button */}
         <button style={{
-          display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.4rem 0.7rem', fontSize: '0.95rem', cursor: 'pointer', boxShadow: 'none'
+          display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.18rem 0.3rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
         }}>
-          {/* Grid icon */}
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <rect x="3" y="3" width="6" height="6" fill="#333"/>
-            <rect x="15" y="3" width="6" height="6" fill="#333"/>
-            <rect x="3" y="15" width="6" height="6" fill="#333"/>
-            <rect x="15" y="15" width="6" height="6" fill="#333"/>
-          </svg>
-          <span>Worksheets</span>
+          <FontAwesomeIcon icon={faThLarge} style={{fontSize:'0.9em'}} />
+          <span style={{fontSize:'0.78rem'}}>Worksheets</span>
         </button>
         {/* Presentation Sheets button */}
         <button style={{
-          display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.4rem 0.7rem', fontSize: '0.95rem', cursor: 'pointer', boxShadow: 'none'
+          display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.18rem 0.3rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
         }}>
-          {/* Laptop icon */}
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <rect x="4" y="6" width="16" height="10" rx="2" fill="#333"/>
-            <rect x="2" y="18" width="20" height="2" rx="1" fill="#333"/>
-          </svg>
-          <span>Presentation Sheets</span>
+          <FontAwesomeIcon icon={faLaptop} style={{fontSize:'0.9em'}} />
+          <span style={{fontSize:'0.78rem'}}>Presentation Sheets</span>
         </button>
         {/* Schedules & Specifications button */}
         <button style={{
-          display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.4rem 0.7rem', fontSize: '0.95rem', cursor: 'pointer', boxShadow: 'none'
+          display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.18rem 0.3rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
         }}>
-          {/* List icon */}
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <rect x="4" y="6" width="16" height="2" fill="#333"/>
-            <rect x="4" y="11" width="16" height="2" fill="#333"/>
-            <rect x="4" y="16" width="16" height="2" fill="#333"/>
-          </svg>
-          <span>Schedules &amp; Specifications</span>
+          <FontAwesomeIcon icon={faList} style={{fontSize:'0.9em'}} />
+          <span style={{fontSize:'0.78rem'}}>Schedules &amp; Specifications</span>
+        </button>
+        {/* Site Diagrams button */}
+        <button style={{
+          display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.18rem 0.3rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
+        }}>
+          <FontAwesomeIcon icon={faEye} style={{fontSize:'0.9em'}} />
+          <span style={{fontSize:'0.78rem'}}>Site Diagrams</span>
+        </button>
+        {/* Budgets button */}
+        <button style={{
+          display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.18rem 0.3rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
+        }}>
+          <FontAwesomeIcon icon={faDollarSign} style={{fontSize:'0.9em'}} />
+          <span style={{fontSize:'0.78rem'}}>Budgets</span>
+        </button>
+        {/* Project Files button */}
+        <button style={{
+          display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.18rem 0.3rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
+        }}>
+          <FontAwesomeIcon icon={faPaperclip} style={{fontSize:'0.9em'}} />
+          <span style={{fontSize:'0.78rem'}}>Project Files</span>
+        </button>
+        {/* Calendar & Timelines button */}
+        <button style={{
+          display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.18rem 0.3rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
+        }}>
+          <FontAwesomeIcon icon={faCalendarAlt} style={{fontSize:'0.9em'}} />
+          <span style={{fontSize:'0.78rem'}}>Calendar &amp; Timelines</span>
         </button>
       </div>
     </div>
