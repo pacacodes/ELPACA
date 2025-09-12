@@ -1,0 +1,11 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <!-- Alpaca side profile silhouette, centered -->
+    <path d="M8 26 Q8 22 12 20 Q12 16 16 15 Q17 10 22 11 Q27 12 26 17 Q29 17 29 20 Q29 23 26 23 Q26 26 22 26 Q19 26 16 26 Q13 26 8 26 Z" fill="white" />
+    <rect x="13" y="26" width="2" height="5" rx="1" fill="white" />
+    <rect x="19" y="26" width="2" height="5" rx="1" fill="white" />
+    <ellipse cx="25" cy="15" rx="1.1" ry="1.5" fill="white" />
+    <rect x="26" y="12" width="1.5" height="2" rx="0.7" fill="white" />
+    <ellipse cx="22" cy="13" rx="0.7" ry="0.7" fill="white" />
+  </g>
+</svg>
