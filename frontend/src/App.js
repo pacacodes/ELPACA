@@ -25,6 +25,29 @@ function App() {
 
   return (
     <div style={{ padding: '2rem', position: 'relative', minHeight: '100vh' }}>
+      {/* Main screen title: show project name and address if a project is open */}
+      {activeProjectFolder && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          color: '#222', // dark grey
+          fontSize: '1.7rem',
+          letterSpacing: '0.04em',
+          zIndex: 9999,
+          background: 'rgba(255,255,255,0.92)',
+          padding: '1.2rem 0 0.7rem 0',
+          boxShadow: '0 2px 12px rgba(0,0,0,0.07)'
+        }}>
+          {activeProjectFolder.name || activeProjectFolder}
+          {activeProjectFolder.address && (
+            <div style={{fontSize:'1.1rem',color:'#666',marginTop:'0.3rem',fontWeight:'400'}}>{activeProjectFolder.address}</div>
+          )}
+        </div>
+      )}
       {/* Floating plus button in bottom left */}
       <button
         style={{
@@ -166,7 +189,9 @@ function App() {
                   }}
                   aria-label={layer.name}
                   onClick={() => {
-                    if (layer.name === 'ground cover layer') setActiveLayer(layer.name);
+                    setActiveLayer(layer.name);
+                    setPopupOpen(false);
+                    setAlpacaPopupOpen(false);
                   }}
                 >
                   {layer.icon === 'grass' ? (
@@ -195,27 +220,28 @@ function App() {
               ))}
             </div>
           </div>
-          {/* Adjacent connected popup for ground cover layer only */}
-          {activeLayer === 'ground cover layer' && (
+          {/* Dedicated popup for any layer */}
+          {activeLayer && (
             <div
               style={{
-                position: 'absolute',
-                left: 'calc(100% + 16px)',
-                top: '0',
-                minWidth: '220px',
-                minHeight: '120px',
-                background: 'rgba(60,60,60,0.85)',
-                borderRadius: '12px',
+                position: 'fixed',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                minWidth: '340px',
+                minHeight: '220px',
+                background: 'rgba(60,60,60,0.92)',
+                borderRadius: '14px',
                 boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
-                padding: '1.2rem',
+                padding: '2rem',
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: 'flex-start',
-                zIndex: 1001,
-                borderLeft: '4px solid #a8be96',
+                alignItems: 'center',
+                zIndex: 9999,
               }}
             >
-              <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.1rem',marginBottom:'0.7rem'}}>Ground Cover Layer</div>
+              <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.3rem',marginBottom:'1.2rem'}}>{activeLayer.replace(' layer','').replace(/\b\w/g, l => l.toUpperCase())} Layer</div>
+              <div style={{color:'#fff',fontSize:'1.05rem',marginBottom:'1.2rem'}}>This is a dedicated popup for the {activeLayer.replace(' layer','')} layer. Add your content here.</div>
               <button
                 style={{
                   marginTop: '0.5rem',
@@ -223,7 +249,7 @@ function App() {
                   color: '#333',
                   border: 'none',
                   borderRadius: '6px',
-                  padding: '0.4rem 0.9rem',
+                  padding: '0.4rem 1.2rem',
                   fontWeight: 'bold',
                   cursor: 'pointer',
                 }}
@@ -397,13 +423,18 @@ function App() {
               </button>
               {/* Centered Projects label or folder name */}
               <div style={{width:'100%',textAlign:'center',position:'absolute',top:'18px',left:0,fontWeight:'bold',color:'#fff',fontSize:'1.1rem',letterSpacing:'0.04em'}}>
-                {activeProjectFolder ? activeProjectFolder : 'Projects'}
+                {activeProjectFolder ? (activeProjectFolder.name || activeProjectFolder) : 'Projects'}
               </div>
               {/* If a folder is open, show its content */}
               {activeProjectFolder ? (
                 <div style={{marginTop:'60px',width:'100%',display:'flex',flexDirection:'column',alignItems:'center',gap:'1.2rem'}}>
                   <FontAwesomeIcon icon={faDog} style={{ fontSize: '2.2rem', color: '#fff' }} />
-                  <div style={{color:'#fff',fontSize:'1.1rem'}}>Welcome to <b>{activeProjectFolder}</b>!</div>
+                  <div style={{color:'#fff',fontSize:'1.1rem',textAlign:'center'}}>
+                    <div>Welcome to <b>{activeProjectFolder.name || activeProjectFolder}</b>!</div>
+                    {activeProjectFolder.address && (
+                      <div style={{fontSize:'1rem',color:'#ccc',marginTop:'0.5rem'}}>Location: <b>{activeProjectFolder.address}</b></div>
+                    )}
+                  </div>
                   <button
                     style={{marginTop:'1.2rem',background:'rgba(168,190,150,0.7)',color:'#333',border:'none',borderRadius:'6px',padding:'0.4rem 1.2rem',fontWeight:'bold',cursor:'pointer'}}
                     onClick={() => setActiveProjectFolder(null)}
@@ -443,11 +474,38 @@ function App() {
                   {/* Project folders list */}
                   <div style={{marginTop:'60px',width:'100%',display:'flex',flexDirection:'column',alignItems:'flex-start',gap:'0.7rem'}}>
                     {projectFolders.map((folder, idx) => (
-                      <div key={idx} style={{background:'rgba(255,255,255,0.08)',borderRadius:'8px',padding:'0.5rem 1rem',color:'#fff',fontWeight:'500',fontSize:'1rem',marginBottom:'0.2rem',display:'flex',alignItems:'center',gap:'0.7rem',cursor:'pointer'}} onClick={() => setActiveProjectFolder(folder)}>
+                      <button key={idx}
+                        style={{
+                          background:'rgba(255,255,255,0.08)',
+                          borderRadius:'8px',
+                          padding:'0.5rem 1rem',
+                          color:'#fff',
+                          fontWeight:'500',
+                          fontSize:'1rem',
+                          marginBottom:'0.2rem',
+                          display:'flex',
+                          alignItems:'center',
+                          gap:'0.7rem',
+                          cursor:'pointer',
+                          border:'none',
+                          width:'100%',
+                          textAlign:'left',
+                        }}
+                        onClick={() => {
+                          console.log('Project folder clicked:', folder);
+                          setActiveProjectFolder(folder);
+                          setPopupOpen(false);
+                          setAlpacaPopupOpen(false);
+                          setNamingFolder(false);
+                          setNewFolderName('');
+                          setNewFolderAddress('');
+                        }}
+                        aria-label={`Open project ${folder.name || folder}`}
+                      >
                         <FontAwesomeIcon icon={faDog} style={{ fontSize: '1.2rem', color: '#fff' }} />
                         <span>{folder.name || folder}</span>
                         {folder.address && <span style={{fontSize:'0.9rem',color:'#ccc',marginLeft:'0.7rem'}}>{folder.address}</span>}
-                      </div>
+                      </button>
                     ))}
                     {namingFolder && (
                       <div style={{background:'rgba(255,255,255,0.13)',borderRadius:'8px',padding:'0.5rem 1rem',color:'#fff',fontWeight:'500',fontSize:'1rem',marginBottom:'0.2rem',display:'flex',flexDirection:'column',alignItems:'flex-start',gap:'0.5rem'}}>
@@ -483,10 +541,14 @@ function App() {
                           title="Save"
                           onClick={() => {
                             if (newFolderName.trim() && newFolderAddress.trim()) {
-                              setProjectFolders([...projectFolders, { name: newFolderName.trim(), address: newFolderAddress.trim() }]);
+                              const newFolder = { name: newFolderName.trim(), address: newFolderAddress.trim() };
+                              setProjectFolders([...projectFolders, newFolder]);
                               setNamingFolder(false);
                               setNewFolderName('');
                               setNewFolderAddress('');
+                              setActiveProjectFolder(newFolder);
+                              setPopupOpen(false);
+                              setAlpacaPopupOpen(false);
                             }
                           }}
                         >✔</button>
