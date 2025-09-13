@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTree, faCloud, faMountain, faThLarge, faLaptop, faList, faEye, faDollarSign, faPaperclip, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTree, faCloud, faMountain, faThLarge, faLaptop, faList, faEye, faDollarSign, faPaperclip, faCalendarAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faPagelines } from '@fortawesome/free-brands-svg-icons';
-// Removed duplicate import of faPagelines and faVine
+import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
 
 function App() {
   const [popupOpen, setPopupOpen] = useState(false);
@@ -24,7 +24,7 @@ function App() {
           width: '48px',
           height: '48px',
           borderRadius: '50%',
-          background: '#4caf50',
+          background: 'rgba(168, 190, 150, 0.7)', // soft sage green, 70% opacity
           color: 'white',
           fontSize: '2rem',
           border: 'none',
@@ -33,11 +33,12 @@ function App() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          zIndex: 1002,
         }}
         aria-label="Add plant"
         onClick={() => setPopupOpen(true)}
       >
-        +
+        <FontAwesomeIcon icon={faPlus} style={{color: 'white', fontSize: '1.3rem'}} />
       </button>
 
       {/* Popup window */}
@@ -172,14 +173,19 @@ function App() {
         </div>
       )}
 
+      {/* Navigation title above circular array */}
+      <div style={{position:'fixed', right:'2rem', top:'1.2rem', width:'160px', display:'flex', justifyContent:'flex-start', marginBottom:'0.38rem', zIndex:1002}}>
+        <span style={{ color: '#888', fontWeight: 'bold', fontSize: '0.78rem', letterSpacing: '0.04em', textAlign: 'left' }}>Navigation</span>
+      </div>
       {/* Floating alpaca button in top right with 6 surrounding buttons */}
       <div style={{
         position: 'fixed',
         right: '2rem',
-        top: '2rem',
+        top: '2.8rem', // shift down to allow space for title
         width: '160px',
         height: '160px',
         pointerEvents: 'none',
+        zIndex: 1001,
       }}>
         {/* 6 surrounding buttons in a circle */}
         {[...Array(6)].map((_, i) => {
@@ -194,31 +200,27 @@ function App() {
                 position: 'absolute',
                 left: `${x}px`,
                 top: `${y}px`,
-                width: '48px',
-                height: '48px',
+                width: '40px',
+                height: '40px',
                 borderRadius: '50%',
-                background: '#4caf50',
-                color: 'white',
+                background: 'rgba(168, 190, 150, 0.7)',
                 border: 'none',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                cursor: 'pointer',
+                boxShadow: '0 1px 4px rgba(0,0,0,0.12)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '1.5rem',
+                fontSize: '1.2rem',
+                color: '#fff',
                 pointerEvents: 'auto',
+                zIndex: 1003,
               }}
               aria-label={`Circle button ${i+1}`}
             >
               {i === 0 ? (
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="10" r="6" fill="white" />
-                  <rect x="9" y="16" width="6" height="4" rx="2" fill="white" />
-                  <rect x="10" y="20" width="4" height="2" rx="1" fill="white" />
-                  <line x1="10" y1="13" x2="14" y2="13" stroke="#4caf50" strokeWidth="1.5" />
-                  <line x1="12" y1="13" x2="12" y2="16" stroke="#4caf50" strokeWidth="1.5" />
-                </svg>
-              ) : null}
+                <FontAwesomeIcon icon={faLightbulb} />
+              ) : (
+                <FontAwesomeIcon icon={faTree} />
+              )}
             </button>
           );
         })}
@@ -231,19 +233,20 @@ function App() {
             width: '48px',
             height: '48px',
             borderRadius: '50%',
-            background: '#4caf50',
-            color: 'white',
-            fontSize: '2rem',
+            background: '#fff',
+            color: '#4caf50',
             border: 'none',
             boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            pointerEvents: 'auto',
+            fontSize: '2rem',
+            zIndex: 1004,
           }}
           aria-label="Alpaca"
         >
+          <FontAwesomeIcon icon={faPagelines} />
         </button>
       </div>
 
@@ -253,7 +256,7 @@ function App() {
         right: '2.5rem',
         top: 'calc(2rem + 180px)',
         display: 'flex',
-        flexDirection: 'column',
+        flexDirection: 'column', // restore to column
         alignItems: 'flex-start',
         gap: '0.35rem',
         background: 'rgba(60,60,60,0)',
@@ -262,59 +265,62 @@ function App() {
         boxShadow: 'none',
         minWidth: '60px',
         maxWidth: '140px',
+        zIndex: 1000,
       }}>
-        <div style={{width:'100%',display:'flex',justifyContent:'center',marginBottom:'0.18rem'}}>
-          <span style={{ color: '#222', fontWeight: 'bold', fontSize: '0.78rem', letterSpacing: '0.04em', textAlign: 'center', textTransform: 'lowercase' }}>layouts</span>
+        <div style={{width:'100%',display:'flex',justifyContent:'flex-start',marginBottom:'0.38rem'}}>
+          <span style={{ color: '#888', fontWeight: 'bold', fontSize: '0.78rem', letterSpacing: '0.04em', textAlign: 'left' }}>Layouts</span>
         </div>
-        {/* Worksheets button */}
-        <button style={{
-          display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.18rem 0.3rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
-        }}>
-          <FontAwesomeIcon icon={faThLarge} style={{fontSize:'0.9em'}} />
-          <span style={{fontSize:'0.78rem'}}>Worksheets</span>
-        </button>
-        {/* Presentation Sheets button */}
-        <button style={{
-          display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.18rem 0.3rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
-        }}>
-          <FontAwesomeIcon icon={faLaptop} style={{fontSize:'0.9em'}} />
-          <span style={{fontSize:'0.78rem'}}>Presentation Sheets</span>
-        </button>
-        {/* Schedules & Specifications button */}
-        <button style={{
-          display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.18rem 0.3rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
-        }}>
-          <FontAwesomeIcon icon={faList} style={{fontSize:'0.9em'}} />
-          <span style={{fontSize:'0.78rem'}}>Schedules &amp; Specifications</span>
-        </button>
-        {/* Site Diagrams button */}
-        <button style={{
-          display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.18rem 0.3rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
-        }}>
-          <FontAwesomeIcon icon={faEye} style={{fontSize:'0.9em'}} />
-          <span style={{fontSize:'0.78rem'}}>Site Diagrams</span>
-        </button>
-        {/* Budgets button */}
-        <button style={{
-          display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.18rem 0.3rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
-        }}>
-          <FontAwesomeIcon icon={faDollarSign} style={{fontSize:'0.9em'}} />
-          <span style={{fontSize:'0.78rem'}}>Budgets</span>
-        </button>
-        {/* Project Files button */}
-        <button style={{
-          display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.18rem 0.3rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
-        }}>
-          <FontAwesomeIcon icon={faPaperclip} style={{fontSize:'0.9em'}} />
-          <span style={{fontSize:'0.78rem'}}>Project Files</span>
-        </button>
-        {/* Calendar & Timelines button */}
-        <button style={{
-          display: 'flex', alignItems: 'center', gap: '0.25rem', background: 'rgba(60,60,60,0)', color: '#333', border: 'none', borderRadius: '6px', padding: '0.18rem 0.3rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
-        }}>
-          <FontAwesomeIcon icon={faCalendarAlt} style={{fontSize:'0.9em'}} />
-          <span style={{fontSize:'0.78rem'}}>Calendar &amp; Timelines</span>
-        </button>
+        <div style={{display:'flex',flexDirection:'column',gap:'0.35rem'}}>
+          {/* Worksheets button */}
+          <button style={{
+            display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
+          }}>
+            <FontAwesomeIcon icon={faThLarge} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
+            <span style={{fontSize:'0.78rem', color: '#888'}}>Worksheets</span>
+          </button>
+          {/* Presentation Sheets button */}
+          <button style={{
+            display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
+          }}>
+            <FontAwesomeIcon icon={faLaptop} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
+            <span style={{fontSize:'0.78rem', color: '#888'}}>Presentation Sheets</span>
+          </button>
+          {/* Schedules & Specifications button */}
+          <button style={{
+            display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
+          }}>
+            <FontAwesomeIcon icon={faList} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
+            <span style={{fontSize:'0.78rem', color: '#888'}}>Schedules &amp; Specifications</span>
+          </button>
+          {/* Site Diagrams button */}
+          <button style={{
+            display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
+          }}>
+            <FontAwesomeIcon icon={faEye} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
+            <span style={{fontSize:'0.78rem', color: '#888'}}>Site Diagrams</span>
+          </button>
+          {/* Budgets button */}
+          <button style={{
+            display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
+          }}>
+            <FontAwesomeIcon icon={faDollarSign} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
+            <span style={{fontSize:'0.78rem', color: '#888'}}>Budgets</span>
+          </button>
+          {/* Project Files button */}
+          <button style={{
+            display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
+          }}>
+            <FontAwesomeIcon icon={faPaperclip} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
+            <span style={{fontSize:'0.78rem', color: '#888'}}>Project Files</span>
+          </button>
+          {/* Calendar & Timelines button */}
+          <button style={{
+            display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
+          }}>
+            <FontAwesomeIcon icon={faCalendarAlt} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
+            <span style={{fontSize:'0.78rem', color: '#888'}}>Calendar &amp; Timelines</span>
+          </button>
+        </div>
       </div>
     </div>
   );
