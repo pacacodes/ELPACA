@@ -8,6 +8,7 @@ import { faDog } from '@fortawesome/free-solid-svg-icons';
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
+  const [activeProjectFolder, setActiveProjectFolder] = useState(null);
   const [popupOpen, setPopupOpen] = useState(false);
   const [projectFolders, setProjectFolders] = useState([]);
   const [newFolderName, setNewFolderName] = useState('');
@@ -69,7 +70,7 @@ function App() {
               borderRadius: '12px',
               boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
               minWidth: '340px',
-              minHeight: '300px',
+              minHeight: '600px', // increased height for 7 buttons
               display: 'flex',
               flexDirection: 'row',
               alignItems: 'flex-start',
@@ -81,11 +82,29 @@ function App() {
             }}
             onMouseDown={e => {
               // Only start dragging if the click is NOT on the close button or its children
-              if (e.target.closest('button[aria-label="Close popup"]')) return;
+              const closeBtn = e.currentTarget.querySelector('button[aria-label="Close popup"]');
+              if (closeBtn && (e.target === closeBtn || closeBtn.contains(e.target))) return;
               setDragging(true);
               setDragOffset({ x: e.clientX - popupPos.x, y: e.clientY - popupPos.y });
             }}
           >
+            {/* Centered title at top */}
+            <div style={{
+              position: 'absolute',
+              top: '18px',
+              left: 0,
+              width: '100%',
+              textAlign: 'center',
+              fontWeight: 'bold',
+              color: '#fff',
+              fontSize: '1.25rem',
+              letterSpacing: '0.04em',
+              zIndex: 1001
+            }}>
+              Permaculture Layers
+            </div>
+            {/* Spacer between title and buttons */}
+            <div style={{width:'100%', height:'2.5rem'}}></div>
             {/* Close button as small black X in top right */}
             <button
               onClick={() => {
@@ -104,6 +123,7 @@ function App() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 padding: 0,
+                pointerEvents: 'auto',
               }}
               aria-label="Close popup"
             >
@@ -113,9 +133,9 @@ function App() {
               </svg>
             </button>
             {/* Column of buttons on the left */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginRight: '2rem', alignItems: 'flex-start', pointerEvents: 'auto' }}>
+            <div style={{ position: 'absolute', left: '24px', top: '90px', display: 'flex', flexDirection: 'column', gap: '1.1rem', alignItems: 'flex-start', pointerEvents: 'auto' }}>
               {[
-         { name: 'ground cover layer', icon: 'grass' },
+                { name: 'ground cover layer', icon: 'grass' },
                 { name: 'root layer', icon: 'grassroots' },
                 { name: 'herbaceous layer', icon: faPagelines },
                 { name: 'shrub layer', icon: faTree },
@@ -123,51 +143,54 @@ function App() {
                 { name: 'tall tree layer', icon: faMountain },
                 { name: 'vine layer', icon: faPagelines },
               ].map((layer, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <button
-                    style={{
-                      width: '48px',
-                      height: '48px',
-                      borderRadius: '50%',
-                      background: 'rgba(60,60,60,0.5)',
-                      color: 'white',
-                      border: 'none',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '1.5rem',
-                    }}
-                    aria-label={layer.name}
-                    onClick={() => {
-                      if (layer.name === 'ground cover layer') setActiveLayer(layer.name);
-                    }}
-                  >
-                    {layer.icon === 'grass' ? (
-                      <svg width="32" height="32" viewBox="0 0 64 64" fill="none" style={{display:'block',margin:'0 auto',position:'relative',top:'-12px'}} xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 62 Q12 40 20 62 Q24 48 28 62 Q32 38 36 62 Q40 50 44 62 Q48 44 52 62" stroke="#fff" strokeWidth="3.5" fill="none"/>
-                      </svg>
-                      ) : layer.icon === 'grassroots' ? (
-                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" style={{display:'block',margin:'0 auto',position:'relative',top:'-2px'}} xmlns="http://www.w3.org/2000/svg">
-                          <path d="M8 20 Q12 4 20 20 Q24 8 28 20 Q32 2 36 20 Q40 10 44 20 Q48 6 52 20" stroke="#fff" strokeWidth="3" fill="none"/>
-                          <path d="M32 20 Q30 14 28 20" stroke="#fff" strokeWidth="2" fill="none"/>
-                          <path d="M32 20 Q34 14 36 20" stroke="#fff" strokeWidth="2" fill="none"/>
-                          <path d="M32 20 Q32 12 32 20" stroke="#fff" strokeWidth="2" fill="none"/>
-                          <polygon points="28,22 36,22 32,60" fill="#fff" />
-                          <path d="M32 40 Q30 44 32 48" stroke="#fff" strokeWidth="1.5" fill="none"/>
-                          <path d="M32 44 Q34 48 32 52" stroke="#fff" strokeWidth="1.5" fill="none"/>
-                        </svg>
-                      ) : layer.icon === 'roots' ? (
-                        <svg width="32" height="32" viewBox="0 0 64 64" fill="none" style={{display:'block',margin:'0 auto',position:'relative',top:'-2px'}} xmlns="http://www.w3.org/2000/svg">
-                          <path d="M32 8 V32 M32 32 Q28 40 24 32 M32 32 Q36 40 40 32 M32 32 Q20 44 16 32 M32 32 Q44 44 48 32" stroke="#fff" strokeWidth="3.5" fill="none"/>
-                        </svg>
-                    ) : (
-                      <FontAwesomeIcon icon={layer.icon} style={{fontSize:'1.5rem'}} />
-                    )}
-                  </button>
-                  <span style={{ textTransform: 'capitalize', fontWeight: '500', color: 'white', fontSize: '1rem' }}>{layer.name}</span>
-                </div>
+                <button
+                  key={i}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    gap: '1.1rem',
+                    width: '320px',
+                    height: '48px',
+                    borderRadius: '12px',
+                    background: 'rgba(60,60,60,0.5)',
+                    color: 'white',
+                    border: 'none',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                    cursor: 'pointer',
+                    fontSize: '1.1rem',
+                    paddingLeft: '1.2rem',
+                    paddingRight: '1.2rem',
+                    justifyContent: 'flex-start',
+                  }}
+                  aria-label={layer.name}
+                  onClick={() => {
+                    if (layer.name === 'ground cover layer') setActiveLayer(layer.name);
+                  }}
+                >
+                  {layer.icon === 'grass' ? (
+                    <svg width="32" height="32" viewBox="0 0 64 64" fill="none" style={{display:'block',margin:'0',position:'relative',top:'-2px'}} xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 62 Q12 40 20 62 Q24 48 28 62 Q32 38 36 62 Q40 50 44 62 Q48 44 52 62" stroke="#fff" strokeWidth="3.5" fill="none"/>
+                    </svg>
+                  ) : layer.icon === 'grassroots' ? (
+                    <svg width="32" height="32" viewBox="0 0 64 64" fill="none" style={{display:'block',margin:'0',position:'relative',top:'-2px'}} xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 20 Q12 4 20 20 Q24 8 28 20 Q32 2 36 20 Q40 10 44 20 Q48 6 52 20" stroke="#fff" strokeWidth="3" fill="none"/>
+                      <path d="M32 20 Q30 14 28 20" stroke="#fff" strokeWidth="2" fill="none"/>
+                      <path d="M32 20 Q34 14 36 20" stroke="#fff" strokeWidth="2" fill="none"/>
+                      <path d="M32 20 Q32 12 32 20" stroke="#fff" strokeWidth="2" fill="none"/>
+                      <polygon points="28,22 36,22 32,60" fill="#fff" />
+                      <path d="M32 40 Q30 44 32 48" stroke="#fff" strokeWidth="1.5" fill="none"/>
+                      <path d="M32 44 Q34 48 32 52" stroke="#fff" strokeWidth="1.5" fill="none"/>
+                    </svg>
+                  ) : layer.icon === 'roots' ? (
+                    <svg width="32" height="32" viewBox="0 0 64 64" fill="none" style={{display:'block',margin:'0',position:'relative',top:'-2px'}} xmlns="http://www.w3.org/2000/svg">
+                      <path d="M32 8 V32 M32 32 Q28 40 24 32 M32 32 Q36 40 40 32 M32 32 Q20 44 16 32 M32 32 Q44 44 48 32" stroke="#fff" strokeWidth="3.5" fill="none"/>
+                    </svg>
+                  ) : (
+                    <FontAwesomeIcon icon={layer.icon} style={{fontSize:'1.5rem'}} />
+                  )}
+                  <span style={{ textTransform: 'capitalize', fontWeight: '500', color: 'white', fontSize: '1rem', whiteSpace: 'nowrap' }}>{layer.name}</span>
+                </button>
               ))}
             </div>
           </div>
@@ -345,7 +368,10 @@ function App() {
             >
               {/* Close button as small white X in top right */}
               <button
-                onClick={() => setAlpacaPopupOpen(false)}
+                onClick={() => {
+                  setAlpacaPopupOpen(false);
+                  setActiveProjectFolder(null);
+                }}
                 style={{
                   position: 'absolute',
                   top: '12px',
@@ -368,87 +394,103 @@ function App() {
                   <line x1="15" y1="3" x2="3" y2="15" stroke="white" strokeWidth="2" />
                 </svg>
               </button>
-              {/* Centered Projects label */}
-              <div style={{width:'100%',textAlign:'center',position:'absolute',top:'18px',left:0,fontWeight:'bold',color:'#fff',fontSize:'1.1rem',letterSpacing:'0.04em'}}>Projects</div>
-              {/* Plus button in bottom right of popup */}
-              <button
-                style={{
-                  position: 'absolute',
-                  left: '18px',
-                  bottom: '18px',
-                  width: '30px',
-                  height: '30px',
-                  borderRadius: '50%',
-                  background: 'rgba(168, 190, 150, 0.7)',
-                  color: 'white',
-                  border: 'none',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '0.83rem',
-                  zIndex: 2002,
-                }}
-                aria-label="Add project"
-                title="Add project"
-                onClick={() => {
-                  setNamingFolder(true);
-                  setNewFolderName('');
-                }}
-              >
-                <FontAwesomeIcon icon={faPlus} />
-              </button>
-              {/* Project folders list */}
-              <div style={{marginTop:'60px',width:'100%',display:'flex',flexDirection:'column',alignItems:'flex-start',gap:'0.7rem'}}>
-                {projectFolders.map((folder, idx) => (
-                  <div key={idx} style={{background:'rgba(255,255,255,0.08)',borderRadius:'8px',padding:'0.5rem 1rem',color:'#fff',fontWeight:'500',fontSize:'1rem',marginBottom:'0.2rem',display:'flex',alignItems:'center',gap:'0.7rem'}}>
-                    <FontAwesomeIcon icon={faDog} style={{ fontSize: '1.2rem', color: '#fff' }} />
-                    {folder}
-                  </div>
-                ))}
-                {namingFolder && (
-                  <div style={{background:'rgba(255,255,255,0.13)',borderRadius:'8px',padding:'0.5rem 1rem',color:'#fff',fontWeight:'500',fontSize:'1rem',marginBottom:'0.2rem',display:'flex',alignItems:'center',gap:'0.5rem'}}>
-                    <input
-                      type="text"
-                      value={newFolderName}
-                      autoFocus
-                      onChange={e => setNewFolderName(e.target.value)}
-                      placeholder="Name your project"
-                      style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
-                      onKeyDown={e => {
-                        if (e.key === 'Enter' && newFolderName.trim()) {
-                          setProjectFolders([...projectFolders, newFolderName.trim()]);
-                          setNamingFolder(false);
-                          setNewFolderName('');
-                        } else if (e.key === 'Escape') {
-                          setNamingFolder(false);
-                          setNewFolderName('');
-                        }
-                      }}
-                    />
-                    <button
-                      style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
-                      title="Save"
-                      onClick={() => {
-                        if (newFolderName.trim()) {
-                          setProjectFolders([...projectFolders, newFolderName.trim()]);
-                          setNamingFolder(false);
-                          setNewFolderName('');
-                        }
-                      }}
-                    >✔</button>
-                    <button
-                      style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
-                      title="Cancel"
-                      onClick={() => {
-                        setNamingFolder(false);
-                        setNewFolderName('');
-                      }}
-                    >✖</button>
-                  </div>
-                )}
+              {/* Centered Projects label or folder name */}
+              <div style={{width:'100%',textAlign:'center',position:'absolute',top:'18px',left:0,fontWeight:'bold',color:'#fff',fontSize:'1.1rem',letterSpacing:'0.04em'}}>
+                {activeProjectFolder ? activeProjectFolder : 'Projects'}
               </div>
+              {/* If a folder is open, show its content */}
+              {activeProjectFolder ? (
+                <div style={{marginTop:'60px',width:'100%',display:'flex',flexDirection:'column',alignItems:'center',gap:'1.2rem'}}>
+                  <FontAwesomeIcon icon={faDog} style={{ fontSize: '2.2rem', color: '#fff' }} />
+                  <div style={{color:'#fff',fontSize:'1.1rem'}}>Welcome to <b>{activeProjectFolder}</b>!</div>
+                  <button
+                    style={{marginTop:'1.2rem',background:'rgba(168,190,150,0.7)',color:'#333',border:'none',borderRadius:'6px',padding:'0.4rem 1.2rem',fontWeight:'bold',cursor:'pointer'}}
+                    onClick={() => setActiveProjectFolder(null)}
+                  >Back to Projects</button>
+                </div>
+              ) : (
+                <>
+                  {/* Plus button in bottom right of popup */}
+                  <button
+                    style={{
+                      position: 'absolute',
+                      left: '18px',
+                      bottom: '18px',
+                      width: '30px',
+                      height: '30px',
+                      borderRadius: '50%',
+                      background: 'rgba(168, 190, 150, 0.7)',
+                      color: 'white',
+                      border: 'none',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '0.83rem',
+                      zIndex: 2002,
+                    }}
+                    aria-label="Add project"
+                    title="Add project"
+                    onClick={() => {
+                      setNamingFolder(true);
+                      setNewFolderName('');
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faPlus} />
+                  </button>
+                  {/* Project folders list */}
+                  <div style={{marginTop:'60px',width:'100%',display:'flex',flexDirection:'column',alignItems:'flex-start',gap:'0.7rem'}}>
+                    {projectFolders.map((folder, idx) => (
+                      <div key={idx} style={{background:'rgba(255,255,255,0.08)',borderRadius:'8px',padding:'0.5rem 1rem',color:'#fff',fontWeight:'500',fontSize:'1rem',marginBottom:'0.2rem',display:'flex',alignItems:'center',gap:'0.7rem',cursor:'pointer'}} onClick={() => setActiveProjectFolder(folder)}>
+                        <FontAwesomeIcon icon={faDog} style={{ fontSize: '1.2rem', color: '#fff' }} />
+                        {folder}
+                      </div>
+                    ))}
+                    {namingFolder && (
+                      <div style={{background:'rgba(255,255,255,0.13)',borderRadius:'8px',padding:'0.5rem 1rem',color:'#fff',fontWeight:'500',fontSize:'1rem',marginBottom:'0.2rem',display:'flex',alignItems:'center',gap:'0.5rem'}}>
+                        <input
+                          type="text"
+                          value={newFolderName}
+                          autoFocus
+                          onChange={e => setNewFolderName(e.target.value)}
+                          placeholder="Name your project"
+                          style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
+                          onKeyDown={e => {
+                            if (e.key === 'Enter' && newFolderName.trim()) {
+                              setProjectFolders([...projectFolders, newFolderName.trim()]);
+                              setNamingFolder(false);
+                              setNewFolderName('');
+                            } else if (e.key === 'Escape') {
+                              setNamingFolder(false);
+                              setNewFolderName('');
+                            }
+                          }}
+                        />
+                        <button
+                          style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
+                          title="Save"
+                          onClick={() => {
+                            if (newFolderName.trim()) {
+                              setProjectFolders([...projectFolders, newFolderName.trim()]);
+                              setNamingFolder(false);
+                              setNewFolderName('');
+                            }
+                          }}
+                        >✔</button>
+                        <button
+                          style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
+                          title="Cancel"
+                          onClick={() => {
+                            setNamingFolder(false);
+                            setNewFolderName('');
+                          }}
+                        >✖</button>
+                      </div>
+                    )}
+                  </div>
+                </>
+              )}
             </div>
             {alpacaDragging && (
               <div
