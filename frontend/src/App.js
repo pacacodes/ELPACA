@@ -9,6 +9,10 @@ import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   const [popupOpen, setPopupOpen] = useState(false);
+  const [alpacaPopupOpen, setAlpacaPopupOpen] = useState(false);
+  const [alpacaPopupPos, setAlpacaPopupPos] = useState({ x: window.innerWidth / 2 - 160, y: window.innerHeight / 2 - 90 });
+  const [alpacaDragging, setAlpacaDragging] = useState(false);
+  const [alpacaDragOffset, setAlpacaDragOffset] = useState({ x: 0, y: 0 });
   const [popupPos, setPopupPos] = useState({ x: window.innerWidth / 2 - 170, y: window.innerHeight / 2 - 150 });
   const [dragging, setDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
@@ -226,7 +230,7 @@ function App() {
         top: '3.8rem', // shift down to allow space for title
         width: '160px',
         height: '160px',
-        pointerEvents: 'none',
+  pointerEvents: 'auto',
         zIndex: 1001,
       }}>
         {/* 6 surrounding buttons in a circle */}
@@ -296,9 +300,85 @@ function App() {
             zIndex: 1004,
           }}
           aria-label="Alpaca"
+          onClick={() => setAlpacaPopupOpen(true)}
         >
           <FontAwesomeIcon icon={faDog} style={{ fontSize: '1.4rem' }} />
         </button>
+        {/* Alpaca popup window */}
+        {alpacaPopupOpen && (
+          <div style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            background: 'rgba(60,60,60,0.3)',
+            zIndex: 2000,
+          }}>
+            <div
+              style={{
+                position: 'absolute',
+                left: alpacaPopupPos.x,
+                top: alpacaPopupPos.y,
+                background: 'rgba(60,60,60,0.7)',
+                borderRadius: '14px',
+                minWidth: '320px',
+                minHeight: '180px',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-end',
+                padding: '1.5rem',
+                cursor: alpacaDragging ? 'grabbing' : 'grab',
+                userSelect: 'none',
+              }}
+              onMouseDown={e => {
+                // Only start dragging if the click is NOT on the close button or its children
+                const closeBtn = e.currentTarget.querySelector('button[aria-label="Close alpaca popup"]');
+                if (closeBtn && (e.target === closeBtn || closeBtn.contains(e.target))) return;
+                setAlpacaDragging(true);
+                setAlpacaDragOffset({ x: e.clientX - alpacaPopupPos.x, y: e.clientY - alpacaPopupPos.y });
+              }}
+            >
+              {/* Close button as small white X in top right */}
+              <button
+                onClick={() => setAlpacaPopupOpen(false)}
+                style={{
+                  position: 'absolute',
+                  top: '12px',
+                  right: '12px',
+                  width: '28px',
+                  height: '28px',
+                  border: 'none',
+                  background: 'transparent',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: 0,
+                  pointerEvents: 'auto',
+                }}
+                aria-label="Close alpaca popup"
+              >
+                <svg width="18" height="18" viewBox="0 0 18 18">
+                  <line x1="3" y1="3" x2="15" y2="15" stroke="white" strokeWidth="2" />
+                  <line x1="15" y1="3" x2="3" y2="15" stroke="white" strokeWidth="2" />
+                </svg>
+              </button>
+              {/* Centered Projects label */}
+              <div style={{width:'100%',textAlign:'center',position:'absolute',top:'18px',left:0,fontWeight:'bold',color:'#fff',fontSize:'1.1rem',letterSpacing:'0.04em'}}>Projects</div>
+            </div>
+            {alpacaDragging && (
+              <div
+                style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 2001, cursor: 'grabbing' }}
+                onMouseMove={e => {
+                  setAlpacaPopupPos({ x: e.clientX - alpacaDragOffset.x, y: e.clientY - alpacaDragOffset.y });
+                }}
+                onMouseUp={() => setAlpacaDragging(false)}
+              />
+            )}
+          </div>
+        )}
       </div>
 
       {/* Layouts category column below top right buttons */}
