@@ -367,6 +367,31 @@ function App() {
               </button>
               {/* Centered Projects label */}
               <div style={{width:'100%',textAlign:'center',position:'absolute',top:'18px',left:0,fontWeight:'bold',color:'#fff',fontSize:'1.1rem',letterSpacing:'0.04em'}}>Projects</div>
+              {/* Plus button in bottom right of popup */}
+              <button
+                style={{
+                  position: 'absolute',
+                  left: '18px',
+                  bottom: '18px',
+                  width: '30px', // 20% smaller than 38px
+                  height: '30px',
+                  borderRadius: '50%',
+                  background: 'rgba(168, 190, 150, 0.7)',
+                  color: 'white',
+                  border: 'none',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '0.83rem',
+                  zIndex: 2002,
+                }}
+                aria-label="Add project"
+                title="Add project"
+              >
+                <FontAwesomeIcon icon={faPlus} />
+              </button>
             </div>
             {alpacaDragging && (
               <div
