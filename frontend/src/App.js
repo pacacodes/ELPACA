@@ -9,6 +9,9 @@ import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   const [popupOpen, setPopupOpen] = useState(false);
+  const [projectFolders, setProjectFolders] = useState([]);
+  const [newFolderName, setNewFolderName] = useState('');
+  const [namingFolder, setNamingFolder] = useState(false);
   const [alpacaPopupOpen, setAlpacaPopupOpen] = useState(false);
   const [alpacaPopupPos, setAlpacaPopupPos] = useState({ x: window.innerWidth / 2 - 160, y: window.innerHeight / 2 - 90 });
   const [alpacaDragging, setAlpacaDragging] = useState(false);
@@ -373,7 +376,7 @@ function App() {
                   position: 'absolute',
                   left: '18px',
                   bottom: '18px',
-                  width: '30px', // 20% smaller than 38px
+                  width: '30px',
                   height: '30px',
                   borderRadius: '50%',
                   background: 'rgba(168, 190, 150, 0.7)',
@@ -389,9 +392,63 @@ function App() {
                 }}
                 aria-label="Add project"
                 title="Add project"
+                onClick={() => {
+                  setNamingFolder(true);
+                  setNewFolderName('');
+                }}
               >
                 <FontAwesomeIcon icon={faPlus} />
               </button>
+              {/* Project folders list */}
+              <div style={{marginTop:'60px',width:'100%',display:'flex',flexDirection:'column',alignItems:'flex-start',gap:'0.7rem'}}>
+                {projectFolders.map((folder, idx) => (
+                  <div key={idx} style={{background:'rgba(255,255,255,0.08)',borderRadius:'8px',padding:'0.5rem 1rem',color:'#fff',fontWeight:'500',fontSize:'1rem',marginBottom:'0.2rem',display:'flex',alignItems:'center',gap:'0.7rem'}}>
+                    <FontAwesomeIcon icon={faDog} style={{ fontSize: '1.2rem', color: '#fff' }} />
+                    {folder}
+                  </div>
+                ))}
+                {namingFolder && (
+                  <div style={{background:'rgba(255,255,255,0.13)',borderRadius:'8px',padding:'0.5rem 1rem',color:'#fff',fontWeight:'500',fontSize:'1rem',marginBottom:'0.2rem',display:'flex',alignItems:'center',gap:'0.5rem'}}>
+                    <input
+                      type="text"
+                      value={newFolderName}
+                      autoFocus
+                      onChange={e => setNewFolderName(e.target.value)}
+                      placeholder="Name your project"
+                      style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
+                      onKeyDown={e => {
+                        if (e.key === 'Enter' && newFolderName.trim()) {
+                          setProjectFolders([...projectFolders, newFolderName.trim()]);
+                          setNamingFolder(false);
+                          setNewFolderName('');
+                        } else if (e.key === 'Escape') {
+                          setNamingFolder(false);
+                          setNewFolderName('');
+                        }
+                      }}
+                    />
+                    <button
+                      style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
+                      title="Save"
+                      onClick={() => {
+                        if (newFolderName.trim()) {
+                          setProjectFolders([...projectFolders, newFolderName.trim()]);
+                          setNamingFolder(false);
+                          setNewFolderName('');
+                        }
+                      }}
+                    >✔</button>
+                    <button
+                      style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
+                      title="Cancel"
+                      onClick={() => {
+                        setNamingFolder(false);
+                        setNewFolderName('');
+                      }}
+                    >✖</button>
+                  </div>
+                )}
+              </div>
             </div>
             {alpacaDragging && (
               <div
