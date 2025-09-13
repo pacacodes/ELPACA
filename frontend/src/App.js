@@ -11,9 +11,7 @@ function App() {
   const [popupPos, setPopupPos] = useState({ x: window.innerWidth / 2 - 170, y: window.innerHeight / 2 - 150 });
   const [dragging, setDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
-  // Only popup state and drag logic needed
-
-  // No plant API or Wikipedia fetch logic
+  const [activeLayer, setActiveLayer] = useState(null);
 
   return (
     <div style={{ padding: '2rem', position: 'relative', minHeight: '100vh' }}>
@@ -134,7 +132,9 @@ function App() {
                       fontSize: '1.5rem',
                     }}
                     aria-label={layer.name}
-                    onClick={() => { console.log(`Clicked: ${layer.name}`); }}
+                    onClick={() => {
+                      if (layer.name === 'ground cover layer') setActiveLayer(layer.name);
+                    }}
                   >
                     {layer.icon === 'grass' ? (
                       <svg width="32" height="32" viewBox="0 0 64 64" fill="none" style={{display:'block',margin:'0 auto',position:'relative',top:'-12px'}} xmlns="http://www.w3.org/2000/svg">
@@ -163,6 +163,42 @@ function App() {
               ))}
             </div>
           </div>
+          {/* Adjacent connected popup for ground cover layer only */}
+          {activeLayer === 'ground cover layer' && (
+            <div
+              style={{
+                position: 'absolute',
+                left: 'calc(100% + 16px)',
+                top: '0',
+                minWidth: '220px',
+                minHeight: '120px',
+                background: 'rgba(60,60,60,0.85)',
+                borderRadius: '12px',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
+                padding: '1.2rem',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                zIndex: 1001,
+                borderLeft: '4px solid #a8be96',
+              }}
+            >
+              <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.1rem',marginBottom:'0.7rem'}}>Ground Cover Layer</div>
+              <button
+                style={{
+                  marginTop: '0.5rem',
+                  background: 'rgba(168,190,150,0.7)',
+                  color: '#333',
+                  border: 'none',
+                  borderRadius: '6px',
+                  padding: '0.4rem 0.9rem',
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                }}
+                onClick={() => setActiveLayer(null)}
+              >Close</button>
+            </div>
+          )}
           {/* Drag logic */}
           {dragging && (
             <div
@@ -177,7 +213,7 @@ function App() {
       )}
 
       {/* Navigation title above circular array */}
-      <div style={{position:'fixed', right:'2rem', top:'1.2rem', width:'160px', display:'flex', justifyContent:'flex-start', marginBottom:'0.38rem', zIndex:1002}}>
+      <div style={{position:'fixed', right:'2rem', top:'2.2rem', width:'160px', display:'flex', justifyContent:'flex-start', marginBottom:'0.38rem', zIndex:1002}}>
         <div style={{width:'100%',display:'flex',justifyContent:'flex-start',marginBottom:'0.38rem'}}>
           <span style={{ color: '#888', fontWeight: 'bold', fontSize: '0.78rem', letterSpacing: '0.04em', textAlign: 'left', marginLeft: '-2.7rem' }}>Navigation</span>
         </div>
@@ -186,7 +222,7 @@ function App() {
       <div style={{
         position: 'fixed',
         right: '2rem',
-        top: '2.8rem', // shift down to allow space for title
+        top: '3.8rem', // shift down to allow space for title
         width: '160px',
         height: '160px',
         pointerEvents: 'none',
@@ -268,7 +304,7 @@ function App() {
       <div style={{
         position: 'fixed',
         right: '5.1rem',
-        top: 'calc(2rem + 180px)',
+        top: 'calc(2rem + 195px)',
         display: 'flex',
         flexDirection: 'column', // restore to column
         alignItems: 'flex-start',
@@ -340,8 +376,8 @@ function App() {
       {/* Communication section below layouts */}
       <div style={{
         position: 'fixed',
-        right: '5.6rem',
-        top: 'calc(2rem + 445px)',
+        right: '4.1rem',
+        top: 'calc(2rem + 460px)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start',
@@ -364,6 +400,25 @@ function App() {
           }}>
             <FontAwesomeIcon icon={faCommentDots} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
             <span style={{fontSize:'0.78rem', color: '#888'}}>Great. Thank you...</span>
+          </button>
+          {/* Additional similar buttons */}
+          <button style={{
+            display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0', marginLeft: '-1.8rem'
+          }}>
+            <FontAwesomeIcon icon={faCommentDots} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
+            <span style={{fontSize:'0.78rem', color: '#888'}}>Can you send the files?</span>
+          </button>
+          <button style={{
+            display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0', marginLeft: '-1.8rem'
+          }}>
+            <FontAwesomeIcon icon={faCommentDots} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
+            <span style={{fontSize:'0.78rem', color: '#888'}}>Let's meet at 2pm</span>
+          </button>
+          <button style={{
+            display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0', marginLeft: '-1.8rem'
+          }}>
+            <FontAwesomeIcon icon={faCommentDots} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
+            <span style={{fontSize:'0.78rem', color: '#888'}}>Received. Will review.</span>
           </button>
         </div>
       </div>
