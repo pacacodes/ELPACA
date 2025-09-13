@@ -12,6 +12,7 @@ function App() {
   const [popupOpen, setPopupOpen] = useState(false);
   const [projectFolders, setProjectFolders] = useState([]);
   const [newFolderName, setNewFolderName] = useState('');
+  const [newFolderAddress, setNewFolderAddress] = useState('');
   const [namingFolder, setNamingFolder] = useState(false);
   const [alpacaPopupOpen, setAlpacaPopupOpen] = useState(false);
   const [alpacaPopupPos, setAlpacaPopupPos] = useState({ x: window.innerWidth / 2 - 160, y: window.innerHeight / 2 - 90 });
@@ -444,26 +445,36 @@ function App() {
                     {projectFolders.map((folder, idx) => (
                       <div key={idx} style={{background:'rgba(255,255,255,0.08)',borderRadius:'8px',padding:'0.5rem 1rem',color:'#fff',fontWeight:'500',fontSize:'1rem',marginBottom:'0.2rem',display:'flex',alignItems:'center',gap:'0.7rem',cursor:'pointer'}} onClick={() => setActiveProjectFolder(folder)}>
                         <FontAwesomeIcon icon={faDog} style={{ fontSize: '1.2rem', color: '#fff' }} />
-                        {folder}
+                        <span>{folder.name || folder}</span>
+                        {folder.address && <span style={{fontSize:'0.9rem',color:'#ccc',marginLeft:'0.7rem'}}>{folder.address}</span>}
                       </div>
                     ))}
                     {namingFolder && (
-                      <div style={{background:'rgba(255,255,255,0.13)',borderRadius:'8px',padding:'0.5rem 1rem',color:'#fff',fontWeight:'500',fontSize:'1rem',marginBottom:'0.2rem',display:'flex',alignItems:'center',gap:'0.5rem'}}>
+                      <div style={{background:'rgba(255,255,255,0.13)',borderRadius:'8px',padding:'0.5rem 1rem',color:'#fff',fontWeight:'500',fontSize:'1rem',marginBottom:'0.2rem',display:'flex',flexDirection:'column',alignItems:'flex-start',gap:'0.5rem'}}>
                         <input
                           type="text"
                           value={newFolderName}
                           autoFocus
                           onChange={e => setNewFolderName(e.target.value)}
-                          placeholder="Name your project"
+                          placeholder="Project Name"
+                          style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem',marginBottom:'0.5rem'}}
+                        />
+                        <input
+                          type="text"
+                          value={newFolderAddress}
+                          onChange={e => setNewFolderAddress(e.target.value)}
+                          placeholder="Project Site Location (Address)"
                           style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
                           onKeyDown={e => {
-                            if (e.key === 'Enter' && newFolderName.trim()) {
-                              setProjectFolders([...projectFolders, newFolderName.trim()]);
+                            if (e.key === 'Enter' && newFolderName.trim() && newFolderAddress.trim()) {
+                              setProjectFolders([...projectFolders, { name: newFolderName.trim(), address: newFolderAddress.trim() }]);
                               setNamingFolder(false);
                               setNewFolderName('');
+                              setNewFolderAddress('');
                             } else if (e.key === 'Escape') {
                               setNamingFolder(false);
                               setNewFolderName('');
+                              setNewFolderAddress('');
                             }
                           }}
                         />
@@ -471,10 +482,11 @@ function App() {
                           style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
                           title="Save"
                           onClick={() => {
-                            if (newFolderName.trim()) {
-                              setProjectFolders([...projectFolders, newFolderName.trim()]);
+                            if (newFolderName.trim() && newFolderAddress.trim()) {
+                              setProjectFolders([...projectFolders, { name: newFolderName.trim(), address: newFolderAddress.trim() }]);
                               setNamingFolder(false);
                               setNewFolderName('');
+                              setNewFolderAddress('');
                             }
                           }}
                         >✔</button>
@@ -484,6 +496,7 @@ function App() {
                           onClick={() => {
                             setNamingFolder(false);
                             setNewFolderName('');
+                            setNewFolderAddress('');
                           }}
                         >✖</button>
                       </div>
