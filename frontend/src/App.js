@@ -134,6 +134,7 @@ function App() {
                       fontSize: '1.5rem',
                     }}
                     aria-label={layer.name}
+                    onClick={() => { console.log(`Clicked: ${layer.name}`); }}
                   >
                     {layer.icon === 'grass' ? (
                       <svg width="32" height="32" viewBox="0 0 64 64" fill="none" style={{display:'block',margin:'0 auto',position:'relative',top:'-12px'}} xmlns="http://www.w3.org/2000/svg">
