@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTree, faCloud, faMountain, faThLarge, faLaptop, faList, faEye, faDollarSign, faPaperclip, faCalendarAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faTree, faCloud, faMountain, faThLarge, faLaptop, faList, faEye, faDollarSign, faPaperclip, faCalendarAlt, faPlus, faMap, faPen, faDraftingCompass, faHardHat, faTasks } from '@fortawesome/free-solid-svg-icons';
 import { faPagelines } from '@fortawesome/free-brands-svg-icons';
 import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
+import { faDog } from '@fortawesome/free-solid-svg-icons';
+import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   const [popupOpen, setPopupOpen] = useState(false);
@@ -175,7 +177,9 @@ function App() {
 
       {/* Navigation title above circular array */}
       <div style={{position:'fixed', right:'2rem', top:'1.2rem', width:'160px', display:'flex', justifyContent:'flex-start', marginBottom:'0.38rem', zIndex:1002}}>
-        <span style={{ color: '#888', fontWeight: 'bold', fontSize: '0.78rem', letterSpacing: '0.04em', textAlign: 'left' }}>Navigation</span>
+        <div style={{width:'100%',display:'flex',justifyContent:'flex-start',marginBottom:'0.38rem'}}>
+          <span style={{ color: '#888', fontWeight: 'bold', fontSize: '0.78rem', letterSpacing: '0.04em', textAlign: 'left', marginLeft: '-2.7rem' }}>Navigation</span>
+        </div>
       </div>
       {/* Floating alpaca button in top right with 6 surrounding buttons */}
       <div style={{
@@ -218,8 +222,16 @@ function App() {
             >
               {i === 0 ? (
                 <FontAwesomeIcon icon={faLightbulb} />
+              ) : i === 1 ? (
+                <FontAwesomeIcon icon={faMap} />
+              ) : i === 2 ? (
+                <FontAwesomeIcon icon={faPen} />
+              ) : i === 3 ? (
+                <FontAwesomeIcon icon={faDraftingCompass} />
+              ) : i === 4 ? (
+                <FontAwesomeIcon icon={faHardHat} />
               ) : (
-                <FontAwesomeIcon icon={faTree} />
+                <FontAwesomeIcon icon={faTasks} />
               )}
             </button>
           );
@@ -228,13 +240,14 @@ function App() {
         <button
           style={{
             position: 'absolute',
-            left: '56px',
-            top: '56px',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
             width: '48px',
             height: '48px',
             borderRadius: '50%',
             background: '#fff',
-            color: '#4caf50',
+            color: '#333', // dark grey
             border: 'none',
             boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
             cursor: 'pointer',
@@ -246,14 +259,14 @@ function App() {
           }}
           aria-label="Alpaca"
         >
-          <FontAwesomeIcon icon={faPagelines} />
+          <FontAwesomeIcon icon={faDog} style={{ fontSize: '1.4rem' }} />
         </button>
       </div>
 
       {/* Layouts category column below top right buttons */}
       <div style={{
         position: 'fixed',
-        right: '2.5rem',
+        right: '5.1rem',
         top: 'calc(2rem + 180px)',
         display: 'flex',
         flexDirection: 'column', // restore to column
@@ -319,6 +332,37 @@ function App() {
           }}>
             <FontAwesomeIcon icon={faCalendarAlt} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
             <span style={{fontSize:'0.78rem', color: '#888'}}>Calendar &amp; Timelines</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Communication section below layouts */}
+      <div style={{
+        position: 'fixed',
+        right: '5.6rem',
+        top: 'calc(2rem + 445px)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        gap: '0.35rem',
+        background: 'rgba(60,60,60,0)',
+        borderRadius: '8px',
+        padding: '0.25rem 0.2rem',
+        boxShadow: 'none',
+        minWidth: '60px',
+        maxWidth: '140px',
+        zIndex: 1000,
+      }}>
+        <div style={{width:'100%',display:'flex',justifyContent:'flex-start',marginBottom:'0.38rem'}}>
+          <span style={{ color: '#888', fontWeight: 'bold', fontSize: '0.78rem', letterSpacing: '0.04em', textAlign: 'left', marginLeft: '-1.8rem' }}>Communication</span>
+        </div>
+        <div style={{display:'flex',flexDirection:'column',gap:'0.35rem'}}>
+          {/* Text thread button */}
+          <button style={{
+            display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0', marginLeft: '-1.8rem'
+          }}>
+            <FontAwesomeIcon icon={faCommentDots} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
+            <span style={{fontSize:'0.78rem', color: '#888'}}>Great. Thank you...</span>
           </button>
         </div>
       </div>
