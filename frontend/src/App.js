@@ -29,22 +29,22 @@ function App() {
       {activeProjectFolder && (
         <div style={{
           position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          textAlign: 'center',
+          top: '1.2rem',
+          left: '1.2rem',
+          textAlign: 'left',
           fontWeight: 'bold',
           color: '#222', // dark grey
-          fontSize: '1.7rem',
+          fontSize: '1.35rem',
           letterSpacing: '0.04em',
           zIndex: 9999,
           background: 'rgba(255,255,255,0.92)',
-          padding: '1.2rem 0 0.7rem 0',
+          padding: '0.7rem 1.2rem',
+          borderRadius: '10px',
           boxShadow: '0 2px 12px rgba(0,0,0,0.07)'
         }}>
-          {activeProjectFolder.name || activeProjectFolder}
+          <div>{activeProjectFolder.name || activeProjectFolder}</div>
           {activeProjectFolder.address && (
-            <div style={{fontSize:'1.1rem',color:'#666',marginTop:'0.3rem',fontWeight:'400'}}>{activeProjectFolder.address}</div>
+            <div style={{fontSize:'1.05rem',color:'#666',marginTop:'0.2rem',fontWeight:'400'}}>{activeProjectFolder.address}</div>
           )}
         </div>
       )}
@@ -539,7 +539,7 @@ function App() {
                         <button
                           style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
                           title="Save"
-                          onClick={() => {
+                          onClick={async () => {
                             if (newFolderName.trim() && newFolderAddress.trim()) {
                               const newFolder = { name: newFolderName.trim(), address: newFolderAddress.trim() };
                               setProjectFolders([...projectFolders, newFolder]);
@@ -549,6 +549,11 @@ function App() {
                               setActiveProjectFolder(newFolder);
                               setPopupOpen(false);
                               setAlpacaPopupOpen(false);
+                              // Create empty files for .rvt, .pln, .ifc
+                              const baseName = newFolder.name.replace(/\s+/g, '_');
+                              fetch(`/api/create-empty-file?name=${baseName}.rvt`, { method: 'POST' });
+                              fetch(`/api/create-empty-file?name=${baseName}.pln`, { method: 'POST' });
+                              fetch(`/api/create-empty-file?name=${baseName}.ifc`, { method: 'POST' });
                             }
                           }}
                         >✔</button>
