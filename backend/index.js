@@ -55,3 +55,23 @@ app.post('/api/create-empty-file', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Backend server running on port ${PORT}`);
 });
+
+onClick={async () => {
+  if (newFolderName.trim() && newFolderAddress.trim()) {
+    const newFolder = { name: newFolderName.trim(), address: newFolderAddress.trim() };
+    setProjectFolders(prev => [...prev, newFolder]);
+    setNamingFolder(false);
+    setNewFolderName('');
+    setNewFolderAddress('');
+    setActiveProjectFolder(newFolder);
+    setTimeout(() => {
+      setPopupOpen(false);
+      setAlpacaPopupOpen(false);
+    }, 0);
+    // Create empty files for .rvt, .pln, .ifc
+    const baseName = newFolder.name.replace(/\s+/g, '_');
+    fetch(`/api/create-empty-file?name=${baseName}.rvt`, { method: 'POST' });
+    fetch(`/api/create-empty-file?name=${baseName}.pln`, { method: 'POST' });
+    fetch(`/api/create-empty-file?name=${baseName}.ifc`, { method: 'POST' });
+  }
+}}
