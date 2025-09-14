@@ -523,18 +523,28 @@ function App() {
                           onChange={e => setNewFolderAddress(e.target.value)}
                           placeholder="Project Site Location (Address)"
                           style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
-                          onKeyDown={e => {
-                            if (e.key === 'Enter' && newFolderName.trim() && newFolderAddress.trim()) {
-                              setProjectFolders([...projectFolders, { name: newFolderName.trim(), address: newFolderAddress.trim() }]);
-                              setNamingFolder(false);
-                              setNewFolderName('');
-                              setNewFolderAddress('');
-                            } else if (e.key === 'Escape') {
-                              setNamingFolder(false);
-                              setNewFolderName('');
-                              setNewFolderAddress('');
-                            }
-                          }}
+                          onKeyDown={async e => {
+  if (e.key === 'Enter' && newFolderName.trim() && newFolderAddress.trim()) {
+    const newFolder = { name: newFolderName.trim(), address: newFolderAddress.trim() };
+    setProjectFolders(prev => [...prev, newFolder]);
+    setNamingFolder(false);
+    setNewFolderName('');
+    setNewFolderAddress('');
+    setActiveProjectFolder(newFolder);
+    setPopupOpen(false);
+    setAlpacaPopupOpen(false);
+
+    // Create empty files for .rvt, .pln, .ifc in /saved_files
+    const baseName = newFolder.name.replace(/\s+/g, '_');
+    await fetch('/api/create-empty-file?name=' + baseName + '.rvt', { method: 'POST' });
+    await fetch('/api/create-empty-file?name=' + baseName + '.pln', { method: 'POST' });
+    await fetch('/api/create-empty-file?name=' + baseName + '.ifc', { method: 'POST' });
+  } else if (e.key === 'Escape') {
+    setNamingFolder(false);
+    setNewFolderName('');
+    setNewFolderAddress('');
+  }
+}}
                         />
                         <button
                           style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
@@ -542,18 +552,19 @@ function App() {
                           onClick={async () => {
                             if (newFolderName.trim() && newFolderAddress.trim()) {
                               const newFolder = { name: newFolderName.trim(), address: newFolderAddress.trim() };
-                              setProjectFolders([...projectFolders, newFolder]);
+                              setProjectFolders(prev => [...prev, newFolder]);
                               setNamingFolder(false);
                               setNewFolderName('');
                               setNewFolderAddress('');
                               setActiveProjectFolder(newFolder);
                               setPopupOpen(false);
                               setAlpacaPopupOpen(false);
-                              // Create empty files for .rvt, .pln, .ifc
+
+                              // Create empty files for .rvt, .pln, .ifc in /saved_files
                               const baseName = newFolder.name.replace(/\s+/g, '_');
-                              fetch(`/api/create-empty-file?name=${baseName}.rvt`, { method: 'POST' });
-                              fetch(`/api/create-empty-file?name=${baseName}.pln`, { method: 'POST' });
-                              fetch(`/api/create-empty-file?name=${baseName}.ifc`, { method: 'POST' });
+                              await fetch('/api/create-empty-file?name=' + baseName + '.rvt', { method: 'POST' });
+                              await fetch('/api/create-empty-file?name=' + baseName + '.pln', { method: 'POST' });
+                              await fetch('/api/create-empty-file?name=' + baseName + '.ifc', { method: 'POST' });
                             }
                           }}
                         >✔</button>
