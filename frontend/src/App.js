@@ -23,6 +23,13 @@ function App() {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [activeLayer, setActiveLayer] = useState(null);
 
+  // New address fields
+  const [newFolderStreet, setNewFolderStreet] = useState('');
+  const [newFolderCity, setNewFolderCity] = useState('');
+  const [newFolderState, setNewFolderState] = useState('');
+  const [newFolderZip, setNewFolderZip] = useState('');
+  const [newFolderCountry, setNewFolderCountry] = useState('');
+
   return (
     <div style={{ padding: '2rem', position: 'relative', minHeight: '100vh' }}>
       {/* Main screen title: show project name and address if a project is open */}
@@ -33,7 +40,7 @@ function App() {
           left: '1.2rem',
           textAlign: 'left',
           fontWeight: 'bold',
-          color: '#222', // dark grey
+          color: '#888', // match navigation title
           fontSize: '1.35rem',
           letterSpacing: '0.04em',
           zIndex: 9999,
@@ -519,17 +526,50 @@ function App() {
                         />
                         <input
                           type="text"
-                          value={newFolderAddress}
-                          onChange={e => setNewFolderAddress(e.target.value)}
-                          placeholder="Project Site Location (Address)"
+                          value={newFolderStreet || ''}
+                          onChange={e => setNewFolderStreet(e.target.value)}
+                          placeholder="Street"
+                          style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
+                        />
+                        <input
+                          type="text"
+                          value={newFolderCity || ''}
+                          onChange={e => setNewFolderCity(e.target.value)}
+                          placeholder="City"
+                          style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
+                        />
+                        <input
+                          type="text"
+                          value={newFolderState || ''}
+                          onChange={e => setNewFolderState(e.target.value)}
+                          placeholder="State"
+                          style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
+                        />
+                        <input
+                          type="text"
+                          value={newFolderZip || ''}
+                          onChange={e => setNewFolderZip(e.target.value)}
+                          placeholder="Zip Code"
+                          style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
+                        />
+                        <input
+                          type="text"
+                          value={newFolderCountry || ''}
+                          onChange={e => setNewFolderCountry(e.target.value)}
+                          placeholder="Country"
                           style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
                           onKeyDown={async e => {
-  if (e.key === 'Enter' && newFolderName.trim() && newFolderAddress.trim()) {
-    const newFolder = { name: newFolderName.trim(), address: newFolderAddress.trim() };
+  if (e.key === 'Enter' && newFolderName.trim() && newFolderStreet && newFolderCity && newFolderState && newFolderZip && newFolderCountry) {
+    const address = `${newFolderStreet}, ${newFolderCity}, ${newFolderState} ${newFolderZip}, ${newFolderCountry}`;
+    const newFolder = { name: newFolderName.trim(), address };
     setProjectFolders(prev => [...prev, newFolder]);
     setNamingFolder(false);
     setNewFolderName('');
-    setNewFolderAddress('');
+    setNewFolderStreet('');
+    setNewFolderCity('');
+    setNewFolderState('');
+    setNewFolderZip('');
+    setNewFolderCountry('');
     setActiveProjectFolder(newFolder);
     setPopupOpen(false);
     setAlpacaPopupOpen(false);
@@ -542,7 +582,11 @@ function App() {
   } else if (e.key === 'Escape') {
     setNamingFolder(false);
     setNewFolderName('');
-    setNewFolderAddress('');
+    setNewFolderStreet('');
+    setNewFolderCity('');
+    setNewFolderState('');
+    setNewFolderZip('');
+    setNewFolderCountry('');
   }
 }}
                         />
@@ -550,12 +594,17 @@ function App() {
                           style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
                           title="Save"
                           onClick={async () => {
-                            if (newFolderName.trim() && newFolderAddress.trim()) {
-                              const newFolder = { name: newFolderName.trim(), address: newFolderAddress.trim() };
+                            if (newFolderName.trim() && newFolderStreet && newFolderCity && newFolderState && newFolderZip && newFolderCountry) {
+                              const address = `${newFolderStreet}, ${newFolderCity}, ${newFolderState} ${newFolderZip}, ${newFolderCountry}`;
+                              const newFolder = { name: newFolderName.trim(), address };
                               setProjectFolders(prev => [...prev, newFolder]);
                               setNamingFolder(false);
                               setNewFolderName('');
-                              setNewFolderAddress('');
+                              setNewFolderStreet('');
+                              setNewFolderCity('');
+                              setNewFolderState('');
+                              setNewFolderZip('');
+                              setNewFolderCountry('');
                               setActiveProjectFolder(newFolder);
                               setPopupOpen(false);
                               setAlpacaPopupOpen(false);
@@ -574,7 +623,11 @@ function App() {
                           onClick={() => {
                             setNamingFolder(false);
                             setNewFolderName('');
-                            setNewFolderAddress('');
+                            setNewFolderStreet('');
+                            setNewFolderCity('');
+                            setNewFolderState('');
+                            setNewFolderZip('');
+                            setNewFolderCountry('');
                           }}
                         >✖</button>
                       </div>
