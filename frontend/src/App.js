@@ -653,9 +653,12 @@ function App() {
 
                               // Create empty files for .rvt, .pln, .ifc in /saved_files
                               const baseName = newFolder.name.replace(/\s+/g, '_');
-                              await fetch('/api/create-empty-file?name=' + baseName + '.rvt', { method: 'POST' });
-                              await fetch('/api/create-empty-file?name=' + baseName + '.pln', { method: 'POST' });
-                              await fetch('/api/create-empty-file?name=' + baseName + '.ifc', { method: 'POST' });
+                              // Create .epc as main file and others in background
+                              await fetch('/api/create-project-files', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ baseName })
+                              });
 
                                 // Fetch native plants from backend
                                 try {
@@ -705,9 +708,12 @@ function App() {
 
                               // Create empty files for .rvt, .pln, .ifc in /saved_files
                               const baseName = newFolder.name.replace(/\s+/g, '_');
-                              await fetch('/api/create-empty-file?name=' + baseName + '.rvt', { method: 'POST' });
-                              await fetch('/api/create-empty-file?name=' + baseName + '.pln', { method: 'POST' });
-                              await fetch('/api/create-empty-file?name=' + baseName + '.ifc', { method: 'POST' });
+                              // Create .epc as main file and others in background
+                              await fetch('/api/create-project-files', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ baseName })
+                              });
 
                                 // Fetch native plants from backend
                                 try {

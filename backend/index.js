@@ -13,16 +13,31 @@ app.use(express.json());
 // API endpoint to create empty project files (.rvt, .pln, .ifc)
 // ...existing code...
 
-app.post('/api/create-empty-file', (req, res) => {
-  const fileName = req.query.name;
-  if (!fileName) return res.status(400).json({ error: 'Missing file name' });
-  const filePath = path.join(__dirname, '../saved_files', fileName);
-  fs.writeFile(filePath, '', { flag: 'wx' }, err => {
-    if (err && err.code !== 'EEXIST') {
-      return res.status(500).json({ error: 'Failed to create file' });
+// Create all project files, but .epc is the main file
+app.post('/api/create-project-files', async (req, res) => {
+  const { baseName } = req.body;
+  if (!baseName) return res.status(400).json({ error: 'Missing baseName' });
+  const files = [
+    `${baseName}.epc`, // main file
+    `${baseName}.pln`,
+    `${baseName}.rvt`,
+    `${baseName}.ifc`
+  ];
+  const results = {};
+  for (const file of files) {
+    const filePath = path.join(__dirname, '../saved_files', file);
+    try {
+      await fs.promises.writeFile(filePath, '', { flag: 'wx' });
+      results[file] = 'created';
+    } catch (err) {
+      if (err.code === 'EEXIST') {
+        results[file] = 'exists';
+      } else {
+        results[file] = 'error';
+      }
     }
-    res.json({ success: true, file: fileName });
-  });
+  }
+  res.json({ success: true, mainFile: `${baseName}.epc`, files: results });
 });
 
 // API endpoint to fetch native plants by address
