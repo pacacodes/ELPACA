@@ -10,7 +10,16 @@ import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 function App() {
   const [activeProjectFolder, setActiveProjectFolder] = useState(null);
   const [popupOpen, setPopupOpen] = useState(false);
-  const [projectFolders, setProjectFolders] = useState([]);
+  const sampleProject = {
+    name: 'Sample Project',
+    address: '2442 Crest View Drive, Los Angeles, CA 90046',
+    sample: true,
+    description: 'A sample project to explore features before starting your own.'
+  };
+  const [projectFolders, setProjectFolders] = useState([sampleProject]);
+
+  // Always include Sample Project in the list
+  const allProjectFolders = [sampleProject, ...projectFolders.filter(f => !f.sample)];
   const [newFolderName, setNewFolderName] = useState('');
   const [namingFolder, setNamingFolder] = useState(false);
   const [alpacaPopupOpen, setAlpacaPopupOpen] = useState(false);
@@ -503,7 +512,9 @@ function App() {
                   <button
                     style={{marginTop:'1.2rem',background:'rgba(168,190,150,0.7)',color:'#333',border:'none',borderRadius:'6px',padding:'0.4rem 1.2rem',fontWeight:'bold',cursor:'pointer'}}
                     onClick={() => {
-                      setAlpacaPopupOpen(true);
+                      setAlpacaPopupOpen(false);
+                      setPopupOpen(true);
+                      setActiveLayer(null);
                     }}
                   >Back to Projects</button>
                 </div>
@@ -540,7 +551,7 @@ function App() {
                   </button>
                   {/* Project folders list */}
                   <div style={{marginTop:'60px',width:'100%',display:'flex',flexDirection:'column',alignItems:'flex-start',gap:'0.7rem'}}>
-                    {projectFolders.map((folder, idx) => (
+                    {allProjectFolders.map((folder, idx) => (
                       <button key={idx}
                         style={{
                           background:'rgba(255,255,255,0.08)',
@@ -559,14 +570,18 @@ function App() {
                           textAlign:'left',
                         }}
                         onClick={() => {
-                          console.log('Project folder clicked:', folder);
-                          setActiveProjectFolder(folder);
+                          // Always pass a new object for Sample Project to force re-render
+                          if (folder.sample) {
+                            setActiveProjectFolder({ ...folder });
+                          } else {
+                            setActiveProjectFolder(folder);
+                          }
                           setPopupOpen(false);
                           setAlpacaPopupOpen(false);
                           setNamingFolder(false);
                           setNewFolderName('');
-
-                          // Fetch native plants for this project address
+                          setActiveLayer(null);
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
                           if (folder.address) {
                             fetch('/api/native-plants', {
                               method: 'POST',
@@ -586,9 +601,11 @@ function App() {
                         }}
                         aria-label={`Open project ${folder.name || folder}`}
                       >
-                        <FontAwesomeIcon icon={faDog} style={{ fontSize: '1.2rem', color: '#fff' }} />
-                        <span>{folder.name || folder}</span>
-                        {folder.address && <span style={{fontSize:'0.9rem',color:'#ccc',marginLeft:'0.7rem'}}>{folder.address}</span>}
+                        <div style={{display:'flex',alignItems:'center',width:'100%'}}>
+                          <FontAwesomeIcon icon={faDog} style={{ fontSize: '1.2rem', color: '#fff' }} />
+                          <span style={{marginLeft:'0.7rem'}}>{folder.name || folder}</span>
+                          {folder.address && <span style={{fontSize:'0.9rem',color:'#ccc',marginLeft:'0.7rem'}}>{folder.address}</span>}
+                        </div>
                       </button>
                     ))}
                     {namingFolder && (
