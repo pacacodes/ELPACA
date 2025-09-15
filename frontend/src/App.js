@@ -12,7 +12,6 @@ function App() {
   const [popupOpen, setPopupOpen] = useState(false);
   const [projectFolders, setProjectFolders] = useState([]);
   const [newFolderName, setNewFolderName] = useState('');
-  const [newFolderAddress, setNewFolderAddress] = useState('');
   const [namingFolder, setNamingFolder] = useState(false);
   const [alpacaPopupOpen, setAlpacaPopupOpen] = useState(false);
   const [alpacaPopupPos, setAlpacaPopupPos] = useState({ x: window.innerWidth / 2 - 160, y: window.innerHeight / 2 - 90 });
@@ -30,17 +29,23 @@ function App() {
   const [newFolderZip, setNewFolderZip] = useState('');
   const [newFolderCountry, setNewFolderCountry] = useState('');
 
+    // Native plants state
+    const [nativePlants, setNativePlants] = useState([]);
+
   return (
     <div style={{ padding: '2rem', position: 'relative', minHeight: '100vh' }}>
-      {/* Main screen title: show project name and address if a project is open */}
+      {/* Always show project title, address, and map if a project is open */}
       {activeProjectFolder && (
         <div style={{
           position: 'fixed',
           top: '1.2rem',
           left: '1.2rem',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
           textAlign: 'left',
           fontWeight: 'bold',
-          color: '#888', // match navigation title
+          color: '#888',
           fontSize: '1.35rem',
           letterSpacing: '0.04em',
           zIndex: 9999,
@@ -49,10 +54,37 @@ function App() {
           borderRadius: '10px',
           boxShadow: '0 2px 12px rgba(0,0,0,0.07)'
         }}>
-          <div>{activeProjectFolder.name || activeProjectFolder}</div>
-          {activeProjectFolder.address && (
-            <div style={{fontSize:'1.05rem',color:'#666',marginTop:'0.2rem',fontWeight:'400'}}>{activeProjectFolder.address}</div>
-          )}
+          {/* Empty square for map preview */}
+          <div style={{
+            width: '80px',
+            height: '80px',
+            marginRight: '1.2rem',
+            borderRadius: '8px',
+            overflow: 'hidden',
+            background: '#eee',
+            filter: 'grayscale(1)',
+            boxShadow: '0 1px 6px rgba(0,0,0,0.08)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+            <div
+              style={{
+                width: '80px',
+                height: '80px',
+                background: 'linear-gradient(135deg, #bbb 60%, #eee 100%)',
+                borderRadius: '8px',
+                marginRight: '1.2rem',
+                boxShadow: '0 1px 6px rgba(0,0,0,0.08)',
+              }}
+            />
+          </div>
+          <div>
+            <div>{activeProjectFolder.name || activeProjectFolder}</div>
+            {activeProjectFolder.address && (
+              <div style={{fontSize:'1.05rem',color:'#666',marginTop:'0.2rem',fontWeight:'400'}}>{activeProjectFolder.address}</div>
+            )}
+          </div>
         </div>
       )}
       {/* Floating plus button in bottom left */}
@@ -134,6 +166,33 @@ function App() {
             }}>
               Permaculture Layers
             </div>
+            {/* Native plants display (always show for active project) */}
+            {activeProjectFolder && nativePlants.length > 0 && (
+              <div style={{
+                position: 'absolute',
+                right: '24px',
+                top: '90px',
+                background: 'rgba(255,255,255,0.08)',
+                borderRadius: '10px',
+                padding: '1rem',
+                minWidth: '220px',
+                maxWidth: '260px',
+                zIndex: 1002,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.12)'
+              }}>
+                <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.1rem',marginBottom:'0.7rem'}}>Native Plants</div>
+                {nativePlants.slice(0,3).map((plant, idx) => (
+                  <div key={idx} style={{display:'flex',alignItems:'center',marginBottom:'0.7rem',gap:'0.7rem'}}>
+                    {plant.image && <img src={plant.image} alt={plant.name} style={{width:'48px',height:'48px',borderRadius:'8px',objectFit:'cover',background:'#eee',marginRight:'0.7rem'}} />}
+                    <div>
+                      <div style={{color:'#fff',fontWeight:'500',fontSize:'1rem'}}>{plant.name}</div>
+                      <div style={{color:'#ccc',fontSize:'0.95rem'}}>{plant.scientific}</div>
+                      {plant.wikipedia && <a href={`https://en.wikipedia.org/wiki/${encodeURIComponent(plant.wikipedia)}`} target="_blank" rel="noopener noreferrer" style={{color:'#61dafb',fontSize:'0.9rem'}}>Wikipedia</a>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
             {/* Spacer between title and buttons */}
             <div style={{width:'100%', height:'2.5rem'}}></div>
             {/* Close button as small black X in top right */}
@@ -444,7 +503,9 @@ function App() {
                   </div>
                   <button
                     style={{marginTop:'1.2rem',background:'rgba(168,190,150,0.7)',color:'#333',border:'none',borderRadius:'6px',padding:'0.4rem 1.2rem',fontWeight:'bold',cursor:'pointer'}}
-                    onClick={() => setActiveProjectFolder(null)}
+                    onClick={() => {
+                      setAlpacaPopupOpen(true);
+                    }}
                   >Back to Projects</button>
                 </div>
               ) : (
@@ -505,7 +566,24 @@ function App() {
                           setAlpacaPopupOpen(false);
                           setNamingFolder(false);
                           setNewFolderName('');
-                          setNewFolderAddress('');
+
+                          // Fetch native plants for this project address
+                          if (folder.address) {
+                            fetch('/api/native-plants', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({ address: folder.address })
+                            })
+                              .then(resp => resp.json())
+                              .then(data => {
+                                if (data.plants) {
+                                  setNativePlants(data.plants);
+                                } else {
+                                  setNativePlants([]);
+                                }
+                              })
+                              .catch(() => setNativePlants([]));
+                          }
                         }}
                         aria-label={`Open project ${folder.name || folder}`}
                       >
@@ -559,36 +637,53 @@ function App() {
                           placeholder="Country"
                           style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
                           onKeyDown={async e => {
-  if (e.key === 'Enter' && newFolderName.trim() && newFolderStreet && newFolderCity && newFolderState && newFolderZip && newFolderCountry) {
-    const address = `${newFolderStreet}, ${newFolderCity}, ${newFolderState} ${newFolderZip}, ${newFolderCountry}`;
-    const newFolder = { name: newFolderName.trim(), address };
-    setProjectFolders(prev => [...prev, newFolder]);
-    setNamingFolder(false);
-    setNewFolderName('');
-    setNewFolderStreet('');
-    setNewFolderCity('');
-    setNewFolderState('');
-    setNewFolderZip('');
-    setNewFolderCountry('');
-    setActiveProjectFolder(newFolder);
-    setPopupOpen(false);
-    setAlpacaPopupOpen(false);
+                            if (e.key === 'Enter' && newFolderName.trim() && newFolderStreet && newFolderCity && newFolderState && newFolderZip && newFolderCountry) {
+                              const address = `${newFolderStreet}, ${newFolderCity}, ${newFolderState} ${newFolderZip}, ${newFolderCountry}`;
+                              const newFolder = { name: newFolderName.trim(), address };
+                              setProjectFolders(prev => [...prev, newFolder]);
+                              setNamingFolder(false);
+                              setNewFolderName('');
+                              setNewFolderStreet('');
+                              setNewFolderCity('');
+                              setNewFolderState('');
+                              setNewFolderZip('');
+                              setNewFolderCountry('');
+                              setActiveProjectFolder(newFolder);
+                              setPopupOpen(false);
+                              setAlpacaPopupOpen(true);
 
-    // Create empty files for .rvt, .pln, .ifc in /saved_files
-    const baseName = newFolder.name.replace(/\s+/g, '_');
-    await fetch('/api/create-empty-file?name=' + baseName + '.rvt', { method: 'POST' });
-    await fetch('/api/create-empty-file?name=' + baseName + '.pln', { method: 'POST' });
-    await fetch('/api/create-empty-file?name=' + baseName + '.ifc', { method: 'POST' });
-  } else if (e.key === 'Escape') {
-    setNamingFolder(false);
-    setNewFolderName('');
-    setNewFolderStreet('');
-    setNewFolderCity('');
-    setNewFolderState('');
-    setNewFolderZip('');
-    setNewFolderCountry('');
-  }
-}}
+                              // Create empty files for .rvt, .pln, .ifc in /saved_files
+                              const baseName = newFolder.name.replace(/\s+/g, '_');
+                              await fetch('/api/create-empty-file?name=' + baseName + '.rvt', { method: 'POST' });
+                              await fetch('/api/create-empty-file?name=' + baseName + '.pln', { method: 'POST' });
+                              await fetch('/api/create-empty-file?name=' + baseName + '.ifc', { method: 'POST' });
+
+                                // Fetch native plants from backend
+                                try {
+                                  const resp = await fetch('/api/native-plants', {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({ address })
+                                  });
+                                  const data = await resp.json();
+                                  if (data.plants) {
+                                    setNativePlants(data.plants);
+                                  } else {
+                                    setNativePlants([]);
+                                  }
+                                } catch (err) {
+                                  setNativePlants([]);
+                                }
+                            } else if (e.key === 'Escape') {
+                              setNamingFolder(false);
+                              setNewFolderName('');
+                              setNewFolderStreet('');
+                              setNewFolderCity('');
+                              setNewFolderState('');
+                              setNewFolderZip('');
+                              setNewFolderCountry('');
+                            }
+                          }}
                         />
                         <button
                           style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
@@ -605,15 +700,32 @@ function App() {
                               setNewFolderState('');
                               setNewFolderZip('');
                               setNewFolderCountry('');
-                              setActiveProjectFolder(newFolder);
+                              setActiveProjectFolder(null);
                               setPopupOpen(false);
-                              setAlpacaPopupOpen(false);
+                              setAlpacaPopupOpen(true);
 
                               // Create empty files for .rvt, .pln, .ifc in /saved_files
                               const baseName = newFolder.name.replace(/\s+/g, '_');
                               await fetch('/api/create-empty-file?name=' + baseName + '.rvt', { method: 'POST' });
                               await fetch('/api/create-empty-file?name=' + baseName + '.pln', { method: 'POST' });
                               await fetch('/api/create-empty-file?name=' + baseName + '.ifc', { method: 'POST' });
+
+                                // Fetch native plants from backend
+                                try {
+                                  const resp = await fetch('/api/native-plants', {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify({ address })
+                                  });
+                                  const data = await resp.json();
+                                  if (data.plants) {
+                                    setNativePlants(data.plants);
+                                  } else {
+                                    setNativePlants([]);
+                                  }
+                                } catch (err) {
+                                  setNativePlants([]);
+                                }
                             }
                           }}
                         >✔</button>
