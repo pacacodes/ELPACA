@@ -463,7 +463,6 @@ function App() {
               <button
                 onClick={() => {
                   setAlpacaPopupOpen(false);
-                  setActiveProjectFolder(null);
                 }}
                 style={{
                   position: 'absolute',
