@@ -570,12 +570,8 @@ function App() {
                           textAlign:'left',
                         }}
                         onClick={() => {
-                          // Always pass a new object for Sample Project to force re-render
-                          if (folder.sample) {
-                            setActiveProjectFolder({ ...folder });
-                          } else {
-                            setActiveProjectFolder(folder);
-                          }
+                          // Treat Sample Project as a real project
+                          setActiveProjectFolder(folder);
                           setPopupOpen(false);
                           setAlpacaPopupOpen(false);
                           setNamingFolder(false);
