@@ -350,7 +350,7 @@ function appendSiteAnalysis(str) {
                 borderRadius: '50%',
                 background: 'rgba(168, 190, 150, 0.7)',
                 border: 'none',
-                boxShadow: '0 1px 4px rgba(0,0,0,0.12)',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.20)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
