@@ -13,6 +13,8 @@ function appendSiteAnalysis(str) {
 }
 
   const [activeProjectFolder, setActiveProjectFolder] = useState(null);
+  // Track which layout is active (subtitle)
+  const [activeLayout, setActiveLayout] = useState('');
   // 0: Lightbulb, 1: Map, 2: Pen, 3: Compass, 4: HardHat, 5: Tasks
   const [activeNav, setActiveNav] = useState(0);
   const [popupOpen, setPopupOpen] = useState(false);
@@ -60,37 +62,45 @@ function appendSiteAnalysis(str) {
       <div style={{
         position: 'fixed',
         top: '1.2rem',
-        left: '1.2rem',
+        left: 0,
+        width: '100vw',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        textAlign: 'left',
+        justifyContent: 'center',
         fontWeight: 'bold',
         color: '#888',
-        fontSize: '1.35rem',
+        fontSize: '1.08rem',
         letterSpacing: '0.04em',
         zIndex: 9999,
         background: 'rgba(255,255,255,0.92)',
-        padding: '0.7rem 1.2rem',
+        padding: '0.56rem 0.96rem',
         borderRadius: '10px',
-        boxShadow: '0 2px 12px rgba(0,0,0,0.07)'
+        boxShadow: '0 2px 12px rgba(0,0,0,0.07)',
+        maxWidth: '900px',
+        minWidth: '700px',
+        margin: '0 auto',
+        left: '50%',
+        transform: 'translateX(-50%)',
       }}>
-        <div style={{display:'flex',flexDirection:'row',alignItems:'stretch',position:'relative'}}>
-          <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'flex-end',textAlign:'right'}}>
-            <span>{sampleProject.name}</span>
-            <span style={{fontSize:'1.05rem',color:'#666',marginTop:'0.2rem',fontWeight:'400'}}>{sampleProject.address}</span>
+        <div style={{display:'flex',flexDirection:'row',alignItems:'stretch',width:'100%',justifyContent:'center'}}>
+          <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'flex-end',textAlign:'right',minWidth:'320px',maxWidth:'420px',whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>
+            <span style={{color:'#888',fontSize:'1.08rem',fontWeight:'bold'}}>{sampleProject.name}</span>
+            <span style={{fontSize:'0.84rem',color:'#888',marginTop:'0.16rem',fontWeight:'400'}}>{sampleProject.address}</span>
           </div>
-          <div style={{display:'flex',alignItems:'center',marginLeft:'1.1rem',height:'auto'}}>
+          <div style={{display:'flex',alignItems:'center',justifyContent:'center',width:'80px',minWidth:'60px'}}>
             <span style={{
               display:'inline-block',
               height:'2.7rem',
               minHeight:'100%',
               borderLeft:'3.5px solid #bbb',
               marginRight:'1.1rem',
-              marginLeft:'0.2rem',
+              marginLeft:'1.1rem',
               alignSelf:'stretch',
             }}></span>
-            <span style={{fontSize:'1.45rem',fontWeight:'bold',color:'#666',letterSpacing:'0.04em',display:'flex',alignItems:'center',height:'2.7rem'}}>{
+          </div>
+          <div style={{display:'flex',flexDirection:'column',alignItems:'flex-start',justifyContent:'center',minWidth:'220px',maxWidth:'320px'}}>
+            <span style={{color:'#888',fontSize:'1.08rem',fontWeight:'bold'}}>{
               activeNav === 0 ? 'Projects' :
               activeNav === 1 ? 'Site Analysis' :
               activeNav === 2 ? 'Design Development' :
@@ -98,6 +108,9 @@ function appendSiteAnalysis(str) {
               activeNav === 4 ? 'Construction Management' :
               'Daily Management'
             }</span>
+            {activeLayout && (
+              <span style={{fontSize:'0.84rem',color:'#888',marginTop:'0.16rem',fontWeight:'400'}}>{activeLayout}</span>
+            )}
           </div>
         </div>
       </div>
@@ -765,49 +778,63 @@ function appendSiteAnalysis(str) {
           {/* Worksheets button */}
           <button style={{
             display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
-          }}>
+          }}
+            onClick={() => setActiveLayout('Worksheets')}
+          >
             <FontAwesomeIcon icon={faThLarge} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
             <span style={{fontSize:'0.78rem', color: '#888'}}>Worksheets</span>
           </button>
           {/* Presentation Sheets button */}
           <button style={{
             display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
-          }}>
+          }}
+            onClick={() => setActiveLayout('Presentation Sheets')}
+          >
             <FontAwesomeIcon icon={faLaptop} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
             <span style={{fontSize:'0.78rem', color: '#888'}}>Presentation Sheets</span>
           </button>
           {/* Schedules & Specifications button */}
           <button style={{
             display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
-          }}>
+          }}
+            onClick={() => setActiveLayout('Schedules & Specifications')}
+          >
             <FontAwesomeIcon icon={faList} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
             <span style={{fontSize:'0.78rem', color: '#888'}}>Schedules &amp; Specifications</span>
           </button>
           {/* Site Diagrams button */}
           <button style={{
             display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
-          }}>
+          }}
+            onClick={() => setActiveLayout('Site Diagrams')}
+          >
             <FontAwesomeIcon icon={faEye} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
             <span style={{fontSize:'0.78rem', color: '#888'}}>Site Diagrams</span>
           </button>
           {/* Budgets button */}
           <button style={{
             display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
-          }}>
+          }}
+            onClick={() => setActiveLayout('Budgets')}
+          >
             <FontAwesomeIcon icon={faDollarSign} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
             <span style={{fontSize:'0.78rem', color: '#888'}}>Budgets</span>
           </button>
           {/* Project Files button */}
           <button style={{
             display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
-          }}>
+          }}
+            onClick={() => setActiveLayout('Project Files')}
+          >
             <FontAwesomeIcon icon={faPaperclip} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
             <span style={{fontSize:'0.78rem', color: '#888'}}>Project Files</span>
           </button>
           {/* Calendar & Timelines button */}
           <button style={{
             display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'
-          }}>
+          }}
+            onClick={() => setActiveLayout('Calendar & Timelines')}
+          >
             <FontAwesomeIcon icon={faCalendarAlt} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} />
             <span style={{fontSize:'0.78rem', color: '#888'}}>Calendar &amp; Timelines</span>
           </button>
