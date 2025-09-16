@@ -235,69 +235,6 @@ function App() {
                 <line x1="15" y1="3" x2="3" y2="15" stroke="white" strokeWidth="2" />
               </svg>
             </button>
-            {/* Column of buttons on the left */}
-            <div style={{ position: 'absolute', left: '24px', top: '90px', display: 'flex', flexDirection: 'column', gap: '1.1rem', alignItems: 'flex-start', pointerEvents: 'auto' }}>
-              {[
-                { name: 'ground cover layer', icon: 'grass' },
-                { name: 'root layer', icon: 'grassroots' },
-                { name: 'herbaceous layer', icon: faPagelines },
-                { name: 'shrub layer', icon: faTree },
-                { name: 'low tree layer', icon: faCloud },
-                { name: 'tall tree layer', icon: faMountain },
-                { name: 'vine layer', icon: faPagelines },
-              ].map((layer, i) => (
-                <button
-                  key={i}
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    gap: '1.1rem',
-                    width: '320px',
-                    height: '48px',
-                    borderRadius: '12px',
-                    background: 'rgba(60,60,60,0.5)',
-                    color: 'white',
-                    border: 'none',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                    cursor: 'pointer',
-                    fontSize: '1.1rem',
-                    paddingLeft: '1.2rem',
-                    paddingRight: '1.2rem',
-                    justifyContent: 'flex-start',
-                  }}
-                  aria-label={layer.name}
-                  onClick={() => {
-                    setActiveLayer(layer.name);
-                    setPopupOpen(false);
-                    setAlpacaPopupOpen(false);
-                  }}
-                >
-                  {layer.icon === 'grass' ? (
-                    <svg width="32" height="32" viewBox="0 0 64 64" fill="none" style={{display:'block',margin:'0',position:'relative',top:'-2px'}} xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8 62 Q12 40 20 62 Q24 48 28 62 Q32 38 36 62 Q40 50 44 62 Q48 44 52 62" stroke="#fff" strokeWidth="3.5" fill="none"/>
-                    </svg>
-                  ) : layer.icon === 'grassroots' ? (
-                    <svg width="32" height="32" viewBox="0 0 64 64" fill="none" style={{display:'block',margin:'0',position:'relative',top:'-2px'}} xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8 20 Q12 4 20 20 Q24 8 28 20 Q32 2 36 20 Q40 10 44 20 Q48 6 52 20" stroke="#fff" strokeWidth="3" fill="none"/>
-                      <path d="M32 20 Q30 14 28 20" stroke="#fff" strokeWidth="2" fill="none"/>
-                      <path d="M32 20 Q34 14 36 20" stroke="#fff" strokeWidth="2" fill="none"/>
-                      <path d="M32 20 Q32 12 32 20" stroke="#fff" strokeWidth="2" fill="none"/>
-                      <polygon points="28,22 36,22 32,60" fill="#fff" />
-                      <path d="M32 40 Q30 44 32 48" stroke="#fff" strokeWidth="1.5" fill="none"/>
-                      <path d="M32 44 Q34 48 32 52" stroke="#fff" strokeWidth="1.5" fill="none"/>
-                    </svg>
-                  ) : layer.icon === 'roots' ? (
-                    <svg width="32" height="32" viewBox="0 0 64 64" fill="none" style={{display:'block',margin:'0',position:'relative',top:'-2px'}} xmlns="http://www.w3.org/2000/svg">
-                      <path d="M32 8 V32 M32 32 Q28 40 24 32 M32 32 Q36 40 40 32 M32 32 Q20 44 16 32 M32 32 Q44 44 48 32" stroke="#fff" strokeWidth="3.5" fill="none"/>
-                    </svg>
-                  ) : (
-                    <FontAwesomeIcon icon={layer.icon} style={{fontSize:'1.5rem'}} />
-                  )}
-                  <span style={{ textTransform: 'capitalize', fontWeight: '500', color: 'white', fontSize: '1rem', whiteSpace: 'nowrap' }}>{layer.name}</span>
-                </button>
-              ))}
-            </div>
           </div>
           {/* Dedicated popup for any layer */}
           {activeLayer && (
