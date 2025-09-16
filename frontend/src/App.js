@@ -73,15 +73,16 @@ function appendSiteAnalysis(str) {
         fontSize: '1.08rem',
         letterSpacing: '0.04em',
         zIndex: 9999,
-        background: 'rgba(255,255,255,0.92)',
-        padding: '0.56rem 0.96rem',
-        borderRadius: '10px',
-        boxShadow: '0 2px 12px rgba(0,0,0,0.07)',
+  background: 'transparent',
+  padding: '0.56rem 0.96rem',
+  borderRadius: '10px',
+  boxShadow: 'none',
         maxWidth: '900px',
         minWidth: '700px',
         margin: '0 auto',
-        left: '50%',
-        transform: 'translateX(-50%)',
+  left: 0,
+  marginLeft: '-4rem',
+  transform: 'none',
       }}>
         <div style={{display:'flex',flexDirection:'row',alignItems:'stretch',width:'100%',justifyContent:'center'}}>
           <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'flex-end',textAlign:'right',minWidth:'320px',maxWidth:'420px',whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>
@@ -91,9 +92,9 @@ function appendSiteAnalysis(str) {
           <div style={{display:'flex',alignItems:'center',justifyContent:'center',width:'80px',minWidth:'60px'}}>
             <span style={{
               display:'inline-block',
-              height:'2.7rem',
+              height:'3.6rem',
               minHeight:'100%',
-              borderLeft:'3.5px solid #bbb',
+              borderLeft:'1.5px solid #bbb',
               marginRight:'1.1rem',
               marginLeft:'1.1rem',
               alignSelf:'stretch',
