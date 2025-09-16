@@ -8,18 +8,26 @@ import { faDog } from '@fortawesome/free-solid-svg-icons';
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
+
   const [activeProjectFolder, setActiveProjectFolder] = useState(null);
   const [popupOpen, setPopupOpen] = useState(false);
-  const sampleProject = {
+  const sampleProject = React.useMemo(() => ({
     name: 'Sample Project',
     address: '2442 Crest View Drive, Los Angeles, CA 90046',
     sample: true,
-    description: 'A sample project to explore features before starting your own.'
-  };
-  const [projectFolders, setProjectFolders] = useState([sampleProject]);
+    description: 'A sample project to explore features before starting your own.',
+    file: 'Sample_Project.epc'
+  }), []);
+  // Removed unused projectFolders state
+  // Open sample project on initial load
+  React.useEffect(() => {
+    if (!activeProjectFolder) {
+      setActiveProjectFolder(sampleProject);
+    }
+  }, [activeProjectFolder, sampleProject]);
 
-  // Always include Sample Project in the list
-  const allProjectFolders = [sampleProject, ...projectFolders.filter(f => !f.sample)];
+  // Only show .epc file (Sample Project) as open
+  const allProjectFolders = [sampleProject];
   const [newFolderName, setNewFolderName] = useState('');
   const [namingFolder, setNamingFolder] = useState(false);
   const [alpacaPopupOpen, setAlpacaPopupOpen] = useState(false);
@@ -43,59 +51,55 @@ function App() {
 
   return (
     <div style={{ padding: '2rem', position: 'relative', minHeight: '100vh' }}>
-      {/* Always show project title, address, and map if a project is open */}
-      {activeProjectFolder && (
+      {/* Always show project title, address, and map for sample project */}
+      <div style={{
+        position: 'fixed',
+        top: '1.2rem',
+        left: '1.2rem',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        textAlign: 'left',
+        fontWeight: 'bold',
+        color: '#888',
+        fontSize: '1.35rem',
+        letterSpacing: '0.04em',
+        zIndex: 9999,
+        background: 'rgba(255,255,255,0.92)',
+        padding: '0.7rem 1.2rem',
+        borderRadius: '10px',
+        boxShadow: '0 2px 12px rgba(0,0,0,0.07)'
+      }}>
+        {/* Empty square for map preview */}
         <div style={{
-          position: 'fixed',
-          top: '1.2rem',
-          left: '1.2rem',
+          width: '80px',
+          height: '80px',
+          marginRight: '1.2rem',
+          borderRadius: '8px',
+          overflow: 'hidden',
+          background: '#eee',
+          filter: 'grayscale(1)',
+          boxShadow: '0 1px 6px rgba(0,0,0,0.08)',
           display: 'flex',
-          flexDirection: 'row',
           alignItems: 'center',
-          textAlign: 'left',
-          fontWeight: 'bold',
-          color: '#888',
-          fontSize: '1.35rem',
-          letterSpacing: '0.04em',
-          zIndex: 9999,
-          background: 'rgba(255,255,255,0.92)',
-          padding: '0.7rem 1.2rem',
-          borderRadius: '10px',
-          boxShadow: '0 2px 12px rgba(0,0,0,0.07)'
+          justifyContent: 'center',
         }}>
-          {/* Empty square for map preview */}
-          <div style={{
-            width: '80px',
-            height: '80px',
-            marginRight: '1.2rem',
-            borderRadius: '8px',
-            overflow: 'hidden',
-            background: '#eee',
-            filter: 'grayscale(1)',
-            boxShadow: '0 1px 6px rgba(0,0,0,0.08)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-            <div
-              style={{
-                width: '80px',
-                height: '80px',
-                background: 'linear-gradient(135deg, #bbb 60%, #eee 100%)',
-                borderRadius: '8px',
-                marginRight: '1.2rem',
-                boxShadow: '0 1px 6px rgba(0,0,0,0.08)',
-              }}
-            />
-          </div>
-          <div>
-            <div>{activeProjectFolder.name || activeProjectFolder}</div>
-            {activeProjectFolder.address && (
-              <div style={{fontSize:'1.05rem',color:'#666',marginTop:'0.2rem',fontWeight:'400'}}>{activeProjectFolder.address}</div>
-            )}
-          </div>
+          <div
+            style={{
+              width: '80px',
+              height: '80px',
+              background: 'linear-gradient(135deg, #bbb 60%, #eee 100%)',
+              borderRadius: '8px',
+              marginRight: '1.2rem',
+              boxShadow: '0 1px 6px rgba(0,0,0,0.08)',
+            }}
+          />
         </div>
-      )}
+        <div>
+          <div>{sampleProject.name}</div>
+          <div style={{fontSize:'1.05rem',color:'#666',marginTop:'0.2rem',fontWeight:'400'}}>{sampleProject.address}</div>
+        </div>
+      </div>
       {/* Floating plus button in bottom left */}
       <button
         style={{
@@ -316,7 +320,23 @@ function App() {
               }}
             >
               <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.3rem',marginBottom:'1.2rem'}}>{activeLayer.replace(' layer','').replace(/\b\w/g, l => l.toUpperCase())} Layer</div>
-              <div style={{color:'#fff',fontSize:'1.05rem',marginBottom:'1.2rem'}}>This is a dedicated popup for the {activeLayer.replace(' layer','')} layer. Add your content here.</div>
+              <div style={{color:'#fff',fontSize:'1.05rem',marginBottom:'1.2rem'}}>This is a dedicated popup for the {activeLayer.replace(' layer','')} layer.</div>
+              {/* Show native plants for this project/address in the permaculture layer popup */}
+              {nativePlants.length > 0 && (
+                <div style={{marginBottom:'1.2rem',width:'100%'}}>
+                  <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.1rem',marginBottom:'0.7rem'}}>Native Plants</div>
+                  {nativePlants.slice(0,3).map((plant, idx) => (
+                    <div key={idx} style={{display:'flex',alignItems:'center',marginBottom:'0.7rem',gap:'0.7rem'}}>
+                      {plant.image && <img src={plant.image} alt={plant.name} style={{width:'48px',height:'48px',borderRadius:'8px',objectFit:'cover',background:'#eee',marginRight:'0.7rem'}} />}
+                      <div>
+                        <div style={{color:'#fff',fontWeight:'500',fontSize:'1rem'}}>{plant.name}</div>
+                        <div style={{color:'#ccc',fontSize:'0.95rem'}}>{plant.scientific}</div>
+                        {plant.wikipedia && <a href={`https://en.wikipedia.org/wiki/${encodeURIComponent(plant.wikipedia)}`} target="_blank" rel="noopener noreferrer" style={{color:'#61dafb',fontSize:'0.9rem'}}>Wikipedia</a>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
               <button
                 style={{
                   marginTop: '0.5rem',
@@ -570,7 +590,7 @@ function App() {
                           textAlign:'left',
                         }}
                         onClick={() => {
-                          // Treat Sample Project as a real project
+                          // Always treat Sample Project as a real project and always fetch plants
                           setActiveProjectFolder(folder);
                           setPopupOpen(false);
                           setAlpacaPopupOpen(false);
@@ -579,6 +599,7 @@ function App() {
                           setActiveLayer(null);
                           window.scrollTo({ top: 0, behavior: 'smooth' });
                           if (folder.address) {
+                            // Always fetch, even if already active
                             fetch('/api/native-plants', {
                               method: 'POST',
                               headers: { 'Content-Type': 'application/json' },
@@ -593,6 +614,8 @@ function App() {
                                 }
                               })
                               .catch(() => setNativePlants([]));
+                          } else {
+                            setNativePlants([]);
                           }
                         }}
                         aria-label={`Open project ${folder.name || folder}`}
@@ -652,7 +675,7 @@ function App() {
                             if (e.key === 'Enter' && newFolderName.trim() && newFolderStreet && newFolderCity && newFolderState && newFolderZip && newFolderCountry) {
                               const address = `${newFolderStreet}, ${newFolderCity}, ${newFolderState} ${newFolderZip}, ${newFolderCountry}`;
                               const newFolder = { name: newFolderName.trim(), address };
-                              setProjectFolders(prev => [...prev, newFolder]);
+                              // setProjectFolders removed: only sample project is supported
                               setNamingFolder(false);
                               setNewFolderName('');
                               setNewFolderStreet('');
@@ -707,7 +730,7 @@ function App() {
                             if (newFolderName.trim() && newFolderStreet && newFolderCity && newFolderState && newFolderZip && newFolderCountry) {
                               const address = `${newFolderStreet}, ${newFolderCity}, ${newFolderState} ${newFolderZip}, ${newFolderCountry}`;
                               const newFolder = { name: newFolderName.trim(), address };
-                              setProjectFolders(prev => [...prev, newFolder]);
+                              // setProjectFolders removed: only sample project is supported
                               setNamingFolder(false);
                               setNewFolderName('');
                               setNewFolderStreet('');
