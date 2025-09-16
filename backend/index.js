@@ -46,7 +46,11 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 // Helper: Geocode address to lat/lon using OpenStreetMap Nominatim
 async function geocodeAddress(address) {
   const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`;
-  const res = await fetch(url);
+  const res = await fetch(url, {
+    headers: {
+      'User-Agent': 'ELPACA-app/1.0 (your-email@example.com)'
+    }
+  });
   const data = await res.json();
   if (data && data.length > 0) {
     return { lat: data[0].lat, lon: data[0].lon };
@@ -91,10 +95,17 @@ async function crossReferenceWikipedia(scientificName) {
 
 app.post('/api/native-plants', async (req, res) => {
   try {
+    console.log('POST /api/native-plants body:', req.body);
     const { address } = req.body;
-    if (!address) return res.status(400).json({ error: 'Missing address' });
+    if (!address) {
+      console.error('Missing address in request body');
+      return res.status(400).json({ error: 'Missing address' });
+    }
     const geo = await geocodeAddress(address);
-    if (!geo) return res.status(404).json({ error: 'Could not geocode address' });
+    if (!geo) {
+      console.error('Could not geocode address:', address);
+      return res.status(404).json({ error: 'Could not geocode address' });
+    }
     const plants = await getNativePlants(geo.lat, geo.lon);
     // Cross-reference with Wikipedia
     const checked = [];
@@ -107,7 +118,8 @@ app.post('/api/native-plants', async (req, res) => {
     }
     res.json({ plants: checked });
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch native plants' });
+    console.error('Error in /api/native-plants:', err);
+    res.status(500).json({ error: 'Failed to fetch native plants', details: err.message });
   }
 });
 
