@@ -127,7 +127,7 @@ function appendSiteAnalysis(str) {
           color: 'white',
           fontSize: '2rem',
           border: 'none',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.20)', // consistent shadow
           cursor: 'pointer',
           display: 'flex',
           alignItems: 'center',
@@ -332,7 +332,7 @@ function appendSiteAnalysis(str) {
   pointerEvents: 'auto',
         zIndex: 1001,
       }}>
-        {/* 6 surrounding buttons in a circle */}
+        {/* Navigation circle buttons */}
         {[...Array(6)].map((_, i) => {
           const angle = ((i / 6) * 2 * Math.PI) - Math.PI / 2;
           const radius = 60;
@@ -350,7 +350,7 @@ function appendSiteAnalysis(str) {
                 borderRadius: '50%',
                 background: 'rgba(168, 190, 150, 0.7)',
                 border: 'none',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.20)',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.20)', // consistent shadow
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -378,7 +378,7 @@ function appendSiteAnalysis(str) {
             </button>
           );
         })}
-        {/* Center alpaca button */}
+        {/* Center alpaca/project button */}
         <button
           style={{
             position: 'absolute',
@@ -389,9 +389,9 @@ function appendSiteAnalysis(str) {
             height: '48px',
             borderRadius: '50%',
             background: '#fff',
-            color: '#333', // dark grey
+            color: '#333',
             border: 'none',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.20)', // consistent shadow
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
@@ -404,328 +404,231 @@ function appendSiteAnalysis(str) {
         >
           <FontAwesomeIcon icon={faDog} style={{ fontSize: '1.4rem' }} />
         </button>
-        {/* Alpaca popup window */}
-        {alpacaPopupOpen && (
-          <div style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            background: 'rgba(60,60,60,0.3)',
-            zIndex: 2000,
-          }}>
-            <div
+      </div>
+      {/* Alpaca popup window */}
+      {alpacaPopupOpen && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          background: 'rgba(60,60,60,0.3)',
+          zIndex: 2000,
+        }}>
+          <div
+            style={{
+              position: 'absolute',
+              left: alpacaPopupPos.x,
+              top: alpacaPopupPos.y,
+              background: 'rgba(60,60,60,0.7)',
+              borderRadius: '14px',
+              minWidth: '320px',
+              minHeight: '180px',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-end',
+              padding: '1.5rem',
+              cursor: alpacaDragging ? 'grabbing' : 'grab',
+              userSelect: 'none',
+            }}
+            onMouseDown={e => {
+              // Only start dragging if the click is NOT on the close button or its children
+              const closeBtn = e.currentTarget.querySelector('button[aria-label="Close alpaca popup"]');
+              if (closeBtn && (e.target === closeBtn || closeBtn.contains(e.target))) return;
+              setAlpacaDragging(true);
+              setAlpacaDragOffset({ x: e.clientX - alpacaPopupPos.x, y: e.clientY - alpacaPopupPos.y });
+            }}
+          >
+            {/* Close button as small white X in top right */}
+            <button
+              onClick={() => {
+                setAlpacaPopupOpen(false);
+              }}
               style={{
                 position: 'absolute',
-                left: alpacaPopupPos.x,
-                top: alpacaPopupPos.y,
-                background: 'rgba(60,60,60,0.7)',
-                borderRadius: '14px',
-                minWidth: '320px',
-                minHeight: '180px',
-                boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
+                top: '12px',
+                right: '12px',
+                width: '28px',
+                height: '28px',
+                border: 'none',
+                background: 'transparent',
+                cursor: 'pointer',
                 display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'flex-end',
-                padding: '1.5rem',
-                cursor: alpacaDragging ? 'grabbing' : 'grab',
-                userSelect: 'none',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: 0,
+                pointerEvents: 'auto',
               }}
-              onMouseDown={e => {
-                // Only start dragging if the click is NOT on the close button or its children
-                const closeBtn = e.currentTarget.querySelector('button[aria-label="Close alpaca popup"]');
-                if (closeBtn && (e.target === closeBtn || closeBtn.contains(e.target))) return;
-                setAlpacaDragging(true);
-                setAlpacaDragOffset({ x: e.clientX - alpacaPopupPos.x, y: e.clientY - alpacaPopupPos.y });
-              }}
+              aria-label="Close alpaca popup"
             >
-              {/* Close button as small white X in top right */}
-              <button
-                onClick={() => {
-                  setAlpacaPopupOpen(false);
-                }}
-                style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '12px',
-                  width: '28px',
-                  height: '28px',
-                  border: 'none',
-                  background: 'transparent',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: 0,
-                  pointerEvents: 'auto',
-                }}
-                aria-label="Close alpaca popup"
-              >
-                <svg width="18" height="18" viewBox="0 0 18 18">
-                  <line x1="3" y1="3" x2="15" y2="15" stroke="white" strokeWidth="2" />
-                  <line x1="15" y1="3" x2="3" y2="15" stroke="white" strokeWidth="2" />
-                </svg>
-              </button>
-              {/* Centered Projects label or folder name */}
-              <div style={{width:'100%',textAlign:'center',position:'absolute',top:'18px',left:0,fontWeight:'bold',color:'#fff',fontSize:'1.1rem',letterSpacing:'0.04em'}}>
-                {activeProjectFolder ? (activeProjectFolder.name || activeProjectFolder) : 'Projects'}
-              </div>
-              {/* If a folder is open, show its content */}
-              {activeProjectFolder ? (
-                <div style={{marginTop:'60px',width:'100%',display:'flex',flexDirection:'column',alignItems:'center',gap:'1.2rem'}}>
-                  <FontAwesomeIcon icon={faDog} style={{ fontSize: '2.2rem', color: '#fff' }} />
-                  <div style={{color:'#fff',fontSize:'1.1rem',textAlign:'center'}}>
-                    <div>Welcome to <b>{activeProjectFolder.name || activeProjectFolder}</b>!</div>
-                    {activeProjectFolder.address && (
-                      <div style={{fontSize:'1rem',color:'#ccc',marginTop:'0.5rem'}}>Location: <b>{activeProjectFolder.address}</b></div>
-                    )}
-                  </div>
-                  <button
-                    style={{marginTop:'1.2rem',background:'rgba(168,190,150,0.7)',color:'#333',border:'none',borderRadius:'6px',padding:'0.4rem 1.2rem',fontWeight:'bold',cursor:'pointer'}}
-                    onClick={() => {
-                      setAlpacaPopupOpen(false);
-                      setPopupOpen(true);
-                      setActiveLayer(null);
-                    }}
-                  >Back to Projects</button>
+              <svg width="18" height="18" viewBox="0 0 18 18">
+                <line x1="3" y1="3" x2="15" y2="15" stroke="white" strokeWidth="2" />
+                <line x1="15" y1="3" x2="3" y2="15" stroke="white" strokeWidth="2" />
+              </svg>
+            </button>
+            {/* Centered Projects label or folder name */}
+            <div style={{width:'100%',textAlign:'center',position:'absolute',top:'18px',left:0,fontWeight:'bold',color:'#fff',fontSize:'1.1rem',letterSpacing:'0.04em'}}>
+              {activeProjectFolder ? (activeProjectFolder.name || activeProjectFolder) : 'Projects'}
+            </div>
+            {/* If a folder is open, show its content */}
+            {activeProjectFolder ? (
+              <div style={{marginTop:'60px',width:'100%',display:'flex',flexDirection:'column',alignItems:'center',gap:'1.2rem'}}>
+                <FontAwesomeIcon icon={faDog} style={{ fontSize: '2.2rem', color: '#fff' }} />
+                <div style={{color:'#fff',fontSize:'1.1rem',textAlign:'center'}}>
+                  <div>Welcome to <b>{activeProjectFolder.name || activeProjectFolder}</b>!</div>
+                  {activeProjectFolder.address && (
+                    <div style={{fontSize:'1rem',color:'#ccc',marginTop:'0.5rem'}}>Location: <b>{activeProjectFolder.address}</b></div>
+                  )}
                 </div>
-              ) : (
-                <>
-                  {/* Plus button in bottom right of popup */}
-                  <button
-                    style={{
-                      position: 'absolute',
-                      left: '18px',
-                      bottom: '18px',
-                      width: '30px',
-                      height: '30px',
-                      borderRadius: '50%',
-                      background: 'rgba(168, 190, 150, 0.7)',
-                      color: 'white',
-                      border: 'none',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '0.83rem',
-                      zIndex: 2002,
-                    }}
-                    aria-label="Add project"
-                    title="Add project"
-                    onClick={() => {
-                      setNamingFolder(true);
-                      setNewFolderName('');
-                    }}
-                  >
-                    <FontAwesomeIcon icon={faPlus} />
-                  </button>
-                  {/* Project folders list */}
-                  <div style={{marginTop:'60px',width:'100%',display:'flex',flexDirection:'column',alignItems:'flex-start',gap:'0.7rem'}}>
-                    {allProjectFolders.map((folder, idx) => (
-                      <button key={idx}
-                        style={{
-                          background:'rgba(255,255,255,0.08)',
-                          borderRadius:'8px',
-                          padding:'0.5rem 1rem',
-                          color:'#fff',
-                          fontWeight:'500',
-                          fontSize:'1rem',
-                          marginBottom:'0.2rem',
-                          display:'flex',
-                          alignItems:'center',
-                          gap:'0.7rem',
-                          cursor:'pointer',
-                          border:'none',
-                          width:'100%',
-                          textAlign:'left',
-                        }}
-                        onClick={() => {
-                          // Always treat Sample Project as a real project and always fetch plants
-                          setActiveProjectFolder(folder);
-                          setPopupOpen(false);
-                          setAlpacaPopupOpen(false);
-                          setNamingFolder(false);
-                          setNewFolderName('');
-                          setActiveLayer(null);
-                          window.scrollTo({ top: 0, behavior: 'smooth' });
-                          if (folder.address) {
-                            // Always fetch, even if already active
-                            fetch('/api/native-plants', {
-                              method: 'POST',
-                              headers: { 'Content-Type': 'application/json' },
-                              body: JSON.stringify({ address: folder.address })
+                <button
+                  style={{marginTop:'1.2rem',background:'rgba(168,190,150,0.7)',color:'#333',border:'none',borderRadius:'6px',padding:'0.4rem 1.2rem',fontWeight:'bold',cursor:'pointer'}}
+                  onClick={() => {
+                    setAlpacaPopupOpen(false);
+                    setPopupOpen(true);
+                    setActiveLayer(null);
+                  }}
+                >Back to Projects</button>
+              </div>
+            ) : (
+              <>
+                {/* Plus button in bottom right of popup */}
+                <button
+                  style={{
+                    position: 'absolute',
+                    left: '18px',
+                    bottom: '18px',
+                    width: '30px',
+                    height: '30px',
+                    borderRadius: '50%',
+                    background: 'rgba(168, 190, 150, 0.7)',
+                    color: 'white',
+                    border: 'none',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '0.83rem',
+                    zIndex: 2002,
+                  }}
+                  aria-label="Add project"
+                  title="Add project"
+                  onClick={() => {
+                    setNamingFolder(true);
+                    setNewFolderName('');
+                  }}
+                >
+                  <FontAwesomeIcon icon={faPlus} />
+                </button>
+                {/* Project folders list */}
+                <div style={{marginTop:'60px',width:'100%',display:'flex',flexDirection:'column',alignItems:'flex-start',gap:'0.7rem'}}>
+                  {allProjectFolders.map((folder, idx) => (
+                    <button key={idx}
+                      style={{
+                        background:'rgba(255,255,255,0.08)',
+                        borderRadius:'8px',
+                        padding:'0.5rem 1rem',
+                        color:'#fff',
+                        fontWeight:'500',
+                        fontSize:'1rem',
+                        marginBottom:'0.2rem',
+                        display:'flex',
+                        alignItems:'center',
+                        gap:'0.7rem',
+                        cursor:'pointer',
+                        border:'none',
+                        width:'100%',
+                        textAlign:'left',
+                      }}
+                      onClick={() => {
+                        // Always treat Sample Project as a real project and always fetch plants
+                        setActiveProjectFolder(folder);
+                        setPopupOpen(false);
+                        setAlpacaPopupOpen(false);
+                        setNamingFolder(false);
+                        setNewFolderName('');
+                        setActiveLayer(null);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        if (folder.address) {
+                          // Always fetch, even if already active
+                          fetch('/api/native-plants', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ address: folder.address })
+                          })
+                            .then(resp => resp.json())
+                            .then(data => {
+                              if (data.plants) {
+                                setNativePlants(data.plants);
+                              } else {
+                                setNativePlants([]);
+                              }
                             })
-                              .then(resp => resp.json())
-                              .then(data => {
-                                if (data.plants) {
-                                  setNativePlants(data.plants);
-                                } else {
-                                  setNativePlants([]);
-                                }
-                              })
-                              .catch(() => setNativePlants([]));
-                          } else {
-                            setNativePlants([]);
-                          }
-                        }}
-                        aria-label={`Open project ${folder.name || folder}`}
-                      >
-                        <div style={{display:'flex',alignItems:'center',width:'100%'}}>
-                          <FontAwesomeIcon icon={faDog} style={{ fontSize: '1.2rem', color: '#fff' }} />
-                          <span style={{marginLeft:'0.7rem'}}>{folder.name || folder}</span>
-                          {folder.address && <span style={{fontSize:'0.9rem',color:'#ccc',marginLeft:'0.7rem'}}>{folder.address}</span>}
-                        </div>
-                      </button>
-                    ))}
-                    {namingFolder && (
-                      <div style={{background:'rgba(255,255,255,0.13)',borderRadius:'8px',padding:'0.5rem 1rem',color:'#fff',fontWeight:'500',fontSize:'1rem',marginBottom:'0.2rem',display:'flex',flexDirection:'column',alignItems:'flex-start',gap:'0.5rem'}}>
-                        <input
-                          type="text"
-                          value={newFolderName}
-                          autoFocus
-                          onChange={e => setNewFolderName(e.target.value)}
-                          placeholder="Project Name"
-                          style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem',marginBottom:'0.5rem'}}
-                        />
-                        <input
-                          type="text"
-                          value={newFolderStreet || ''}
-                          onChange={e => setNewFolderStreet(e.target.value)}
-                          placeholder="Street"
-                          style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
-                        />
-                        <input
-                          type="text"
-                          value={newFolderCity || ''}
-                          onChange={e => setNewFolderCity(e.target.value)}
-                          placeholder="City"
-                          style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
-                        />
-                        <input
-                          type="text"
-                          value={newFolderState || ''}
-                          onChange={e => setNewFolderState(e.target.value)}
-                          placeholder="State"
-                          style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
-                        />
-                        <input
-                          type="text"
-                          value={newFolderZip || ''}
-                          onChange={e => setNewFolderZip(e.target.value)}
-                          placeholder="Zip Code"
-                          style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
-                        />
-                        <input
-                          type="text"
-                          value={newFolderCountry || ''}
-                          onChange={e => setNewFolderCountry(e.target.value)}
-                          placeholder="Country"
-                          style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
-                          onKeyDown={async e => {
-                            if (e.key === 'Enter' && newFolderName.trim() && newFolderStreet && newFolderCity && newFolderState && newFolderZip && newFolderCountry) {
-                              const address = `${newFolderStreet}, ${newFolderCity}, ${newFolderState} ${newFolderZip}, ${newFolderCountry}`;
-                              const newFolder = { name: newFolderName.trim(), address };
-                              // setProjectFolders removed: only sample project is supported
-                              setNamingFolder(false);
-                              setNewFolderName('');
-                              setNewFolderStreet('');
-                              setNewFolderCity('');
-                              setNewFolderState('');
-                              setNewFolderZip('');
-                              setNewFolderCountry('');
-                              setActiveProjectFolder(newFolder);
-                              setPopupOpen(false);
-                              setAlpacaPopupOpen(true);
-
-                              // Create empty files for .rvt, .pln, .ifc in /saved_files
-                              const baseName = newFolder.name.replace(/\s+/g, '_');
-                              // Create .epc as main file and others in background
-                              await fetch('/api/create-project-files', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ baseName })
-                              });
-
-                                // Fetch native plants from backend
-                                try {
-                                  const resp = await fetch('/api/native-plants', {
-                                    method: 'POST',
-                                    headers: { 'Content-Type': 'application/json' },
-                                    body: JSON.stringify({ address })
-                                  });
-                                  const data = await resp.json();
-                                  if (data.plants) {
-                                    setNativePlants(data.plants);
-                                  } else {
-                                    setNativePlants([]);
-                                  }
-                                } catch (err) {
-                                  setNativePlants([]);
-                                }
-                            } else if (e.key === 'Escape') {
-                              setNamingFolder(false);
-                              setNewFolderName('');
-                              setNewFolderStreet('');
-                              setNewFolderCity('');
-                              setNewFolderState('');
-                              setNewFolderZip('');
-                              setNewFolderCountry('');
-                            }
-                          }}
-                        />
-                        <button
-                          style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
-                          title="Save"
-                          onClick={async () => {
-                            if (newFolderName.trim() && newFolderStreet && newFolderCity && newFolderState && newFolderZip && newFolderCountry) {
-                              const address = `${newFolderStreet}, ${newFolderCity}, ${newFolderState} ${newFolderZip}, ${newFolderCountry}`;
-                              const newFolder = { name: newFolderName.trim(), address };
-                              // setProjectFolders removed: only sample project is supported
-                              setNamingFolder(false);
-                              setNewFolderName('');
-                              setNewFolderStreet('');
-                              setNewFolderCity('');
-                              setNewFolderState('');
-                              setNewFolderZip('');
-                              setNewFolderCountry('');
-                              setActiveProjectFolder(null);
-                              setPopupOpen(false);
-                              setAlpacaPopupOpen(true);
-
-                              // Create empty files for .rvt, .pln, .ifc in /saved_files
-                              const baseName = newFolder.name.replace(/\s+/g, '_');
-                              // Create .epc as main file and others in background
-                              await fetch('/api/create-project-files', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ baseName })
-                              });
-
-                                // Fetch native plants from backend
-                                try {
-                                  const resp = await fetch('/api/native-plants', {
-                                    method: 'POST',
-                                    headers: { 'Content-Type': 'application/json' },
-                                    body: JSON.stringify({ address })
-                                  });
-                                  const data = await resp.json();
-                                  if (data.plants) {
-                                    setNativePlants(data.plants);
-                                  } else {
-                                    setNativePlants([]);
-                                  }
-                                } catch (err) {
-                                  setNativePlants([]);
-                                }
-                            }
-                          }}
-                        >✔</button>
-                        <button
-                          style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
-                          title="Cancel"
-                          onClick={() => {
+                            .catch(() => setNativePlants([]));
+                        } else {
+                          setNativePlants([]);
+                        }
+                      }}
+                      aria-label={`Open project ${folder.name || folder}`}
+                    >
+                      <div style={{display:'flex',alignItems:'center',width:'100%'}}>
+                        <FontAwesomeIcon icon={faDog} style={{ fontSize: '1.2rem', color: '#fff' }} />
+                        <span style={{marginLeft:'0.7rem'}}>{folder.name || folder}</span>
+                        {folder.address && <span style={{fontSize:'0.9rem',color:'#ccc',marginLeft:'0.7rem'}}>{folder.address}</span>}
+                      </div>
+                    </button>
+                  ))}
+                  {namingFolder && (
+                    <div style={{background:'rgba(255,255,255,0.13)',borderRadius:'8px',padding:'0.5rem 1rem',color:'#fff',fontWeight:'500',fontSize:'1rem',marginBottom:'0.2rem',display:'flex',flexDirection:'column',alignItems:'flex-start',gap:'0.5rem'}}>
+                      <input
+                        type="text"
+                        value={newFolderName}
+                        autoFocus
+                        onChange={e => setNewFolderName(e.target.value)}
+                        placeholder="Project Name"
+                        style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem',marginBottom:'0.5rem'}}
+                      />
+                      <input
+                        type="text"
+                        value={newFolderStreet || ''}
+                        onChange={e => setNewFolderStreet(e.target.value)}
+                        placeholder="Street"
+                        style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
+                      />
+                      <input
+                        type="text"
+                        value={newFolderCity || ''}
+                        onChange={e => setNewFolderCity(e.target.value)}
+                        placeholder="City"
+                        style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
+                      />
+                      <input
+                        type="text"
+                        value={newFolderState || ''}
+                        onChange={e => setNewFolderState(e.target.value)}
+                        placeholder="State"
+                        style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
+                      />
+                      <input
+                        type="text"
+                        value={newFolderZip || ''}
+                        onChange={e => setNewFolderZip(e.target.value)}
+                        placeholder="Zip Code"
+                        style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
+                      />
+                      <input
+                        type="text"
+                        value={newFolderCountry || ''}
+                        onChange={e => setNewFolderCountry(e.target.value)}
+                        placeholder="Country"
+                        style={{background:'rgba(255,255,255,0.2)',border:'none',borderRadius:'4px',color:'#333',fontWeight:'500',fontSize:'1rem',padding:'0.3rem 0.7rem'}}
+                        onKeyDown={async e => {
+                          if (e.key === 'Enter' && newFolderName.trim() && newFolderStreet && newFolderCity && newFolderState && newFolderZip && newFolderCountry) {
+                            const address = `${newFolderStreet}, ${newFolderCity}, ${newFolderState} ${newFolderZip}, ${newFolderCountry}`;
+                            const newFolder = { name: newFolderName.trim(), address };
+                            // setProjectFolders removed: only sample project is supported
                             setNamingFolder(false);
                             setNewFolderName('');
                             setNewFolderStreet('');
@@ -733,26 +636,123 @@ function appendSiteAnalysis(str) {
                             setNewFolderState('');
                             setNewFolderZip('');
                             setNewFolderCountry('');
-                          }}
-                        >✖</button>
-                      </div>
-                    )}
-                  </div>
-                </>
-              )}
-            </div>
-            {alpacaDragging && (
-              <div
-                style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 2001, cursor: 'grabbing' }}
-                onMouseMove={e => {
-                  setAlpacaPopupPos({ x: e.clientX - alpacaDragOffset.x, y: e.clientY - alpacaDragOffset.y });
-                }}
-                onMouseUp={() => setAlpacaDragging(false)}
-              />
+                            setActiveProjectFolder(newFolder);
+                            setPopupOpen(false);
+                            setAlpacaPopupOpen(true);
+
+                            // Create empty files for .rvt, .pln, .ifc in /saved_files
+                            const baseName = newFolder.name.replace(/\s+/g, '_');
+                            // Create .epc as main file and others in background
+                            await fetch('/api/create-project-files', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({ baseName })
+                            });
+
+                              // Fetch native plants from backend
+                              try {
+                                const resp = await fetch('/api/native-plants', {
+                                  method: 'POST',
+                                  headers: { 'Content-Type': 'application/json' },
+                                  body: JSON.stringify({ address })
+                                });
+                                const data = await resp.json();
+                                if (data.plants) {
+                                  setNativePlants(data.plants);
+                                } else {
+                                  setNativePlants([]);
+                                }
+                              } catch (err) {
+                                setNativePlants([]);
+                              }
+                          } else if (e.key === 'Escape') {
+                            setNamingFolder(false);
+                            setNewFolderName('');
+                            setNewFolderStreet('');
+                            setNewFolderCity('');
+                            setNewFolderState('');
+                            setNewFolderZip('');
+                            setNewFolderCountry('');
+                          }
+                        }}
+                      />
+                      <button
+                        style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
+                        title="Save"
+                        onClick={async () => {
+                          if (newFolderName.trim() && newFolderStreet && newFolderCity && newFolderState && newFolderZip && newFolderCountry) {
+                            const address = `${newFolderStreet}, ${newFolderCity}, ${newFolderState} ${newFolderZip}, ${newFolderCountry}`;
+                            const newFolder = { name: newFolderName.trim(), address };
+                            // setProjectFolders removed: only sample project is supported
+                            setNamingFolder(false);
+                            setNewFolderName('');
+                            setNewFolderStreet('');
+                            setNewFolderCity('');
+                            setNewFolderState('');
+                            setNewFolderZip('');
+                            setNewFolderCountry('');
+                            setActiveProjectFolder(null);
+                            setPopupOpen(false);
+                            setAlpacaPopupOpen(true);
+
+                            // Create empty files for .rvt, .pln, .ifc in /saved_files
+                            const baseName = newFolder.name.replace(/\s+/g, '_');
+                            // Create .epc as main file and others in background
+                            await fetch('/api/create-project-files', {
+                              method: 'POST',
+                              headers: { 'Content-Type': 'application/json' },
+                              body: JSON.stringify({ baseName })
+                            });
+
+                              // Fetch native plants from backend
+                              try {
+                                const resp = await fetch('/api/native-plants', {
+                                  method: 'POST',
+                                  headers: { 'Content-Type': 'application/json' },
+                                  body: JSON.stringify({ address })
+                                });
+                                const data = await resp.json();
+                                if (data.plants) {
+                                  setNativePlants(data.plants);
+                                } else {
+                                  setNativePlants([]);
+                                }
+                              } catch (err) {
+                                setNativePlants([]);
+                              }
+                          }
+                        }}
+                      >✔</button>
+                      <button
+                        style={{background:'transparent',border:'none',color:'#fff',fontSize:'1.1rem',cursor:'pointer'}}
+                        title="Cancel"
+                        onClick={() => {
+                          setNamingFolder(false);
+                          setNewFolderName('');
+                          setNewFolderStreet('');
+                          setNewFolderCity('');
+                          setNewFolderState('');
+                          setNewFolderZip('');
+                          setNewFolderCountry('');
+                        }}
+                      >✖</button>
+                    </div>
+                  )}
+                </div>
+              </>
             )}
           </div>
-        )}
-      </div>
+          {alpacaDragging && (
+            <div
+              style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 2001, cursor: 'grabbing' }}
+              onMouseMove={e => {
+                setAlpacaPopupPos({ x: e.clientX - alpacaDragOffset.x, y: e.clientY - alpacaDragOffset.y });
+              }}
+              onMouseUp={() => setAlpacaDragging(false)}
+            />
+          )}
+        </div>
+      )}
 
       {/* Layouts category column below top right buttons */}
       <div style={{
