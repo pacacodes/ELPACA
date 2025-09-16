@@ -8,8 +8,13 @@ import { faDog } from '@fortawesome/free-solid-svg-icons';
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
+function appendSiteAnalysis(str) {
+  return str.endsWith(' | Site Analysis') ? str : str + ' | Site Analysis';
+}
 
   const [activeProjectFolder, setActiveProjectFolder] = useState(null);
+  // 0: Lightbulb, 1: Map, 2: Pen, 3: Compass, 4: HardHat, 5: Tasks
+  const [activeNav, setActiveNav] = useState(0);
   const [popupOpen, setPopupOpen] = useState(false);
   const sampleProject = React.useMemo(() => ({
     name: 'Sample Project',
@@ -51,7 +56,7 @@ function App() {
 
   return (
     <div style={{ padding: '2rem', position: 'relative', minHeight: '100vh' }}>
-      {/* Always show project title, address, and map for sample project */}
+      {/* Always show project title and address, with dynamic section title */}
       <div style={{
         position: 'fixed',
         top: '1.2rem',
@@ -70,34 +75,30 @@ function App() {
         borderRadius: '10px',
         boxShadow: '0 2px 12px rgba(0,0,0,0.07)'
       }}>
-        {/* Empty square for map preview */}
-        <div style={{
-          width: '80px',
-          height: '80px',
-          marginRight: '1.2rem',
-          borderRadius: '8px',
-          overflow: 'hidden',
-          background: '#eee',
-          filter: 'grayscale(1)',
-          boxShadow: '0 1px 6px rgba(0,0,0,0.08)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-          <div
-            style={{
-              width: '80px',
-              height: '80px',
-              background: 'linear-gradient(135deg, #bbb 60%, #eee 100%)',
-              borderRadius: '8px',
-              marginRight: '1.2rem',
-              boxShadow: '0 1px 6px rgba(0,0,0,0.08)',
-            }}
-          />
-        </div>
-        <div>
-          <div>{sampleProject.name}</div>
-          <div style={{fontSize:'1.05rem',color:'#666',marginTop:'0.2rem',fontWeight:'400'}}>{sampleProject.address}</div>
+        <div style={{display:'flex',flexDirection:'row',alignItems:'stretch',position:'relative'}}>
+          <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'flex-end',textAlign:'right'}}>
+            <span>{sampleProject.name}</span>
+            <span style={{fontSize:'1.05rem',color:'#666',marginTop:'0.2rem',fontWeight:'400'}}>{sampleProject.address}</span>
+          </div>
+          <div style={{display:'flex',alignItems:'center',marginLeft:'1.1rem',height:'auto'}}>
+            <span style={{
+              display:'inline-block',
+              height:'2.7rem',
+              minHeight:'100%',
+              borderLeft:'3.5px solid #bbb',
+              marginRight:'1.1rem',
+              marginLeft:'0.2rem',
+              alignSelf:'stretch',
+            }}></span>
+            <span style={{fontSize:'1.45rem',fontWeight:'bold',color:'#666',letterSpacing:'0.04em',display:'flex',alignItems:'center',height:'2.7rem'}}>{
+              activeNav === 0 ? 'Projects' :
+              activeNav === 1 ? 'Site Analysis' :
+              activeNav === 2 ? 'Design Development' :
+              activeNav === 3 ? 'Construction Documents' :
+              activeNav === 4 ? 'Construction Management' :
+              'Daily Management'
+            }</span>
+          </div>
         </div>
       </div>
       {/* Floating plus button in bottom left */}
@@ -346,6 +347,7 @@ function App() {
                 zIndex: 1003,
               }}
               aria-label={`Circle button ${i+1}`}
+              onClick={() => setActiveNav(i)}
             >
               {i === 0 ? (
                 <FontAwesomeIcon icon={faLightbulb} />
