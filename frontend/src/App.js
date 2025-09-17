@@ -299,7 +299,12 @@ function appendSiteAnalysis(str) {
                     >
                       <span style={{display:'flex',alignItems:'center',gap:'0.5rem'}}>
                         {section === 'Canopy' && <FontAwesomeIcon icon={faTree} />}
-                        {section === 'Understory' && <FontAwesomeIcon icon={faTree} style={{fontSize:'0.6em'}} />}
+                        {section === 'Understory' && (
+                          <span style={{display:'flex',alignItems:'flex-end',gap:'0'}}>
+                            <FontAwesomeIcon icon={faTree} style={{fontSize:'1.2em', color:'#bdbdbd'}} />
+                            <FontAwesomeIcon icon={faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#fff'}} />
+                          </span>
+                        )}
                         {section === 'Shrub' && <FontAwesomeIcon icon={faCloud} />}
                         {section === 'Herbaceous' && <FontAwesomeIcon icon={faLeaf} />}
                         {section === 'Ground Cover' && <FontAwesomeIcon icon={faClover} />}
