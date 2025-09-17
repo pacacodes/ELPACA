@@ -397,7 +397,64 @@ function appendSiteAnalysis(str) {
                 zIndex: 2001
               }}>
                 <div style={{fontSize:'1.25rem',fontWeight:'bold',marginBottom:'1.2rem'}}>{activeSection}</div>
-                {/* Section content goes here */}
+                {/* Section content for Canopy */}
+                {activeSection === 'Canopy' && (() => {
+                  // Section map for matching canopy trees
+                  const sectionMap = [
+                    { key: 'CANOPY', match: ['oak','hackberry','walnut','pecan','hickory','elm','maple','beech','chestnut','sycamore','canopy','overstory','tall tree'] },
+                  ];
+                  function parseHeight(val) {
+                    if (!val) return null;
+                    // Accept numbers, ranges, and units (meters, m, feet, ft)
+                    const m = /([0-9]+(?:\.[0-9]+)?)\s*(m|meter|meters)/i.exec(val);
+                    if (m) return parseFloat(m[1]);
+                    const ft = /([0-9]+(?:\.[0-9]+)?)\s*(ft|feet|foot)/i.exec(val);
+                    if (ft) return parseFloat(ft[1]) * 0.3048;
+                    // Range: "9-15 m" or "30-50 ft"
+                    const range = /([0-9]+(?:\.[0-9]+)?)[-–]([0-9]+(?:\.[0-9]+)?)\s*(m|meter|meters|ft|feet|foot)/i.exec(val);
+                    if (range) {
+                      let v = parseFloat(range[2]);
+                      if (/ft|feet|foot/i.test(range[3])) v *= 0.3048;
+                      return v;
+                    }
+                    return null;
+                  }
+                  function getSection(plant) {
+                    // If height is available and >=9m or 30ft, consider Canopy
+                    const heightFields = [plant.height, plant.matureHeight, plant.maxHeight, plant.size, plant.height_m, plant.height_ft, plant['mature height']];
+                    for (const h of heightFields) {
+                      const val = parseHeight(h);
+                      if (val && val >= 9) return 'CANOPY';
+                    }
+                    // Fallback to keyword matching
+                    const fields = [plant.name, plant.scientific, plant.category, plant.layer, plant.type, plant.description];
+                    const text = fields.filter(Boolean).join(' ').toLowerCase();
+                    for (const sec of sectionMap) {
+                      if (sec.match.some(m => text.includes(m))) return sec.key;
+                    }
+                    return 'OTHER';
+                  }
+                  const canopyPlants = nativePlants.filter(plant => getSection(plant) === 'CANOPY').slice(0,3);
+                  return (
+                    <>
+                      <div style={{fontWeight:'bold',color:'#ffe082',fontSize:'1.05rem',marginBottom:'0.7rem'}}>Example Native Canopy Trees</div>
+                      {canopyPlants.length > 0 ? (
+                        canopyPlants.map((plant, idx) => (
+                          <div key={idx} style={{display:'flex',alignItems:'center',marginBottom:'0.7rem',gap:'0.7rem',background:'transparent'}}>
+                            {plant.image && <img src={plant.image} alt={plant.name} style={{width:'48px',height:'48px',borderRadius:'8px',objectFit:'cover',background:'#eee',marginRight:'0.7rem'}} />}
+                            <div>
+                              <div style={{color:'#fff',fontWeight:'500',fontSize:'1rem'}}>{plant.name}</div>
+                              <div style={{color:'#ccc',fontSize:'0.95rem'}}>{plant.scientific}</div>
+                              {plant.wikipedia && <a href={`https://en.wikipedia.org/wiki/${encodeURIComponent(plant.wikipedia)}`} target="_blank" rel="noopener noreferrer" style={{color:'#61dafb',fontSize:'0.9rem'}}>Wikipedia</a>}
+                            </div>
+                          </div>
+                        ))
+                      ) : (
+                        <div style={{color:'#ccc',fontSize:'0.98rem',marginBottom:'0.7rem'}}>No native canopy trees found for this location.</div>
+                      )}
+                    </>
+                  );
+                })()}
               </div>
             )}
           </div>
