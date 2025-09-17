@@ -107,14 +107,50 @@ app.post('/api/native-plants', async (req, res) => {
       return res.status(404).json({ error: 'Could not geocode address' });
     }
     const plants = await getNativePlants(geo.lat, geo.lon);
+    // Try to filter for canopy trees (9m+ or matching canopy keywords)
+    function isCanopy(plant) {
+      const canopyWords = ['canopy','overstory','tall tree','oak','hackberry','walnut','pecan','hickory','elm','maple','beech','chestnut','sycamore'];
+      // Try to parse height if available
+      const heightFields = [plant.height, plant.matureHeight, plant.maxHeight, plant.size, plant.height_m, plant.height_ft, plant['mature height']];
+      for (const h of heightFields) {
+        if (!h) continue;
+        const m = /([0-9]+(?:\.[0-9]+)?)\s*(m|meter|meters)/i.exec(h);
+        if (m && parseFloat(m[1]) >= 9) return true;
+        const ft = /([0-9]+(?:\.[0-9]+)?)\s*(ft|feet|foot)/i.exec(h);
+        if (ft && parseFloat(ft[1]) >= 30) return true;
+        const range = /([0-9]+(?:\.[0-9]+)?)[-–]([0-9]+(?:\.[0-9]+)?)\s*(m|meter|meters|ft|feet|foot)/i.exec(h);
+        if (range) {
+          let v = parseFloat(range[2]);
+          if (/ft|feet|foot/i.test(range[3])) v *= 0.3048;
+          if (v >= 9) return true;
+        }
+      }
+      // Fallback to keyword matching
+      const fields = [plant.name, plant.scientific, plant.category, plant.layer, plant.type, plant.description];
+      const text = fields.filter(Boolean).join(' ').toLowerCase();
+      return canopyWords.some(m => text.includes(m));
+    }
     // Cross-reference with Wikipedia
     const checked = [];
-    for (const plant of plants) {
+    // Try to get at least 3 canopy trees if possible
+    const canopyCandidates = plants.filter(isCanopy);
+    for (const plant of canopyCandidates) {
       const wikiTitle = await crossReferenceWikipedia(plant.scientific);
       if (wikiTitle) {
         checked.push({ ...plant, wikipedia: wikiTitle });
       }
       if (checked.length >= 3) break;
+    }
+    // If not enough, fill with other plants
+    if (checked.length < 3) {
+      for (const plant of plants) {
+        if (checked.find(p => p.scientific === plant.scientific)) continue;
+        const wikiTitle = await crossReferenceWikipedia(plant.scientific);
+        if (wikiTitle) {
+          checked.push({ ...plant, wikipedia: wikiTitle });
+        }
+        if (checked.length >= 3) break;
+      }
     }
     res.json({ plants: checked });
   } catch (err) {
