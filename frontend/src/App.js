@@ -220,18 +220,24 @@ function appendSiteAnalysis(str) {
                 position: 'absolute',
                 right: '24px',
                 top: '90px',
-                background: 'rgba(255,255,255,0.08)',
-                borderRadius: '10px',
-                padding: '1rem',
-                minWidth: '220px',
-                maxWidth: '260px',
+                background: 'transparent',
+                padding: 0,
+                minWidth: '240px',
+                maxWidth: '320px',
+                minHeight: '420px',
                 zIndex: 1002,
-                boxShadow: '0 2px 8px rgba(0,0,0,0.12)'
+                boxShadow: 'none',
+                border: 'none',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'stretch',
+                justifyContent: 'flex-start',
+                overflowY: 'auto'
               }}>
-                <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.1rem',marginBottom:'0.7rem'}}>Native Plants</div>
+                <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.1rem',marginBottom:'0.7rem',background:'transparent',border:'none',boxShadow:'none'}}>Native Plants</div>
                 {nativePlants.length > 0 ? (
                   nativePlants.slice(0,3).map((plant, idx) => (
-                    <div key={idx} style={{display:'flex',alignItems:'center',marginBottom:'0.7rem',gap:'0.7rem'}}>
+                    <div key={idx} style={{display:'flex',alignItems:'center',marginBottom:'0.7rem',gap:'0.7rem',background:'transparent'}}>
                       {plant.image && <img src={plant.image} alt={plant.name} style={{width:'48px',height:'48px',borderRadius:'8px',objectFit:'cover',background:'#eee',marginRight:'0.7rem'}} />}
                       <div>
                         <div style={{color:'#fff',fontWeight:'500',fontSize:'1rem'}}>{plant.name}</div>
@@ -358,10 +364,10 @@ function appendSiteAnalysis(str) {
                 }
                 return (
                   <>
-                    <div style={{marginBottom:'1.2rem',width:'100%'}}>
+                    <div style={{marginBottom:'1.2rem',width:'100%', background:'transparent', boxShadow:'none', border:'none', padding:0}}>
                       <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.1rem',marginBottom:'0.7rem'}}>Native Plants by Permaculture Section</div>
                       {sectionMap.map(sec => grouped[sec.key].length > 0 && (
-                        <div key={sec.key} style={{marginBottom:'1.1rem'}}>
+                        <div key={sec.key} style={{marginBottom:'1.1rem', background:'transparent', boxShadow:'none', border:'none', padding:0}}>
                           <div style={{color:'#ffe082',fontWeight:'bold',fontSize:'1.05rem',marginBottom:'0.2rem'}}>{sec.key}</div>
                           <div style={{color:'#bbb',fontSize:'0.95rem',marginBottom:'0.3rem'}}>{sec.desc}</div>
                           {grouped[sec.key].map((plant, idx) => (
