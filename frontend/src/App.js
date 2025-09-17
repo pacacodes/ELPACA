@@ -246,7 +246,7 @@ function appendSiteAnalysis(str) {
                 alignItems: 'stretch',
                 justifyContent: 'flex-start',
                 overflowY: 'visible',
-                marginTop: 0
+                marginTop: '2.5rem'
               }}>
                 {nativePlants.length > 0 ? (
                   nativePlants.slice(0,3).map((plant, idx) => (
@@ -414,7 +414,7 @@ function appendSiteAnalysis(str) {
                 return (
                   <>
                     <div style={{marginBottom:'1.2rem',width:'100%', background:'transparent', boxShadow:'none', border:'none', padding:0}}>
-                      <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.1rem',marginBottom:'0.7rem'}}>Native Plants by Permaculture Section</div>
+                      <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.1rem',marginBottom:'0.7rem',marginTop:'2.5rem'}}>Native Plants by Permaculture Section</div>
                       {sectionMap.map(sec => grouped[sec.key].length > 0 && (
                         <div key={sec.key} style={{marginBottom:'1.1rem', background:'transparent', boxShadow:'none', border:'none', padding:0}}>
                           <div style={{color:'#ffe082',fontWeight:'bold',fontSize:'1.05rem',marginBottom:'0.2rem'}}>{sec.key}</div>
@@ -437,7 +437,7 @@ function appendSiteAnalysis(str) {
               })()}
 
               {/* Section filter buttons always visible, outside plant grouping */}
-              <div style={{display:'flex',flexWrap:'wrap',gap:'0.5rem',justifyContent:'center',marginTop:'1.2rem'}}>
+              <div style={{display:'flex',flexWrap:'wrap',gap:'0.5rem',justifyContent:'center',marginTop:'2.5rem'}}>
                 {['Canopy','Understory','Shrub','Herbaceous','Ground Cover','Root Crop','Vine','Fungi'].map(section => (
                   <button
                     key={section}
