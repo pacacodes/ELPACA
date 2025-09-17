@@ -8,6 +8,8 @@ import { faDog } from '@fortawesome/free-solid-svg-icons';
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
+  // State for showing the right-side section
+  const [activeSection, setActiveSection] = useState(null);
 function appendSiteAnalysis(str) {
   return str.endsWith(' | Site Analysis') ? str : str + ' | Site Analysis';
 }
@@ -234,24 +236,18 @@ function appendSiteAnalysis(str) {
             {/* Native plants display (always show for active project) */}
             {activeProjectFolder && (
               <div style={{
-                position: 'absolute',
-                right: '24px',
-                top: '90px',
                 background: 'transparent',
                 padding: 0,
-                minWidth: '240px',
-                maxWidth: '320px',
-                minHeight: '420px',
-                zIndex: 1002,
+                width: '100%',
                 boxShadow: 'none',
                 border: 'none',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'stretch',
                 justifyContent: 'flex-start',
-                overflowY: 'auto'
+                overflowY: 'visible',
+                marginTop: 0
               }}>
-                <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.1rem',marginBottom:'0.7rem',background:'transparent',border:'none',boxShadow:'none'}}>Native Plants</div>
                 {nativePlants.length > 0 ? (
                   nativePlants.slice(0,3).map((plant, idx) => (
                     <div key={idx} style={{display:'flex',alignItems:'center',marginBottom:'0.7rem',gap:'0.7rem',background:'transparent'}}>
@@ -279,19 +275,24 @@ function appendSiteAnalysis(str) {
                     <button
                       key={section}
                       style={{
-                        background: '#ffe082',
-                        color: '#333',
+                        background: 'rgba(255,255,255,0.18)',
+                        color: '#fff',
                         border: 'none',
                         borderRadius: '6px',
                         padding: '0.32rem 0.9rem',
-                        fontWeight: 'bold',
+                        fontWeight: 'normal',
                         fontSize: '0.98rem',
                         cursor: 'pointer',
                         boxShadow: '0 1px 4px rgba(0,0,0,0.10)',
                         marginBottom: '0',
                         transition: 'background 0.15s',
-                        width: '100%'
+                        width: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.7rem',
+                        justifyContent: 'flex-start'
                       }}
+                      onClick={() => setActiveSection(section)}
                     >
                       {section}
                     </button>
@@ -325,9 +326,29 @@ function appendSiteAnalysis(str) {
             >
               <svg width="18" height="18" viewBox="0 0 18 18">
                 <line x1="3" y1="3" x2="15" y2="15" stroke="white" strokeWidth="2" />
-                <line x1="15" y1="3" x2="3" y2="15" stroke="white" strokeWidth="2" />
+                        flexDirection: 'row',
               </svg>
             </button>
+            {activeSection && (
+              <div style={{
+                minWidth: '260px',
+                minHeight: '400px',
+                marginLeft: '2.5rem',
+                background: 'rgba(60,60,60,0.92)',
+                borderRadius: '12px',
+                boxShadow: '0 4px 24px rgba(0,0,0,0.18)',
+                padding: '1.5rem',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                justifyContent: 'flex-start',
+                color: '#fff',
+                zIndex: 1003
+              }}>
+                <div style={{fontSize:'1.25rem',fontWeight:'bold',marginBottom:'1.2rem'}}>{activeSection}</div>
+                {/* Section content goes here */}
+              </div>
+            )}
           </div>
           {/* Dedicated popup for any layer */}
           {activeLayer && (
