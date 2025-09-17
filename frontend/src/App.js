@@ -281,7 +281,7 @@ function appendSiteAnalysis(str) {
                         color: '#fff',
                         border: 'none',
                         borderRadius: '6px',
-                        padding: '0.48rem 0.9rem', // taller
+                        padding: '0.48rem 0.9rem',
                         fontWeight: 'normal',
                         fontSize: '0.98rem',
                         cursor: 'pointer',
@@ -291,41 +291,58 @@ function appendSiteAnalysis(str) {
                         width: '100%',
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '0.7rem',
+                        gap: '0',
                         justifyContent: 'flex-start',
-                        whiteSpace: 'nowrap' // keep title on one row
+                        whiteSpace: 'nowrap',
+                        position: 'relative',
+                        minHeight: '2.6em'
                       }}
                       onClick={() => setActiveSection(section)}
                     >
                       <span style={{display:'flex',alignItems:'center',gap:'0.5rem'}}>
-                        {section === 'Canopy' && (
-                          <span style={{display:'flex',alignItems:'flex-end',gap:'0'}}>
-                            <FontAwesomeIcon icon={faTree} style={{fontSize:'1.2em', color:'#fff'}} />
-                            <FontAwesomeIcon icon={faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#bdbdbd'}} />
-                          </span>
-                        )}
-                        {section === 'Understory' && (
-                          <span style={{display:'flex',alignItems:'flex-end',gap:'0'}}>
-                            <FontAwesomeIcon icon={faTree} style={{fontSize:'1.2em', color:'#bdbdbd'}} />
-                            <FontAwesomeIcon icon={faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#fff'}} />
-                          </span>
-                        )}
-                        {section === 'Shrub' && <FontAwesomeIcon icon={faCloud} />}
-                        {section === 'Herbaceous' && <FontAwesomeIcon icon={faLeaf} />}
-                        {section === 'Ground Cover' && <FontAwesomeIcon icon={faClover} />}
-                        {section === 'Root Crop' && <FontAwesomeIcon icon={faCarrot} />}
-                        {section === 'Vine' && <FontAwesomeIcon icon={faPagelines} />}
-                        {section === 'Fungi' && <FontAwesomeIcon icon={faDisease} />}
                         <span style={{
-                          display: 'inline-block',
-                          width: '1.5px',
-                          height: '1.25em',
-                          background: 'currentColor',
-                          margin: '0 0.5rem',
-                          verticalAlign: 'middle',
-                          opacity: 0.7
-                        }}></span>
-                        <span>{section}</span>
+                          display: 'flex',
+                          alignItems: 'center',
+                          width: '100%',
+                        }}>
+                          <span style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            minWidth: '2.2em',
+                            marginRight: '0.7em',
+                          }}>
+                            {section === 'Canopy' && (
+                              <span style={{display:'flex',alignItems:'flex-end',gap:'0'}}>
+                                <FontAwesomeIcon icon={faTree} style={{fontSize:'1.2em', color:'#fff'}} />
+                                <FontAwesomeIcon icon={faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#bdbdbd'}} />
+                              </span>
+                            )}
+                            {section === 'Understory' && (
+                              <span style={{display:'flex',alignItems:'flex-end',gap:'0'}}>
+                                <FontAwesomeIcon icon={faTree} style={{fontSize:'1.2em', color:'#bdbdbd'}} />
+                                <FontAwesomeIcon icon={faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#fff'}} />
+                              </span>
+                            )}
+                            {section === 'Shrub' && <FontAwesomeIcon icon={faCloud} />}
+                            {section === 'Herbaceous' && <FontAwesomeIcon icon={faLeaf} />}
+                            {section === 'Ground Cover' && <FontAwesomeIcon icon={faClover} />}
+                            {section === 'Root Crop' && <FontAwesomeIcon icon={faCarrot} />}
+                            {section === 'Vine' && <FontAwesomeIcon icon={faPagelines} />}
+                            {section === 'Fungi' && <FontAwesomeIcon icon={faDisease} />}
+                          </span>
+                          <span style={{
+                            display: 'inline-block',
+                            width: '1.5px',
+                            height: '1.25em',
+                            background: 'currentColor',
+                            margin: '0 0.7em 0 0',
+                            verticalAlign: 'middle',
+                            opacity: 0.7
+                          }}></span>
+                          <span style={{whiteSpace:'nowrap'}}>{section}</span>
+                        </span>
                       </span>
                     </button>
                   ))}
