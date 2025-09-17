@@ -215,7 +215,7 @@ function appendSiteAnalysis(str) {
               Permaculture Layers
             </div>
             {/* Native plants display (always show for active project) */}
-            {activeProjectFolder && nativePlants.length > 0 && (
+            {activeProjectFolder && (
               <div style={{
                 position: 'absolute',
                 right: '24px',
@@ -229,16 +229,51 @@ function appendSiteAnalysis(str) {
                 boxShadow: '0 2px 8px rgba(0,0,0,0.12)'
               }}>
                 <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.1rem',marginBottom:'0.7rem'}}>Native Plants</div>
-                {nativePlants.slice(0,3).map((plant, idx) => (
-                  <div key={idx} style={{display:'flex',alignItems:'center',marginBottom:'0.7rem',gap:'0.7rem'}}>
-                    {plant.image && <img src={plant.image} alt={plant.name} style={{width:'48px',height:'48px',borderRadius:'8px',objectFit:'cover',background:'#eee',marginRight:'0.7rem'}} />}
-                    <div>
-                      <div style={{color:'#fff',fontWeight:'500',fontSize:'1rem'}}>{plant.name}</div>
-                      <div style={{color:'#ccc',fontSize:'0.95rem'}}>{plant.scientific}</div>
-                      {plant.wikipedia && <a href={`https://en.wikipedia.org/wiki/${encodeURIComponent(plant.wikipedia)}`} target="_blank" rel="noopener noreferrer" style={{color:'#61dafb',fontSize:'0.9rem'}}>Wikipedia</a>}
+                {nativePlants.length > 0 ? (
+                  nativePlants.slice(0,3).map((plant, idx) => (
+                    <div key={idx} style={{display:'flex',alignItems:'center',marginBottom:'0.7rem',gap:'0.7rem'}}>
+                      {plant.image && <img src={plant.image} alt={plant.name} style={{width:'48px',height:'48px',borderRadius:'8px',objectFit:'cover',background:'#eee',marginRight:'0.7rem'}} />}
+                      <div>
+                        <div style={{color:'#fff',fontWeight:'500',fontSize:'1rem'}}>{plant.name}</div>
+                        <div style={{color:'#ccc',fontSize:'0.95rem'}}>{plant.scientific}</div>
+                        {plant.wikipedia && <a href={`https://en.wikipedia.org/wiki/${encodeURIComponent(plant.wikipedia)}`} target="_blank" rel="noopener noreferrer" style={{color:'#61dafb',fontSize:'0.9rem'}}>Wikipedia</a>}
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))
+                ) : (
+                  <div style={{color:'#ccc',fontSize:'0.98rem',marginBottom:'0.7rem'}}>No native plants found for this location.</div>
+                )}
+                {/* Section filter buttons always visible in main popup */}
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.5rem',
+                  alignItems: 'stretch',
+                  marginTop: '1.2rem',
+                  width: '100%'
+                }}>
+                  {['Canopy','Understory','Shrub','Herbaceous','Ground Cover','Root Crop','Vine','Fungi'].map(section => (
+                    <button
+                      key={section}
+                      style={{
+                        background: '#ffe082',
+                        color: '#333',
+                        border: 'none',
+                        borderRadius: '6px',
+                        padding: '0.32rem 0.9rem',
+                        fontWeight: 'bold',
+                        fontSize: '0.98rem',
+                        cursor: 'pointer',
+                        boxShadow: '0 1px 4px rgba(0,0,0,0.10)',
+                        marginBottom: '0',
+                        transition: 'background 0.15s',
+                        width: '100%'
+                      }}
+                    >
+                      {section}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
             {/* Spacer between title and buttons */}
@@ -294,21 +329,81 @@ function appendSiteAnalysis(str) {
               <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.3rem',marginBottom:'1.2rem'}}>{activeLayer.replace(' layer','').replace(/\b\w/g, l => l.toUpperCase())} Layer</div>
               <div style={{color:'#fff',fontSize:'1.05rem',marginBottom:'1.2rem'}}>This is a dedicated popup for the {activeLayer.replace(' layer','')} layer.</div>
               {/* Show native plants for this project/address in the permaculture layer popup */}
-              {nativePlants.length > 0 && (
-                <div style={{marginBottom:'1.2rem',width:'100%'}}>
-                  <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.1rem',marginBottom:'0.7rem'}}>Native Plants</div>
-                  {nativePlants.slice(0,3).map((plant, idx) => (
-                    <div key={idx} style={{display:'flex',alignItems:'center',marginBottom:'0.7rem',gap:'0.7rem'}}>
-                      {plant.image && <img src={plant.image} alt={plant.name} style={{width:'48px',height:'48px',borderRadius:'8px',objectFit:'cover',background:'#eee',marginRight:'0.7rem'}} />}
-                      <div>
-                        <div style={{color:'#fff',fontWeight:'500',fontSize:'1rem'}}>{plant.name}</div>
-                        <div style={{color:'#ccc',fontSize:'0.95rem'}}>{plant.scientific}</div>
-                        {plant.wikipedia && <a href={`https://en.wikipedia.org/wiki/${encodeURIComponent(plant.wikipedia)}`} target="_blank" rel="noopener noreferrer" style={{color:'#61dafb',fontSize:'0.9rem'}}>Wikipedia</a>}
-                      </div>
+              {/* Group native plants into permaculture sections and show 3 examples per section */}
+              {/* Group native plants into permaculture sections and show 3 examples per section */}
+              {(() => {
+                // ...existing sectionMap, getSection, and grouping code...
+                const sectionMap = [
+                  { key: 'CANOPY', desc: 'Large shade and nut trees (e.g. Hackberry, Oaks)', match: ['oak','hackberry','walnut','pecan','hickory','elm','maple','beech','chestnut','sycamore'] },
+                  { key: 'UNDERSTORY', desc: 'Dwarf fruit trees (e.g. apple, pear, plums)', match: ['apple','pear','plum','cherry','peach','apricot','pawpaw','persimmon'] },
+                  { key: 'SHRUB', desc: 'Berry and nut bushes (e.g. blueberry, hazelnut)', match: ['blueberry','hazelnut','currant','gooseberry','elderberry','serviceberry','raspberry','blackberry','mulberry'] },
+                  { key: 'HERBACEOUS', desc: 'Flowers, herbs, and vegetables (e.g. chives, asparagus, rhubarb)', match: ['asparagus','rhubarb','chives','mint','sage','basil','dill','fennel','oregano','thyme','echinacea','coneflower','milkweed','aster','goldenrod'] },
+                  { key: 'GROUND COVER', desc: 'Low-growing/sprawling plants (e.g. clover, strawberry)', match: ['clover','strawberry','creeping','vetch','thyme','ajuga','groundsel','phlox','chickweed'] },
+                  { key: 'ROOT CROP', desc: 'Underground tubers and bulbs (e.g. potato, ginger, carrot)', match: ['potato','ginger','carrot','onion','garlic','turnip','radish','beet','yam','jerusalem artichoke'] },
+                  { key: 'VINE', desc: 'Vertical climbers (e.g. grape, maypop)', match: ['grape','maypop','passionflower','kiwi','cucumber','bean','pea','honeysuckle','wisteria'] },
+                  { key: 'FUNGI', desc: 'Edible and non-edible mushrooms', match: ['mushroom','fungi','morel','chanterelle','shiitake','oyster','boletus','agaricus'] }
+                ];
+                function getSection(plant) {
+                  const name = (plant.name || plant.scientific || '').toLowerCase();
+                  for (const sec of sectionMap) {
+                    if (sec.match.some(m => name.includes(m))) return sec.key;
+                  }
+                  return 'OTHER';
+                }
+                const grouped = {};
+                for (const sec of sectionMap) grouped[sec.key] = [];
+                for (const plant of nativePlants) {
+                  const sec = getSection(plant);
+                  if (grouped[sec] && grouped[sec].length < 3) grouped[sec].push(plant);
+                }
+                return (
+                  <>
+                    <div style={{marginBottom:'1.2rem',width:'100%'}}>
+                      <div style={{fontWeight:'bold',color:'#fff',fontSize:'1.1rem',marginBottom:'0.7rem'}}>Native Plants by Permaculture Section</div>
+                      {sectionMap.map(sec => grouped[sec.key].length > 0 && (
+                        <div key={sec.key} style={{marginBottom:'1.1rem'}}>
+                          <div style={{color:'#ffe082',fontWeight:'bold',fontSize:'1.05rem',marginBottom:'0.2rem'}}>{sec.key}</div>
+                          <div style={{color:'#bbb',fontSize:'0.95rem',marginBottom:'0.3rem'}}>{sec.desc}</div>
+                          {grouped[sec.key].map((plant, idx) => (
+                            <div key={plant.name+idx} style={{display:'flex',alignItems:'center',marginBottom:'0.7rem',gap:'0.7rem'}}>
+                              {plant.image && <img src={plant.image} alt={plant.name} style={{width:'48px',height:'48px',borderRadius:'8px',objectFit:'cover',background:'#eee',marginRight:'0.7rem'}} />}
+                              <div>
+                                <div style={{color:'#fff',fontWeight:'500',fontSize:'1rem'}}>{plant.name}</div>
+                                <div style={{color:'#ccc',fontSize:'0.95rem'}}>{plant.scientific}</div>
+                                {plant.wikipedia && <a href={`https://en.wikipedia.org/wiki/${encodeURIComponent(plant.wikipedia)}`} target="_blank" rel="noopener noreferrer" style={{color:'#61dafb',fontSize:'0.9rem'}}>Wikipedia</a>}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              )}
+                  </>
+                );
+              })()}
+
+              {/* Section filter buttons always visible, outside plant grouping */}
+              <div style={{display:'flex',flexWrap:'wrap',gap:'0.5rem',justifyContent:'center',marginTop:'1.2rem'}}>
+                {['Canopy','Understory','Shrub','Herbaceous','Ground Cover','Root Crop','Vine','Fungi'].map(section => (
+                  <button
+                    key={section}
+                    style={{
+                      background: '#ffe082',
+                      color: '#333',
+                      border: 'none',
+                      borderRadius: '6px',
+                      padding: '0.32rem 0.9rem',
+                      fontWeight: 'bold',
+                      fontSize: '0.98rem',
+                      cursor: 'pointer',
+                      boxShadow: '0 1px 4px rgba(0,0,0,0.10)',
+                      marginBottom: '0.2rem',
+                      transition: 'background 0.15s'
+                    }}
+                  >
+                    {section}
+                  </button>
+                ))}
+              </div>
               <button
                 style={{
                   marginTop: '0.5rem',
