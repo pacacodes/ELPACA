@@ -102,7 +102,8 @@ function appendSiteAnalysis(str) {
           </div>
           <div style={{display:'flex',flexDirection:'column',alignItems:'flex-start',justifyContent:'center',minWidth:'220px',maxWidth:'320px'}}>
             <span style={{color:'#888',fontSize:'1.08rem',fontWeight:'bold'}}>{
-              activeNav === 0 ? 'Projects' :
+              activeNav === -1 ? 'Projects' :
+              activeNav === 0 ? 'Ideas' :
               activeNav === 1 ? 'Site Analysis' :
               activeNav === 2 ? 'Design Development' :
               activeNav === 3 ? 'Construction Documents' :
@@ -360,7 +361,8 @@ function appendSiteAnalysis(str) {
                 pointerEvents: 'auto',
                 zIndex: 1003,
               }}
-              aria-label={`Circle button ${i+1}`}
+              aria-label={i === 0 ? 'Ideas' : `Circle button ${i+1}`}
+              title={i === 0 ? 'Ideas' : undefined}
               onClick={() => setActiveNav(i)}
             >
               {i === 0 ? (
@@ -399,9 +401,12 @@ function appendSiteAnalysis(str) {
             justifyContent: 'center',
             fontSize: '2rem',
             zIndex: 1004,
+            flexDirection: 'column',
+            padding: 0
           }}
-          aria-label="Alpaca"
-          onClick={() => setAlpacaPopupOpen(true)}
+          aria-label="Projects"
+          title="Projects"
+          onClick={() => { setActiveNav(-1); setAlpacaPopupOpen(true); }}
         >
           <FontAwesomeIcon icon={faDog} style={{ fontSize: '1.4rem' }} />
         </button>
