@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTree, faCloud, faMountain, faThLarge, faLaptop, faList, faEye, faDollarSign, faPaperclip, faCalendarAlt, faPlus, faMap, faPen, faDraftingCompass, faHardHat, faTasks } from '@fortawesome/free-solid-svg-icons';
+import { faTree, faCloud, faMountain, faThLarge, faLaptop, faList, faEye, faDollarSign, faPaperclip, faCalendarAlt, faPlus, faMap, faPen, faDraftingCompass, faHardHat, faTasks, faLeaf, faCarrot, faSeedling } from '@fortawesome/free-solid-svg-icons';
 import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import { faPagelines } from '@fortawesome/free-brands-svg-icons';
 import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
@@ -294,7 +294,18 @@ function appendSiteAnalysis(str) {
                       }}
                       onClick={() => setActiveSection(section)}
                     >
-                      {section}
+                      <span style={{display:'flex',alignItems:'center',gap:'0.5rem'}}>
+                        {section === 'Canopy' && <FontAwesomeIcon icon={faTree} />}
+                        {section === 'Understory' && <FontAwesomeIcon icon={faCloud} />}
+                        {section === 'Shrub' && <FontAwesomeIcon icon={faPagelines} />}
+                        {section === 'Herbaceous' && <FontAwesomeIcon icon={faLeaf} />}
+                        {section === 'Ground Cover' && <FontAwesomeIcon icon={faThLarge} />}
+                        {section === 'Root Crop' && <FontAwesomeIcon icon={faCarrot} />}
+                        {section === 'Vine' && <FontAwesomeIcon icon={faMountain} />}
+                        {section === 'Fungi' && <FontAwesomeIcon icon={faSeedling} />}
+                        <span style={{margin:'0 0.5rem',color:'#ffe082',fontWeight:'bold'}}>|</span>
+                        <span>{section}</span>
+                      </span>
                     </button>
                   ))}
                 </div>
