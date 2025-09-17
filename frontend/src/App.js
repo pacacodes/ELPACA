@@ -380,9 +380,11 @@ function appendSiteAnalysis(str) {
             </button>
             {activeSection && (
               <div style={{
+                position: 'fixed',
+                top: popupPos.y,
+                left: popupPos.x + 420, // 420px is approx width of main popup
                 minWidth: '260px',
                 minHeight: '400px',
-                marginLeft: '2.5rem',
                 background: 'rgba(60,60,60,0.92)',
                 borderRadius: '12px',
                 boxShadow: '0 4px 24px rgba(0,0,0,0.18)',
@@ -392,7 +394,7 @@ function appendSiteAnalysis(str) {
                 alignItems: 'flex-start',
                 justifyContent: 'flex-start',
                 color: '#fff',
-                zIndex: 1003
+                zIndex: 2001
               }}>
                 <div style={{fontSize:'1.25rem',fontWeight:'bold',marginBottom:'1.2rem'}}>{activeSection}</div>
                 {/* Section content goes here */}
