@@ -63,6 +63,23 @@ function appendSiteAnalysis(str) {
   const [popupPos, setPopupPos] = useState({ x: window.innerWidth / 2 - 170, y: window.innerHeight / 2 - 150 });
   const [dragging, setDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+
+  // Drag event handlers for popup
+  React.useEffect(() => {
+    if (!dragging) return;
+    function onMouseMove(e) {
+      setPopupPos({ x: e.clientX - dragOffset.x, y: e.clientY - dragOffset.y });
+    }
+    function onMouseUp() {
+      setDragging(false);
+    }
+    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mouseup', onMouseUp);
+    return () => {
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
+    };
+  }, [dragging, dragOffset]);
   const [activeLayer, setActiveLayer] = useState(null);
 
   // New address fields
@@ -425,16 +442,7 @@ function appendSiteAnalysis(str) {
               >Close</button>
             </div>
           )}
-          {/* Drag logic */}
-          {dragging && (
-            <div
-              style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: 1001, cursor: 'grabbing' }}
-              onMouseMove={e => {
-                setPopupPos({ x: e.clientX - dragOffset.x, y: e.clientY - dragOffset.y });
-              }}
-              onMouseUp={() => setDragging(false)}
-            />
-          )}
+          {/* Drag logic handled globally with window event listeners */}
         </div>
       )}
 
