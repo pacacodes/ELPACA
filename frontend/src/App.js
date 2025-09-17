@@ -18,6 +18,25 @@ function appendSiteAnalysis(str) {
   // 0: Lightbulb, 1: Map, 2: Pen, 3: Compass, 4: HardHat, 5: Tasks
   const [activeNav, setActiveNav] = useState(0);
   const [popupOpen, setPopupOpen] = useState(false);
+  // Fetch native plants for the project location when permaculture popup opens
+  React.useEffect(() => {
+    if (popupOpen && activeProjectFolder && activeProjectFolder.address) {
+      fetch('/api/native-plants', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ address: activeProjectFolder.address })
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data && Array.isArray(data.plants)) {
+            setNativePlants(data.plants);
+          } else {
+            setNativePlants([]);
+          }
+        })
+        .catch(() => setNativePlants([]));
+    }
+  }, [popupOpen, activeProjectFolder]);
   const sampleProject = React.useMemo(() => ({
     name: 'Sample Project',
     address: '2442 Crest View Drive, Los Angeles, CA 90046',
