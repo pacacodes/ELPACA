@@ -1,6 +1,8 @@
+import { faClover } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTree, faCloud, faMountain, faThLarge, faLaptop, faList, faEye, faDollarSign, faPaperclip, faCalendarAlt, faPlus, faMap, faPen, faDraftingCompass, faHardHat, faTasks, faLeaf, faCarrot, faSeedling } from '@fortawesome/free-solid-svg-icons';
+import { faTree, faCloud, faMountain, faThLarge, faLaptop, faList, faEye, faDollarSign, faPaperclip, faCalendarAlt, faPlus, faMap, faPen, faDraftingCompass, faHardHat, faTasks, faLeaf, faCarrot, faSeedling, faDisease } from '@fortawesome/free-solid-svg-icons';
+import { faSpa } from '@fortawesome/free-solid-svg-icons';
 import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import { faPagelines } from '@fortawesome/free-brands-svg-icons';
 import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
@@ -279,7 +281,7 @@ function appendSiteAnalysis(str) {
                         color: '#fff',
                         border: 'none',
                         borderRadius: '6px',
-                        padding: '0.32rem 0.9rem',
+                        padding: '0.48rem 0.9rem', // taller
                         fontWeight: 'normal',
                         fontSize: '0.98rem',
                         cursor: 'pointer',
@@ -290,20 +292,29 @@ function appendSiteAnalysis(str) {
                         display: 'flex',
                         alignItems: 'center',
                         gap: '0.7rem',
-                        justifyContent: 'flex-start'
+                        justifyContent: 'flex-start',
+                        whiteSpace: 'nowrap' // keep title on one row
                       }}
                       onClick={() => setActiveSection(section)}
                     >
                       <span style={{display:'flex',alignItems:'center',gap:'0.5rem'}}>
                         {section === 'Canopy' && <FontAwesomeIcon icon={faTree} />}
-                        {section === 'Understory' && <FontAwesomeIcon icon={faCloud} />}
-                        {section === 'Shrub' && <FontAwesomeIcon icon={faPagelines} />}
+                        {section === 'Understory' && <FontAwesomeIcon icon={faTree} style={{fontSize:'0.6em'}} />}
+                        {section === 'Shrub' && <FontAwesomeIcon icon={faCloud} />}
                         {section === 'Herbaceous' && <FontAwesomeIcon icon={faLeaf} />}
-                        {section === 'Ground Cover' && <FontAwesomeIcon icon={faThLarge} />}
+                        {section === 'Ground Cover' && <FontAwesomeIcon icon={faClover} />}
                         {section === 'Root Crop' && <FontAwesomeIcon icon={faCarrot} />}
-                        {section === 'Vine' && <FontAwesomeIcon icon={faMountain} />}
-                        {section === 'Fungi' && <FontAwesomeIcon icon={faSeedling} />}
-                        <span style={{margin:'0 0.5rem',color:'#ffe082',fontWeight:'bold'}}>|</span>
+                        {section === 'Vine' && <FontAwesomeIcon icon={faPagelines} />}
+                        {section === 'Fungi' && <FontAwesomeIcon icon={faDisease} />}
+                        <span style={{
+                          display: 'inline-block',
+                          width: '1.5px',
+                          height: '1.25em',
+                          background: 'currentColor',
+                          margin: '0 0.5rem',
+                          verticalAlign: 'middle',
+                          opacity: 0.7
+                        }}></span>
                         <span>{section}</span>
                       </span>
                     </button>
