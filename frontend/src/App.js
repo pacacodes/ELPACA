@@ -298,7 +298,12 @@ function appendSiteAnalysis(str) {
                       onClick={() => setActiveSection(section)}
                     >
                       <span style={{display:'flex',alignItems:'center',gap:'0.5rem'}}>
-                        {section === 'Canopy' && <FontAwesomeIcon icon={faTree} />}
+                        {section === 'Canopy' && (
+                          <span style={{display:'flex',alignItems:'flex-end',gap:'0'}}>
+                            <FontAwesomeIcon icon={faTree} style={{fontSize:'1.2em', color:'#fff'}} />
+                            <FontAwesomeIcon icon={faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#bdbdbd'}} />
+                          </span>
+                        )}
                         {section === 'Understory' && (
                           <span style={{display:'flex',alignItems:'flex-end',gap:'0'}}>
                             <FontAwesomeIcon icon={faTree} style={{fontSize:'1.2em', color:'#bdbdbd'}} />
