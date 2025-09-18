@@ -83,7 +83,7 @@ function AlpacaPopup({
         {/* If a folder is open, show its content */}
         {activeProjectFolder ? (
           <div style={{marginTop:'60px',width:'100%',display:'flex',flexDirection:'column',alignItems:'center',gap:'1.2rem'}}>
-            <span role="img" aria-label="alpaca" style={{ fontSize: '2.2rem', color: '#fff' }}>🦙</span>
+            <img src={process.env.PUBLIC_URL + '/favicon.ico'} alt="alpaca icon" style={{ width: '38px', height: '38px', display: 'block', filter: 'brightness(0) invert(1)' }} />
             <div style={{color:'#fff',fontSize:'1.1rem',textAlign:'center'}}>
               <div>Welcome to <b>{activeProjectFolder.name || activeProjectFolder}</b>!</div>
               {activeProjectFolder.address && (
