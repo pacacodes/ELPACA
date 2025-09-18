@@ -12,6 +12,8 @@ import AlpacaPopup from './AlpacaPopup';
 
 function App() {
   const [activeSection, setActiveSection] = useState(null);
+
+
   const [activeProjectFolder, setActiveProjectFolder] = useState(null);
   const [activeLayout, setActiveLayout] = useState('');
   const [activeNav, setActiveNav] = useState(0);
@@ -31,7 +33,6 @@ function App() {
   const [newFolderZip, setNewFolderZip] = useState('');
   const [newFolderCountry, setNewFolderCountry] = useState('');
   const [nativePlants, setNativePlants] = useState([]);
-
   const sampleProject = useMemo(() => ({
     name: 'Sample Project',
     address: '2442 Crest View Drive, Los Angeles, CA 90046',
@@ -39,12 +40,13 @@ function App() {
     description: 'A sample project to explore features before starting your own.',
     file: 'Sample_Project.epc'
   }), []);
-
   useEffect(() => {
     if (!activeProjectFolder) {
       setActiveProjectFolder(sampleProject);
     }
   }, [activeProjectFolder, sampleProject]);
+
+
 
   useEffect(() => {
     if (popupOpen && activeProjectFolder && activeProjectFolder.address) {
