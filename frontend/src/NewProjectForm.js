@@ -67,6 +67,12 @@ function NewProjectForm({
           if (e.key === 'Enter' && newFolderName.trim() && newFolderStreet && newFolderCity && newFolderState && newFolderZip && newFolderCountry) {
             const address = `${newFolderStreet}, ${newFolderCity}, ${newFolderState} ${newFolderZip}, ${newFolderCountry}`;
             const newFolder = { name: newFolderName.trim(), address };
+            // Save project to backend
+            await fetch('/api/projects', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(newFolder)
+            });
             setNamingFolder(false);
             setNewFolderName('');
             setNewFolderStreet('');

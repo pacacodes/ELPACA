@@ -1,3 +1,4 @@
+
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
@@ -8,6 +9,129 @@ const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+
+// Utility: Append a new user to users.json
+async function appendUser(user) {
+  const filePath = path.join(__dirname, 'data', 'users.json');
+  let users = [];
+  try {
+    const content = await fs.promises.readFile(filePath, 'utf-8');
+    users = JSON.parse(content);
+  } catch (err) {
+    if (err.code !== 'ENOENT') throw err;
+  }
+  users.push(user);
+  await fs.promises.writeFile(filePath, JSON.stringify(users, null, 2));
+}
+
+// API: Append a new user (POST /api/users)
+app.post('/api/users', async (req, res) => {
+  const user = req.body;
+  if (!user || !user.id) {
+    return res.status(400).json({ error: 'Missing user data or id' });
+  }
+  try {
+    await appendUser(user);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to append user', details: err.message });
+  }
+});
+
+// Utility: Add or update a Wikipedia entry in wikipedia.json
+async function upsertWikipediaEntry(entry) {
+  const filePath = path.join(__dirname, 'data', 'wikipedia.json');
+  let wikiData = {};
+  try {
+    const content = await fs.promises.readFile(filePath, 'utf-8');
+    wikiData = JSON.parse(content);
+  } catch (err) {
+    if (err.code !== 'ENOENT') throw err;
+  }
+  // Use scientific name as key
+  if (entry && entry.scientific && entry.wikipedia) {
+    wikiData[entry.scientific] = entry.wikipedia;
+    await fs.promises.writeFile(filePath, JSON.stringify(wikiData, null, 2));
+  }
+}
+
+// API: Add or update a Wikipedia entry (POST /api/wikipedia)
+app.post('/api/wikipedia', async (req, res) => {
+  const entry = req.body;
+  if (!entry || !entry.scientific || !entry.wikipedia) {
+    return res.status(400).json({ error: 'Missing scientific or wikipedia data' });
+  }
+  try {
+    await upsertWikipediaEntry(entry);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to upsert wikipedia entry', details: err.message });
+  }
+});
+
+// Utility: Save JSON data to a file
+function saveJsonToFile(filename, data) {
+  const filePath = path.join(__dirname, 'data', filename);
+  return fs.promises.writeFile(filePath, JSON.stringify(data, null, 2));
+}
+
+// Utility: Read JSON data from a file
+async function readJsonFromFile(filename) {
+  const filePath = path.join(__dirname, 'data', filename);
+  const content = await fs.promises.readFile(filePath, 'utf-8');
+  return JSON.parse(content);
+}
+
+// API: Save a user project (POST /api/projects)
+app.post('/api/projects', async (req, res) => {
+  const project = req.body;
+  if (!project || !project.name) {
+    return res.status(400).json({ error: 'Missing project data or name' });
+  }
+  try {
+    await saveJsonToFile(`${project.name.replace(/\s+/g, '_')}.project.json`, project);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to save project', details: err.message });
+  }
+});
+
+// API: Get a user project (GET /api/projects/:name)
+app.get('/api/projects/:name', async (req, res) => {
+  const name = req.params.name;
+  try {
+    const project = await readJsonFromFile(`${name.replace(/\s+/g, '_')}.project.json`);
+    res.json(project);
+  } catch (err) {
+    res.status(404).json({ error: 'Project not found', details: err.message });
+  }
+});
+
+// API: Save plant selections for a project (POST /api/projects/:name/plants)
+app.post('/api/projects/:name/plants', async (req, res) => {
+  const name = req.params.name;
+  const plants = req.body;
+  if (!Array.isArray(plants)) {
+    return res.status(400).json({ error: 'Plants data must be an array' });
+  }
+  try {
+    await saveJsonToFile(`${name.replace(/\s+/g, '_')}.plants.json`, plants);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to save plant selections', details: err.message });
+  }
+});
+
+// API: Get plant selections for a project (GET /api/projects/:name/plants)
+app.get('/api/projects/:name/plants', async (req, res) => {
+  const name = req.params.name;
+  try {
+    const plants = await readJsonFromFile(`${name.replace(/\s+/g, '_')}.plants.json`);
+    res.json(plants);
+  } catch (err) {
+    res.status(404).json({ error: 'Plant selections not found', details: err.message });
+  }
+});
 
 
 // API endpoint to create empty project files (.rvt, .pln, .ifc)

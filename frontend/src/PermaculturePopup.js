@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTree, faCloud, faLeaf, faClover, faCarrot, faPagelines, faDisease, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faTree, faCloud, faLeaf, faClover, faCarrot, faDisease, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPagelines } from '@fortawesome/free-brands-svg-icons';
 
 function PermaculturePopup({
   popupOpen,
