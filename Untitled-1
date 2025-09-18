@@ -1,0 +1,1 @@
+<img src={process.env.PUBLIC_URL + '/alpaca-icon.png'} alt="alpaca icon" style={{ width: '32px', height: '32px', display: 'block' }} />

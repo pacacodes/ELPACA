@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLightbulb, faMap, faPen, faDraftingCompass, faHardHat, faTasks, faDog } from '@fortawesome/free-solid-svg-icons';
+import { faLightbulb, faMap, faPen, faDraftingCompass, faHardHat, faTasks } from '@fortawesome/free-solid-svg-icons';
 
 function NavigationCircle({ setActiveNav, setAlpacaPopupOpen }) {
   return (
@@ -95,7 +95,7 @@ function NavigationCircle({ setActiveNav, setAlpacaPopupOpen }) {
           title="Projects"
           onClick={() => { setActiveNav(-1); setAlpacaPopupOpen(true); }}
         >
-          <FontAwesomeIcon icon={faDog} style={{ fontSize: '1.4rem' }} />
+          <img src={process.env.PUBLIC_URL + '/favicon.ico'} alt="alpaca icon" style={{ width: '32px', height: '32px', display: 'block' }} />
         </button>
       </div>
     </>

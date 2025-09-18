@@ -95,9 +95,18 @@ function PermaculturePopup({
           <div style={{marginTop:'3.5rem',marginBottom:'1.5rem',width:'100%'}}>
             <div style={{color:'#fff',fontWeight:'bold',fontSize:'1.08rem',marginBottom:'0.5rem'}}>Native Plants</div>
             <div style={{display:'flex',flexWrap:'wrap',gap:'0.5rem'}}>
-              {nativePlants && nativePlants.length > 0 ? nativePlants.map((plant, idx) => (
-                <span key={idx} style={{background:'#a8be96',color:'#fff',borderRadius:'6px',padding:'0.2rem 0.7rem',fontSize:'0.98rem'}}>{plant}</span>
-              )) : <span style={{color:'#bbb'}}>No data</span>}
+              {nativePlants && nativePlants.length > 0 ? nativePlants.map((plant, idx) => {
+                // Display plant info: name, scientific, Wikipedia link if available
+                let name = plant.name || plant.common || plant.scientific || (typeof plant === 'string' ? plant : '');
+                let sci = plant.scientific ? ` (${plant.scientific})` : '';
+                let wiki = plant.wikipedia ? ` | ` : '';
+                let wikiLink = plant.wikipedia ? <a href={plant.wikipedia} target="_blank" rel="noopener noreferrer" style={{color:'#fff',textDecoration:'underline'}}>Wikipedia</a> : null;
+                return (
+                  <span key={idx} style={{background:'#a8be96',color:'#fff',borderRadius:'6px',padding:'0.2rem 0.7rem',fontSize:'0.98rem',display:'flex',alignItems:'center',gap:'0.3rem'}}>
+                    {name}{sci}{wiki}{wikiLink}
+                  </span>
+                );
+              }) : <span style={{color:'#bbb'}}>No data</span>}
             </div>
           </div>
         )}
