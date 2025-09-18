@@ -18,6 +18,27 @@ function PermaculturePopup({
   nativePlants,
   sectionList
 }) {
+  React.useEffect(() => {
+    // Save plant selections and Wikipedia data when nativePlants and project are available
+    if (activeProjectFolder && nativePlants && nativePlants.length > 0) {
+      // Save plant selections
+      fetch(`/api/projects/${encodeURIComponent(activeProjectFolder.name)}/plants`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(nativePlants)
+      });
+      // Save Wikipedia entries if available
+      nativePlants.forEach(plant => {
+        if (plant.scientific && plant.wikipedia) {
+          fetch('/api/wikipedia', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ scientific: plant.scientific, wikipedia: plant.wikipedia })
+          });
+        }
+      });
+    }
+  }, [activeProjectFolder, nativePlants]);
   if (!popupOpen) return null;
   return (
     <div
