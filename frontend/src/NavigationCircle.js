@@ -78,10 +78,10 @@ function NavigationCircle({ setActiveNav, setAlpacaPopupOpen }) {
             width: '48px',
             height: '48px',
             borderRadius: '50%',
-            background: '#fff',
+            background: 'transparent',
             color: '#333',
             border: 'none',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.20)',
+            boxShadow: 'none',
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
@@ -95,7 +95,7 @@ function NavigationCircle({ setActiveNav, setAlpacaPopupOpen }) {
           title="Projects"
           onClick={() => { setActiveNav(-1); setAlpacaPopupOpen(true); }}
         >
-          <img src={process.env.PUBLIC_URL + '/favicon.ico'} alt="alpaca icon" style={{ width: '32px', height: '32px', display: 'block' }} />
+          <img src={process.env.PUBLIC_URL + '/favicon.ico'} alt="alpaca icon" style={{ width: '32.96px', height: '32.96px', display: 'block' }} />
         </button>
       </div>
     </>
