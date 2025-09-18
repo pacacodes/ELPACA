@@ -95,7 +95,7 @@ function NavigationCircle({ setActiveNav, setAlpacaPopupOpen }) {
           title="Projects"
           onClick={() => { setActiveNav(-1); setAlpacaPopupOpen(true); }}
         >
-          <img src={process.env.PUBLIC_URL + '/favicon.ico'} alt="alpaca icon" style={{ width: '32.96px', height: '32.96px', display: 'block' }} />
+          <img src={process.env.PUBLIC_URL + '/favicon.ico'} alt="alpaca icon" style={{ width: '37.42px', height: '37.42px', display: 'block' }} />
         </button>
       </div>
     </>
@@ -103,3 +103,4 @@ function NavigationCircle({ setActiveNav, setAlpacaPopupOpen }) {
 }
 
 export default NavigationCircle;
+
