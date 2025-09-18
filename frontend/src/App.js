@@ -4,12 +4,17 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import ProjectHeader from './ProjectHeader';
 import PermaculturePopup from './PermaculturePopup';
 import NewProjectForm from './NewProjectForm';
+import NavigationCircle from './NavigationCircle';
+import LayoutsColumn from './LayoutsColumn';
+import CommunicationColumn from './CommunicationColumn';
+import ViewsColumn from './ViewsColumn';
 
 function App() {
   const [activeSection, setActiveSection] = useState(null);
   const [activeProjectFolder, setActiveProjectFolder] = useState(null);
   const [activeLayout, setActiveLayout] = useState('');
   const [activeNav, setActiveNav] = useState(0);
+  const [alpacaPopupOpen, setAlpacaPopupOpen] = useState(false);
   const [popupOpen, setPopupOpen] = useState(false);
   const [popupPos, setPopupPos] = useState({ x: window.innerWidth / 2 - 170, y: window.innerHeight / 2 - 150 });
   const [dragging, setDragging] = useState(false);
@@ -58,6 +63,10 @@ function App() {
 
   return (
     <div style={{ padding: '2rem', position: 'relative', minHeight: '100vh' }}>
+      <NavigationCircle setActiveNav={setActiveNav} setAlpacaPopupOpen={setAlpacaPopupOpen} />
+      <LayoutsColumn setActiveLayout={setActiveLayout} />
+      <CommunicationColumn />
+      <ViewsColumn />
       <ProjectHeader
         projectName={sampleProject.name}
         projectAddress={sampleProject.address}
