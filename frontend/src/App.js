@@ -8,6 +8,7 @@ import NavigationCircle from './NavigationCircle';
 import LayoutsColumn from './LayoutsColumn';
 import CommunicationColumn from './CommunicationColumn';
 import ViewsColumn from './ViewsColumn';
+import AlpacaPopup from './AlpacaPopup';
 
 function App() {
   const [activeSection, setActiveSection] = useState(null);
@@ -15,6 +16,9 @@ function App() {
   const [activeLayout, setActiveLayout] = useState('');
   const [activeNav, setActiveNav] = useState(0);
   const [alpacaPopupOpen, setAlpacaPopupOpen] = useState(false);
+  const [alpacaPopupPos, setAlpacaPopupPos] = useState({ x: window.innerWidth / 2 - 160, y: window.innerHeight / 2 - 90 });
+  const [alpacaDragging, setAlpacaDragging] = useState(false);
+  const [alpacaDragOffset, setAlpacaDragOffset] = useState({ x: 0, y: 0 });
   const [popupOpen, setPopupOpen] = useState(false);
   const [popupPos, setPopupPos] = useState({ x: window.innerWidth / 2 - 170, y: window.innerHeight / 2 - 150 });
   const [dragging, setDragging] = useState(false);
@@ -67,6 +71,22 @@ function App() {
       <LayoutsColumn setActiveLayout={setActiveLayout} />
       <CommunicationColumn />
       <ViewsColumn />
+      <AlpacaPopup
+        alpacaPopupOpen={alpacaPopupOpen}
+        setAlpacaPopupOpen={setAlpacaPopupOpen}
+        alpacaPopupPos={alpacaPopupPos}
+        setAlpacaPopupPos={setAlpacaPopupPos}
+        alpacaDragging={alpacaDragging}
+        setAlpacaDragging={setAlpacaDragging}
+        alpacaDragOffset={alpacaDragOffset}
+        setAlpacaDragOffset={setAlpacaDragOffset}
+        activeProjectFolder={activeProjectFolder}
+        setActiveProjectFolder={setActiveProjectFolder}
+        setPopupOpen={setPopupOpen}
+        setNamingFolder={setNamingFolder}
+        setNewFolderName={setNewFolderName}
+        allProjectFolders={[sampleProject]}
+      />
       <ProjectHeader
         projectName={sampleProject.name}
         projectAddress={sampleProject.address}
