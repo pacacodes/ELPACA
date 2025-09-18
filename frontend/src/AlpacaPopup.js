@@ -1,4 +1,6 @@
 import React from 'react';
+import BackToProjectsButton from './BackToProjectsButton';
+import ProjectsPopup from './ProjectsPopup';
 
 function AlpacaPopup({
   alpacaPopupOpen,
@@ -80,7 +82,7 @@ function AlpacaPopup({
         <div style={{width:'100%',textAlign:'center',position:'absolute',top:'18px',left:0,fontWeight:'bold',color:'#fff',fontSize:'1.1rem',letterSpacing:'0.04em'}}>
           {activeProjectFolder ? (activeProjectFolder.name || activeProjectFolder) : 'Projects'}
         </div>
-        {/* If a folder is open, show its content */}
+        {/* If a folder is open, show its content, else show ProjectsPopup */}
         {activeProjectFolder ? (
           <div style={{marginTop:'60px',width:'100%',display:'flex',flexDirection:'column',alignItems:'center',gap:'1.2rem'}}>
             <img src={process.env.PUBLIC_URL + '/favicon.ico'} alt="alpaca icon" style={{ width: '38px', height: '38px', display: 'block', filter: 'brightness(0) invert(1)' }} />
@@ -90,81 +92,21 @@ function AlpacaPopup({
                 <div style={{fontSize:'1rem',color:'#ccc',marginTop:'0.5rem'}}>Location: <b>{activeProjectFolder.address}</b></div>
               )}
             </div>
-            <button
-              style={{marginTop:'1.2rem',background:'rgba(168,190,150,0.7)',color:'#333',border:'none',borderRadius:'6px',padding:'0.4rem 1.2rem',fontWeight:'bold',cursor:'pointer'}}
-              onClick={() => {
-                setAlpacaPopupOpen(false);
-                setPopupOpen(true);
-              }}
-            >Back to Projects</button>
+            <BackToProjectsButton
+              setActiveProjectFolder={setActiveProjectFolder}
+              setAlpacaPopupOpen={setAlpacaPopupOpen}
+              setProjectsPopupOpen={setPopupOpen}
+            />
           </div>
         ) : (
-          <>
-            {/* Plus button in bottom right of popup */}
-            <button
-              style={{
-                position: 'absolute',
-                left: '18px',
-                bottom: '18px',
-                width: '30px',
-                height: '30px',
-                borderRadius: '50%',
-                background: 'rgba(168, 190, 150, 0.7)',
-                color: 'white',
-                border: 'none',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '0.83rem',
-                zIndex: 2002,
-              }}
-              aria-label="Add project"
-              title="Add project"
-              onClick={() => {
-                setNamingFolder(true);
-                setNewFolderName('');
-              }}
-            >
-              +
-            </button>
-            {/* Project folders list */}
-            <div style={{marginTop:'60px',width:'100%',display:'flex',flexDirection:'column',alignItems:'flex-start',gap:'0.7rem'}}>
-              {allProjectFolders.map((folder, idx) => (
-                <button key={idx}
-                  style={{
-                    background:'rgba(255,255,255,0.08)',
-                    borderRadius:'8px',
-                    padding:'0.5rem 1rem',
-                    color:'#fff',
-                    fontWeight:'500',
-                    fontSize:'1rem',
-                    marginBottom:'0.2rem',
-                    display:'flex',
-                    alignItems:'center',
-                    gap:'0.7rem',
-                    cursor:'pointer',
-                    border:'none',
-                    width:'100%',
-                    textAlign:'left',
-                  }}
-                  onClick={() => {
-                    setActiveProjectFolder(folder);
-                    setPopupOpen(false);
-                    setAlpacaPopupOpen(false);
-                    setNamingFolder(false);
-                    setNewFolderName('');
-                  }}
-                  aria-label={`Open project ${folder.name || folder}`}
-                >
-                  <span role="img" aria-label="alpaca" style={{ fontSize: '1.2rem', color: '#fff' }}>🦙</span>
-                  <span style={{marginLeft:'0.7rem'}}>{folder.name || folder}</span>
-                  {folder.address && <span style={{fontSize:'0.9rem',color:'#ccc',marginLeft:'0.7rem'}}>{folder.address}</span>}
-                </button>
-              ))}
-            </div>
-          </>
+          <ProjectsPopup
+            allProjectFolders={allProjectFolders}
+            setActiveProjectFolder={setActiveProjectFolder}
+            setNamingFolder={setNamingFolder}
+            setNewFolderName={setNewFolderName}
+            setAlpacaPopupOpen={setAlpacaPopupOpen}
+            setPopupOpen={setPopupOpen}
+          />
         )}
         {alpacaDragging && (
           <div

@@ -93,7 +93,10 @@ function NavigationCircle({ setActiveNav, setAlpacaPopupOpen }) {
           }}
           aria-label="Projects"
           title="Projects"
-          onClick={() => { setActiveNav(-1); setAlpacaPopupOpen(true); }}
+          onClick={() => {
+            setActiveNav(-1);
+            setAlpacaPopupOpen(true);
+          }}
         >
           <img src={process.env.PUBLIC_URL + '/favicon.ico'} alt="alpaca icon" style={{ width: '37.42px', height: '37.42px', display: 'block' }} />
         </button>
