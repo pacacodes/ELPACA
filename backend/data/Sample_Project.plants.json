@@ -1,20 +1,20 @@
 [
   {
-    "name": "Willows",
-    "scientific": "Salix",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/11846/medium.jpg",
-    "wikipedia": "Willow"
+    "name": "Sacred Datura",
+    "scientific": "Datura wrightii",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/240640006/medium.jpg",
+    "wikipedia": "Datura wrightii"
   },
   {
-    "name": "yellow trumpet flower",
-    "scientific": "Tecoma stans",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/248877294/medium.jpeg",
-    "wikipedia": "Tecoma stans"
+    "name": "One-sided Bottlebrush",
+    "scientific": "Melaleuca quadrifida",
+    "image": "https://static.inaturalist.org/photos/165066034/medium.jpeg",
+    "wikipedia": "Calothamnus quadrifidus"
   },
   {
-    "name": "blue plumbago",
-    "scientific": "Plumbago auriculata",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/170645472/medium.jpeg",
-    "wikipedia": "Plumbago auriculata"
+    "name": "Grasstrees",
+    "scientific": "Xanthorrhoea",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/231108760/medium.jpeg",
+    "wikipedia": "Xanthorrhoea"
   }
 ]

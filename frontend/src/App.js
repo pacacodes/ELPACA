@@ -22,7 +22,7 @@ function App() {
   const [alpacaDragging, setAlpacaDragging] = useState(false);
   const [alpacaDragOffset, setAlpacaDragOffset] = useState({ x: 0, y: 0 });
   const [popupOpen, setPopupOpen] = useState(false);
-  const [popupPos, setPopupPos] = useState({ x: window.innerWidth / 2 - 170, y: window.innerHeight / 2 - 150 });
+  const [popupPos, setPopupPos] = useState({ x: 40, y: 100 });
   const [dragging, setDragging] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [namingFolder, setNamingFolder] = useState(false);
@@ -125,7 +125,10 @@ function App() {
           zIndex: 1002,
         }}
         aria-label="Add plant"
-        onClick={() => setPopupOpen(true)}
+        onClick={() => {
+          setPopupPos({ x: 40, y: 100 });
+          setPopupOpen(true);
+        }}
       >
         <FontAwesomeIcon icon={faPlus} style={{color: 'white', fontSize: '1.3rem'}} />
       </button>
