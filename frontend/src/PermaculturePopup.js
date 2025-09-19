@@ -278,7 +278,7 @@ function PermaculturePopup({
           open={detailOpen}
           pos={{
             x: collapsed
-              ? popupPos.x + 48 + 32 + 85 - 34 - 34 + 17 + 17
+              ? popupPos.x + 48 + 32 + 85 - 34 - 34 + 17 - 51 + 3.4
               : popupPos.x + 340 + 32 + 85 - 34 - 34 + 17 + 17,
             y: popupPos.y
           }}
