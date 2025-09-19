@@ -1,5 +1,11 @@
 [
   {
+    "name": "waterlilies",
+    "scientific": "Nymphaea",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/8612205/medium.jpg",
+    "wikipedia": "Nymphaea"
+  },
+  {
     "name": "Sacred Datura",
     "scientific": "Datura wrightii",
     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/240640006/medium.jpg",
@@ -10,11 +16,5 @@
     "scientific": "Melaleuca quadrifida",
     "image": "https://static.inaturalist.org/photos/165066034/medium.jpeg",
     "wikipedia": "Calothamnus quadrifidus"
-  },
-  {
-    "name": "Grasstrees",
-    "scientific": "Xanthorrhoea",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/231108760/medium.jpeg",
-    "wikipedia": "Xanthorrhoea"
   }
 ]
