@@ -4,6 +4,17 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import LayerButtons from './LayerButtons';
 import LayerDetailPopup from './LayerDetailPopup';
 
+// Map section to icon (copied from LayerButtons)
+const sectionIcons = {
+  'Canopy': (
+    <span style={{display:'flex',alignItems:'flex-end',gap:'0'}}>
+      <FontAwesomeIcon icon={require('@fortawesome/free-solid-svg-icons').faTree} style={{fontSize:'1.2em', color:'#fff'}} />
+      <FontAwesomeIcon icon={require('@fortawesome/free-solid-svg-icons').faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#bdbdbd'}} />
+    </span>
+  ),
+  // Add other section icons as needed
+};
+
 function PermaculturePopup({
   popupOpen,
   setPopupOpen,
@@ -61,33 +72,7 @@ function PermaculturePopup({
   const [detailSection, setDetailSection] = React.useState(null);
   const [detailPos, setDetailPos] = React.useState({ x: 0, y: 0 });
 
-  // Map section to icon (copied from LayerButtons)
-  const sectionIcons = {
-    'Canopy': (
-      <span style={{display:'flex',alignItems:'flex-end',gap:'0'}}>
-        <FontAwesomeIcon icon={require('@fortawesome/free-solid-svg-icons').faTree} style={{fontSize:'1.2em', color:'#fff'}} />
-        <FontAwesomeIcon icon={require('@fortawesome/free-solid-svg-icons').faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#bdbdbd'}} />
-      </span>
-    ),
-    'Understory': (
-      <span style={{display:'flex',alignItems:'flex-end',gap:'0'}}>
-        <FontAwesomeIcon icon={require('@fortawesome/free-solid-svg-icons').faTree} style={{fontSize:'1.2em', color:'#bdbdbd'}} />
-        <FontAwesomeIcon icon={require('@fortawesome/free-solid-svg-icons').faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#fff'}} />
-      </span>
-    ),
-    'Shrub': <FontAwesomeIcon icon={require('@fortawesome/free-solid-svg-icons').faCloud} />, 
-    'Herbaceous': <FontAwesomeIcon icon={require('@fortawesome/free-solid-svg-icons').faLeaf} />, 
-    'Ground Cover': <FontAwesomeIcon icon={require('@fortawesome/free-solid-svg-icons').faClover} />, 
-    'Root Crop': <FontAwesomeIcon icon={require('@fortawesome/free-solid-svg-icons').faCarrot} />, 
-    'Vine': <FontAwesomeIcon icon={require('@fortawesome/free-brands-svg-icons').faPagelines} />, 
-    'Fungi': <FontAwesomeIcon icon={require('@fortawesome/free-solid-svg-icons').faDisease} />
-  };
-
-  // Handler for layer button click
-  const handleLayerClick = (section) => {
-    setDetailSection(section);
-    setDetailOpen(true);
-  };
+  // Removed broken sectionIcons and stray JSX that caused unterminated JSX error
 
   if (!popupOpen) return null;
   return (
@@ -110,7 +95,7 @@ function PermaculturePopup({
           top: popupPos.y,
           background: 'rgba(60,60,60,0.7)',
           padding: '2rem',
-          borderRadius: '12px 0 0 12px',
+          borderRadius: '12px',
           boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
           minWidth: '340px',
           minHeight: '600px',
@@ -164,7 +149,8 @@ function PermaculturePopup({
           sectionList={sectionList}
           setActiveSection={section => {
             setActiveSection(section);
-            handleLayerClick(section);
+            setDetailSection(section);
+            setDetailOpen(true);
           }}
         />
         <div style={{width:'100%', height:'2.5rem'}}></div>
@@ -201,7 +187,7 @@ function PermaculturePopup({
       {detailOpen && (
         <LayerDetailPopup
           open={detailOpen}
-          pos={{ x: popupPos.x + 340, y: popupPos.y }}
+          pos={{ x: popupPos.x + 340 + 32 + 85 - 34 - 34 + 17, y: popupPos.y }}
           section={detailSection}
           icon={detailSection ? sectionIcons[detailSection] : null}
           onClose={() => setDetailOpen(false)}

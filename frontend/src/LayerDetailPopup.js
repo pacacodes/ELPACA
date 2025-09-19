@@ -29,7 +29,6 @@ function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart }) {
       }}
     >
       <div style={{display:'flex',alignItems:'center',gap:'0.7em',marginBottom:'1.2rem'}}>
-        <span style={{display:'flex',alignItems:'center',gap:'0.7em'}}>
           <span style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',minWidth:'2.2em',marginRight:'0.7em'}}>{icon}</span>
           <span style={{
             display: 'inline-block',
@@ -40,8 +39,7 @@ function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart }) {
             verticalAlign: 'middle',
             opacity: 0.7
           }}></span>
-          <span style={{color:'#fff',fontWeight:'bold',fontSize:'1.3rem',letterSpacing:'0.04em',whiteSpace:'nowrap'}}>{section}</span>
-        </span>
+           <span style={{color:'#fff',fontWeight:'bold',fontSize:'1.3rem',letterSpacing:'0.04em',whiteSpace:'nowrap'}}>{section}</span>
       </div>
       <button
         onClick={onClose}
