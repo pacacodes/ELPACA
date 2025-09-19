@@ -187,7 +187,7 @@ function PermaculturePopup({
       {detailOpen && (
         <LayerDetailPopup
           open={detailOpen}
-          pos={{ x: popupPos.x + 340 + 32 + 85 - 34 - 34 + 17, y: popupPos.y }}
+          pos={{ x: popupPos.x + 340 + 32 + 85 - 34 - 34 + 17 + 17, y: popupPos.y }}
           section={detailSection}
           icon={detailSection ? sectionIcons[detailSection] : null}
           onClose={() => setDetailOpen(false)}
