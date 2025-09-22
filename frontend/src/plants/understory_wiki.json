@@ -2,16 +2,19 @@
   {
     "common": "Redbud",
     "scientific": "Cercis canadensis",
-    "wiki": "https://en.wikipedia.org/wiki/Cercis_canadensis"
+    "wiki": "https://en.wikipedia.org/wiki/Cercis_canadensis",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Cercis_canadensis_flowers.jpg/320px-Cercis_canadensis_flowers.jpg"
   },
   {
     "common": "Serviceberry",
     "scientific": "Amelanchier arborea",
-    "wiki": "https://en.wikipedia.org/wiki/Amelanchier_arborea"
+    "wiki": "https://en.wikipedia.org/wiki/Amelanchier_arborea",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Amelanchier_arborea_1.jpg/320px-Amelanchier_arborea_1.jpg"
   },
   {
     "common": "Dogwood",
     "scientific": "Cornus florida",
-    "wiki": "https://en.wikipedia.org/wiki/Cornus_florida"
+    "wiki": "https://en.wikipedia.org/wiki/Cornus_florida",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Cornus_florida_001.jpg/320px-Cornus_florida_001.jpg"
   }
 ]

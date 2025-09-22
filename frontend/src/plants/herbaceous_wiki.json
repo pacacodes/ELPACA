@@ -2,16 +2,19 @@
   {
     "common": "Wild Bergamot",
     "scientific": "Monarda fistulosa",
-    "wiki": "https://en.wikipedia.org/wiki/Monarda_fistulosa"
+    "wiki": "https://en.wikipedia.org/wiki/Monarda_fistulosa",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Monarda_fistulosa_001.jpg/320px-Monarda_fistulosa_001.jpg"
   },
   {
     "common": "Milkweed",
     "scientific": "Asclepias syriaca",
-    "wiki": "https://en.wikipedia.org/wiki/Asclepias_syriaca"
+    "wiki": "https://en.wikipedia.org/wiki/Asclepias_syriaca",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Asclepias_syriaca_001.jpg/320px-Asclepias_syriaca_001.jpg"
   },
   {
     "common": "Goldenrod",
     "scientific": "Solidago canadensis",
-    "wiki": "https://en.wikipedia.org/wiki/Solidago_canadensis"
+    "wiki": "https://en.wikipedia.org/wiki/Solidago_canadensis",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Solidago_canadensis_001.jpg/320px-Solidago_canadensis_001.jpg"
   }
 ]

@@ -2,16 +2,19 @@
   {
     "common": "Elderberry",
     "scientific": "Sambucus canadensis",
-    "wiki": "https://en.wikipedia.org/wiki/Sambucus_canadensis"
+    "wiki": "https://en.wikipedia.org/wiki/Sambucus_canadensis",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Sambucus_canadensis_001.jpg/320px-Sambucus_canadensis_001.jpg"
   },
   {
     "common": "Blueberry",
     "scientific": "Vaccinium corymbosum",
-    "wiki": "https://en.wikipedia.org/wiki/Vaccinium_corymbosum"
+    "wiki": "https://en.wikipedia.org/wiki/Vaccinium_corymbosum",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Vaccinium_corymbosum_001.jpg/320px-Vaccinium_corymbosum_001.jpg"
   },
   {
     "common": "Hazelnut",
     "scientific": "Corylus americana",
-    "wiki": "https://en.wikipedia.org/wiki/Corylus_americana"
+    "wiki": "https://en.wikipedia.org/wiki/Corylus_americana",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Corylus_americana_001.jpg/320px-Corylus_americana_001.jpg"
   }
 ]

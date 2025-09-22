@@ -2,16 +2,19 @@
   {
     "common": "Jerusalem Artichoke",
     "scientific": "Helianthus tuberosus",
-    "wiki": "https://en.wikipedia.org/wiki/Helianthus_tuberosus"
+    "wiki": "https://en.wikipedia.org/wiki/Helianthus_tuberosus",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Helianthus_tuberosus_001.jpg/320px-Helianthus_tuberosus_001.jpg"
   },
   {
     "common": "Groundnut",
     "scientific": "Apios americana",
-    "wiki": "https://en.wikipedia.org/wiki/Apios_americana"
+    "wiki": "https://en.wikipedia.org/wiki/Apios_americana",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Apios_americana_001.jpg/320px-Apios_americana_001.jpg"
   },
   {
     "common": "Wild Carrot",
     "scientific": "Daucus carota",
-    "wiki": "https://en.wikipedia.org/wiki/Daucus_carota"
+    "wiki": "https://en.wikipedia.org/wiki/Daucus_carota",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Daucus_carota_001.jpg/320px-Daucus_carota_001.jpg"
   }
 ]

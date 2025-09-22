@@ -2,16 +2,19 @@
   {
     "common": "White Oak",
     "scientific": "Quercus alba",
-    "wiki": "https://en.wikipedia.org/wiki/Quercus_alba"
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_alba",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Quercus_alba_001.jpg/320px-Quercus_alba_001.jpg"
   },
   {
     "common": "Sugar Maple",
     "scientific": "Acer saccharum",
-    "wiki": "https://en.wikipedia.org/wiki/Acer_saccharum"
+    "wiki": "https://en.wikipedia.org/wiki/Acer_saccharum",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Acer_saccharum_1.jpg/320px-Acer_saccharum_1.jpg"
   },
   {
     "common": "American Beech",
     "scientific": "Fagus grandifolia",
-    "wiki": "https://en.wikipedia.org/wiki/Fagus_grandifolia"
+    "wiki": "https://en.wikipedia.org/wiki/Fagus_grandifolia",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Fagus_grandifolia_001.jpg/320px-Fagus_grandifolia_001.jpg"
   }
 ]

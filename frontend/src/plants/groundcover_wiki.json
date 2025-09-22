@@ -2,16 +2,19 @@
   {
     "common": "Wild Ginger",
     "scientific": "Asarum canadense",
-    "wiki": "https://en.wikipedia.org/wiki/Asarum_canadense"
+    "wiki": "https://en.wikipedia.org/wiki/Asarum_canadense",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Asarum_canadense_001.jpg/320px-Asarum_canadense_001.jpg"
   },
   {
     "common": "Creeping Phlox",
     "scientific": "Phlox stolonifera",
-    "wiki": "https://en.wikipedia.org/wiki/Phlox_stolonifera"
+    "wiki": "https://en.wikipedia.org/wiki/Phlox_stolonifera",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Phlox_stolonifera_001.jpg/320px-Phlox_stolonifera_001.jpg"
   },
   {
     "common": "Partridgeberry",
     "scientific": "Mitchella repens",
-    "wiki": "https://en.wikipedia.org/wiki/Mitchella_repens"
+    "wiki": "https://en.wikipedia.org/wiki/Mitchella_repens",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Mitchella_repens_001.jpg/320px-Mitchella_repens_001.jpg"
   }
 ]

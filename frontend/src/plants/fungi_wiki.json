@@ -2,16 +2,19 @@
   {
     "common": "Morel",
     "scientific": "Morchella esculenta",
-    "wiki": "https://en.wikipedia.org/wiki/Morchella_esculenta"
+    "wiki": "https://en.wikipedia.org/wiki/Morchella_esculenta",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Morchella_esculenta_001.jpg/320px-Morchella_esculenta_001.jpg"
   },
   {
     "common": "Chicken of the Woods",
     "scientific": "Laetiporus sulphureus",
-    "wiki": "https://en.wikipedia.org/wiki/Laetiporus_sulphureus"
+    "wiki": "https://en.wikipedia.org/wiki/Laetiporus_sulphureus",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Laetiporus_sulphureus_001.jpg/320px-Laetiporus_sulphureus_001.jpg"
   },
   {
     "common": "Lion's Mane",
     "scientific": "Hericium erinaceus",
-    "wiki": "https://en.wikipedia.org/wiki/Hericium_erinaceus"
+    "wiki": "https://en.wikipedia.org/wiki/Hericium_erinaceus",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Hericium_erinaceus_001.jpg/320px-Hericium_erinaceus_001.jpg"
   }
 ]

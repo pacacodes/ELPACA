@@ -2,16 +2,19 @@
   {
     "common": "Riverbank Grape",
     "scientific": "Vitis riparia",
-    "wiki": "https://en.wikipedia.org/wiki/Vitis_riparia"
+    "wiki": "https://en.wikipedia.org/wiki/Vitis_riparia",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Vitis_riparia_001.jpg/320px-Vitis_riparia_001.jpg"
   },
   {
     "common": "Virginia Creeper",
     "scientific": "Parthenocissus quinquefolia",
-    "wiki": "https://en.wikipedia.org/wiki/Parthenocissus_quinquefolia"
+    "wiki": "https://en.wikipedia.org/wiki/Parthenocissus_quinquefolia",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Parthenocissus_quinquefolia_001.jpg/320px-Parthenocissus_quinquefolia_001.jpg"
   },
   {
     "common": "Passionflower",
     "scientific": "Passiflora incarnata",
-    "wiki": "https://en.wikipedia.org/wiki/Passiflora_incarnata"
+    "wiki": "https://en.wikipedia.org/wiki/Passiflora_incarnata",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Passiflora_incarnata_001.jpg/320px-Passiflora_incarnata_001.jpg"
   }
 ]
