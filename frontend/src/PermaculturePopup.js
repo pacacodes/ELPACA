@@ -3,6 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import LayerButtons from './LayerButtons';
 import LayerDetailPopup from './LayerDetailPopup';
+import CanopyLayer from './CanopyLayer';
+import UnderstoryLayer from './UnderstoryLayer';
+import ShrubLayer from './ShrubLayer';
+import HerbaceousLayer from './HerbaceousLayer';
+import GroundcoverLayer from './GroundcoverLayer';
+import RootcropLayer from './RootcropLayer';
+import VineLayer from './VineLayer';
+import FungiLayer from './FungiLayer';
 
 // Map section to icon (copied from LayerButtons)
 const sectionIcons = {
@@ -289,7 +297,17 @@ function PermaculturePopup({
             setDragging(true);
             setDragOffset({ x: e.clientX - popupPos.x, y: e.clientY - popupPos.y });
           }}
-        />
+        >
+          {/* Render the correct layer component based on detailSection */}
+          {detailSection === 'Canopy' && <CanopyLayer />}
+          {detailSection === 'Understory' && <UnderstoryLayer />}
+          {detailSection === 'Shrub' && <ShrubLayer />}
+          {detailSection === 'Herbaceous' && <HerbaceousLayer />}
+          {detailSection === 'Ground Cover' && <GroundcoverLayer />}
+          {detailSection === 'Root Crop' && <RootcropLayer />}
+          {detailSection === 'Vine' && <VineLayer />}
+          {detailSection === 'Fungi' && <FungiLayer />}
+        </LayerDetailPopup>
       )}
     </div>
   );

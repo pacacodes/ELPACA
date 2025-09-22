@@ -1,7 +1,8 @@
 
 import React from 'react';
 
-function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart }) {
+
+function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart, children }) {
   if (!open || !section) return null;
   return (
     <div
@@ -13,7 +14,7 @@ function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart }) {
         borderRadius: '12px',
         boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
         padding: '2rem 2.5rem',
-        minWidth: '260px',
+        minWidth: '320px',
         minHeight: '120px',
         zIndex: 1101,
         display: 'flex',
@@ -29,17 +30,17 @@ function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart }) {
       }}
     >
       <div style={{display:'flex',alignItems:'center',gap:'0.7em',marginBottom:'1.2rem'}}>
-          <span style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',minWidth:'2.2em',marginRight:'0.7em'}}>{icon}</span>
-          <span style={{
-            display: 'inline-block',
-            width: '1.5px',
-            height: '1.25em',
-            background: 'currentColor',
-            margin: '0 0.7em 0 0',
-            verticalAlign: 'middle',
-            opacity: 0.7
-          }}></span>
-           <span style={{color:'#fff',fontWeight:'bold',fontSize:'1.3rem',letterSpacing:'0.04em',whiteSpace:'nowrap'}}>{section}</span>
+        <span style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',minWidth:'2.2em',marginRight:'0.7em'}}>{icon}</span>
+        <span style={{
+          display: 'inline-block',
+          width: '1.5px',
+          height: '1.25em',
+          background: 'currentColor',
+          margin: '0 0.7em 0 0',
+          verticalAlign: 'middle',
+          opacity: 0.7
+        }}></span>
+        <span style={{color:'#fff',fontWeight:'bold',fontSize:'1.3rem',letterSpacing:'0.04em',whiteSpace:'nowrap'}}>{section}</span>
       </div>
       <button
         onClick={onClose}
@@ -65,6 +66,10 @@ function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart }) {
           <line x1="15" y1="3" x2="3" y2="15" stroke="white" strokeWidth="2" />
         </svg>
       </button>
+      {/* Render children (layer component) if provided */}
+      <div style={{width:'100%'}}>
+        {children}
+      </div>
     </div>
   );
 }
