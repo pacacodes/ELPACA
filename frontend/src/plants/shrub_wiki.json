@@ -1,0 +1,17 @@
+[
+  {
+    "common": "Elderberry",
+    "scientific": "Sambucus canadensis",
+    "wiki": "https://en.wikipedia.org/wiki/Sambucus_canadensis"
+  },
+  {
+    "common": "Blueberry",
+    "scientific": "Vaccinium corymbosum",
+    "wiki": "https://en.wikipedia.org/wiki/Vaccinium_corymbosum"
+  },
+  {
+    "common": "Hazelnut",
+    "scientific": "Corylus americana",
+    "wiki": "https://en.wikipedia.org/wiki/Corylus_americana"
+  }
+]

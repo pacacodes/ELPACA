@@ -1,0 +1,17 @@
+[
+  {
+    "common": "White Oak",
+    "scientific": "Quercus alba",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_alba"
+  },
+  {
+    "common": "Sugar Maple",
+    "scientific": "Acer saccharum",
+    "wiki": "https://en.wikipedia.org/wiki/Acer_saccharum"
+  },
+  {
+    "common": "American Beech",
+    "scientific": "Fagus grandifolia",
+    "wiki": "https://en.wikipedia.org/wiki/Fagus_grandifolia"
+  }
+]

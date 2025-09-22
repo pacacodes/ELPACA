@@ -1,20 +1,20 @@
 [
   {
-    "name": "waterlilies",
-    "scientific": "Nymphaea",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/8612205/medium.jpg",
-    "wikipedia": "Nymphaea"
+    "name": "tree tobacco",
+    "scientific": "Nicotiana glauca",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/438871248/medium.jpg",
+    "wikipedia": "Nicotiana glauca"
   },
   {
-    "name": "Sacred Datura",
-    "scientific": "Datura wrightii",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/240640006/medium.jpg",
-    "wikipedia": "Datura wrightii"
+    "name": "dicots",
+    "scientific": "Magnoliopsida",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/95003339/medium.jpeg",
+    "wikipedia": "Magnoliopsida"
   },
   {
-    "name": "One-sided Bottlebrush",
-    "scientific": "Melaleuca quadrifida",
-    "image": "https://static.inaturalist.org/photos/165066034/medium.jpeg",
-    "wikipedia": "Calothamnus quadrifidus"
+    "name": "Flax-leaved Horseweed",
+    "scientific": "Erigeron bonariensis",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/216160111/medium.jpeg",
+    "wikipedia": "Erigeron bonariensis"
   }
 ]
