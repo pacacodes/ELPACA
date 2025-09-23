@@ -1,17 +1,502 @@
 [
   {
-    "common": "Morel",
-    "scientific": "Morchella esculenta",
-    "wiki": "https://en.wikipedia.org/wiki/Morchella_esculenta"
+    "common": "California golden chanterelle",
+    "scientific": "Cantharellus californicus",
+    "wiki": "https://en.wikipedia.org/wiki/Cantharellus_californicus"
   },
   {
-    "common": "Chicken of the Woods",
+    "common": "King bolete",
+    "scientific": "Boletus edulis",
+    "wiki": "https://en.wikipedia.org/wiki/Boletus_edulis"
+  },
+  {
+    "common": "Oyster mushroom",
+    "scientific": "Pleurotus ostreatus",
+    "wiki": "https://en.wikipedia.org/wiki/Pleurotus_ostreatus"
+  },
+  {
+    "common": "Lion's mane",
+    "scientific": "Hericium erinaceus",
+    "wiki": "https://en.wikipedia.org/wiki/Hericium_erinaceus"
+  },
+  {
+    "common": "Cauliflower mushroom",
+    "scientific": "Sparassis crispa",
+    "wiki": "https://en.wikipedia.org/wiki/Sparassis"
+  },
+  {
+    "common": "Candy cap",
+    "scientific": "Lactarius rubidus",
+    "wiki": "https://en.wikipedia.org/wiki/Lactarius_rubidus"
+  },
+  {
+    "common": "Morels",
+    "scientific": "Morchella spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Morchella"
+  },
+  {
+    "common": "Hedgehog mushroom",
+    "scientific": "Hydnum repandum",
+    "wiki": "https://en.wikipedia.org/wiki/Hydnum_repandum"
+  },
+  {
+    "common": "Black trumpet",
+    "scientific": "Craterellus cornucopioides",
+    "wiki": "https://en.wikipedia.org/wiki/Craterellus_cornucopioides"
+  },
+  {
+    "common": "Chicken of the woods",
+    "scientific": "Laetiporus gilbertsonii",
+    "wiki": "https://en.wikipedia.org/wiki/Laetiporus_gilbertsonii"
+  },
+  {
+    "common": "White chanterelle",
+    "scientific": "Cantharellus subalbidus",
+    "wiki": "https://en.wikipedia.org/wiki/Cantharellus_subalbidus"
+  },
+  {
+    "common": "The Prince",
+    "scientific": "Agaricus augustus",
+    "wiki": "https://en.wikipedia.org/wiki/Agaricus_augustus"
+  },
+  {
+    "common": "Shaggy mane",
+    "scientific": "Coprinus comatus",
+    "wiki": "https://en.wikipedia.org/wiki/Coprinus_comatus"
+  },
+  {
+    "common": "Blewit",
+    "scientific": "Clitocybe nuda",
+    "wiki": "https://en.wikipedia.org/wiki/Lepista_nuda"
+  },
+  {
+    "common": "Turkey tail",
+    "scientific": "Trametes versicolor",
+    "wiki": "https://en.wikipedia.org/wiki/Trametes_versicolor"
+  },
+  {
+    "common": "Artist's conk",
+    "scientific": "Ganoderma applanatum",
+    "wiki": "https://en.wikipedia.org/wiki/Ganoderma_applanatum"
+  },
+  {
+    "common": "Sulfur tuft",
+    "scientific": "Hypholoma fasciculare",
+    "wiki": "https://en.wikipedia.org/wiki/Hypholoma_fasciculare"
+  },
+  {
+    "common": "Redwood rooter",
+    "scientific": "Caulorhiza umbonata",
+    "wiki": "https://en.wikipedia.org/wiki/Caulorhiza_umbonata"
+  },
+  {
+    "common": "Honey mushroom",
+    "scientific": "Armillaria mellea",
+    "wiki": "https://en.wikipedia.org/wiki/Armillaria_mellea"
+  },
+  {
+    "common": "Splitgill mushroom",
+    "scientific": "Schizophyllum commune",
+    "wiki": "https://en.wikipedia.org/wiki/Schizophyllum_commune"
+  },
+  {
+    "common": "False turkey tail",
+    "scientific": "Stereum hirsutum",
+    "wiki": "https://en.wikipedia.org/wiki/Stereum_hirsutum"
+  },
+  {
+    "common": "Mica cap",
+    "scientific": "Coprinellus micaceus",
+    "wiki": "https://en.wikipedia.org/wiki/Coprinellus_micaceus"
+  },
+  {
+    "common": "Witch's butter",
+    "scientific": "Exidia glandulosa",
+    "wiki": "https://en.wikipedia.org/wiki/Exidia_glandulosa"
+  },
+  {
+    "common": "Sooty-crusted brown rot",
+    "scientific": "Phaeolus schweinitzii",
+    "wiki": "https://en.wikipedia.org/wiki/Phaeolus_schweinitzii"
+  },
+  {
+    "common": "Charcoal fungus",
+    "scientific": "Annulohypoxylon spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Annulohypoxylon"
+  },
+  {
+    "common": "Dyer's polypore",
+    "scientific": "Phaeolus schweinitzii",
+    "wiki": "https://en.wikipedia.org/wiki/Phaeolus_schweinitzii"
+  },
+  {
+    "common": "Common earthstar",
+    "scientific": "Astraeus hygrometricus",
+    "wiki": "https://en.wikipedia.org/wiki/Astraeus_hygrometricus"
+  },
+  {
+    "common": "Velvet foot",
+    "scientific": "Flammulina velutipes",
+    "wiki": "https://en.wikipedia.org/wiki/Flammulina_velutipes"
+  },
+  {
+    "common": "Hairy turkey tail",
+    "scientific": "Trametes hirsuta",
+    "wiki": "https://en.wikipedia.org/wiki/Trametes_hirsuta"
+  },
+  {
+    "common": "Coral tooth fungus",
+    "scientific": "Hericium coralloides",
+    "wiki": "https://en.wikipedia.org/wiki/Hericium_coralloides"
+  },
+  {
+    "common": "Fly agaric",
+    "scientific": "Amanita muscaria",
+    "wiki": "https://en.wikipedia.org/wiki/Amanita_muscaria"
+  },
+  {
+    "common": "Pine spike",
+    "scientific": "Chroogomphus vinicolor",
+    "wiki": "https://en.wikipedia.org/wiki/Chroogomphus_vinicolor"
+  },
+  {
+    "common": "Manzanita bolete",
+    "scientific": "Leccinum manzanitae",
+    "wiki": "https://en.wikipedia.org/wiki/Leccinum_manzanitae"
+  },
+  {
+    "common": "Slippery jack",
+    "scientific": "Suillus pungens",
+    "wiki": "https://en.wikipedia.org/wiki/Suillus_pungens"
+  },
+  {
+    "common": "Winter chanterelle",
+    "scientific": "Craterellus tubaeformis",
+    "wiki": "https://en.wikipedia.org/wiki/Craterellus_tubaeformis"
+  },
+  {
+    "common": "Blushing rosette",
+    "scientific": "Abortiporus biennis",
+    "wiki": "https://en.wikipedia.org/wiki/Abortiporus_biennis"
+  },
+  {
+    "common": "Oak root fungus",
+    "scientific": "Armillaria mellea",
+    "wiki": "https://en.wikipedia.org/wiki/Armillaria_mellea"
+  },
+  {
+    "common": "Honey mushroom",
+    "scientific": "Armillaria gallica",
+    "wiki": "https://en.wikipedia.org/wiki/Armillaria_gallica"
+  },
+  {
+    "common": "Matsutake",
+    "scientific": "Tricholoma magnivelare",
+    "wiki": "https://en.wikipedia.org/wiki/Tricholoma_magnivelare"
+  },
+  {
+    "common": "Truffles",
+    "scientific": "Tuber spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Tuber_(fungus)"
+  },
+  {
+    "common": "Fat jack",
+    "scientific": "Suillus ponderosus",
+    "wiki": "https://en.wikipedia.org/wiki/Suillus_ponderosus"
+  },
+  {
+    "common": "Rosy gomphidius",
+    "scientific": "Gomphidius oregonensis",
+    "wiki": "https://en.wikipedia.org/wiki/Gomphidius_oregonensis"
+  },
+  {
+    "common": "Western painted suillus",
+    "scientific": "Suillus lakei",
+    "wiki": "https://en.wikipedia.org/wiki/Suillus_lakei"
+  },
+  {
+    "common": "Amethyst deceiver",
+    "scientific": "Laccaria amethysteo-occidentalis",
+    "wiki": "https://en.wikipedia.org/wiki/Laccaria_amethysteo-occidentalis"
+  },
+  {
+    "common": "Earth tongues",
+    "scientific": "Geoglossaceae family",
+    "wiki": "https://en.wikipedia.org/wiki/Geoglossaceae"
+  },
+  {
+    "common": "Dead man's fingers",
+    "scientific": "Xylaria polymorpha",
+    "wiki": "https://en.wikipedia.org/wiki/Xylaria_polymorpha"
+  },
+  {
+    "common": "Cup fungi",
+    "scientific": "Pezizaceae family",
+    "wiki": "https://en.wikipedia.org/wiki/Pezizaceae"
+  },
+  {
+    "common": "Jelly fungi",
+    "scientific": "Tremellales order",
+    "wiki": "https://en.wikipedia.org/wiki/Tremellales"
+  },
+  {
+    "common": "Puffballs",
+    "scientific": "Lycoperdon spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Lycoperdon"
+  },
+  {
+    "common": "Stinkhorns",
+    "scientific": "Phallaceae family",
+    "wiki": "https://en.wikipedia.org/wiki/Phallaceae"
+  },
+  {
+    "common": "Bird's nest fungi",
+    "scientific": "Nidulariaceae family",
+    "wiki": "https://en.wikipedia.org/wiki/Nidulariaceae"
+  },
+  {
+    "common": "Coral fungi",
+    "scientific": "Clavulina spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Clavulina"
+  },
+  {
+    "common": "Slime molds",
+    "scientific": "Protostelia group",
+    "wiki": "https://en.wikipedia.org/wiki/Protostelia"
+  },
+  {
+    "common": "Jack-o'-lantern mushroom",
+    "scientific": "Omphalotus olivascens",
+    "wiki": "https://en.wikipedia.org/wiki/Omphalotus_olivascens"
+  },
+  {
+    "common": "Green-gilled parasol",
+    "scientific": "Chlorophyllum molybdites",
+    "wiki": "https://en.wikipedia.org/wiki/Chlorophyllum_molybdites"
+  },
+  {
+    "common": "Deer mushroom",
+    "scientific": "Pluteus cervinus",
+    "wiki": "https://en.wikipedia.org/wiki/Pluteus_cervinus"
+  },
+  {
+    "common": "Meadow mushroom",
+    "scientific": "Agaricus campestris",
+    "wiki": "https://en.wikipedia.org/wiki/Agaricus_campestris"
+  },
+  {
+    "common": "Wine cap stropharia",
+    "scientific": "Stropharia rugosoannulata",
+    "wiki": "https://en.wikipedia.org/wiki/Stropharia_rugosoannulata"
+  },
+  {
+    "common": "Orange peel fungus",
+    "scientific": "Aleuria aurantia",
+    "wiki": "https://en.wikipedia.org/wiki/Aleuria_aurantia"
+  },
+  {
+    "common": "Jubilee jelly",
+    "scientific": "Mycena spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Mycena"
+  },
+  {
+    "common": "Purple-staining lactarius",
+    "scientific": "Lactarius spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Lactarius"
+  },
+  {
+    "common": "Crimson waxycap",
+    "scientific": "Hygrocybe punicea",
+    "wiki": "https://en.wikipedia.org/wiki/Hygrocybe_punicea"
+  },
+  {
+    "common": "Purple fairy club",
+    "scientific": "Alloclavaria purpurea",
+    "wiki": "https://en.wikipedia.org/wiki/Alloclavaria_purpurea"
+  },
+  {
+    "common": "Bleeding fairy helmet",
+    "scientific": "Mycena haematopus",
+    "wiki": "https://en.wikipedia.org/wiki/Mycena_haematopus"
+  },
+  {
+    "common": "Winter mushroom",
+    "scientific": "Flammulina velutipes",
+    "wiki": "https://en.wikipedia.org/wiki/Flammulina_velutipes"
+  },
+  {
+    "common": "Pinwheel mushroom",
+    "scientific": "Marasmius spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Marasmius"
+  },
+  {
+    "common": "Witch's hat",
+    "scientific": "Hygrocybe spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Hygrocybe"
+  },
+  {
+    "common": "Pine cone fungus",
+    "scientific": "Auriscalpium vulgare",
+    "wiki": "https://en.wikipedia.org/wiki/Auriscalpium_vulgare"
+  },
+  {
+    "common": "Coral-like fungus",
+    "scientific": "Ramaria spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Ramaria"
+  },
+  {
+    "common": "Rosy gomphidius",
+    "scientific": "Gomphidius roseus",
+    "wiki": "https://en.wikipedia.org/wiki/Gomphidius_roseus"
+  },
+  {
+    "common": "Western grisette",
+    "scientific": "Amanita pachycolea",
+    "wiki": "https://en.wikipedia.org/wiki/Amanita_pachycolea"
+  },
+  {
+    "common": "Coccora",
+    "scientific": "Amanita calyptroderma",
+    "wiki": "https://en.wikipedia.org/wiki/Amanita_calyptroderma"
+  },
+  {
+    "common": "Saffron milkcap",
+    "scientific": "Lactarius deliciosus",
+    "wiki": "https://en.wikipedia.org/wiki/Lactarius_deliciosus"
+  },
+  {
+    "common": "Honey-colored lactarius",
+    "scientific": "Lactarius spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Lactarius"
+  },
+  {
+    "common": "Yellow-foot chanterelle",
+    "scientific": "Craterellus tubaeformis",
+    "wiki": "https://en.wikipedia.org/wiki/Craterellus_tubaeformis"
+  },
+  {
+    "common": "Rufous candy cap",
+    "scientific": "Lactarius rufulus",
+    "wiki": "https://en.wikipedia.org/wiki/Lactarius_rufulus"
+  },
+  {
+    "common": "False chanterelle",
+    "scientific": "Hygrophoropsis aurantiaca",
+    "wiki": "https://en.wikipedia.org/wiki/Hygrophoropsis_aurantiaca"
+  },
+  {
+    "common": "Suede bolete",
+    "scientific": "Xerocomus subtomentosus",
+    "wiki": "https://en.wikipedia.org/wiki/Xerocomus_subtomentosus"
+  },
+  {
+    "common": "Western witch's hat",
+    "scientific": "Hygrocybe singeri",
+    "wiki": "https://en.wikipedia.org/wiki/Hygrocybe_singeri"
+  },
+  {
+    "common": "Earthstars",
+    "scientific": "Geastrum spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Geastrum"
+  },
+  {
+    "common": "Orange milky cap",
+    "scientific": "Lactarius alnicola",
+    "wiki": "https://en.wikipedia.org/wiki/Lactarius_alnicola"
+  },
+  {
+    "common": "Short-stemmed russula",
+    "scientific": "Russula brevipes",
+    "wiki": "https://en.wikipedia.org/wiki/Russula_brevipes"
+  },
+  {
+    "common": "Blackfoot polypore",
+    "scientific": "Polyporus leptocephalus",
+    "wiki": "https://en.wikipedia.org/wiki/Polyporus_leptocephalus"
+  },
+  {
+    "common": "Small stagshorn",
+    "scientific": "Calocera cornea",
+    "wiki": "https://en.wikipedia.org/wiki/Calocera_cornea"
+  },
+  {
+    "common": "Velvet-stalked polypore",
+    "scientific": "Polyporus badius",
+    "wiki": "https://en.wikipedia.org/wiki/Polyporus_badius"
+  },
+  {
+    "common": "Brown jelly fungus",
+    "scientific": "Auricularia auricula-judae",
+    "wiki": "https://en.wikipedia.org/wiki/Auricularia_auricula-judae"
+  },
+  {
+    "common": "Purple-staining puffball",
+    "scientific": "Calvatia spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Calvatia"
+  },
+  {
+    "common": "Green elfcap",
+    "scientific": "Microstoma protractum",
+    "wiki": "https://en.wikipedia.org/wiki/Microstoma_protractum"
+  },
+  {
+    "common": "Winter polypore",
+    "scientific": "Polyporus brumalis",
+    "wiki": "https://en.wikipedia.org/wiki/Polyporus_brumalis"
+  },
+  {
+    "common": "Hairy milkcap",
+    "scientific": "Lactarius spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Lactarius"
+  },
+  {
+    "common": "Golden waxcap",
+    "scientific": "Hygrocybe spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Hygrocybe"
+  },
+  {
+    "common": "Yellow-orange russula",
+    "scientific": "Russula spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Russula"
+  },
+  {
+    "common": "Western jack-o'-lantern",
+    "scientific": "Omphalotus olivascens",
+    "wiki": "https://en.wikipedia.org/wiki/Omphalotus_olivascens"
+  },
+  {
+    "common": "Lilac oysterling",
+    "scientific": "Panellus spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Panellus"
+  },
+  {
+    "common": "Pacific golden chanterelle",
+    "scientific": "Cantharellus formosus",
+    "wiki": "https://en.wikipedia.org/wiki/Cantharellus_formosus"
+  },
+  {
+    "common": "Golden jelly fungus",
+    "scientific": "Tremella mesenterica",
+    "wiki": "https://en.wikipedia.org/wiki/Tremella_mesenterica"
+  },
+  {
+    "common": "Sulphur shelf",
     "scientific": "Laetiporus sulphureus",
     "wiki": "https://en.wikipedia.org/wiki/Laetiporus_sulphureus"
   },
   {
-    "common": "Lion's Mane",
-    "scientific": "Hericium erinaceus",
-    "wiki": "https://en.wikipedia.org/wiki/Hericium_erinaceus"
+    "common": "Blushing morel",
+    "scientific": "Morchella rufobrunnea",
+    "wiki": "https://en.wikipedia.org/wiki/Morchella_rufobrunnea"
+  },
+  {
+    "common": "Fairy fingers",
+    "scientific": "Clavaria fragilis",
+    "wiki": "https://en.wikipedia.org/wiki/Clavaria_fragilis"
+  },
+  {
+    "common": "Western amethyst laccaria",
+    "scientific": "Laccaria amethysteo-occidentalis",
+    "wiki": "https://en.wikipedia.org/wiki/Laccaria_amethysteo-occidentalis"
   }
 ]
