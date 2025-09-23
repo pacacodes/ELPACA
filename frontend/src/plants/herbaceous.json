@@ -14,4 +14,157 @@
     "scientific": "Solidago canadensis",
     "wiki": "https://en.wikipedia.org/wiki/Solidago_canadensis"
   }
+    ,
+    {
+      "common": "California poppy",
+      "scientific": "Eschscholzia californica",
+      "wiki": "https://en.wikipedia.org/wiki/Eschscholzia_californica"
+    },
+    {
+      "common": "Arroyo lupine",
+      "scientific": "Lupinus succulentus",
+      "wiki": "https://en.wikipedia.org/wiki/Lupinus_succulentus"
+    },
+    {
+      "common": "Tidy tips",
+      "scientific": "Layia platyglossa",
+      "wiki": "https://en.wikipedia.org/wiki/Layia_platyglossa"
+    },
+    {
+      "common": "Baby blue-eyes",
+      "scientific": "Nemophila menziesii",
+      "wiki": "https://en.wikipedia.org/wiki/Nemophila_menziesii"
+    },
+    {
+      "common": "Chinese houses",
+      "scientific": "Collinsia heterophylla",
+      "wiki": "https://en.wikipedia.org/wiki/Collinsia_heterophylla"
+    },
+    {
+      "common": "Elegant clarkia",
+      "scientific": "Clarkia unguiculata",
+      "wiki": "https://en.wikipedia.org/wiki/Clarkia_unguiculata"
+    },
+    {
+      "common": "Farewell-to-spring",
+      "scientific": "Clarkia amoena",
+      "wiki": "https://en.wikipedia.org/wiki/Clarkia_amoena"
+    },
+    {
+      "common": "California bluebell",
+      "scientific": "Phacelia campanularia",
+      "wiki": "https://en.wikipedia.org/wiki/Phacelia_campanularia"
+    },
+    {
+      "common": "Lacy phacelia",
+      "scientific": "Phacelia tanacetifolia",
+      "wiki": "https://en.wikipedia.org/wiki/Phacelia_tanacetifolia"
+    },
+    {
+      "common": "Owl's clover",
+      "scientific": "Castilleja purpurascens",
+      "wiki": "https://en.wikipedia.org/wiki/Castilleja"
+    }
+      ,
+      {
+        "common": "California buttercup",
+        "scientific": "Ranunculus californicus",
+        "wiki": "https://en.wikipedia.org/wiki/Ranunculus_californicus"
+      },
+      {
+        "common": "Wind poppy",
+        "scientific": "Stylomecon heterophylla",
+        "wiki": "https://en.wikipedia.org/wiki/Stylomecon_heterophylla"
+      },
+      {
+        "common": "Western meadowfoam",
+        "scientific": "Limnanthes douglasii",
+        "wiki": "https://en.wikipedia.org/wiki/Limnanthes_douglasii"
+      },
+      {
+        "common": "Goldfields",
+        "scientific": "Lasthenia californica",
+        "wiki": "https://en.wikipedia.org/wiki/Lasthenia_californica"
+      },
+      {
+        "common": "Common fiddleneck",
+        "scientific": "Amsinckia menziesii",
+        "wiki": "https://en.wikipedia.org/wiki/Amsinckia_menziesii"
+      },
+      {
+        "common": "Caterpillar phacelia",
+        "scientific": "Phacelia cicutaria",
+        "wiki": "https://en.wikipedia.org/wiki/Phacelia_cicutaria"
+      },
+      {
+        "common": "Blue flax",
+        "scientific": "Linum lewisii",
+        "wiki": "https://en.wikipedia.org/wiki/Linum_lewisii"
+      },
+      {
+        "common": "California primrose",
+        "scientific": "Oenothera californica",
+        "wiki": "https://en.wikipedia.org/wiki/Oenothera_californica"
+      },
+      {
+        "common": "Desert sand-verbena",
+        "scientific": "Abronia villosa",
+        "wiki": "https://en.wikipedia.org/wiki/Abronia_villosa"
+      },
+      {
+        "common": "Douglas iris",
+        "scientific": "Iris douglasiana",
+        "wiki": "https://en.wikipedia.org/wiki/Iris_douglasiana"
+      }
+        ,
+        {
+          "common": "Checker lily",
+          "scientific": "Fritillaria affinis",
+          "wiki": "https://en.wikipedia.org/wiki/Fritillaria_affinis"
+        },
+        {
+          "common": "Mariposa lily",
+          "scientific": "Calochortus species",
+          "wiki": "https://en.wikipedia.org/wiki/Calochortus"
+        },
+        {
+          "common": "Fairy lantern",
+          "scientific": "Calochortus albus",
+          "wiki": "https://en.wikipedia.org/wiki/Calochortus_albus"
+        },
+        {
+          "common": "Shooting star",
+          "scientific": "Dodecatheon hendersonii",
+          "wiki": "https://en.wikipedia.org/wiki/Dodecatheon_hendersonii"
+        },
+        {
+          "common": "California wild strawberry",
+          "scientific": "Fragaria vesca ssp. californica",
+          "wiki": "https://en.wikipedia.org/wiki/Fragaria_vesca"
+        },
+        {
+          "common": "Narrowleaf milkweed",
+          "scientific": "Asclepias fascicularis",
+          "wiki": "https://en.wikipedia.org/wiki/Asclepias_fascicularis"
+        },
+        {
+          "common": "Common yarrow",
+          "scientific": "Achillea millefolium",
+          "wiki": "https://en.wikipedia.org/wiki/Achillea_millefolium"
+        },
+        {
+          "common": "Hummingbird sage",
+          "scientific": "Salvia spathacea",
+          "wiki": "https://en.wikipedia.org/wiki/Salvia_spathacea"
+        },
+        {
+          "common": "Coyote mint",
+          "scientific": "Monardella villosa",
+          "wiki": "https://en.wikipedia.org/wiki/Monardella_villosa"
+        },
+        {
+          "common": "Yerba buena",
+          "scientific": "Clinopodium douglasii",
+          "wiki": "https://en.wikipedia.org/wiki/Clinopodium_douglasii"
+        }
 ]
