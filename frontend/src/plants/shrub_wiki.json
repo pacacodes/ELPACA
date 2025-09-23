@@ -2,19 +2,75 @@
   {
     "common": "Elderberry",
     "scientific": "Sambucus canadensis",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Sambucus_canadensis_001.jpg/320px-Sambucus_canadensis_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Sambucus_canadensis_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Sambucus_canadensis_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Sambucus_canadensis_leaf.jpg",
+    "climate_zone": "3-9",
+    "native_region": "North America",
+    "soil_type": "Moist, well-drained",
+    "watering": "Moderate",
+    "sun": "Full sun to partial shade",
+    "typical_use": [
+      {"type": "Edible", "part": "Fruit", "use": "Berries used in syrups and jams"},
+      {"type": "Medicinal", "part": "Flower", "use": "Flowers used for teas and remedies"}
+    ],
+    "toxicity": [
+      {"part": "Fruit (raw)", "to": ["Humans", "Pets"], "effect": "Mildly toxic if eaten raw; safe when cooked"}
+    ],
+    "companion_plants": ["Blueberry", "Hazelnut"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Sambucus_canadensis",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Sambucus_canadensis_001.jpg/320px-Sambucus_canadensis_001.jpg"
+    "blurb": "Elderberry is a deciduous shrub with edible berries and flowers, native to North America and valued for food and medicine."
   },
   {
     "common": "Blueberry",
     "scientific": "Vaccinium corymbosum",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Vaccinium_corymbosum_001.jpg/320px-Vaccinium_corymbosum_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Vaccinium_corymbosum_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Vaccinium_corymbosum_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Vaccinium_corymbosum_leaf.jpg",
+    "climate_zone": "3-7",
+    "native_region": "North America",
+    "soil_type": "Acidic, well-drained",
+    "watering": "Moderate",
+    "sun": "Full sun to partial shade",
+    "typical_use": [
+      {"type": "Edible", "part": "Fruit", "use": "Berries eaten fresh or in baking"},
+      {"type": "Ornamental", "part": "Flower", "use": "Attractive spring flowers"}
+    ],
+    "toxicity": [
+      {"part": "None", "to": ["Humans", "Pets"], "effect": "Non-toxic"}
+    ],
+    "companion_plants": ["Azalea", "Rhododendron"],
+    "antagonistic_plants": ["Tomato"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Vaccinium_corymbosum",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Vaccinium_corymbosum_001.jpg/320px-Vaccinium_corymbosum_001.jpg"
+    "blurb": "Blueberry is a deciduous shrub with edible blue berries, native to North America and valued for its fruit."
   },
   {
     "common": "Hazelnut",
     "scientific": "Corylus americana",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Corylus_americana_001.jpg/320px-Corylus_americana_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Corylus_americana_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Corylus_americana_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Corylus_americana_leaf.jpg",
+    "climate_zone": "4-9",
+    "native_region": "North America",
+    "soil_type": "Moist, well-drained",
+    "watering": "Moderate",
+    "sun": "Full sun to partial shade",
+    "typical_use": [
+      {"type": "Edible", "part": "Nut", "use": "Nuts eaten raw or roasted"}
+    ],
+    "toxicity": [
+      {"part": "None", "to": ["Humans", "Pets"], "effect": "Non-toxic"}
+    ],
+    "companion_plants": ["Elderberry", "Blueberry"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Corylus_americana",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Corylus_americana_001.jpg/320px-Corylus_americana_001.jpg"
+    "blurb": "Hazelnut is a deciduous shrub producing edible nuts, native to North America and used for food and wildlife habitat."
   }
 ]

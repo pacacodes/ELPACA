@@ -3,18 +3,96 @@
     "common": "White Oak",
     "scientific": "Quercus alba",
     "wiki": "https://en.wikipedia.org/wiki/Quercus_alba",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Quercus_alba_001.jpg/320px-Quercus_alba_001.jpg"
-  },
-  {
-    "common": "Sugar Maple",
-    "scientific": "Acer saccharum",
-    "wiki": "https://en.wikipedia.org/wiki/Acer_saccharum",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Acer_saccharum_1.jpg/320px-Acer_saccharum_1.jpg"
-  },
-  {
-    "common": "American Beech",
-    "scientific": "Fagus grandifolia",
-    "wiki": "https://en.wikipedia.org/wiki/Fagus_grandifolia",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Fagus_grandifolia_001.jpg/320px-Fagus_grandifolia_001.jpg"
-  }
-]
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Quercus_alba_001.jpg/320px-Quercus_alba_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Quercus_alba_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Quercus_alba_bark.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Quercus_alba_leaf.jpg",
+    "watering": "Moderate",
+    "sun": "Full sun to partial shade",
+    "native_region": "Eastern North America",
+    "climate_zone": "3-9",
+    "soil_type": "Well-drained, loamy",
+    "genetic_code": "ATCG...",
+    "companion_plants": ["Hazelnut", "Serviceberry"],
+    "antagonistic_plants": ["Black Walnut"],
+    "typical_use": [
+      {"type": "Edible", "part": "Acorn", "use": "Ground into flour, leached and eaten"},
+      {"type": "Timber", "part": "Wood", "use": "Furniture, flooring"}
+    [
+      {
+        "common": "White Oak",
+        "scientific": "Quercus alba",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Quercus_alba_001.jpg/320px-Quercus_alba_001.jpg",
+        "image_flower": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Quercus_alba_flower.jpg",
+        "image_stem": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Quercus_alba_bark.jpg",
+        "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Quercus_alba_leaf.jpg",
+        "climate_zone": "3-9",
+        "native_region": "Eastern North America",
+        "soil_type": "Well-drained, loamy",
+        "watering": "Moderate",
+        "sun": "Full sun to partial shade",
+        "typical_use": [
+          {"type": "Edible", "part": "Acorn", "use": "Ground into flour, leached and eaten"},
+          {"type": "Timber", "part": "Wood", "use": "Furniture, flooring"}
+        ],
+        "toxicity": [
+          {"part": "Acorn", "to": ["Dogs", "Horses"], "effect": "Gastrointestinal upset if consumed in large quantities"},
+          {"part": "Leaves", "to": ["Humans"], "effect": "Generally non-toxic"}
+        ],
+      "companion_plants": ["Hazelnut", "Serviceberry"],
+      "antagonistic_plants": ["Black Walnut"],
+      "genetic_code": "ATCG...",
+      "wiki": "https://en.wikipedia.org/wiki/Quercus_alba",
+      "blurb": "White Oak is a large deciduous tree native to eastern North America, valued for its strong wood and edible acorns."
+      },
+      {
+        "common": "Sugar Maple",
+        "scientific": "Acer saccharum",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Acer_saccharum_1.jpg/320px-Acer_saccharum_1.jpg",
+        "image_flower": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Acer_saccharum_flower.jpg",
+        "image_stem": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Acer_saccharum_bark.jpg",
+        "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Acer_saccharum_leaf.jpg",
+        "climate_zone": "3-8",
+        "native_region": "Northeastern North America",
+        "soil_type": "Moist, well-drained",
+        "watering": "Moderate",
+        "sun": "Full sun to partial shade",
+        "typical_use": [
+          {"type": "Edible", "part": "Sap", "use": "Maple syrup"},
+          {"type": "Timber", "part": "Wood", "use": "Flooring, furniture"}
+        ],
+        "toxicity": [
+          {"part": "Sap", "to": ["Humans"], "effect": "Non-toxic"}
+        ],
+      "companion_plants": ["Beech", "Birch"],
+      "antagonistic_plants": ["Black Walnut"],
+      "genetic_code": "ATCG...",
+      "wiki": "https://en.wikipedia.org/wiki/Acer_saccharum",
+      "blurb": "Sugar Maple is a deciduous tree known for its sap, which is used to make maple syrup, and its beautiful fall foliage."
+      },
+      {
+        "common": "American Beech",
+        "scientific": "Fagus grandifolia",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Fagus_grandifolia_001.jpg/320px-Fagus_grandifolia_001.jpg",
+        "image_flower": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Fagus_grandifolia_flower.jpg",
+        "image_stem": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Fagus_grandifolia_bark.jpg",
+        "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Fagus_grandifolia_leaf.jpg",
+        "climate_zone": "3-9",
+        "native_region": "Eastern North America",
+        "soil_type": "Rich, moist, well-drained",
+        "watering": "Moderate",
+        "sun": "Full sun to partial shade",
+        "typical_use": [
+          {"type": "Edible", "part": "Nut", "use": "Eaten raw or cooked"},
+          {"type": "Timber", "part": "Wood", "use": "Furniture, flooring"}
+        ],
+        "toxicity": [
+          {"part": "Nut", "to": ["Humans"], "effect": "Non-toxic"}
+        ],
+      "companion_plants": ["Maple", "Dogwood"],
+      "antagonistic_plants": ["Black Walnut"],
+      "genetic_code": "ATCG...",
+      "wiki": "https://en.wikipedia.org/wiki/Fagus_grandifolia",
+      "blurb": "American Beech is a shade-tolerant tree with smooth gray bark and edible nuts, found in eastern North American forests."
+      }
+    ]

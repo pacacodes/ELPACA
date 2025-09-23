@@ -2,19 +2,73 @@
   {
     "common": "Morel",
     "scientific": "Morchella esculenta",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Morchella_esculenta_001.jpg/320px-Morchella_esculenta_001.jpg",
+    "image_flower": "",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Morchella_esculenta_stem.jpg",
+    "image_leaf": "",
+    "climate_zone": "4-9",
+    "native_region": "Northern Hemisphere",
+    "soil_type": "Moist, well-drained, rich in organic matter",
+    "watering": "Moist",
+    "sun": "Partial shade",
+    "typical_use": [
+      {"type": "Edible", "part": "Fruiting body", "use": "Highly prized edible mushroom"}
+    ],
+    "toxicity": [
+      {"part": "Raw", "to": ["Humans"], "effect": "Toxic if eaten raw; safe when cooked"}
+    ],
+    "companion_plants": ["Ash", "Elm"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Morchella_esculenta",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Morchella_esculenta_001.jpg/320px-Morchella_esculenta_001.jpg"
+    "blurb": "Morel is a highly sought-after edible mushroom, found in forests and prized by foragers."
   },
   {
     "common": "Chicken of the Woods",
     "scientific": "Laetiporus sulphureus",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Laetiporus_sulphureus_001.jpg/320px-Laetiporus_sulphureus_001.jpg",
+    "image_flower": "",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Laetiporus_sulphureus_stem.jpg",
+    "image_leaf": "",
+    "climate_zone": "5-10",
+    "native_region": "North America, Europe",
+    "soil_type": "Grows on wood",
+    "watering": "Moist",
+    "sun": "Partial shade",
+    "typical_use": [
+      {"type": "Edible", "part": "Fruiting body", "use": "Edible when young, tastes like chicken"}
+    ],
+    "toxicity": [
+      {"part": "Old specimens", "to": ["Humans"], "effect": "Can cause stomach upset in some people"}
+    ],
+    "companion_plants": ["Oak", "Cherry"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Laetiporus_sulphureus",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Laetiporus_sulphureus_001.jpg/320px-Laetiporus_sulphureus_001.jpg"
+    "blurb": "Chicken of the Woods is a bright orange shelf fungus, edible when young and found on trees."
   },
   {
     "common": "Lion's Mane",
     "scientific": "Hericium erinaceus",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Hericium_erinaceus_001.jpg/320px-Hericium_erinaceus_001.jpg",
+    "image_flower": "",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Hericium_erinaceus_stem.jpg",
+    "image_leaf": "",
+    "climate_zone": "4-9",
+    "native_region": "North America, Europe, Asia",
+    "soil_type": "Grows on wood",
+    "watering": "Moist",
+    "sun": "Partial shade",
+    "typical_use": [
+      {"type": "Edible", "part": "Fruiting body", "use": "Edible and used in medicine"}
+    ],
+    "toxicity": [
+      {"part": "None", "to": ["Humans", "Pets"], "effect": "Non-toxic"}
+    ],
+    "companion_plants": ["Beech", "Maple"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Hericium_erinaceus",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Hericium_erinaceus_001.jpg/320px-Hericium_erinaceus_001.jpg"
+    "blurb": "Lion's Mane is a unique, edible mushroom with medicinal properties, found on hardwood trees."
   }
 ]

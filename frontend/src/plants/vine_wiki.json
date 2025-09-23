@@ -2,19 +2,75 @@
   {
     "common": "Riverbank Grape",
     "scientific": "Vitis riparia",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Vitis_riparia_001.jpg/320px-Vitis_riparia_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Vitis_riparia_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Vitis_riparia_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Vitis_riparia_leaf.jpg",
+    "climate_zone": "3-8",
+    "native_region": "North America",
+    "soil_type": "Moist, well-drained",
+    "watering": "Moderate",
+    "sun": "Full sun",
+    "typical_use": [
+      {"type": "Edible", "part": "Fruit", "use": "Grapes eaten fresh or for wine"},
+      {"type": "Wildlife", "part": "All", "use": "Food for birds and mammals"}
+    ],
+    "toxicity": [
+      {"part": "Leaf", "to": ["Dogs"], "effect": "Potentially toxic if ingested in large amounts"}
+    ],
+    "companion_plants": ["Passionflower", "Virginia Creeper"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Vitis_riparia",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Vitis_riparia_001.jpg/320px-Vitis_riparia_001.jpg"
+    "blurb": "Riverbank Grape is a vigorous native vine with edible fruit, important for wildlife and erosion control."
   },
   {
     "common": "Virginia Creeper",
     "scientific": "Parthenocissus quinquefolia",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Parthenocissus_quinquefolia_001.jpg/320px-Parthenocissus_quinquefolia_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Parthenocissus_quinquefolia_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Parthenocissus_quinquefolia_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Parthenocissus_quinquefolia_leaf.jpg",
+    "climate_zone": "3-9",
+    "native_region": "Eastern and Central North America",
+    "soil_type": "Moist, well-drained",
+    "watering": "Moderate",
+    "sun": "Full sun to shade",
+    "typical_use": [
+      {"type": "Ornamental", "part": "Leaf", "use": "Colorful fall foliage"}
+    ],
+    "toxicity": [
+      {"part": "Berry", "to": ["Humans", "Pets"], "effect": "Mildly toxic if ingested"}
+    ],
+    "companion_plants": ["Riverbank Grape", "Passionflower"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Parthenocissus_quinquefolia",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Parthenocissus_quinquefolia_001.jpg/320px-Parthenocissus_quinquefolia_001.jpg"
+    "blurb": "Virginia Creeper is a fast-growing native vine with five-part leaves and blue berries, used for groundcover and wildlife habitat."
   },
   {
     "common": "Passionflower",
     "scientific": "Passiflora incarnata",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Passiflora_incarnata_001.jpg/320px-Passiflora_incarnata_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Passiflora_incarnata_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Passiflora_incarnata_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Passiflora_incarnata_leaf.jpg",
+    "climate_zone": "6-10",
+    "native_region": "Southeastern United States",
+    "soil_type": "Well-drained",
+    "watering": "Moderate",
+    "sun": "Full sun",
+    "typical_use": [
+      {"type": "Edible", "part": "Fruit", "use": "Fruit eaten fresh or in drinks"},
+      {"type": "Medicinal", "part": "Leaf", "use": "Leaves used in herbal medicine"}
+    ],
+    "toxicity": [
+      {"part": "None", "to": ["Humans", "Pets"], "effect": "Non-toxic"}
+    ],
+    "companion_plants": ["Riverbank Grape", "Virginia Creeper"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Passiflora_incarnata",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Passiflora_incarnata_001.jpg/320px-Passiflora_incarnata_001.jpg"
+    "blurb": "Passionflower is a perennial vine with exotic flowers and edible fruit, native to the southeastern United States."
   }
 ]

@@ -2,19 +2,75 @@
   {
     "common": "Redbud",
     "scientific": "Cercis canadensis",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Cercis_canadensis_flowers.jpg/320px-Cercis_canadensis_flowers.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Cercis_canadensis_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Cercis_canadensis_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Cercis_canadensis_leaf.jpg",
+    "climate_zone": "4-9",
+    "native_region": "Eastern North America",
+    "soil_type": "Moist, well-drained",
+    "watering": "Moderate",
+    "sun": "Full sun to partial shade",
+    "typical_use": [
+      {"type": "Ornamental", "part": "Flower", "use": "Showy spring flowers"},
+      {"type": "Edible", "part": "Flower", "use": "Flowers edible raw or cooked"}
+    ],
+    "toxicity": [
+      {"part": "None", "to": ["Humans", "Pets"], "effect": "Non-toxic"}
+    ],
+    "companion_plants": ["Dogwood", "Serviceberry"],
+    "antagonistic_plants": ["Black Walnut"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Cercis_canadensis",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Cercis_canadensis_flowers.jpg/320px-Cercis_canadensis_flowers.jpg"
+    "blurb": "Redbud is a small deciduous tree with striking pink flowers in early spring, native to eastern North America."
   },
   {
     "common": "Serviceberry",
     "scientific": "Amelanchier arborea",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Amelanchier_arborea_1.jpg/320px-Amelanchier_arborea_1.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Amelanchier_arborea_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Amelanchier_arborea_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Amelanchier_arborea_leaf.jpg",
+    "climate_zone": "4-9",
+    "native_region": "Eastern North America",
+    "soil_type": "Moist, well-drained",
+    "watering": "Moderate",
+    "sun": "Full sun to partial shade",
+    "typical_use": [
+      {"type": "Edible", "part": "Fruit", "use": "Berries eaten fresh or in jams"},
+      {"type": "Ornamental", "part": "Flower", "use": "Showy white flowers"}
+    ],
+    "toxicity": [
+      {"part": "None", "to": ["Humans", "Pets"], "effect": "Non-toxic"}
+    ],
+    "companion_plants": ["Redbud", "Dogwood"],
+    "antagonistic_plants": ["Black Walnut"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Amelanchier_arborea",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Amelanchier_arborea_1.jpg/320px-Amelanchier_arborea_1.jpg"
+    "blurb": "Serviceberry is a small tree or shrub with edible berries and attractive white flowers, native to North America."
   },
   {
     "common": "Dogwood",
     "scientific": "Cornus florida",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Cornus_florida_001.jpg/320px-Cornus_florida_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Cornus_florida_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Cornus_florida_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Cornus_florida_leaf.jpg",
+    "climate_zone": "5-9",
+    "native_region": "Eastern North America",
+    "soil_type": "Rich, well-drained",
+    "watering": "Moderate",
+    "sun": "Full sun to partial shade",
+    "typical_use": [
+      {"type": "Ornamental", "part": "Flower", "use": "Showy spring flowers"}
+    ],
+    "toxicity": [
+      {"part": "Fruit", "to": ["Humans"], "effect": "Mildly toxic if eaten in large quantities"}
+    ],
+    "companion_plants": ["Redbud", "Serviceberry"],
+    "antagonistic_plants": ["Black Walnut"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Cornus_florida",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Cornus_florida_001.jpg/320px-Cornus_florida_001.jpg"
+    "blurb": "Dogwood is a popular ornamental tree with showy flowers and red berries, native to eastern North America."
   }
 ]

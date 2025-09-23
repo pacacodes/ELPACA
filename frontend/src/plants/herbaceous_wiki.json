@@ -2,19 +2,74 @@
   {
     "common": "Wild Bergamot",
     "scientific": "Monarda fistulosa",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Monarda_fistulosa_001.jpg/320px-Monarda_fistulosa_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Monarda_fistulosa_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Monarda_fistulosa_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Monarda_fistulosa_leaf.jpg",
+    "climate_zone": "3-9",
+    "native_region": "North America",
+    "soil_type": "Dry to moist, well-drained",
+    "watering": "Low to moderate",
+    "sun": "Full sun to partial shade",
+    "typical_use": [
+      {"type": "Medicinal", "part": "Leaf", "use": "Used for teas and remedies"},
+      {"type": "Ornamental", "part": "Flower", "use": "Attractive to pollinators"}
+    ],
+    "toxicity": [
+      {"part": "None", "to": ["Humans", "Pets"], "effect": "Non-toxic"}
+    ],
+    "companion_plants": ["Milkweed", "Goldenrod"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Monarda_fistulosa",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Monarda_fistulosa_001.jpg/320px-Monarda_fistulosa_001.jpg"
+    "blurb": "Wild Bergamot is a perennial herb with aromatic leaves and showy flowers, native to North America and used in teas."
   },
   {
     "common": "Milkweed",
     "scientific": "Asclepias syriaca",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Asclepias_syriaca_001.jpg/320px-Asclepias_syriaca_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Asclepias_syriaca_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Asclepias_syriaca_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Asclepias_syriaca_leaf.jpg",
+    "climate_zone": "3-9",
+    "native_region": "North America",
+    "soil_type": "Well-drained",
+    "watering": "Low to moderate",
+    "sun": "Full sun",
+    "typical_use": [
+      {"type": "Wildlife", "part": "All", "use": "Host plant for monarch butterflies"}
+    ],
+    "toxicity": [
+      {"part": "All", "to": ["Humans", "Pets"], "effect": "Toxic if ingested in quantity"}
+    ],
+    "companion_plants": ["Wild Bergamot", "Goldenrod"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Asclepias_syriaca",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Asclepias_syriaca_001.jpg/320px-Asclepias_syriaca_001.jpg"
+    "blurb": "Milkweed is a perennial plant known for its milky sap and importance to monarch butterflies, native to North America."
   },
   {
     "common": "Goldenrod",
     "scientific": "Solidago canadensis",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Solidago_canadensis_001.jpg/320px-Solidago_canadensis_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Solidago_canadensis_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Solidago_canadensis_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Solidago_canadensis_leaf.jpg",
+    "climate_zone": "3-9",
+    "native_region": "North America",
+    "soil_type": "Dry to moist, well-drained",
+    "watering": "Low to moderate",
+    "sun": "Full sun",
+    "typical_use": [
+      {"type": "Ornamental", "part": "Flower", "use": "Showy yellow flowers"}
+    ],
+    "toxicity": [
+      {"part": "None", "to": ["Humans", "Pets"], "effect": "Non-toxic"}
+    ],
+    "companion_plants": ["Wild Bergamot", "Milkweed"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Solidago_canadensis",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Solidago_canadensis_001.jpg/320px-Solidago_canadensis_001.jpg"
+    "blurb": "Goldenrod is a perennial herb with bright yellow flowers, native to North America and important for pollinators."
   }
 ]

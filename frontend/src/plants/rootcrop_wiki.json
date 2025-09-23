@@ -2,19 +2,73 @@
   {
     "common": "Jerusalem Artichoke",
     "scientific": "Helianthus tuberosus",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Helianthus_tuberosus_001.jpg/320px-Helianthus_tuberosus_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Helianthus_tuberosus_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Helianthus_tuberosus_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Helianthus_tuberosus_leaf.jpg",
+    "climate_zone": "3-8",
+    "native_region": "North America",
+    "soil_type": "Well-drained, sandy",
+    "watering": "Moderate",
+    "sun": "Full sun",
+    "typical_use": [
+      {"type": "Edible", "part": "Tuber", "use": "Tubers eaten cooked or raw"}
+    ],
+    "toxicity": [
+      {"part": "None", "to": ["Humans", "Pets"], "effect": "Non-toxic"}
+    ],
+    "companion_plants": ["Groundnut", "Wild Carrot"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Helianthus_tuberosus",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Helianthus_tuberosus_001.jpg/320px-Helianthus_tuberosus_001.jpg"
+    "blurb": "Jerusalem Artichoke is a perennial sunflower grown for its edible tubers, native to North America."
   },
   {
     "common": "Groundnut",
     "scientific": "Apios americana",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Apios_americana_001.jpg/320px-Apios_americana_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Apios_americana_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Apios_americana_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Apios_americana_leaf.jpg",
+    "climate_zone": "4-9",
+    "native_region": "Eastern North America",
+    "soil_type": "Moist, sandy",
+    "watering": "Moderate",
+    "sun": "Full sun to partial shade",
+    "typical_use": [
+      {"type": "Edible", "part": "Tuber", "use": "Tubers eaten cooked"}
+    ],
+    "toxicity": [
+      {"part": "None", "to": ["Humans", "Pets"], "effect": "Non-toxic"}
+    ],
+    "companion_plants": ["Jerusalem Artichoke", "Wild Carrot"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Apios_americana",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Apios_americana_001.jpg/320px-Apios_americana_001.jpg"
+    "blurb": "Groundnut is a perennial vine with edible tubers, native to eastern North America and used as a food source."
   },
   {
     "common": "Wild Carrot",
     "scientific": "Daucus carota",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Daucus_carota_001.jpg/320px-Daucus_carota_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Daucus_carota_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Daucus_carota_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Daucus_carota_leaf.jpg",
+    "climate_zone": "3-9",
+    "native_region": "Europe, Asia, North America",
+    "soil_type": "Well-drained, sandy",
+    "watering": "Moderate",
+    "sun": "Full sun",
+    "typical_use": [
+      {"type": "Edible", "part": "Root", "use": "Roots eaten raw or cooked"}
+    ],
+    "toxicity": [
+      {"part": "Leaf", "to": ["Humans"], "effect": "Mildly toxic if ingested in large amounts"}
+    ],
+    "companion_plants": ["Groundnut", "Jerusalem Artichoke"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Daucus_carota",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Daucus_carota_001.jpg/320px-Daucus_carota_001.jpg"
+    "blurb": "Wild Carrot is a biennial plant with edible roots, ancestor of the cultivated carrot, and found in many regions."
   }
 ]

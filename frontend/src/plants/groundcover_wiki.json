@@ -2,19 +2,73 @@
   {
     "common": "Wild Ginger",
     "scientific": "Asarum canadense",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Asarum_canadense_001.jpg/320px-Asarum_canadense_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Asarum_canadense_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Asarum_canadense_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Asarum_canadense_leaf.jpg",
+    "climate_zone": "4-6",
+    "native_region": "Eastern North America",
+    "soil_type": "Moist, rich",
+    "watering": "Moderate",
+    "sun": "Shade to partial shade",
+    "typical_use": [
+      {"type": "Groundcover", "part": "Leaf", "use": "Dense foliage for shade gardens"}
+    ],
+    "toxicity": [
+      {"part": "Root", "to": ["Humans"], "effect": "Toxic if ingested in quantity"}
+    ],
+    "companion_plants": ["Partridgeberry", "Creeping Phlox"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Asarum_canadense",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Asarum_canadense_001.jpg/320px-Asarum_canadense_001.jpg"
+    "blurb": "Wild Ginger is a low-growing perennial with heart-shaped leaves, native to eastern North America and used as a groundcover."
   },
   {
     "common": "Creeping Phlox",
     "scientific": "Phlox stolonifera",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Phlox_stolonifera_001.jpg/320px-Phlox_stolonifera_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Phlox_stolonifera_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Phlox_stolonifera_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Phlox_stolonifera_leaf.jpg",
+    "climate_zone": "4-8",
+    "native_region": "Eastern North America",
+    "soil_type": "Moist, well-drained",
+    "watering": "Moderate",
+    "sun": "Full sun to partial shade",
+    "typical_use": [
+      {"type": "Groundcover", "part": "Leaf", "use": "Spreading mat for erosion control"}
+    ],
+    "toxicity": [
+      {"part": "None", "to": ["Humans", "Pets"], "effect": "Non-toxic"}
+    ],
+    "companion_plants": ["Wild Ginger", "Partridgeberry"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Phlox_stolonifera",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Phlox_stolonifera_001.jpg/320px-Phlox_stolonifera_001.jpg"
+    "blurb": "Creeping Phlox is a mat-forming perennial with colorful flowers, native to eastern North America and used as a groundcover."
   },
   {
     "common": "Partridgeberry",
     "scientific": "Mitchella repens",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Mitchella_repens_001.jpg/320px-Mitchella_repens_001.jpg",
+    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Mitchella_repens_flower.jpg",
+    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Mitchella_repens_stem.jpg",
+    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Mitchella_repens_leaf.jpg",
+    "climate_zone": "3-8",
+    "native_region": "Eastern North America",
+    "soil_type": "Moist, acidic",
+    "watering": "Moderate",
+    "sun": "Shade to partial shade",
+    "typical_use": [
+      {"type": "Groundcover", "part": "Leaf", "use": "Low, spreading mat for woodland gardens"}
+    ],
+    "toxicity": [
+      {"part": "None", "to": ["Humans", "Pets"], "effect": "Non-toxic"}
+    ],
+    "companion_plants": ["Wild Ginger", "Creeping Phlox"],
+    "antagonistic_plants": ["None"],
+    "genetic_code": "ATCG...",
     "wiki": "https://en.wikipedia.org/wiki/Mitchella_repens",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Mitchella_repens_001.jpg/320px-Mitchella_repens_001.jpg"
+    "blurb": "Partridgeberry is a trailing evergreen groundcover with red berries, native to eastern North America."
   }
 ]
