@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Grape",
+    "scientific_name": "Vitis vinifera",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Vitis_vinifera_Vineyard.jpg",
+    "about": "Vitis vinifera, the common grape vine, is a species native to the Mediterranean region, central Europe, and southwestern Asia. It is widely cultivated for its fruit, which is used for wine, juice, and fresh consumption.",
+    "classification": {
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "class": "Magnoliopsida",
+      "order": "Vitales",
+      "family": "Vitaceae",
+      "genus": "Vitis",
+      "species": "V. vinifera"
+    },
+    "taxon_id": "29760",
+    "genome_assembly": "Vitis_vinifera_12X",
+    "dna_sequence": "[FASTA or large string omitted for brevity]"
+  }
+]
