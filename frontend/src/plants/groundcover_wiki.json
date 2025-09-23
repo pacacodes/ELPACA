@@ -1,7 +1,21 @@
 [
   {
-    "common": "Wild Ginger",
-    "scientific": "Asarum canadense",
+    "name": "Wild Ginger",
+    "scientific_name": "Asarum canadense",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Asarum_canadense_001.jpg/320px-Asarum_canadense_001.jpg",
+    "about": "Wild Ginger is a low-growing perennial with heart-shaped leaves, native to eastern North America and used as a groundcover.",
+    "classification": {
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "class": "Magnoliopsida",
+      "order": "Piperales",
+      "family": "Aristolochiaceae",
+      "genus": "Asarum",
+      "species": "A. canadense"
+    },
+    "taxon_id": "3482",
+    "genome_assembly": "Asarum_canadense_v1.0",
+    "dna_sequence": "[FASTA or large string omitted for brevity]",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Asarum_canadense_001.jpg/320px-Asarum_canadense_001.jpg",
     "image_flower": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Asarum_canadense_flower.jpg",
     "image_stem": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Asarum_canadense_stem.jpg",
@@ -27,8 +41,22 @@
   "root_type": "rhizome"
   },
   {
-    "common": "Creeping Phlox",
-    "scientific": "Phlox stolonifera",
+    "name": "Creeping Phlox",
+    "scientific_name": "Phlox stolonifera",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Phlox_stolonifera_001.jpg/320px-Phlox_stolonifera_001.jpg",
+    "about": "Creeping Phlox is a mat-forming perennial with colorful flowers, native to eastern North America and used as a groundcover.",
+    "classification": {
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "class": "Magnoliopsida",
+      "order": "Ericales",
+      "family": "Polemoniaceae",
+      "genus": "Phlox",
+      "species": "P. stolonifera"
+    },
+    "taxon_id": "4007",
+    "genome_assembly": "Phlox_stolonifera_v1.0",
+    "dna_sequence": "[FASTA or large string omitted for brevity]",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Phlox_stolonifera_001.jpg/320px-Phlox_stolonifera_001.jpg",
     "image_flower": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Phlox_stolonifera_flower.jpg",
     "image_stem": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Phlox_stolonifera_stem.jpg",
@@ -54,8 +82,22 @@
   "root_type": "fibrous"
   },
   {
-    "common": "Partridgeberry",
-    "scientific": "Mitchella repens",
+    "name": "Partridgeberry",
+    "scientific_name": "Mitchella repens",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Mitchella_repens_001.jpg/320px-Mitchella_repens_001.jpg",
+    "about": "Partridgeberry is a trailing evergreen groundcover with red berries, native to eastern North America.",
+    "classification": {
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "class": "Magnoliopsida",
+      "order": "Gentianales",
+      "family": "Rubiaceae",
+      "genus": "Mitchella",
+      "species": "M. repens"
+    },
+    "taxon_id": "4123",
+    "genome_assembly": "Mitchella_repens_v1.0",
+    "dna_sequence": "[FASTA or large string omitted for brevity]",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Mitchella_repens_001.jpg/320px-Mitchella_repens_001.jpg",
     "image_flower": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Mitchella_repens_flower.jpg",
     "image_stem": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Mitchella_repens_stem.jpg",
