@@ -14,4 +14,514 @@
     "scientific": "Corylus americana",
     "wiki": "https://en.wikipedia.org/wiki/Corylus_americana"
   }
+    ,
+    {
+      "common": "California coffeeberry",
+      "scientific": "Frangula californica",
+      "wiki": "https://en.wikipedia.org/wiki/Frangula_californica"
+    },
+    {
+      "common": "California buckwheat",
+      "scientific": "Eriogonum fasciculatum",
+      "wiki": "https://en.wikipedia.org/wiki/Eriogonum_fasciculatum"
+    },
+    {
+      "common": "California sagebrush",
+      "scientific": "Artemisia californica",
+      "wiki": "https://en.wikipedia.org/wiki/Artemisia_californica"
+    },
+    {
+      "common": "Coyote bush",
+      "scientific": "Baccharis pilularis",
+      "wiki": "https://en.wikipedia.org/wiki/Baccharis_pilularis"
+    },
+    {
+      "common": "Lemonade berry",
+      "scientific": "Rhus integrifolia",
+      "wiki": "https://en.wikipedia.org/wiki/Rhus_integrifolia"
+    },
+    {
+      "common": "Toyon",
+      "scientific": "Heteromeles arbutifolia",
+      "wiki": "https://en.wikipedia.org/wiki/Heteromeles_arbutifolia"
+    },
+    {
+      "common": "California lilac",
+      "scientific": "Ceanothus spp.",
+      "wiki": "https://en.wikipedia.org/wiki/Ceanothus"
+    },
+    {
+      "common": "Manzanita",
+      "scientific": "Arctostaphylos spp.",
+      "wiki": "https://en.wikipedia.org/wiki/Arctostaphylos"
+    },
+    {
+      "common": "Currants and gooseberries",
+      "scientific": "Ribes spp.",
+      "wiki": "https://en.wikipedia.org/wiki/Ribes"
+    },
+    {
+      "common": "Bush monkeyflower",
+      "scientific": "Mimulus aurantiacus",
+      "wiki": "https://en.wikipedia.org/wiki/Mimulus_aurantiacus"
+    }
+      ,
+      {
+        "common": "Manzanita 'Emerald Carpet'",
+        "scientific": "Arctostaphylos 'Emerald Carpet'",
+        "wiki": "https://calscape.org/Arctostaphylos-'Emerald-Carpet'"
+      },
+      {
+        "common": "Manzanita 'Howard McMinn'",
+        "scientific": "Arctostaphylos densiflora 'Howard McMinn'",
+        "wiki": "https://calscape.org/Arctostaphylos-densiflora-'Howard-McMinn'"
+      },
+      {
+        "common": "Manzanita 'Lester Rowntree'",
+        "scientific": "Arctostaphylos 'Lester Rowntree'",
+        "wiki": "https://calscape.org/Arctostaphylos-'Lester-Rowntree'"
+      },
+      {
+        "common": "Manzanita 'Louis Edmunds'",
+        "scientific": "Arctostaphylos bakeri 'Louis Edmunds'",
+        "wiki": "https://calscape.org/Arctostaphylos-bakeri-'Louis-Edmunds'"
+      },
+      {
+        "common": "Manzanita 'Pacific Mist'",
+        "scientific": "Arctostaphylos x 'Pacific Mist'",
+        "wiki": "https://calscape.org/Arctostaphylos-x-'Pacific-Mist'"
+      },
+      {
+        "common": "Manzanita 'Sunset'",
+        "scientific": "Arctostaphylos 'Sunset'",
+        "wiki": "https://calscape.org/Arctostaphylos-'Sunset'"
+      },
+      {
+        "common": "Manzanita 'White Lanterns'",
+        "scientific": "Arctostaphylos 'White Lanterns'",
+        "wiki": "https://calscape.org/Arctostaphylos-'White-Lanterns'"
+      },
+      {
+        "common": "Bigberry manzanita",
+        "scientific": "Arctostaphylos glauca",
+        "wiki": "https://calscape.org/Arctostaphylos-glauca"
+      },
+      {
+        "common": "Common manzanita",
+        "scientific": "Arctostaphylos manzanita",
+        "wiki": "https://calscape.org/Arctostaphylos-manzanita"
+      },
+      {
+        "common": "Hairy manzanita",
+        "scientific": "Arctostaphylos columbiana",
+        "wiki": "https://calscape.org/Arctostaphylos-columbiana"
+      }
+        ,
+        {
+          "common": "Greenleaf manzanita",
+          "scientific": "Arctostaphylos patula",
+          "wiki": "https://calscape.org/Arctostaphylos-patula"
+        },
+        {
+          "common": "Pointleaf manzanita",
+          "scientific": "Arctostaphylos pungens",
+          "wiki": "https://calscape.org/Arctostaphylos-pungens"
+        },
+        {
+          "common": "Stanford's manzanita",
+          "scientific": "Arctostaphylos stanfordiana",
+          "wiki": "https://calscape.org/Arctostaphylos-stanfordiana"
+        },
+        {
+          "common": "Vine Hill manzanita",
+          "scientific": "Arctostaphylos densiflora",
+          "wiki": "https://calscape.org/Arctostaphylos-densiflora"
+        },
+        {
+          "common": "Dr. Hurd manzanita",
+          "scientific": "Arctostaphylos 'Dr. Hurd'",
+          "wiki": "https://calscape.org/Arctostaphylos-'Dr.-Hurd'"
+        },
+        {
+          "common": "Sentinel manzanita",
+          "scientific": "Arctostaphylos 'Sentinel'",
+          "wiki": "https://calscape.org/Arctostaphylos-'Sentinel'"
+        },
+        {
+          "common": "California lilac 'Blue Cascade'",
+          "scientific": "Ceanothus 'Blue Cascade'",
+          "wiki": "https://calscape.org/Ceanothus-'Blue-Cascade'"
+        },
+        {
+          "common": "California lilac 'Blue Jeans'",
+          "scientific": "Ceanothus 'Blue Jeans'",
+          "wiki": "https://calscape.org/Ceanothus-'Blue-Jeans'"
+        },
+        {
+          "common": "California lilac 'Concha'",
+          "scientific": "Ceanothus 'Concha'",
+          "wiki": "https://calscape.org/Ceanothus-'Concha'"
+        },
+        {
+          "common": "California lilac 'Dark Star'",
+          "scientific": "Ceanothus 'Dark Star'",
+          "wiki": "https://calscape.org/Ceanothus-'Dark-Star'"
+        }
+          ,
+          {
+            "common": "California lilac 'Frosty Blue'",
+            "scientific": "Ceanothus 'Frosty Blue'",
+            "wiki": "https://calscape.org/Ceanothus-'Frosty-Blue'"
+          },
+          {
+            "common": "California lilac 'Heart's Desire'",
+            "scientific": "Ceanothus 'Heart's Desire'",
+            "wiki": "https://calscape.org/Ceanothus-'Heart's-Desire'"
+          },
+          {
+            "common": "California lilac 'Julia Phelps'",
+            "scientific": "Ceanothus 'Julia Phelps'",
+            "wiki": "https://calscape.org/Ceanothus-'Julia-Phelps'"
+          },
+          {
+            "common": "California lilac 'Joyce Coulter'",
+            "scientific": "Ceanothus 'Joyce Coulter'",
+            "wiki": "https://calscape.org/Ceanothus-'Joyce-Coulter'"
+          },
+          {
+            "common": "California lilac 'Louis Edmunds'",
+            "scientific": "Ceanothus griseus 'Louis Edmunds'",
+            "wiki": "https://calscape.org/Ceanothus-griseus-'Louis-Edmunds'"
+          },
+          {
+            "common": "California lilac 'Owlswood Blue'",
+            "scientific": "Ceanothus 'Owlswood Blue'",
+            "wiki": "https://calscape.org/Ceanothus-'Owlswood-Blue'"
+          },
+          {
+            "common": "California lilac 'Ray Hartman'",
+            "scientific": "Ceanothus 'Ray Hartman'",
+            "wiki": "https://calscape.org/Ceanothus-'Ray-Hartman'"
+          },
+          {
+            "common": "California lilac 'Skylark'",
+            "scientific": "Ceanothus thyrsiflorus 'Skylark'",
+            "wiki": "https://calscape.org/Ceanothus-thyrsiflorus-'Skylark'"
+          },
+          {
+            "common": "California lilac 'Yankee Point'",
+            "scientific": "Ceanothus griseus horizontalis 'Yankee Point'",
+            "wiki": "https://calscape.org/Ceanothus-griseus-horizontalis-'Yankee-Point'"
+          },
+          {
+            "common": "Catalina feltleaf ceanothus",
+            "scientific": "Ceanothus arboreus",
+            "wiki": "https://calscape.org/Ceanothus-arboreus"
+          }
+            ,
+            {
+              "common": "Buckbrush",
+              "scientific": "Ceanothus cuneatus",
+              "wiki": "https://calscape.org/Ceanothus-cuneatus"
+            },
+            {
+              "common": "Carmel creeper",
+              "scientific": "Ceanothus griseus horizontalis",
+              "wiki": "https://calscape.org/Ceanothus-griseus-horizontalis"
+            },
+            {
+              "common": "Chaparral whitethorn",
+              "scientific": "Ceanothus leucodermis",
+              "wiki": "https://calscape.org/Ceanothus-leucodermis"
+            },
+            {
+              "common": "Hairy ceanothus",
+              "scientific": "Ceanothus oliganthus",
+              "wiki": "https://calscape.org/Ceanothus-oliganthus"
+            },
+            {
+              "common": "Woollyleaf ceanothus",
+              "scientific": "Ceanothus tomentosus",
+              "wiki": "https://calscape.org/Ceanothus-tomentosus"
+            },
+            {
+              "common": "Bitter gooseberry",
+              "scientific": "Ribes amarum",
+              "wiki": "https://calscape.org/Ribes-amarum"
+            },
+            {
+              "common": "Catalina currant",
+              "scientific": "Ribes viburnifolium",
+              "wiki": "https://calscape.org/Ribes-viburnifolium"
+            },
+            {
+              "common": "Canyon gooseberry",
+              "scientific": "Ribes menziesii",
+              "wiki": "https://calscape.org/Ribes-menziesii"
+            },
+            {
+              "common": "Chaparral currant",
+              "scientific": "Ribes malvaceum",
+              "wiki": "https://calscape.org/Ribes-malvaceum"
+            },
+            {
+              "common": "Evergreen currant",
+              "scientific": "Ribes viburnifolium",
+              "wiki": "https://calscape.org/Ribes-viburnifolium"
+            }
+              ,
+              {
+                "common": "Fuchsia-flowered gooseberry",
+                "scientific": "Ribes speciosum",
+                "wiki": "https://calscape.org/Ribes-speciosum"
+              },
+              {
+                "common": "Golden currant",
+                "scientific": "Ribes aureum",
+                "wiki": "https://calscape.org/Ribes-aureum"
+              },
+              {
+                "common": "Hillside gooseberry",
+                "scientific": "Ribes californicum",
+                "wiki": "https://calscape.org/Ribes-californicum"
+              },
+              {
+                "common": "Pink Sierra currant",
+                "scientific": "Ribes nevadense",
+                "wiki": "https://calscape.org/Ribes-nevadense"
+              },
+              {
+                "common": "Pink-flowered currant",
+                "scientific": "Ribes sanguineum var. glutinosum",
+                "wiki": "https://calscape.org/Ribes-sanguineum-var.-glutinosum"
+              },
+              {
+                "common": "Sticky currant",
+                "scientific": "Ribes viscosissimum",
+                "wiki": "https://calscape.org/Ribes-viscosissimum"
+              },
+              {
+                "common": "White-flowered currant",
+                "scientific": "Ribes indecorum",
+                "wiki": "https://calscape.org/Ribes-indecorum"
+              },
+              {
+                "common": "Yellow gooseberry",
+                "scientific": "Ribes quercetorum",
+                "wiki": "https://calscape.org/Ribes-quercetorum"
+              },
+              {
+                "common": "Black sage",
+                "scientific": "Salvia mellifera",
+                "wiki": "https://calscape.org/Salvia-mellifera"
+              },
+              {
+                "common": "Cleveland sage",
+                "scientific": "Salvia clevelandii",
+                "wiki": "https://calscape.org/Salvia-clevelandii"
+              }
+                ,
+                {
+                  "common": "Hummingbird sage",
+                  "scientific": "Salvia spathacea",
+                  "wiki": "https://calscape.org/Salvia-spathacea"
+                },
+                {
+                  "common": "White sage",
+                  "scientific": "Salvia apiana",
+                  "wiki": "https://calscape.org/Salvia-apiana"
+                },
+                {
+                  "common": "Woolly blue curls",
+                  "scientific": "Trichostema lanatum",
+                  "wiki": "https://calscape.org/Trichostema-lanatum"
+                },
+                {
+                  "common": "Bush germander",
+                  "scientific": "Teucrium polium",
+                  "wiki": "https://en.wikipedia.org/wiki/Teucrium_polium"
+                },
+                {
+                  "common": "Pitcher sage",
+                  "scientific": "Lepechinia calycina",
+                  "wiki": "https://calscape.org/Lepechinia-calycina"
+                },
+                {
+                  "common": "San Miguel savory",
+                  "scientific": "Satureja douglasii",
+                  "wiki": "https://calscape.org/Satureja-douglasii"
+                },
+                {
+                  "common": "California beeplant",
+                  "scientific": "Scrophularia californica",
+                  "wiki": "https://calscape.org/Scrophularia-californica"
+                },
+                {
+                  "common": "Coyote mint",
+                  "scientific": "Monardella villosa",
+                  "wiki": "https://calscape.org/Monardella-villosa"
+                },
+                {
+                  "common": "Western redbud",
+                  "scientific": "Cercis occidentalis",
+                  "wiki": "https://calscape.org/Cercis-occidentalis"
+                },
+                {
+                  "common": "Western serviceberry",
+                  "scientific": "Amelanchier alnifolia",
+                  "wiki": "https://calscape.org/Amelanchier-alnifolia"
+                }
+                  ,
+                  {
+                    "common": "California wild rose",
+                    "scientific": "Rosa californica",
+                    "wiki": "https://calscape.org/Rosa-californica"
+                  },
+                  {
+                    "common": "Blue elderberry",
+                    "scientific": "Sambucus nigra ssp. caerulea",
+                    "wiki": "https://calscape.org/Sambucus-nigra-ssp.-caerulea"
+                  },
+                  {
+                    "common": "Snowberry",
+                    "scientific": "Symphoricarpos albus",
+                    "wiki": "https://calscape.org/Symphoricarpos-albus"
+                  },
+                  {
+                    "common": "Hollyleaf cherry",
+                    "scientific": "Prunus ilicifolia",
+                    "wiki": "https://calscape.org/Prunus-ilicifolia"
+                  },
+                  {
+                    "common": "Bush anemone",
+                    "scientific": "Carpenteria californica",
+                    "wiki": "https://calscape.org/Carpenteria-californica"
+                  },
+                  {
+                    "common": "Flannel bush",
+                    "scientific": "Fremontodendron californicum",
+                    "wiki": "https://calscape.org/Fremontodendron-californicum"
+                  },
+                  {
+                    "common": "California bush sunflower",
+                    "scientific": "Encelia californica",
+                    "wiki": "https://calscape.org/Encelia-californica"
+                  },
+                  {
+                    "common": "Desert willow",
+                    "scientific": "Chilopsis linearis",
+                    "wiki": "https://calscape.org/Chilopsis-linearis"
+                  },
+                  {
+                    "common": "Chaparral mallow",
+                    "scientific": "Malacothamnus fasciculatus",
+                    "wiki": "https://calscape.org/Malacothamnus-fasciculatus"
+                  },
+                  {
+                    "common": "Island snapdragon",
+                    "scientific": "Galvezia speciosa",
+                    "wiki": "https://calscape.org/Galvezia-speciosa"
+                  }
+                    ,
+                    {
+                      "common": "Ashy silktassel",
+                      "scientific": "Garrya flavescens",
+                      "wiki": "https://calscape.org/Garrya-flavescens"
+                    },
+                    {
+                      "common": "Yerba santa",
+                      "scientific": "Eriodictyon californicum",
+                      "wiki": "https://calscape.org/Eriodictyon-californicum"
+                    },
+                    {
+                      "common": "Bush poppy",
+                      "scientific": "Dendromecon rigida",
+                      "wiki": "https://calscape.org/Dendromecon-rigida"
+                    },
+                    {
+                      "common": "Bladderpod",
+                      "scientific": "Peritoma arborea",
+                      "wiki": "https://calscape.org/Peritoma-arborea"
+                    },
+                    {
+                      "common": "Mule fat",
+                      "scientific": "Baccharis salicifolia",
+                      "wiki": "https://calscape.org/Baccharis-salicifolia"
+                    },
+                    {
+                      "common": "Chamise",
+                      "scientific": "Adenostoma fasciculatum",
+                      "wiki": "https://calscape.org/Adenostoma-fasciculatum"
+                    },
+                    {
+                      "common": "Island tree mallow",
+                      "scientific": "Malva assurgentiflora",
+                      "wiki": "https://calscape.org/Malva-assurgentiflora"
+                    },
+                    {
+                      "common": "Laurel sumac",
+                      "scientific": "Malosma laurina",
+                      "wiki": "https://calscape.org/Malosma-laurina"
+                    },
+                    {
+                      "common": "Apricot mallow",
+                      "scientific": "Sphaeralcea ambigua",
+                      "wiki": "https://calscape.org/Sphaeralcea-ambigua"
+                    },
+                    {
+                      "common": "Deer brush",
+                      "scientific": "Ceanothus integerrimus",
+                      "wiki": "https://calscape.org/Ceanothus-integerrimus"
+                    }
+                      ,
+                      {
+                        "common": "Golden yarrow",
+                        "scientific": "Eriophyllum confertiflorum",
+                        "wiki": "https://calscape.org/Eriophyllum-confertiflorum"
+                      },
+                      {
+                        "common": "Canyon gray sagebrush",
+                        "scientific": "Artemisia californica 'Canyon Gray'",
+                        "wiki": "https://calscape.org/Artemisia-californica-'Canyon-Gray'"
+                      },
+                      {
+                        "common": "Dwarf coyote brush",
+                        "scientific": "Baccharis pilularis 'Pigeon Point'",
+                        "wiki": "https://calscape.org/Baccharis-pilularis-'Pigeon-Point'"
+                      },
+                      {
+                        "common": "Hollyleaf redberry",
+                        "scientific": "Rhamnus ilicifolia",
+                        "wiki": "https://calscape.org/Rhamnus-ilicifolia"
+                      },
+                      {
+                        "common": "Island bush poppy",
+                        "scientific": "Dendromecon harfordii",
+                        "wiki": "https://calscape.org/Dendromecon-harfordii"
+                      },
+                      {
+                        "common": "Mock orange",
+                        "scientific": "Philadelphus lewisii",
+                        "wiki": "https://calscape.org/Philadelphus-lewisii"
+                      },
+                      {
+                        "common": "Pacific wax myrtle",
+                        "scientific": "Myrica californica",
+                        "wiki": "https://calscape.org/Myrica-californica"
+                      },
+                      {
+                        "common": "St. Catherine's lace",
+                        "scientific": "Eriogonum giganteum",
+                        "wiki": "https://calscape.org/Eriogonum-giganteum"
+                      },
+                      {
+                        "common": "Woolly blue curls",
+                        "scientific": "Trichostema lanatum",
+                        "wiki": "https://calscape.org/Trichostema-lanatum"
+                      },
+                      {
+                        "common": "Western dogwood",
+                        "scientific": "Cornus sericea",
+                        "wiki": "https://calscape.org/Cornus-sericea"
+                      }
 ]

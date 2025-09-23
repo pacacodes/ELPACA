@@ -14,4 +14,415 @@
     "scientific": "Cornus florida",
     "wiki": "https://en.wikipedia.org/wiki/Cornus_florida"
   }
+    ,
+    {
+      "common": "Vine maple",
+      "scientific": "Acer circinatum",
+      "wiki": "https://en.wikipedia.org/wiki/Acer_circinatum"
+    },
+    {
+      "common": "California buckeye",
+      "scientific": "Aesculus californica",
+      "wiki": "https://en.wikipedia.org/wiki/Aesculus_californica"
+    },
+    {
+      "common": "White alder",
+      "scientific": "Alnus rhombifolia",
+      "wiki": "https://en.wikipedia.org/wiki/Alnus_rhombifolia"
+    },
+    {
+      "common": "Red alder",
+      "scientific": "Alnus rubra",
+      "wiki": "https://en.wikipedia.org/wiki/Alnus_rubra"
+    },
+    {
+      "common": "Serviceberry",
+      "scientific": "Amelanchier spp.",
+      "wiki": "https://en.wikipedia.org/wiki/Amelanchier"
+    },
+    {
+      "common": "Madrone",
+      "scientific": "Arbutus menziesii",
+      "wiki": "https://en.wikipedia.org/wiki/Arbutus_menziesii"
+    },
+    {
+      "common": "Manzanita",
+      "scientific": "Arctostaphylos spp.",
+      "wiki": "https://en.wikipedia.org/wiki/Arctostaphylos"
+    },
+    {
+      "common": "Spicebush",
+      "scientific": "Calycanthus occidentalis",
+      "wiki": "https://en.wikipedia.org/wiki/Calycanthus_occidentalis"
+    },
+    {
+      "common": "Bush anemone",
+      "scientific": "Carpenteria californica",
+      "wiki": "https://en.wikipedia.org/wiki/Carpenteria_californica"
+    },
+    {
+      "common": "California lilac",
+      "scientific": "Ceanothus spp.",
+      "wiki": "https://en.wikipedia.org/wiki/Ceanothus"
+    }
+      ,
+      {
+        "common": "Western redbud",
+        "scientific": "Cercis occidentalis",
+        "wiki": "https://en.wikipedia.org/wiki/Cercis_occidentalis"
+      },
+      {
+        "common": "Mountain mahogany",
+        "scientific": "Cercocarpus betuloides",
+        "wiki": "https://en.wikipedia.org/wiki/Cercocarpus_betuloides"
+      },
+      {
+        "common": "Desert willow",
+        "scientific": "Chilopsis linearis",
+        "wiki": "https://en.wikipedia.org/wiki/Chilopsis_linearis"
+      },
+      {
+        "common": "Summer-holly",
+        "scientific": "Comarostaphylis diversifolia",
+        "wiki": "https://en.wikipedia.org/wiki/Comarostaphylis_diversifolia"
+      },
+      {
+        "common": "Red osier dogwood",
+        "scientific": "Cornus sericea",
+        "wiki": "https://en.wikipedia.org/wiki/Cornus_sericea"
+      },
+      {
+        "common": "California hazelnut",
+        "scientific": "Corylus cornuta",
+        "wiki": "https://en.wikipedia.org/wiki/Corylus_cornuta"
+      },
+      {
+        "common": "Coffeeberry",
+        "scientific": "Frangula californica",
+        "wiki": "https://en.wikipedia.org/wiki/Frangula_californica"
+      },
+      {
+        "common": "Flannelbush",
+        "scientific": "Fremontodendron californicum",
+        "wiki": "https://en.wikipedia.org/wiki/Fremontodendron_californicum"
+      },
+      {
+        "common": "Coast silktassel",
+        "scientific": "Garrya elliptica",
+        "wiki": "https://en.wikipedia.org/wiki/Garrya_elliptica"
+      },
+      {
+        "common": "Toyon",
+        "scientific": "Heteromeles arbutifolia",
+        "wiki": "https://en.wikipedia.org/wiki/Heteromeles_arbutifolia"
+      }
+        ,
+        {
+          "common": "Ocean spray",
+          "scientific": "Holodiscus discolor",
+          "wiki": "https://en.wikipedia.org/wiki/Holodiscus_discolor"
+        },
+        {
+          "common": "California black walnut",
+          "scientific": "Juglans californica",
+          "wiki": "https://en.wikipedia.org/wiki/Juglans_californica"
+        },
+        {
+          "common": "Tree mallow",
+          "scientific": "Malva assurgentiflora",
+          "wiki": "https://en.wikipedia.org/wiki/Malva_assurgentiflora"
+        },
+        {
+          "common": "Pacific wax myrtle",
+          "scientific": "Morella californica",
+          "wiki": "https://en.wikipedia.org/wiki/Morella_californica"
+        },
+        {
+          "common": "Mock orange",
+          "scientific": "Philadelphus lewisii",
+          "wiki": "https://en.wikipedia.org/wiki/Philadelphus_lewisii"
+        },
+        {
+          "common": "Hollyleaf cherry",
+          "scientific": "Prunus ilicifolia",
+          "wiki": "https://en.wikipedia.org/wiki/Prunus_ilicifolia"
+        },
+        {
+          "common": "Leather oak",
+          "scientific": "Quercus durata var. durata",
+          "wiki": "https://en.wikipedia.org/wiki/Quercus_durata"
+        },
+        {
+          "common": "Currants and gooseberries",
+          "scientific": "Ribes spp.",
+          "wiki": "https://en.wikipedia.org/wiki/Ribes"
+        },
+        {
+          "common": "Blue elderberry",
+          "scientific": "Sambucus nigra ssp. caerulea",
+          "wiki": "https://en.wikipedia.org/wiki/Sambucus_nigra_subsp._caerulea"
+        },
+        {
+          "common": "California bay",
+          "scientific": "Umbellularia californica",
+          "wiki": "https://en.wikipedia.org/wiki/Umbellularia_californica"
+        }
+          ,
+          {
+            "common": "Bigleaf maple",
+            "scientific": "Acer macrophyllum",
+            "wiki": "https://en.wikipedia.org/wiki/Acer_macrophyllum"
+          },
+          {
+            "common": "Fig",
+            "scientific": "Ficus carica",
+            "wiki": "https://en.wikipedia.org/wiki/Ficus_carica"
+          },
+          {
+            "common": "Thimbleberry",
+            "scientific": "Rubus parviflorus",
+            "wiki": "https://en.wikipedia.org/wiki/Rubus_parviflorus"
+          },
+          {
+            "common": "Japanese maple",
+            "scientific": "Acer palmatum",
+            "wiki": "https://en.wikipedia.org/wiki/Acer_palmatum"
+          },
+          {
+            "common": "Citrus trees",
+            "scientific": "Citrus spp.",
+            "wiki": "https://en.wikipedia.org/wiki/Citrus"
+          },
+          {
+            "common": "Jujube",
+            "scientific": "Ziziphus jujuba",
+            "wiki": "https://en.wikipedia.org/wiki/Ziziphus_jujuba"
+          },
+          {
+            "common": "Loquat",
+            "scientific": "Eriobotrya japonica",
+            "wiki": "https://en.wikipedia.org/wiki/Eriobotrya_japonica"
+          },
+          {
+            "common": "Crape myrtle",
+            "scientific": "Lagerstroemia",
+            "wiki": "https://en.wikipedia.org/wiki/Lagerstroemia"
+          },
+          {
+            "common": "Southern magnolia",
+            "scientific": "Magnolia grandiflora",
+            "wiki": "https://en.wikipedia.org/wiki/Magnolia_grandiflora"
+          },
+          {
+            "common": "Mexican palo verde",
+            "scientific": "Parkinsonia aculeata",
+            "wiki": "https://en.wikipedia.org/wiki/Parkinsonia_aculeata"
+          }
+            ,
+            {
+              "common": "Persimmon",
+              "scientific": "Diospyros kaki",
+              "wiki": "https://en.wikipedia.org/wiki/Diospyros_kaki"
+            },
+            {
+              "common": "Pomegranate",
+              "scientific": "Punica granatum",
+              "wiki": "https://en.wikipedia.org/wiki/Punica_granatum"
+            },
+            {
+              "common": "Stone fruits",
+              "scientific": "Prunus spp.",
+              "wiki": "https://en.wikipedia.org/wiki/Prunus"
+            },
+            {
+              "common": "Highbush blueberry",
+              "scientific": "Vaccinium corymbosum",
+              "wiki": "https://en.wikipedia.org/wiki/Vaccinium_corymbosum"
+            }
+              ,
+              {
+                "common": "Refugio manzanita",
+                "scientific": "Arctostaphylos refugioensis",
+                "wiki": "https://calscape.org/Arctostaphylos-refugioensis"
+              },
+              {
+                "common": "Lester Rowntree manzanita",
+                "scientific": "Arctostaphylos 'Lester Rowntree'",
+                "wiki": "https://calscape.org/Arctostaphylos-'Lester-Rowntree'"
+              },
+              {
+                "common": "Howard McMinn manzanita",
+                "scientific": "Arctostaphylos densiflora 'Howard McMinn'",
+                "wiki": "https://calscape.org/Arctostaphylos-densiflora-'Howard-McMinn'"
+              },
+              {
+                "common": "Austin Griffith's manzanita",
+                "scientific": "Arctostaphylos manzanita x densiflora 'Austin Griffith'",
+                "wiki": "https://calscape.org/Arctostaphylos-manzanita-x-densiflora-'Austin-Griffith'"
+              },
+              {
+                "common": "Canyon Sparkles manzanita",
+                "scientific": "Arctostaphylos 'Canyon Sparkles'",
+                "wiki": "https://calscape.org/Arctostaphylos-'Canyon-Sparkles'"
+              },
+              {
+                "common": "Island Ceanothus",
+                "scientific": "Ceanothus arboreus",
+                "wiki": "https://calscape.org/Ceanothus-arboreus"
+              },
+              {
+                "common": "Ray Hartman ceanothus",
+                "scientific": "Ceanothus 'Ray Hartman'",
+                "wiki": "https://calscape.org/Ceanothus-'Ray-Hartman'"
+              },
+              {
+                "common": "Carmel creeper",
+                "scientific": "Ceanothus griseus var. horizontalis",
+                "wiki": "https://calscape.org/Ceanothus-griseus-var.-horizontalis"
+              },
+              {
+                "common": "Point Reyes ceanothus",
+                "scientific": "Ceanothus 'Point Reyes'",
+                "wiki": "https://calscape.org/Ceanothus-'Point-Reyes'"
+              },
+              {
+                "common": "Leatherleaf California coffeeberry",
+                "scientific": "Rhamnus californica 'Leatherleaf'",
+                "wiki": "https://calscape.org/Rhamnus-californica-'Leatherleaf'"
+              },
+              {
+                "common": "Catalina currant",
+                "scientific": "Ribes viburnifolium",
+                "wiki": "https://calscape.org/Ribes-viburnifolium"
+              },
+              {
+                "common": "Chaparral currant",
+                "scientific": "Ribes malvaceum",
+                "wiki": "https://calscape.org/Ribes-malvaceum"
+              },
+              {
+                "common": "White flowering currant",
+                "scientific": "Ribes indecorum",
+                "wiki": "https://calscape.org/Ribes-indecorum"
+              },
+              {
+                "common": "Golden currant",
+                "scientific": "Ribes aureum",
+                "wiki": "https://calscape.org/Ribes-aureum"
+              },
+              {
+                "common": "Lemonade berry",
+                "scientific": "Rhus integrifolia",
+                "wiki": "https://calscape.org/Rhus-integrifolia"
+              },
+              {
+                "common": "Blue elderberry",
+                "scientific": "Sambucus nigra ssp. caerulea",
+                "wiki": "https://calscape.org/Sambucus-nigra-ssp.-caerulea"
+              },
+              {
+                "common": "Red elderberry",
+                "scientific": "Sambucus racemosa",
+                "wiki": "https://calscape.org/Sambucus-racemosa"
+              },
+              {
+                "common": "Coast silktassel",
+                "scientific": "Garrya elliptica",
+                "wiki": "https://calscape.org/Garrya-elliptica"
+              },
+              {
+                "common": "Golden chinquapin",
+                "scientific": "Chrysolepis chrysophylla",
+                "wiki": "https://calscape.org/Chrysolepis-chrysophylla"
+              },
+              {
+                "common": "Oregon grape",
+                "scientific": "Berberis aquifolium",
+                "wiki": "https://calscape.org/Berberis-aquifolium"
+              },
+              {
+                "common": "Oso berry",
+                "scientific": "Oemleria cerasiformis",
+                "wiki": "https://calscape.org/Oemleria-cerasiformis"
+              },
+              {
+                "common": "Western ninebark",
+                "scientific": "Physocarpus capitatus",
+                "wiki": "https://calscape.org/Physocarpus-capitatus"
+              },
+              {
+                "common": "Western burning bush",
+                "scientific": "Euonymus occidentalis",
+                "wiki": "https://calscape.org/Euonymus-occidentalis"
+              },
+              {
+                "common": "Common snowberry",
+                "scientific": "Symphoricarpos albus",
+                "wiki": "https://calscape.org/Symphoricarpos-albus"
+              },
+              {
+                "common": "Squaw bush",
+                "scientific": "Rhus trilobata",
+                "wiki": "https://calscape.org/Rhus-trilobata"
+              },
+              {
+                "common": "Pink flowering currant",
+                "scientific": "Ribes sanguineum",
+                "wiki": "https://calscape.org/Ribes-sanguineum"
+              },
+              {
+                "common": "Shining willow",
+                "scientific": "Salix lasiandra",
+                "wiki": "https://calscape.org/Salix-lasiandra"
+              },
+              {
+                "common": "Bush poppy",
+                "scientific": "Dendromecon rigida",
+                "wiki": "https://calscape.org/Dendromecon-rigida"
+              },
+              {
+                "common": "Baja bird bush",
+                "scientific": "Ornithostaphylos oppositifolia",
+                "wiki": "https://calscape.org/Ornithostaphylos-oppositifolia"
+              },
+              {
+                "common": "Desert olive",
+                "scientific": "Forestiera pubescens",
+                "wiki": "https://calscape.org/Forestiera-pubescens"
+              },
+              {
+                "common": "Gaping keckiella",
+                "scientific": "Keckiella breviflora",
+                "wiki": "https://calscape.org/Keckiella-breviflora"
+              },
+              {
+                "common": "Fern-leaf ironwood",
+                "scientific": "Lyonothamnus floribundus ssp. aspleniifolius",
+                "wiki": "https://calscape.org/Lyonothamnus-floribundus-ssp.-aspleniifolius"
+              },
+              {
+                "common": "California honeysuckle",
+                "scientific": "Lonicera hispidula",
+                "wiki": "https://calscape.org/Lonicera-hispidula"
+              },
+              {
+                "common": "Coyote brush",
+                "scientific": "Baccharis pilularis",
+                "wiki": "https://calscape.org/Baccharis-pilularis"
+              },
+              {
+                "common": "White sage",
+                "scientific": "Salvia apiana",
+                "wiki": "https://calscape.org/Salvia-apiana"
+              },
+              {
+                "common": "Purple sage",
+                "scientific": "Salvia leucophylla",
+                "wiki": "https://calscape.org/Salvia-leucophylla"
+              },
+              {
+                "common": "Pinon pine",
+                "scientific": "Pinus edulis",
+                "wiki": "https://calscape.org/Pinus-edulis"
+              }
 ]
