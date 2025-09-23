@@ -167,4 +167,362 @@
           "scientific": "Clinopodium douglasii",
           "wiki": "https://en.wikipedia.org/wiki/Clinopodium_douglasii"
         }
+          ,
+          {
+            "common": "Yerba mansa",
+            "scientific": "Anemopsis californica",
+            "wiki": "https://en.wikipedia.org/wiki/Anemopsis_californica"
+          },
+          {
+            "common": "Wild ginger",
+            "scientific": "Asarum caudatum",
+            "wiki": "https://en.wikipedia.org/wiki/Asarum_caudatum"
+          },
+          {
+            "common": "Miner's lettuce",
+            "scientific": "Claytonia perfoliata",
+            "wiki": "https://en.wikipedia.org/wiki/Claytonia_perfoliata"
+          },
+          {
+            "common": "Pacific sanicle",
+            "scientific": "Sanicula crassicaulis",
+            "wiki": "https://en.wikipedia.org/wiki/Sanicula_crassicaulis"
+          },
+          {
+            "common": "Meadow rue",
+            "scientific": "Thalictrum fendleri",
+            "wiki": "https://en.wikipedia.org/wiki/Thalictrum_fendleri"
+          },
+          {
+            "common": "Goldenrod",
+            "scientific": "Solidago velutina",
+            "wiki": "https://en.wikipedia.org/wiki/Solidago_velutina"
+          },
+          {
+            "common": "Gumplant",
+            "scientific": "Grindelia species",
+            "wiki": "https://en.wikipedia.org/wiki/Grindelia"
+          },
+          {
+            "common": "Checkerbloom",
+            "scientific": "Sidalcea malviflora",
+            "wiki": "https://en.wikipedia.org/wiki/Sidalcea_malviflora"
+          },
+          {
+            "common": "California bee-plant",
+            "scientific": "Scrophularia californica",
+            "wiki": "https://en.wikipedia.org/wiki/Scrophularia_californica"
+          },
+          {
+            "common": "Angelica",
+            "scientific": "Angelica species",
+            "wiki": "https://en.wikipedia.org/wiki/Angelica"
+          }
+            ,
+            {
+              "common": "Western columbine",
+              "scientific": "Aquilegia formosa",
+              "wiki": "https://en.wikipedia.org/wiki/Aquilegia_formosa"
+            },
+            {
+              "common": "Cow parsnip",
+              "scientific": "Heracleum maximum",
+              "wiki": "https://en.wikipedia.org/wiki/Heracleum_maximum"
+            },
+            {
+              "common": "Western yampah",
+              "scientific": "Perideridia kelloggii",
+              "wiki": "https://en.wikipedia.org/wiki/Perideridia_kelloggii"
+            },
+            {
+              "common": "Hairy vetch",
+              "scientific": "Vicia villosa",
+              "wiki": "https://en.wikipedia.org/wiki/Vicia_villosa"
+            },
+            {
+              "common": "Coyote thistle",
+              "scientific": "Eryngium species",
+              "wiki": "https://en.wikipedia.org/wiki/Eryngium"
+            },
+            {
+              "common": "Mugwort",
+              "scientific": "Artemisia douglasiana",
+              "wiki": "https://en.wikipedia.org/wiki/Artemisia_douglasiana"
+            },
+            {
+              "common": "Spearmint",
+              "scientific": "Mentha spicata",
+              "wiki": "https://en.wikipedia.org/wiki/Mentha_spicata"
+            },
+            {
+              "common": "Rosemary",
+              "scientific": "Salvia rosmarinus",
+              "wiki": "https://en.wikipedia.org/wiki/Salvia_rosmarinus"
+            },
+            {
+              "common": "Basil",
+              "scientific": "Ocimum basilicum",
+              "wiki": "https://en.wikipedia.org/wiki/Ocimum_basilicum"
+            }
+              ,
+              {
+                "common": "Oregano",
+                "scientific": "Origanum vulgare",
+                "wiki": "https://en.wikipedia.org/wiki/Origanum_vulgare"
+              },
+              {
+                "common": "Garlic",
+                "scientific": "Allium sativum",
+                "wiki": "https://en.wikipedia.org/wiki/Garlic"
+              },
+              {
+                "common": "Onion",
+                "scientific": "Allium cepa",
+                "wiki": "https://en.wikipedia.org/wiki/Onion"
+              },
+              {
+                "common": "Lettuce",
+                "scientific": "Lactuca sativa",
+                "wiki": "https://en.wikipedia.org/wiki/Lettuce"
+              },
+              {
+                "common": "Spinach",
+                "scientific": "Spinacia oleracea",
+                "wiki": "https://en.wikipedia.org/wiki/Spinach"
+              },
+              {
+                "common": "Kale",
+                "scientific": "Brassica oleracea",
+                "wiki": "https://en.wikipedia.org/wiki/Kale"
+              },
+              {
+                "common": "Radishes",
+                "scientific": "Raphanus sativus",
+                "wiki": "https://en.wikipedia.org/wiki/Radish"
+              },
+              {
+                "common": "Carrots",
+                "scientific": "Daucus carota",
+                "wiki": "https://en.wikipedia.org/wiki/Carrot"
+              },
+              {
+                "common": "Beets",
+                "scientific": "Beta vulgaris",
+                "wiki": "https://en.wikipedia.org/wiki/Beetroot"
+              }
+                ,
+                {
+                  "common": "Chives",
+                  "scientific": "Allium schoenoprasum",
+                  "wiki": "https://en.wikipedia.org/wiki/Chives"
+                },
+                {
+                  "common": "Chamomile",
+                  "scientific": "Matricaria recutita",
+                  "wiki": "https://en.wikipedia.org/wiki/Matricaria_recutita"
+                },
+                {
+                  "common": "Fennel",
+                  "scientific": "Foeniculum vulgare",
+                  "wiki": "https://en.wikipedia.org/wiki/Fennel"
+                },
+                {
+                  "common": "Dill",
+                  "scientific": "Anethum graveolens",
+                  "wiki": "https://en.wikipedia.org/wiki/Dill"
+                },
+                {
+                  "common": "Cilantro/Coriander",
+                  "scientific": "Coriandrum sativum",
+                  "wiki": "https://en.wikipedia.org/wiki/Coriander"
+                },
+                {
+                  "common": "Parsley",
+                  "scientific": "Petroselinum crispum",
+                  "wiki": "https://en.wikipedia.org/wiki/Parsley"
+                },
+                {
+                  "common": "Lavender",
+                  "scientific": "Lavandula spp.",
+                  "wiki": "https://en.wikipedia.org/wiki/Lavender"
+                },
+                {
+                  "common": "Sage",
+                  "scientific": "Salvia officinalis",
+                  "wiki": "https://en.wikipedia.org/wiki/Salvia_officinalis"
+                },
+                {
+                  "common": "Mint",
+                  "scientific": "Mentha species",
+                  "wiki": "https://en.wikipedia.org/wiki/Mentha"
+                }
+                  ,
+                  {
+                    "common": "California fuchsia",
+                    "scientific": "Epilobium canum",
+                    "wiki": "https://en.wikipedia.org/wiki/Epilobium_canum"
+                  },
+                  {
+                    "common": "Desert marigold",
+                    "scientific": "Baileya multiradiata",
+                    "wiki": "https://en.wikipedia.org/wiki/Baileya_multiradiata"
+                  },
+                  {
+                    "common": "Desert globemallow",
+                    "scientific": "Sphaeralcea ambigua",
+                    "wiki": "https://en.wikipedia.org/wiki/Sphaeralcea_ambigua"
+                  },
+                  {
+                    "common": "Seaside daisy",
+                    "scientific": "Erigeron glaucus",
+                    "wiki": "https://en.wikipedia.org/wiki/Erigeron_glaucus"
+                  },
+                  {
+                    "common": "Alum root",
+                    "scientific": "Heuchera maxima",
+                    "wiki": "https://en.wikipedia.org/wiki/Heuchera_maxima"
+                  },
+                  {
+                    "common": "Golden yarrow",
+                    "scientific": "Eriophyllum species",
+                    "wiki": "https://en.wikipedia.org/wiki/Eriophyllum"
+                  },
+                  {
+                    "common": "Beach strawberry",
+                    "scientific": "Fragaria chiloensis",
+                    "wiki": "https://en.wikipedia.org/wiki/Fragaria_chiloensis"
+                  },
+                  {
+                    "common": "Hummingbird mint",
+                    "scientific": "Agastache species",
+                    "wiki": "https://en.wikipedia.org/wiki/Agastache"
+                  },
+                  {
+                    "common": "Aster",
+                    "scientific": "Symphyotrichum chilense",
+                    "wiki": "https://en.wikipedia.org/wiki/Symphyotrichum_chilense"
+                  }
+                    ,
+                    {
+                      "common": "Gaillardia",
+                      "scientific": "Gaillardia species",
+                      "wiki": "https://en.wikipedia.org/wiki/Gaillardia"
+                    },
+                    {
+                      "common": "Coneflower",
+                      "scientific": "Echinacea species",
+                      "wiki": "https://en.wikipedia.org/wiki/Echinacea"
+                    },
+                    {
+                      "common": "Coreopsis",
+                      "scientific": "Coreopsis species",
+                      "wiki": "https://en.wikipedia.org/wiki/Coreopsis"
+                    },
+                    {
+                      "common": "Daylily",
+                      "scientific": "Hemerocallis species",
+                      "wiki": "https://en.wikipedia.org/wiki/Hemerocallis"
+                    },
+                    {
+                      "common": "Heuchera",
+                      "scientific": "Heuchera species",
+                      "wiki": "https://en.wikipedia.org/wiki/Heuchera"
+                    },
+                    {
+                      "common": "Hosta",
+                      "scientific": "Hosta species",
+                      "wiki": "https://en.wikipedia.org/wiki/Hosta"
+                    },
+                    {
+                      "common": "Peony",
+                      "scientific": "Paeonia species",
+                      "wiki": "https://en.wikipedia.org/wiki/Peony"
+                    },
+                    {
+                      "common": "Black-eyed Susan",
+                      "scientific": "Rudbeckia hirta",
+                      "wiki": "https://en.wikipedia.org/wiki/Rudbeckia_hirta"
+                    },
+                    {
+                      "common": "Green wizard rudbeckia",
+                      "scientific": "Rudbeckia occidentalis",
+                      "wiki": "https://en.wikipedia.org/wiki/Rudbeckia_occidentalis"
+                    }
+                      ,
+                      {
+                        "common": "Aster",
+                        "scientific": "Aster species",
+                        "wiki": "https://en.wikipedia.org/wiki/Aster_(genus)"
+                      },
+                      {
+                        "common": "Sedum",
+                        "scientific": "Sedum species",
+                        "wiki": "https://en.wikipedia.org/wiki/Sedum"
+                      },
+                      {
+                        "common": "Hardy geranium",
+                        "scientific": "Geranium species",
+                        "wiki": "https://en.wikipedia.org/wiki/Geranium"
+                      },
+                      {
+                        "common": "Cranesbill",
+                        "scientific": "Geranium species",
+                        "wiki": "https://en.wikipedia.org/wiki/Geranium"
+                      },
+                      {
+                        "common": "Sedge",
+                        "scientific": "Carex pansa",
+                        "wiki": "https://en.wikipedia.org/wiki/Carex_pansa"
+                      },
+                      {
+                        "common": "Tufted hairgrass",
+                        "scientific": "Deschampsia caespitosa",
+                        "wiki": "https://en.wikipedia.org/wiki/Deschampsia_caespitosa"
+                      },
+                      {
+                        "common": "Iris",
+                        "scientific": "Iris species",
+                        "wiki": "https://en.wikipedia.org/wiki/Iris_(plant)"
+                      },
+                      {
+                        "common": "Penstemon",
+                        "scientific": "Penstemon species",
+                        "wiki": "https://en.wikipedia.org/wiki/Penstemon"
+                      },
+                      {
+                        "common": "Lilac verbena",
+                        "scientific": "Verbena lilacina",
+                        "wiki": "https://en.wikipedia.org/wiki/Verbena_lilacina"
+                      }
+                        ,
+                        {
+                          "common": "Yampah",
+                          "scientific": "Perideridia species",
+                          "wiki": "https://en.wikipedia.org/wiki/Perideridia"
+                        },
+                        {
+                          "common": "Ramshaw Meadows abronia",
+                          "scientific": "Abronia alpina",
+                          "wiki": "https://en.wikipedia.org/wiki/Abronia_alpina"
+                        },
+                        {
+                          "common": "California cudweed",
+                          "scientific": "Pseudognaphalium californicum",
+                          "wiki": "https://en.wikipedia.org/wiki/Pseudognaphalium_californicum"
+                        },
+                        {
+                          "common": "Purple nightshade",
+                          "scientific": "Solanum umbelliferum",
+                          "wiki": "https://en.wikipedia.org/wiki/Solanum_umbelliferum"
+                        },
+                        {
+                          "common": "Desert bluebells",
+                          "scientific": "Phacelia species",
+                          "wiki": "https://en.wikipedia.org/wiki/Phacelia"
+                        },
+                        {
+                          "common": "Western wake-robin",
+                          "scientific": "Trillium chloropetalum",
+                          "wiki": "https://en.wikipedia.org/wiki/Trillium_chloropetalum"
+                        }
 ]
