@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Wild Ginger",
+    "scientific_name": "Asarum canadense",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Asarum_canadense_plant.jpg",
+    "about": "Asarum canadense, wild ginger, is a perennial groundcover native to eastern North America, known for its heart-shaped leaves and rhizomes.",
+    "classification": {
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "class": "Magnoliopsida",
+      "order": "Piperales",
+      "family": "Aristolochiaceae",
+      "genus": "Asarum",
+      "species": "A. canadense"
+    },
+    "taxon_id": "3482",
+    "genome_assembly": "Asarum_canadense_v1.0",
+    "dna_sequence": "[FASTA or large string omitted for brevity]"
+  }
+]

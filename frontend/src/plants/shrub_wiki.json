@@ -21,8 +21,11 @@
     "companion_plants": ["Blueberry", "Hazelnut"],
     "antagonistic_plants": ["None"],
     "genetic_code": "ATCG...",
-    "wiki": "https://en.wikipedia.org/wiki/Sambucus_canadensis",
-    "blurb": "Elderberry is a deciduous shrub with edible berries and flowers, native to North America and valued for food and medicine."
+  "wiki": "https://en.wikipedia.org/wiki/Sambucus_canadensis",
+  "blurb": "Elderberry is a deciduous shrub with edible berries and flowers, native to North America and valued for food and medicine.",
+  "growth_rate": "fast",
+  "lifecycle": "perennial",
+  "root_type": "fibrous"
   },
   {
     "common": "Blueberry",
@@ -46,8 +49,11 @@
     "companion_plants": ["Azalea", "Rhododendron"],
     "antagonistic_plants": ["Tomato"],
     "genetic_code": "ATCG...",
-    "wiki": "https://en.wikipedia.org/wiki/Vaccinium_corymbosum",
-    "blurb": "Blueberry is a deciduous shrub with edible blue berries, native to North America and valued for its fruit."
+  "wiki": "https://en.wikipedia.org/wiki/Vaccinium_corymbosum",
+  "blurb": "Blueberry is a deciduous shrub with edible blue berries, native to North America and valued for its fruit.",
+  "growth_rate": "moderate",
+  "lifecycle": "perennial",
+  "root_type": "fibrous"
   },
   {
     "common": "Hazelnut",
@@ -70,7 +76,10 @@
     "companion_plants": ["Elderberry", "Blueberry"],
     "antagonistic_plants": ["None"],
     "genetic_code": "ATCG...",
-    "wiki": "https://en.wikipedia.org/wiki/Corylus_americana",
-    "blurb": "Hazelnut is a deciduous shrub producing edible nuts, native to North America and used for food and wildlife habitat."
+  "wiki": "https://en.wikipedia.org/wiki/Corylus_americana",
+  "blurb": "Hazelnut is a deciduous shrub producing edible nuts, native to North America and used for food and wildlife habitat.",
+  "growth_rate": "moderate",
+  "lifecycle": "perennial",
+  "root_type": "fibrous"
   }
 ]

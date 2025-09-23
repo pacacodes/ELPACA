@@ -20,8 +20,11 @@
     "companion_plants": ["Partridgeberry", "Creeping Phlox"],
     "antagonistic_plants": ["None"],
     "genetic_code": "ATCG...",
-    "wiki": "https://en.wikipedia.org/wiki/Asarum_canadense",
-    "blurb": "Wild Ginger is a low-growing perennial with heart-shaped leaves, native to eastern North America and used as a groundcover."
+  "wiki": "https://en.wikipedia.org/wiki/Asarum_canadense",
+  "blurb": "Wild Ginger is a low-growing perennial with heart-shaped leaves, native to eastern North America and used as a groundcover.",
+  "growth_rate": "moderate",
+  "lifecycle": "perennial",
+  "root_type": "rhizome"
   },
   {
     "common": "Creeping Phlox",
@@ -44,8 +47,11 @@
     "companion_plants": ["Wild Ginger", "Partridgeberry"],
     "antagonistic_plants": ["None"],
     "genetic_code": "ATCG...",
-    "wiki": "https://en.wikipedia.org/wiki/Phlox_stolonifera",
-    "blurb": "Creeping Phlox is a mat-forming perennial with colorful flowers, native to eastern North America and used as a groundcover."
+  "wiki": "https://en.wikipedia.org/wiki/Phlox_stolonifera",
+  "blurb": "Creeping Phlox is a mat-forming perennial with colorful flowers, native to eastern North America and used as a groundcover.",
+  "growth_rate": "fast",
+  "lifecycle": "perennial",
+  "root_type": "fibrous"
   },
   {
     "common": "Partridgeberry",
@@ -68,7 +74,10 @@
     "companion_plants": ["Wild Ginger", "Creeping Phlox"],
     "antagonistic_plants": ["None"],
     "genetic_code": "ATCG...",
-    "wiki": "https://en.wikipedia.org/wiki/Mitchella_repens",
-    "blurb": "Partridgeberry is a trailing evergreen groundcover with red berries, native to eastern North America."
+  "wiki": "https://en.wikipedia.org/wiki/Mitchella_repens",
+  "blurb": "Partridgeberry is a trailing evergreen groundcover with red berries, native to eastern North America.",
+  "growth_rate": "slow",
+  "lifecycle": "perennial",
+  "root_type": "fibrous"
   }
 ]

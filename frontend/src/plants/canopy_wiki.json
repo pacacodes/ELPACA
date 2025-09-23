@@ -1,24 +1,4 @@
 [
-  {
-    "common": "White Oak",
-    "scientific": "Quercus alba",
-    "wiki": "https://en.wikipedia.org/wiki/Quercus_alba",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Quercus_alba_001.jpg/320px-Quercus_alba_001.jpg",
-    "image_flower": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Quercus_alba_flower.jpg",
-    "image_stem": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Quercus_alba_bark.jpg",
-    "image_leaf": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Quercus_alba_leaf.jpg",
-    "watering": "Moderate",
-    "sun": "Full sun to partial shade",
-    "native_region": "Eastern North America",
-    "climate_zone": "3-9",
-    "soil_type": "Well-drained, loamy",
-    "genetic_code": "ATCG...",
-    "companion_plants": ["Hazelnut", "Serviceberry"],
-    "antagonistic_plants": ["Black Walnut"],
-    "typical_use": [
-      {"type": "Edible", "part": "Acorn", "use": "Ground into flour, leached and eaten"},
-      {"type": "Timber", "part": "Wood", "use": "Furniture, flooring"}
-    [
       {
         "common": "White Oak",
         "scientific": "Quercus alba",
@@ -43,7 +23,10 @@
       "antagonistic_plants": ["Black Walnut"],
       "genetic_code": "ATCG...",
       "wiki": "https://en.wikipedia.org/wiki/Quercus_alba",
-      "blurb": "White Oak is a large deciduous tree native to eastern North America, valued for its strong wood and edible acorns."
+  "blurb": "White Oak is a large deciduous tree native to eastern North America, valued for its strong wood and edible acorns.",
+  "growth_rate": "slow",
+  "lifecycle": "perennial",
+  "root_type": "deep taproot"
       },
       {
         "common": "Sugar Maple",
@@ -68,7 +51,10 @@
       "antagonistic_plants": ["Black Walnut"],
       "genetic_code": "ATCG...",
       "wiki": "https://en.wikipedia.org/wiki/Acer_saccharum",
-      "blurb": "Sugar Maple is a deciduous tree known for its sap, which is used to make maple syrup, and its beautiful fall foliage."
+  "blurb": "Sugar Maple is a deciduous tree known for its sap, which is used to make maple syrup, and its beautiful fall foliage.",
+  "growth_rate": "moderate",
+  "lifecycle": "perennial",
+  "root_type": "fibrous"
       },
       {
         "common": "American Beech",
@@ -93,6 +79,9 @@
       "antagonistic_plants": ["Black Walnut"],
       "genetic_code": "ATCG...",
       "wiki": "https://en.wikipedia.org/wiki/Fagus_grandifolia",
-      "blurb": "American Beech is a shade-tolerant tree with smooth gray bark and edible nuts, found in eastern North American forests."
-      }
-    ]
+  "blurb": "American Beech is a shade-tolerant tree with smooth gray bark and edible nuts, found in eastern North American forests.",
+  "growth_rate": "slow",
+  "lifecycle": "perennial",
+      "root_type": "fibrous"
+    }
+  ]

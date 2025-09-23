@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Blueberry",
+    "scientific_name": "Vaccinium corymbosum",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Vaccinium_corymbosum_shrub.jpg",
+    "about": "Vaccinium corymbosum, the northern highbush blueberry, is a deciduous shrub native to North America, cultivated for its edible berries.",
+    "classification": {
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "class": "Magnoliopsida",
+      "order": "Ericales",
+      "family": "Ericaceae",
+      "genus": "Vaccinium",
+      "species": "V. corymbosum"
+    },
+    "taxon_id": "3600",
+    "genome_assembly": "Vaccinium_corymbosum_v1.0",
+    "dna_sequence": "[FASTA or large string omitted for brevity]"
+  }
+]

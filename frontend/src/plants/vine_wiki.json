@@ -21,8 +21,11 @@
     "companion_plants": ["Passionflower", "Virginia Creeper"],
     "antagonistic_plants": ["None"],
     "genetic_code": "ATCG...",
-    "wiki": "https://en.wikipedia.org/wiki/Vitis_riparia",
-    "blurb": "Riverbank Grape is a vigorous native vine with edible fruit, important for wildlife and erosion control."
+  "wiki": "https://en.wikipedia.org/wiki/Vitis_riparia",
+  "blurb": "Riverbank Grape is a vigorous native vine with edible fruit, important for wildlife and erosion control.",
+  "growth_rate": "fast",
+  "lifecycle": "perennial",
+  "root_type": "fibrous"
   },
   {
     "common": "Virginia Creeper",
@@ -45,8 +48,11 @@
     "companion_plants": ["Riverbank Grape", "Passionflower"],
     "antagonistic_plants": ["None"],
     "genetic_code": "ATCG...",
-    "wiki": "https://en.wikipedia.org/wiki/Parthenocissus_quinquefolia",
-    "blurb": "Virginia Creeper is a fast-growing native vine with five-part leaves and blue berries, used for groundcover and wildlife habitat."
+  "wiki": "https://en.wikipedia.org/wiki/Parthenocissus_quinquefolia",
+  "blurb": "Virginia Creeper is a fast-growing native vine with five-part leaves and blue berries, used for groundcover and wildlife habitat.",
+  "growth_rate": "fast",
+  "lifecycle": "perennial",
+  "root_type": "fibrous"
   },
   {
     "common": "Passionflower",
@@ -70,7 +76,10 @@
     "companion_plants": ["Riverbank Grape", "Virginia Creeper"],
     "antagonistic_plants": ["None"],
     "genetic_code": "ATCG...",
-    "wiki": "https://en.wikipedia.org/wiki/Passiflora_incarnata",
-    "blurb": "Passionflower is a perennial vine with exotic flowers and edible fruit, native to the southeastern United States."
+  "wiki": "https://en.wikipedia.org/wiki/Passiflora_incarnata",
+  "blurb": "Passionflower is a perennial vine with exotic flowers and edible fruit, native to the southeastern United States.",
+  "growth_rate": "moderate",
+  "lifecycle": "perennial",
+  "root_type": "fibrous"
   }
 ]

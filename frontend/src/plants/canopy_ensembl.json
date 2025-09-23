@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Oak",
+    "scientific_name": "Quercus robur",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Quercus_robur_tree.jpg",
+    "about": "Quercus robur, commonly known as the English oak, is a large deciduous tree native to Europe and western Asia. It is valued for its timber and ecological importance.",
+    "classification": {
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "class": "Magnoliopsida",
+      "order": "Fagales",
+      "family": "Fagaceae",
+      "genus": "Quercus",
+      "species": "Q. robur"
+    },
+    "taxon_id": "58334",
+    "genome_assembly": "Quercus_robur_v2.3",
+    "dna_sequence": "[FASTA or large string omitted for brevity]"
+  }
+]

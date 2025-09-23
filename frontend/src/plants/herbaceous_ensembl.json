@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Wild Bergamot",
+    "scientific_name": "Monarda fistulosa",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Monarda_fistulosa_plant.jpg",
+    "about": "Monarda fistulosa, known as wild bergamot, is a perennial herb native to North America, valued for its aromatic leaves and flowers.",
+    "classification": {
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "class": "Magnoliopsida",
+      "order": "Lamiales",
+      "family": "Lamiaceae",
+      "genus": "Monarda",
+      "species": "M. fistulosa"
+    },
+    "taxon_id": "4156",
+    "genome_assembly": "Monarda_fistulosa_v1.0",
+    "dna_sequence": "[FASTA or large string omitted for brevity]"
+  }
+]

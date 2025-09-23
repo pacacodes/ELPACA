@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Wild Carrot",
+    "scientific_name": "Daucus carota",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Daucus_carota_plant.jpg",
+    "about": "Daucus carota, wild carrot, is a biennial plant native to Europe and Asia, ancestor of the cultivated carrot.",
+    "classification": {
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "class": "Magnoliopsida",
+      "order": "Apiales",
+      "family": "Apiaceae",
+      "genus": "Daucus",
+      "species": "D. carota"
+    },
+    "taxon_id": "4036",
+    "genome_assembly": "Daucus_carota_v2.0",
+    "dna_sequence": "[FASTA or large string omitted for brevity]"
+  }
+]

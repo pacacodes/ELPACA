@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Redbud",
+    "scientific_name": "Cercis canadensis",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Cercis_canadensis_tree.jpg",
+    "about": "Cercis canadensis, the Eastern Redbud, is a small deciduous tree native to eastern North America, known for its pink spring flowers.",
+    "classification": {
+      "kingdom": "Plantae",
+      "phylum": "Tracheophyta",
+      "class": "Magnoliopsida",
+      "order": "Fabales",
+      "family": "Fabaceae",
+      "genus": "Cercis",
+      "species": "C. canadensis"
+    },
+    "taxon_id": "3647",
+    "genome_assembly": "Cercis_canadensis_v1.0",
+    "dna_sequence": "[FASTA or large string omitted for brevity]"
+  }
+]

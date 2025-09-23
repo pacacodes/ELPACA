@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Morel",
+    "scientific_name": "Morchella esculenta",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Morchella_esculenta_mushroom.jpg",
+    "about": "Morchella esculenta, the morel mushroom, is a highly prized edible fungus found in temperate forests worldwide.",
+    "classification": {
+      "kingdom": "Fungi",
+      "phylum": "Ascomycota",
+      "class": "Pezizomycetes",
+      "order": "Pezizales",
+      "family": "Morchellaceae",
+      "genus": "Morchella",
+      "species": "M. esculenta"
+    },
+    "taxon_id": "4217",
+    "genome_assembly": "Morchella_esculenta_v1.0",
+    "dna_sequence": "[FASTA or large string omitted for brevity]"
+  }
+]
