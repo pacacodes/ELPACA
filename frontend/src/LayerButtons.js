@@ -26,7 +26,7 @@ const sectionIcons = {
 
 function LayerButtons({ sectionList, setActiveSection }) {
   return (
-    <div style={{display:'flex',flexDirection:'column',gap:'0.7rem',marginTop:'1.5rem',width:'100%'}}>
+  <div style={{display:'flex',flexDirection:'column',gap:'0.7rem',marginTop:'1.5rem',width:'100%', padding: 0, boxSizing: 'border-box'}}>
       {sectionList.map(section => (
         <button
           key={section}
@@ -48,7 +48,8 @@ function LayerButtons({ sectionList, setActiveSection }) {
             justifyContent: 'center',
             whiteSpace: 'nowrap',
             position: 'relative',
-            minHeight: '2.7em'
+            minHeight: '2.7em',
+            boxSizing: 'border-box'
           }}
           onClick={() => setActiveSection(section)}
         >
@@ -57,7 +58,8 @@ function LayerButtons({ sectionList, setActiveSection }) {
             flexDirection:'column',
             alignItems:'center',
             justifyContent:'center',
-            width:'100%'
+            width:'100%',
+            boxSizing: 'border-box'
           }}>
             <span style={{
               display: 'flex',

@@ -10,15 +10,15 @@ function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart, chil
         position: 'absolute',
         left: pos.x,
         top: pos.y,
-  background: '#4a4a4a', // halfway between previous and current shade
+        background: '#4a4a4a',
         borderRadius: '12px',
         boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
         padding: collapsed ? '0' : '2rem',
-        minWidth: collapsed ? '48px' : '340px',
+  minWidth: collapsed ? '48px' : '400px',
         width: collapsed ? '48px' : undefined,
-  minHeight: collapsed ? '785px' : '720px',
-  height: collapsed ? '785px' : '720px',
-  maxHeight: collapsed ? '785px' : '720px',
+        minHeight: collapsed ? '785px' : '720px',
+        height: collapsed ? '785px' : '720px',
+        maxHeight: collapsed ? '785px' : '720px',
         zIndex: 1101,
         display: 'flex',
         flexDirection: 'column',
@@ -115,7 +115,7 @@ function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart, chil
             </svg>
           </button>
           {/* Only the content area is scrollable, not the whole popup. Move scrollbar closer to edge. */}
-          <div style={{width:'100%', flex: 1, overflowY: 'auto', maxHeight: 'calc(720px - 88px)', paddingRight: '2px'}}>
+          <div style={{width:'calc(100% + 20px)', flex: 1, overflowY: 'auto', maxHeight: 'calc(720px - 88px)', paddingRight: '2px', marginLeft: 'auto', marginRight: 'auto'}}>
             {children}
           </div>
         </>
