@@ -6,7 +6,7 @@ function PlantDetailPopup({ open, pos, plant, onClose }) {
     <div
       style={{
         position: 'absolute',
-        left: pos.x,
+  left: pos.x + 130,
         top: pos.y,
   background: '#333333', // now matches previous layer popup color
         borderRadius: '12px',
