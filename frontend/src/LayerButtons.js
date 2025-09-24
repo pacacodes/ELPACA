@@ -33,51 +33,43 @@ function LayerButtons({ sectionList, setActiveSection }) {
           style={{
             border: 'none',
             borderRadius: '6px',
-            padding: '0.48rem 0.9rem',
+            padding: '0.82rem 0.9rem',
             fontWeight: 'normal',
-            fontSize: '0.98rem',
+            fontSize: '1.09rem',
             cursor: 'pointer',
             boxShadow: '0 1px 4px rgba(0,0,0,0.10)',
             marginBottom: '0',
             transition: 'background 0.15s',
             width: '100%',
             display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
-            gap: '0',
-            justifyContent: 'flex-start',
+            gap: '0.18em',
+            justifyContent: 'center',
             whiteSpace: 'nowrap',
             position: 'relative',
-            minHeight: '2.6em'
+            minHeight: '2.7em'
           }}
           onClick={() => setActiveSection(section)}
         >
-          <span style={{display:'flex',alignItems:'center',gap:'0.5rem'}}>
+          <span style={{
+            display:'flex',
+            flexDirection:'column',
+            alignItems:'center',
+            justifyContent:'center',
+            width:'100%'
+          }}>
             <span style={{
               display: 'flex',
+              flexDirection: 'column',
               alignItems: 'center',
-              width: '100%',
+              justifyContent: 'center',
+              minWidth: '2.2em',
+              marginBottom: '0.1em',
             }}>
-              <span style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                minWidth: '2.2em',
-                marginRight: '0.7em',
-              }}>
-                {sectionIcons[section]}
-              </span>
-              <span style={{
-                display: 'inline-block',
-                width: '1.5px',
-                height: '1.25em',
-                background: 'currentColor',
-                margin: '0 0.7em 0 0',
-                verticalAlign: 'middle',
-                opacity: 0.7
-              }}></span>
-              <span style={{whiteSpace:'nowrap'}}>{section}</span>
+              {sectionIcons[section]}
             </span>
+            <span style={{whiteSpace:'nowrap', display:'block', textAlign:'center'}}>{section}</span>
           </span>
         </button>
       ))}
