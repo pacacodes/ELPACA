@@ -13,6 +13,8 @@ import PlantDetailPopup from './PlantDetailPopup';
 
 function App() {
   const [activeSection, setActiveSection] = useState(null);
+  const [collapsed, setCollapsed] = useState(false);
+  const [layerCollapsed, setLayerCollapsed] = useState(false);
 
 
   const [activeProjectFolder, setActiveProjectFolder] = useState(null);
@@ -159,12 +161,17 @@ function App() {
         sectionList={['Canopy','Understory','Shrub','Herbaceous','Ground Cover','Root Crop','Vine','Fungi']}
         onPlantClick={handlePlantClick}
         plantDetailPopupOpen={plantDetailPopupOpen}
+        collapsed={collapsed}
+        setCollapsed={setCollapsed}
       />
 
       {/* Third popup for plant details, positioned to the right of layer popup */}
       <PlantDetailPopup
         open={plantDetailPopupOpen}
-  pos={{ x: popupPos.x + 340 + 320 + 230, y: popupPos.y }}
+        pos={{
+          x: popupPos.x + (collapsed ? 48 : 340) + (layerCollapsed ? 48 : 320) + 80 * 2,
+          y: popupPos.y
+        }}
         plant={activePlant}
         onClose={() => setPlantDetailPopupOpen(false)}
       />

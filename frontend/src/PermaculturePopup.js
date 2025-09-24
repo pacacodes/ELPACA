@@ -38,9 +38,10 @@ function PermaculturePopup({
   nativePlants,
   sectionList,
   onPlantClick,
-  plantDetailPopupOpen
+  plantDetailPopupOpen,
+  collapsed,
+  setCollapsed
 }) {
-  const [collapsed, setCollapsed] = React.useState(false);
   React.useEffect(() => {
     // Save plant selections and Wikipedia data when nativePlants and project are available
     if (activeProjectFolder && nativePlants && nativePlants.length > 0) {
