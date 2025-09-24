@@ -1,17 +1,487 @@
 [
   {
-    "common": "White Oak",
-    "scientific": "Quercus alba",
-    "wiki": "https://en.wikipedia.org/wiki/Quercus_alba"
+    "common": "Coast Redwood",
+    "scientific": "Sequoia sempervirens",
+    "wiki": "https://en.wikipedia.org/wiki/Sequoia_sempervirens"
   },
   {
-    "common": "Sugar Maple",
-    "scientific": "Acer saccharum",
-    "wiki": "https://en.wikipedia.org/wiki/Acer_saccharum"
+    "common": "Douglas Fir",
+    "scientific": "Pseudotsuga menziesii",
+    "wiki": "https://en.wikipedia.org/wiki/Pseudotsuga_menziesii"
   },
   {
-    "common": "American Beech",
-    "scientific": "Fagus grandifolia",
-    "wiki": "https://en.wikipedia.org/wiki/Fagus_grandifolia"
+    "common": "Incense Cedar",
+    "scientific": "Calocedrus decurrens",
+    "wiki": "https://en.wikipedia.org/wiki/Calocedrus_decurrens"
+  },
+  {
+    "common": "Ponderosa Pine",
+    "scientific": "Pinus ponderosa",
+    "wiki": "https://en.wikipedia.org/wiki/Pinus_ponderosa"
+  },
+  {
+    "common": "Sugar Pine",
+    "scientific": "Pinus lambertiana",
+    "wiki": "https://en.wikipedia.org/wiki/Pinus_lambertiana"
+  },
+  {
+    "common": "Coulter Pine",
+    "scientific": "Pinus coulteri",
+    "wiki": "https://en.wikipedia.org/wiki/Pinus_coulteri"
+  },
+  {
+    "common": "Foothill Pine",
+    "scientific": "Pinus sabiniana",
+    "wiki": "https://en.wikipedia.org/wiki/Pinus_sabiniana"
+  },
+  {
+    "common": "Jeffrey Pine",
+    "scientific": "Pinus jeffreyi",
+    "wiki": "https://en.wikipedia.org/wiki/Pinus_jeffreyi"
+  },
+  {
+    "common": "White Fir",
+    "scientific": "Abies concolor",
+    "wiki": "https://en.wikipedia.org/wiki/Abies_concolor"
+  },
+  {
+    "common": "Lodgepole Pine",
+    "scientific": "Pinus contorta",
+    "wiki": "https://en.wikipedia.org/wiki/Pinus_contorta"
+  },
+  {
+    "common": "Monterey Pine",
+    "scientific": "Pinus radiata",
+    "wiki": "https://en.wikipedia.org/wiki/Pinus_radiata"
+  },
+  {
+    "common": "Torrey Pine",
+    "scientific": "Pinus torreyana",
+    "wiki": "https://en.wikipedia.org/wiki/Pinus_torreyana"
+  },
+  {
+    "common": "Western Hemlock",
+    "scientific": "Tsuga heterophylla",
+    "wiki": "https://en.wikipedia.org/wiki/Tsuga_heterophylla"
+  },
+  {
+    "common": "Sitka Spruce",
+    "scientific": "Picea sitchensis",
+    "wiki": "https://en.wikipedia.org/wiki/Picea_sitchensis"
+  },
+  {
+    "common": "Western Juniper",
+    "scientific": "Juniperus occidentalis",
+    "wiki": "https://en.wikipedia.org/wiki/Juniperus_occidentalis"
+  },
+  {
+    "common": "Sierra Juniper",
+    "scientific": "Juniperus grandis",
+    "wiki": "https://en.wikipedia.org/wiki/Juniperus_grandis"
+  },
+  {
+    "common": "California Nutmeg",
+    "scientific": "Torreya californica",
+    "wiki": "https://en.wikipedia.org/wiki/Torreya_californica"
+  },
+  {
+    "common": "Giant Sequoia",
+    "scientific": "Sequoiadendron giganteum",
+    "wiki": "https://en.wikipedia.org/wiki/Sequoiadendron_giganteum"
+  },
+  {
+    "common": "Knobcone Pine",
+    "scientific": "Pinus attenuata",
+    "wiki": "https://en.wikipedia.org/wiki/Pinus_attenuata"
+  },
+  {
+    "common": "Bishop Pine",
+    "scientific": "Pinus muricata",
+    "wiki": "https://en.wikipedia.org/wiki/Pinus_muricata"
+  },
+  {
+    "common": "Valley Oak",
+    "scientific": "Quercus lobata",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_lobata"
+  },
+  {
+    "common": "Coast Live Oak",
+    "scientific": "Quercus agrifolia",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_agrifolia"
+  },
+  {
+    "common": "California Black Oak",
+    "scientific": "Quercus kelloggii",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_kelloggii"
+  },
+  {
+    "common": "Canyon Live Oak",
+    "scientific": "Quercus chrysolepis",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_chrysolepis"
+  },
+  {
+    "common": "Blue Oak",
+    "scientific": "Quercus douglasii",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_douglasii"
+  },
+  {
+    "common": "Interior Live Oak",
+    "scientific": "Quercus wislizeni",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_wislizeni"
+  },
+  {
+    "common": "Engelmann Oak",
+    "scientific": "Quercus engelmannii",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_engelmannii"
+  },
+  {
+    "common": "Tanoak",
+    "scientific": "Notholithocarpus densiflorus",
+    "wiki": "https://en.wikipedia.org/wiki/Notholithocarpus_densiflorus"
+  },
+  {
+    "common": "Oregon White Oak",
+    "scientific": "Quercus garryana",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_garryana"
+  },
+  {
+    "common": "Island Oak",
+    "scientific": "Quercus tomentella",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_tomentella"
+  },
+  {
+    "common": "California Scrub Oak",
+    "scientific": "Quercus berberidifolia",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_berberidifolia"
+  },
+  {
+    "common": "Leather Oak",
+    "scientific": "Quercus durata",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_durata"
+  },
+  {
+    "common": "California White Oak",
+    "scientific": "Quercus sadleriana",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_sadleriana"
+  },
+  {
+    "common": "Oracle Oak",
+    "scientific": "Quercus x morehus",
+    "wiki": "https://en.wikipedia.org/wiki/Quercus_x_morehus"
+  },
+  {
+    "common": "California Sycamore",
+    "scientific": "Platanus racemosa",
+    "wiki": "https://en.wikipedia.org/wiki/Platanus_racemosa"
+  },
+  {
+    "common": "Bigleaf Maple",
+    "scientific": "Acer macrophyllum",
+    "wiki": "https://en.wikipedia.org/wiki/Acer_macrophyllum"
+  },
+  {
+    "common": "Fremont Cottonwood",
+    "scientific": "Populus fremontii",
+    "wiki": "https://en.wikipedia.org/wiki/Populus_fremontii"
+  },
+  {
+    "common": "Black Cottonwood",
+    "scientific": "Populus trichocarpa",
+    "wiki": "https://en.wikipedia.org/wiki/Populus_trichocarpa"
+  },
+  {
+    "common": "White Alder",
+    "scientific": "Alnus rhombifolia",
+    "wiki": "https://en.wikipedia.org/wiki/Alnus_rhombifolia"
+  },
+  {
+    "common": "Red Alder",
+    "scientific": "Alnus rubra",
+    "wiki": "https://en.wikipedia.org/wiki/Alnus_rubra"
+  },
+  {
+    "common": "California Black Walnut",
+    "scientific": "Juglans californica",
+    "wiki": "https://en.wikipedia.org/wiki/Juglans_californica"
+  },
+  {
+    "common": "Arizona Walnut",
+    "scientific": "Juglans major",
+    "wiki": "https://en.wikipedia.org/wiki/Juglans_major"
+  },
+  {
+    "common": "Western Redbud",
+    "scientific": "Cercis occidentalis",
+    "wiki": "https://en.wikipedia.org/wiki/Cercis_occidentalis"
+  },
+  {
+    "common": "California Buckeye",
+    "scientific": "Aesculus californica",
+    "wiki": "https://en.wikipedia.org/wiki/Aesculus_californica"
+  },
+  {
+    "common": "Box Elder",
+    "scientific": "Acer negundo",
+    "wiki": "https://en.wikipedia.org/wiki/Acer_negundo"
+  },
+  {
+    "common": "Arroyo Willow",
+    "scientific": "Salix lasiolepis",
+    "wiki": "https://en.wikipedia.org/wiki/Salix_lasiolepis"
+  },
+  {
+    "common": "Cascara Buckthorn",
+    "scientific": "Frangula purshiana",
+    "wiki": "https://en.wikipedia.org/wiki/Frangula_purshiana"
+  },
+  {
+    "common": "Bigtooth Maple",
+    "scientific": "Acer grandidentatum",
+    "wiki": "https://en.wikipedia.org/wiki/Acer_grandidentatum"
+  },
+  {
+    "common": "Quaking Aspen",
+    "scientific": "Populus tremuloides",
+    "wiki": "https://en.wikipedia.org/wiki/Populus_tremuloides"
+  },
+  {
+    "common": "California Bay Laurel",
+    "scientific": "Umbellularia californica",
+    "wiki": "https://en.wikipedia.org/wiki/Umbellularia_californica"
+  },
+  {
+    "common": "Pacific Madrone",
+    "scientific": "Arbutus menziesii",
+    "wiki": "https://en.wikipedia.org/wiki/Arbutus_menziesii"
+  },
+  {
+    "common": "California Pepper Tree",
+    "scientific": "Schinus molle",
+    "wiki": "https://en.wikipedia.org/wiki/Schinus_molle"
+  },
+  {
+    "common": "Southern Magnolia",
+    "scientific": "Magnolia grandiflora",
+    "wiki": "https://en.wikipedia.org/wiki/Magnolia_grandiflora"
+  },
+  {
+    "common": "Jacaranda",
+    "scientific": "Jacaranda mimosifolia",
+    "wiki": "https://en.wikipedia.org/wiki/Jacaranda_mimosifolia"
+  },
+  {
+    "common": "Tamarisk",
+    "scientific": "Tamarix spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Tamarix"
+  },
+  {
+    "common": "Olive",
+    "scientific": "Olea europaea",
+    "wiki": "https://en.wikipedia.org/wiki/Olea_europaea"
+  },
+  {
+    "common": "Evergreen Ash",
+    "scientific": "Fraxinus uhdei",
+    "wiki": "https://en.wikipedia.org/wiki/Fraxinus_uhdei"
+  },
+  {
+    "common": "Carob Tree",
+    "scientific": "Ceratonia siliqua",
+    "wiki": "https://en.wikipedia.org/wiki/Ceratonia_siliqua"
+  },
+  {
+    "common": "Chinese Pistache",
+    "scientific": "Pistacia chinensis",
+    "wiki": "https://en.wikipedia.org/wiki/Pistacia_chinensis"
+  },
+  {
+    "common": "Chinese Elm",
+    "scientific": "Ulmus parvifolia",
+    "wiki": "https://en.wikipedia.org/wiki/Ulmus_parvifolia"
+  },
+  {
+    "common": "American Sycamore",
+    "scientific": "Platanus occidentalis",
+    "wiki": "https://en.wikipedia.org/wiki/Platanus_occidentalis"
+  },
+  {
+    "common": "Weeping Willow",
+    "scientific": "Salix babylonica",
+    "wiki": "https://en.wikipedia.org/wiki/Salix_babylonica"
+  },
+  {
+    "common": "Fern Pine",
+    "scientific": "Podocarpus henkelii",
+    "wiki": "https://en.wikipedia.org/wiki/Podocarpus_henkelii"
+  },
+  {
+    "common": "Ginkgo",
+    "scientific": "Ginkgo biloba",
+    "wiki": "https://en.wikipedia.org/wiki/Ginkgo_biloba"
+  },
+  {
+    "common": "Tulip Tree",
+    "scientific": "Liriodendron tulipifera",
+    "wiki": "https://en.wikipedia.org/wiki/Liriodendron_tulipifera"
+  },
+  {
+    "common": "Crape Myrtle",
+    "scientific": "Lagerstroemia indica",
+    "wiki": "https://en.wikipedia.org/wiki/Lagerstroemia_indica"
+  },
+  {
+    "common": "Mulberry",
+    "scientific": "Morus spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Morus"
+  },
+  {
+    "common": "Pineapple Guava",
+    "scientific": "Feijoa sellowiana",
+    "wiki": "https://en.wikipedia.org/wiki/Feijoa_sellowiana"
+  },
+  {
+    "common": "Avocado",
+    "scientific": "Persea americana",
+    "wiki": "https://en.wikipedia.org/wiki/Persea_americana"
+  },
+  {
+    "common": "Fig",
+    "scientific": "Ficus carica",
+    "wiki": "https://en.wikipedia.org/wiki/Ficus_carica"
+  },
+  {
+    "common": "Persimmon",
+    "scientific": "Diospyros spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Diospyros"
+  },
+  {
+    "common": "Pomegranate",
+    "scientific": "Punica granatum",
+    "wiki": "https://en.wikipedia.org/wiki/Punica_granatum"
+  },
+  {
+    "common": "Loquat",
+    "scientific": "Eriobotrya japonica",
+    "wiki": "https://en.wikipedia.org/wiki/Eriobotrya_japonica"
+  },
+  {
+    "common": "Jujube",
+    "scientific": "Ziziphus jujuba",
+    "wiki": "https://en.wikipedia.org/wiki/Ziziphus_jujuba"
+  },
+  {
+    "common": "Almond",
+    "scientific": "Prunus dulcis",
+    "wiki": "https://en.wikipedia.org/wiki/Prunus_dulcis"
+  },
+  {
+    "common": "Pecan",
+    "scientific": "Carya illinoinensis",
+    "wiki": "https://en.wikipedia.org/wiki/Carya_illinoinensis"
+  },
+  {
+    "common": "Apple",
+    "scientific": "Malus domestica",
+    "wiki": "https://en.wikipedia.org/wiki/Malus_domestica"
+  },
+  {
+    "common": "Pear",
+    "scientific": "Pyrus communis",
+    "wiki": "https://en.wikipedia.org/wiki/Pyrus_communis"
+  },
+  {
+    "common": "Plum",
+    "scientific": "Prunus domestica",
+    "wiki": "https://en.wikipedia.org/wiki/Prunus_domestica"
+  },
+  {
+    "common": "Apricot",
+    "scientific": "Prunus armeniaca",
+    "wiki": "https://en.wikipedia.org/wiki/Prunus_armeniaca"
+  },
+  {
+    "common": "Lemon",
+    "scientific": "Citrus limon",
+    "wiki": "https://en.wikipedia.org/wiki/Citrus_limon"
+  },
+  {
+    "common": "Orange",
+    "scientific": "Citrus sinensis",
+    "wiki": "https://en.wikipedia.org/wiki/Citrus_sinensis"
+  },
+  {
+    "common": "Guava",
+    "scientific": "Psidium guajava",
+    "wiki": "https://en.wikipedia.org/wiki/Psidium_guajava"
+  },
+  {
+    "common": "California Lilac",
+    "scientific": "Ceanothus spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Ceanothus"
+  },
+  {
+    "common": "Palo Verde",
+    "scientific": "Parkinsonia spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Parkinsonia"
+  },
+  {
+    "common": "Acacia",
+    "scientific": "Acacia spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Acacia"
+  },
+  {
+    "common": "Desert Ironwood",
+    "scientific": "Olneya tesota",
+    "wiki": "https://en.wikipedia.org/wiki/Olneya_tesota"
+  },
+  {
+    "common": "Catclaw Acacia",
+    "scientific": "Acacia greggii",
+    "wiki": "https://en.wikipedia.org/wiki/Acacia_greggii"
+  },
+  {
+    "common": "Mesquite",
+    "scientific": "Prosopis spp.",
+    "wiki": "https://en.wikipedia.org/wiki/Prosopis"
+  },
+  {
+    "common": "Western Mountain Mahogany",
+    "scientific": "Cercocarpus montanus",
+    "wiki": "https://en.wikipedia.org/wiki/Cercocarpus_montanus"
+  },
+  {
+    "common": "Hollyleaf Cherry",
+    "scientific": "Prunus ilicifolia",
+    "wiki": "https://en.wikipedia.org/wiki/Prunus_ilicifolia"
+  },
+  {
+    "common": "Toyon",
+    "scientific": "Heteromeles arbutifolia",
+    "wiki": "https://en.wikipedia.org/wiki/Heteromeles_arbutifolia"
+  },
+  {
+    "common": "Catalina Cherry",
+    "scientific": "Prunus ilicifolia ssp. lyonii",
+    "wiki": "https://en.wikipedia.org/wiki/Prunus_ilicifolia"
+  },
+  {
+    "common": "Fern-leaf Catalina Ironwood",
+    "scientific": "Lyonothamnus floribundus ssp. aspleniifolius",
+    "wiki": "https://en.wikipedia.org/wiki/Lyonothamnus_floribundus"
+  },
+  {
+    "common": "Pacific Wax Myrtle",
+    "scientific": "Morella californica",
+    "wiki": "https://en.wikipedia.org/wiki/Morella_californica"
+  },
+  {
+    "common": "Mexican Elderberry",
+    "scientific": "Sambucus mexicana",
+    "wiki": "https://en.wikipedia.org/wiki/Sambucus_mexicana"
+  },
+  {
+    "common": "Chamise",
+    "scientific": "Adenostoma fasciculatum",
+    "wiki": "https://en.wikipedia.org/wiki/Adenostoma_fasciculatum"
   }
 ]
