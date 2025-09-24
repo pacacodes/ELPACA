@@ -169,7 +169,7 @@ function App() {
       <PlantDetailPopup
         open={plantDetailPopupOpen}
         pos={{
-          x: popupPos.x + (collapsed ? 48 : 340) + (layerCollapsed ? 48 : 320) + 80 * 2,
+          x: popupPos.x + (collapsed ? 48 : 340) + (layerCollapsed ? 48 : 320) + 80 * 2 + 64,
           y: popupPos.y
         }}
         plant={activePlant}
