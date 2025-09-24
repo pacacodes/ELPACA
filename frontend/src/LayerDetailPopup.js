@@ -10,11 +10,11 @@ function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart, chil
         position: 'absolute',
         left: pos.x,
         top: pos.y,
-        background: 'rgba(60,60,60,0.7)', // match PermaculturePopup
+  background: '#4a4a4a', // halfway between previous and current shade
         borderRadius: '12px',
         boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
-        padding: collapsed ? '0' : '2rem', // match PermaculturePopup
-        minWidth: collapsed ? '48px' : '340px', // match PermaculturePopup
+        padding: collapsed ? '0' : '2rem',
+        minWidth: collapsed ? '48px' : '340px',
         width: collapsed ? '48px' : undefined,
         minHeight: '720px',
         height: '720px',
@@ -25,7 +25,7 @@ function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart, chil
         alignItems: 'center',
         userSelect: 'none',
         cursor: collapsed ? 'pointer' : 'grab',
-        justifyContent: 'flex-start', // match PermaculturePopup
+        justifyContent: 'flex-start',
       }}
       onMouseDown={e => {
         const closeBtn = e.currentTarget.querySelector('button[aria-label="Close layer detail"]');
