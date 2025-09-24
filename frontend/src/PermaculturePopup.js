@@ -40,7 +40,9 @@ function PermaculturePopup({
   onPlantClick,
   plantDetailPopupOpen,
   collapsed,
-  setCollapsed
+  setCollapsed,
+  layerCollapsed,
+  setLayerCollapsed
 }) {
   React.useEffect(() => {
     // Save plant selections and Wikipedia data when nativePlants and project are available
@@ -111,9 +113,9 @@ function PermaculturePopup({
           boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
           minWidth: collapsed ? '48px' : '340px',
           width: collapsed ? '48px' : undefined,
-          minHeight: '720px',
-          height: '720px',
-          maxHeight: '720px',
+          minHeight: collapsed ? '785px' : '720px',
+          height: collapsed ? '785px' : '720px',
+          maxHeight: collapsed ? '785px' : '720px',
           overflowY: 'auto',
           userSelect: 'none',
           cursor: dragging ? 'grabbing' : 'grab',
@@ -121,7 +123,7 @@ function PermaculturePopup({
           zIndex: 1100,
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
+          alignItems: collapsed ? 'stretch' : 'center',
           justifyContent: 'flex-start',
         }}
         onMouseDown={e => {
@@ -155,8 +157,11 @@ function PermaculturePopup({
               color: '#fff',
               fontWeight: 'bold',
               fontSize: '1.1rem',
-              height: '600px',
+              height: '100%',
+              minHeight: '100%',
+              maxHeight: '100%',
               display: 'flex',
+              flex: 1,
               alignItems: 'center',
               justifyContent: 'center',
               letterSpacing: '0.04em',
@@ -280,15 +285,15 @@ function PermaculturePopup({
       {detailOpen && (
         <LayerDetailPopup
           open={detailOpen}
-          collapsed={collapsed}
+          collapsed={layerCollapsed}
           pos={{
             x: popupPos.x + (collapsed ? 48 : 340) + 80,
             y: popupPos.y
           }}
           section={detailSection}
           icon={detailSection ? sectionIcons[detailSection] : null}
-          onClose={() => setCollapsed(false)}
-          onCollapse={() => setCollapsed(true)}
+          onClose={() => setLayerCollapsed(false)}
+          onCollapse={() => setLayerCollapsed(true)}
           onDragStart={e => {
             setDragging(true);
             setDragOffset({ x: e.clientX - popupPos.x, y: e.clientY - popupPos.y });

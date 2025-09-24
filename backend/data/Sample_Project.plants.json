@@ -6,15 +6,15 @@
     "wikipedia": "Quercus agrifolia"
   },
   {
-    "name": "Avocado",
-    "scientific": "Persea americana",
-    "image": "https://static.inaturalist.org/photos/188938346/medium.jpg",
-    "wikipedia": "Avocado"
+    "name": "laurel sumac",
+    "scientific": "Malosma laurina",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/2121812/medium.JPG",
+    "wikipedia": "Malosma"
   },
   {
-    "name": "Chinese pistache",
-    "scientific": "Pistacia chinensis",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/171142/medium.jpg",
-    "wikipedia": "Pistacia chinensis"
+    "name": "Silver Dollar Gum",
+    "scientific": "Eucalyptus polyanthemos",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/150097925/medium.jpeg",
+    "wikipedia": "Eucalyptus polyanthemos"
   }
 ]

@@ -163,6 +163,8 @@ function App() {
         plantDetailPopupOpen={plantDetailPopupOpen}
         collapsed={collapsed}
         setCollapsed={setCollapsed}
+        layerCollapsed={layerCollapsed}
+        setLayerCollapsed={setLayerCollapsed}
       />
 
       {/* Third popup for plant details, positioned to the right of layer popup */}
