@@ -7,21 +7,21 @@ const sectionIcons = {
   'Canopy': (
     <span style={{display:'flex',alignItems:'flex-end',gap:'0'}}>
       <FontAwesomeIcon icon={faTree} style={{fontSize:'1.2em', color:'#fff'}} />
-      <FontAwesomeIcon icon={faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#bdbdbd'}} />
+      <FontAwesomeIcon icon={faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#4a4a4a'}} />
     </span>
   ),
   'Understory': (
     <span style={{display:'flex',alignItems:'flex-end',gap:'0'}}>
-      <FontAwesomeIcon icon={faTree} style={{fontSize:'1.2em', color:'#bdbdbd'}} />
+      <FontAwesomeIcon icon={faTree} style={{fontSize:'1.2em', color:'#4a4a4a'}} />
       <FontAwesomeIcon icon={faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#fff'}} />
     </span>
   ),
-  'Shrub': <FontAwesomeIcon icon={faCloud} />, 
-  'Herbaceous': <FontAwesomeIcon icon={faLeaf} />, 
-  'Ground Cover': <FontAwesomeIcon icon={faClover} />, 
+  'Shrub': <FontAwesomeIcon icon={faCloud} style={{color:'#4a4a4a'}} />, 
+  'Herbaceous': <FontAwesomeIcon icon={faLeaf} style={{color:'#4a4a4a'}} />, 
+  'Ground Cover': <FontAwesomeIcon icon={faClover} style={{color:'#4a4a4a'}} />, 
   'Root Crop': <FontAwesomeIcon icon={faCarrot} />, 
-  'Vine': <FontAwesomeIcon icon={faPagelines} />, 
-  'Fungi': <FontAwesomeIcon icon={faDisease} />
+  'Vine': <FontAwesomeIcon icon={faPagelines} style={{color:'#4a4a4a'}} />, 
+  'Fungi': <FontAwesomeIcon icon={faDisease} style={{color:'#4a4a4a'}} />
 };
 
 function LayerButtons({ sectionList, setActiveSection }) {
