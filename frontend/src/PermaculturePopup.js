@@ -37,7 +37,8 @@ function PermaculturePopup({
   activeProjectFolder,
   nativePlants,
   sectionList,
-  onPlantClick
+  onPlantClick,
+  plantDetailPopupOpen
 }) {
   const [collapsed, setCollapsed] = React.useState(false);
   React.useEffect(() => {
@@ -285,6 +286,7 @@ function PermaculturePopup({
       {detailOpen && (
         <LayerDetailPopup
           open={detailOpen}
+          collapsed={collapsed}
           pos={{
             x: collapsed
               ? popupPos.x + 48 + 32 + 85 - 34 - 34 + 17 - 51 + 3.4
@@ -293,7 +295,8 @@ function PermaculturePopup({
           }}
           section={detailSection}
           icon={detailSection ? sectionIcons[detailSection] : null}
-          onClose={() => setDetailOpen(false)}
+          onClose={() => setCollapsed(false)}
+          onCollapse={() => setCollapsed(true)}
           onDragStart={e => {
             setDragging(true);
             setDragOffset({ x: e.clientX - popupPos.x, y: e.clientY - popupPos.y });

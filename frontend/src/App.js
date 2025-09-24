@@ -158,6 +158,7 @@ function App() {
         nativePlants={nativePlants}
         sectionList={['Canopy','Understory','Shrub','Herbaceous','Ground Cover','Root Crop','Vine','Fungi']}
         onPlantClick={handlePlantClick}
+        plantDetailPopupOpen={plantDetailPopupOpen}
       />
 
       {/* Third popup for plant details, positioned to the right of layer popup */}
