@@ -22,7 +22,7 @@ function CanopyLayer({ onPlantClick }) {
   }, []);
 
   return (
-    <div style={{ padding: '1rem' }}>
+  <div style={{ padding: '1rem', minWidth: '500px', width: '500px', maxWidth: '500px', minHeight: '720px', height: '720px', maxHeight: '720px', boxSizing: 'border-box' }}>
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {plants.map((plant, idx) => (
           <li key={idx} style={{ marginBottom: '1.2rem', padding: 0 }}>

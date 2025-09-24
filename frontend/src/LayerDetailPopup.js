@@ -52,10 +52,19 @@ function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart, chil
             textAlign: 'center',
             marginTop: 0,
             position: 'relative',
+            boxSizing: 'border-box',
+            padding: 0,
           }}
           onClick={onClose}
         >
-          <span style={{width:'100%',textAlign:'center'}}>{section}</span>
+          <span style={{
+            width:'100%',
+            textAlign:'center',
+            display:'flex',
+            alignItems:'center',
+            justifyContent:'center',
+            height:'100%',
+          }}>{section}</span>
         </div>
       ) : (
         <>

@@ -148,26 +148,36 @@ function PermaculturePopup({
           </div>
         )}
         {collapsed && (
-          <div style={{
-            writingMode: 'vertical-rl',
-            transform: 'rotate(180deg)',
-            color: '#fff',
-            fontWeight: 'bold',
-            fontSize: '1.1rem',
-            height: '600px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            letterSpacing: '0.04em',
-            cursor: 'pointer',
-            width: '48px',
-            textAlign: 'center',
-            marginTop: 0,
-            position: 'relative',
-          }}
+          <div
+            style={{
+              writingMode: 'vertical-rl',
+              transform: 'rotate(180deg)',
+              color: '#fff',
+              fontWeight: 'bold',
+              fontSize: '1.1rem',
+              height: '600px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              letterSpacing: '0.04em',
+              cursor: 'pointer',
+              width: '48px',
+              textAlign: 'center',
+              marginTop: 0,
+              position: 'relative',
+              boxSizing: 'border-box',
+              padding: 0,
+            }}
             onClick={() => setCollapsed(false)}
           >
-            Permaculture Layers
+            <span style={{
+              width:'100%',
+              textAlign:'center',
+              display:'flex',
+              alignItems:'center',
+              justifyContent:'center',
+              height:'100%',
+            }}>Permaculture Layers</span>
           </div>
         )}
         {/* Collapse/close button logic */}

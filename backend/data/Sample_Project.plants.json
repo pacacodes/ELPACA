@@ -6,15 +6,15 @@
     "wikipedia": "Quercus agrifolia"
   },
   {
+    "name": "Avocado",
+    "scientific": "Persea americana",
+    "image": "https://static.inaturalist.org/photos/188938346/medium.jpg",
+    "wikipedia": "Avocado"
+  },
+  {
     "name": "Chinese pistache",
     "scientific": "Pistacia chinensis",
     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/171142/medium.jpg",
     "wikipedia": "Pistacia chinensis"
-  },
-  {
-    "name": "spearmint",
-    "scientific": "Mentha spicata",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/1186004/medium.jpg",
-    "wikipedia": "Spearmint"
   }
 ]
