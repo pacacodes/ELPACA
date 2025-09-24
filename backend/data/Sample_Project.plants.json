@@ -6,15 +6,15 @@
     "wikipedia": "Celtis"
   },
   {
+    "name": "California poppy",
+    "scientific": "Eschscholzia californica",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/67227218/medium.jpg",
+    "wikipedia": "Eschscholzia californica"
+  },
+  {
     "name": "Common Tree Euphorbia",
     "scientific": "Euphorbia ingens",
     "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/323573340/medium.jpeg",
     "wikipedia": "Euphorbia ingens"
-  },
-  {
-    "name": "ginkgo",
-    "scientific": "Ginkgo biloba",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/397250612/medium.jpeg",
-    "wikipedia": "Ginkgo biloba"
   }
 ]

@@ -109,16 +109,19 @@ function PermaculturePopup({
           padding: collapsed ? '0' : '2rem',
           borderRadius: '12px',
           boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
-          minWidth: collapsed ? '48px' : '340px',
-          width: collapsed ? '48px' : undefined,
-          minHeight: '600px',
-          userSelect: 'none',
-          cursor: dragging ? 'grabbing' : 'grab',
-          position: 'absolute',
-          zIndex: 1100,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
+      minWidth: collapsed ? '48px' : '340px',
+      width: collapsed ? '48px' : undefined,
+      minHeight: '720px',
+      height: '720px',
+      maxHeight: '720px',
+      overflowY: 'auto',
+    userSelect: 'none',
+    cursor: dragging ? 'grabbing' : 'grab',
+    position: 'absolute',
+    zIndex: 1100,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
           justifyContent: 'flex-start',
         }}
         onMouseDown={e => {
@@ -131,15 +134,14 @@ function PermaculturePopup({
         {/* Title or rotated bar */}
         {!collapsed && (
           <div style={{
-            position: 'absolute',
-            top: '18px',
-            left: 0,
             width: '100%',
             textAlign: 'center',
             fontWeight: 'bold',
             color: '#fff',
             fontSize: '1.25rem',
             letterSpacing: '0.04em',
+            marginBottom: '2.2rem',
+            marginTop: '0.5rem',
             zIndex: 1001
           }}>
             Permaculture Layers
@@ -223,26 +225,7 @@ function PermaculturePopup({
           </button>
         )}
         {/* (Removed duplicate always-present title. Title is now only shown above when not collapsed, or as rotated bar when collapsed.) */}
-        {/* Native plants display (always show for active project) */}
-        {!collapsed && activeProjectFolder && (
-          <div style={{marginTop:'3.5rem',marginBottom:'1.5rem',width:'100%'}}>
-            <div style={{color:'#fff',fontWeight:'bold',fontSize:'1.08rem',marginBottom:'0.5rem'}}>Native Plants</div>
-            <div style={{display:'flex',flexDirection:'column',gap:'0.5rem'}}>
-              {nativePlants && nativePlants.length > 0 ? nativePlants.map((plant, idx) => {
-                let common = plant.name || plant.common || (typeof plant === 'string' ? plant : '');
-                let sci = plant.scientific || '';
-                let wikiLink = plant.wikipedia ? <a href={plant.wikipedia} target="_blank" rel="noopener noreferrer" style={{color:'#fff',textDecoration:'underline',fontSize:'0.92rem'}}>Wikipedia</a> : null;
-                return (
-                  <div key={idx} style={{background:'#a8be96',color:'#fff',borderRadius:'6px',padding:'0.32rem 0.9rem',fontSize:'0.98rem',display:'flex',flexDirection:'column',alignItems:'flex-start',gap:'0.1rem',minWidth:'180px'}}>
-                    <span style={{fontWeight:'bold'}}>{common}</span>
-                    <span style={{fontStyle:'italic',fontSize:'0.96rem'}}>{sci}</span>
-                    {wikiLink && <span>{wikiLink}</span>}
-                  </div>
-                );
-              }) : <span style={{color:'#bbb'}}>No data</span>}
-            </div>
-          </div>
-        )}
+        {/* Native plants removed. Only show title and buttons. */}
         {!collapsed && (
           <LayerButtons
             sectionList={sectionList}
