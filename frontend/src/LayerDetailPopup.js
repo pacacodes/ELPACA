@@ -85,7 +85,6 @@ function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart, chil
             alignItems: 'center',
             justifyContent: 'center',
           }}>
-            <span style={{marginRight:'0.7em'}}>{icon}</span>
             <span style={{color:'#fff',fontWeight:'bold',fontSize:'1.25rem',letterSpacing:'0.04em',whiteSpace:'nowrap'}}>{section}</span>
           </div>
           {/* Collapse button absolutely positioned in top right of popup container */}
