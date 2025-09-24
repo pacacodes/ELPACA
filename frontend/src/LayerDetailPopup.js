@@ -62,7 +62,7 @@ function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart, chil
           <div style={{
             position: 'sticky',
             top: 0,
-            background: 'transparent', // remove black bar
+            background: 'transparent',
             zIndex: 2,
             width: '100%',
             textAlign: 'center',
@@ -78,29 +78,32 @@ function LayerDetailPopup({ open, pos, section, icon, onClose, onDragStart, chil
           }}>
             <span style={{marginRight:'0.7em'}}>{icon}</span>
             <span style={{color:'#fff',fontWeight:'bold',fontSize:'1.25rem',letterSpacing:'0.04em',whiteSpace:'nowrap'}}>{section}</span>
-            <button
-              onClick={onCollapse}
-              style={{
-                marginLeft: '0.7em',
-                width: '28px',
-                height: '28px',
-                border: 'none',
-                background: 'transparent',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: 0,
-                pointerEvents: 'auto',
-                zIndex: 3,
-              }}
-              aria-label="Collapse layer detail"
-            >
-              <svg width="18" height="18" viewBox="0 0 18 18">
-                <rect x="4" y="8" width="10" height="2" rx="1" fill="white" />
-              </svg>
-            </button>
           </div>
+          {/* Collapse button absolutely positioned in top right of popup container */}
+          <button
+            onClick={onCollapse}
+            style={{
+              position: 'absolute',
+              top: '12px',
+              right: '12px',
+              width: '28px',
+              height: '28px',
+              border: 'none',
+              background: 'transparent',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 0,
+              pointerEvents: 'auto',
+              zIndex: 1202,
+            }}
+            aria-label="Collapse layer detail"
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18">
+              <rect x="4" y="8" width="10" height="2" rx="1" fill="white" />
+            </svg>
+          </button>
           {/* Only the content area is scrollable, not the whole popup. Move scrollbar closer to edge. */}
           <div style={{width:'100%', flex: 1, overflowY: 'auto', maxHeight: 'calc(720px - 88px)', paddingRight: '2px'}}>
             {children}

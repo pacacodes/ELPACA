@@ -8,7 +8,6 @@ function ShrubLayer() {
   }, []);
   return (
     <div style={{ padding: '1rem' }}>
-      <h2 style={{ marginBottom: '1rem' }}>Shrub Layer Example Plants</h2>
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {plants.map((plant, idx) => (
           <li key={idx} style={{

@@ -23,7 +23,6 @@ function CanopyLayer({ onPlantClick }) {
 
   return (
     <div style={{ padding: '1rem' }}>
-      <h2 style={{ marginBottom: '1rem' }}>Canopy Layer Example Plants</h2>
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {plants.map((plant, idx) => (
           <li key={idx} style={{ marginBottom: '1.2rem', padding: 0 }}>
