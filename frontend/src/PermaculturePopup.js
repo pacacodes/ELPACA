@@ -36,7 +36,8 @@ function PermaculturePopup({
   setActiveSection,
   activeProjectFolder,
   nativePlants,
-  sectionList
+  sectionList,
+  onPlantClick
 }) {
   const [collapsed, setCollapsed] = React.useState(false);
   React.useEffect(() => {
@@ -299,14 +300,14 @@ function PermaculturePopup({
           }}
         >
           {/* Render the correct layer component based on detailSection */}
-          {detailSection === 'Canopy' && <CanopyLayer />}
-          {detailSection === 'Understory' && <UnderstoryLayer />}
-          {detailSection === 'Shrub' && <ShrubLayer />}
-          {detailSection === 'Herbaceous' && <HerbaceousLayer />}
-          {detailSection === 'Ground Cover' && <GroundcoverLayer />}
-          {detailSection === 'Root Crop' && <RootcropLayer />}
-          {detailSection === 'Vine' && <VineLayer />}
-          {detailSection === 'Fungi' && <FungiLayer />}
+          {detailSection === 'Canopy' && <CanopyLayer onPlantClick={onPlantClick} />}
+          {detailSection === 'Understory' && <UnderstoryLayer onPlantClick={onPlantClick} />}
+          {detailSection === 'Shrub' && <ShrubLayer onPlantClick={onPlantClick} />}
+          {detailSection === 'Herbaceous' && <HerbaceousLayer onPlantClick={onPlantClick} />}
+          {detailSection === 'Ground Cover' && <GroundcoverLayer onPlantClick={onPlantClick} />}
+          {detailSection === 'Root Crop' && <RootcropLayer onPlantClick={onPlantClick} />}
+          {detailSection === 'Vine' && <VineLayer onPlantClick={onPlantClick} />}
+          {detailSection === 'Fungi' && <FungiLayer onPlantClick={onPlantClick} />}
         </LayerDetailPopup>
       )}
     </div>

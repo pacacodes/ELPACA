@@ -1,13 +1,24 @@
 import React, { useEffect, useState } from 'react';
 
 // Import the canopy_wiki.json data
-import canopyPlants from './plants/canopy_wiki.json';
+import canopyJson from './plants/canopy.json';
+import canopyWiki from './plants/canopy_wiki.json';
+import canopyEnsembl from './plants/canopy_ensembl.json';
 
 function CanopyLayer({ onPlantClick }) {
   const [plants, setPlants] = useState([]);
 
   useEffect(() => {
-    setPlants(canopyPlants.slice(0, 3));
+    // Merge all sources, deduplicate by scientific name
+    const allPlants = [...canopyJson, ...canopyWiki, ...canopyEnsembl];
+    const seen = new Set();
+    const merged = allPlants.filter(p => {
+      if (!p.scientific) return false;
+      if (seen.has(p.scientific)) return false;
+      seen.add(p.scientific);
+      return true;
+    });
+    setPlants(merged);
   }, []);
 
   return (

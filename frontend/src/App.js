@@ -9,6 +9,7 @@ import LayoutsColumn from './LayoutsColumn';
 import CommunicationColumn from './CommunicationColumn';
 import ViewsColumn from './ViewsColumn';
 import AlpacaPopup from './AlpacaPopup';
+import PlantDetailPopup from './PlantDetailPopup';
 
 function App() {
   const [activeSection, setActiveSection] = useState(null);
@@ -33,6 +34,8 @@ function App() {
   const [newFolderZip, setNewFolderZip] = useState('');
   const [newFolderCountry, setNewFolderCountry] = useState('');
   const [nativePlants, setNativePlants] = useState([]);
+  const [plantDetailPopupOpen, setPlantDetailPopupOpen] = useState(false);
+  const [activePlant, setActivePlant] = useState(null);
   const sampleProject = useMemo(() => ({
     name: 'Sample Project',
     address: '2442 Crest View Drive, Los Angeles, CA 90046',
@@ -66,6 +69,13 @@ function App() {
         .catch(() => setNativePlants([]));
     }
   }, [popupOpen, activeProjectFolder]);
+
+  // Handler for plant click in layer
+  const handlePlantClick = (plant) => {
+    setActivePlant(plant);
+    setPlantDetailPopupOpen(true);
+    // No need to set position, will be derived from popupPos
+  };
 
   return (
     <div style={{ padding: '2rem', position: 'relative', minHeight: '100vh' }}>
@@ -147,6 +157,15 @@ function App() {
         activeProjectFolder={activeProjectFolder}
         nativePlants={nativePlants}
         sectionList={['Canopy','Understory','Shrub','Herbaceous','Ground Cover','Root Crop','Vine','Fungi']}
+        onPlantClick={handlePlantClick}
+      />
+
+      {/* Third popup for plant details, positioned to the right of layer popup */}
+      <PlantDetailPopup
+        open={plantDetailPopupOpen}
+        pos={{ x: popupPos.x + 340 + 320 + 64, y: popupPos.y }}
+        plant={activePlant}
+        onClose={() => setPlantDetailPopupOpen(false)}
       />
 
       {namingFolder && (
