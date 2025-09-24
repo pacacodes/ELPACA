@@ -7,8 +7,6 @@ function PlantDetailPopup({ open, pos, plant, onClose }) {
     { label: 'Flower', value: plant.flower, type: 'image' },
     { label: 'Leaf/Foliage', value: plant.leaf, type: 'image' },
     { label: 'Stem', value: plant.stem, type: 'image' },
-    { label: 'Common Name', value: plant.common },
-    { label: 'Scientific Name', value: plant.scientific },
     { label: 'Climate Zone', value: plant.climate },
     { label: 'Native Region', value: plant.region },
     { label: 'Soil Type', value: plant.soil },
@@ -72,8 +70,8 @@ function PlantDetailPopup({ open, pos, plant, onClose }) {
           <line x1="15" y1="3" x2="3" y2="15" stroke="white" strokeWidth="2" />
         </svg>
       </button>
-      <div style={{width:'100%',textAlign:'center',fontWeight:'bold',color:'#fff',fontSize:'1.25rem',letterSpacing:'0.04em',marginBottom:'2.2rem',marginTop:'0.5rem',zIndex:1001,display:'flex',alignItems:'center',justifyContent:'center'}}>{plant.common || 'Common Name'}</div>
-      <div style={{marginBottom:'0.5rem', color:'#fff'}}><strong>Scientific:</strong> {plant.scientific || 'Scientific Name'}</div>
+  <div style={{width:'100%',textAlign:'center',fontWeight:'bold',color:'#fff',fontSize:'1.25rem',letterSpacing:'0.04em',marginBottom:'2.2rem',marginTop:'0.5rem',zIndex:1001,display:'flex',alignItems:'center',justifyContent:'center'}}>{plant.common || 'Common Name'}</div>
+  <div style={{marginBottom:'0.5rem', color:'#fff'}}><strong>Scientific:</strong> {plant.scientific || 'Scientific Name'}</div>
       <div style={{width:'100%',marginTop:'1.2rem'}}>
         {fields.map((field, idx) => (
           <div key={field.label} style={{marginBottom:'1.1rem',display:'flex',alignItems:'center'}}>

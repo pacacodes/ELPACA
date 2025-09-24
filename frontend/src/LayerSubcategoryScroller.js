@@ -40,8 +40,6 @@ export function LayerSubcategoryScroller({ subcategory, plants, onPlantClick }) 
                 <div style={{width:'2.6em',height:'2.6em',background:'#eee',borderRadius:'4px',display:'flex',alignItems:'center',justifyContent:'center',color:'#aaa',fontSize:'0.9em'}}>No Photo</div>
               )}
             </div>
-            <span style={{fontWeight:'bold',fontSize:'1.05em',marginBottom:'0.1em'}}>{plant.common || plant.name || 'Common Name'}</span>
-            <span style={{fontSize:'0.92em',color:'#666'}}>{plant.scientific || 'Scientific Name'}</span>
           </button>
         ))}
       </div>
