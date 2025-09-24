@@ -163,7 +163,7 @@ function App() {
       {/* Third popup for plant details, positioned to the right of layer popup */}
       <PlantDetailPopup
         open={plantDetailPopupOpen}
-        pos={{ x: popupPos.x + 340 + 320 + 64, y: popupPos.y }}
+  pos={{ x: popupPos.x + 340 + 320 + 230, y: popupPos.y }}
         plant={activePlant}
         onClose={() => setPlantDetailPopupOpen(false)}
       />
