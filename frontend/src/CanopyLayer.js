@@ -1,28 +1,57 @@
-import React, { useEffect, useState } from 'react';
 
-// Import the canopy_wiki.json data
+import React, { useEffect, useState } from 'react';
 import canopyJson from './plants/canopy.json';
 import canopyWiki from './plants/canopy_wiki.json';
 import canopyEnsembl from './plants/canopy_ensembl.json';
+
+function mergePlantsByScientificName(...plantArrays) {
+  const plantMap = new Map();
+  for (const arr of plantArrays) {
+    for (const plant of arr) {
+      // Use scientific name or scientific_name as key
+      const sci = plant.scientific || plant.scientific_name;
+      if (!sci) continue;
+      if (!plantMap.has(sci)) {
+        plantMap.set(sci, { ...plant });
+      } else {
+        const existing = plantMap.get(sci);
+        // Merge fields: prefer non-empty, merge arrays/objects
+        for (const key of Object.keys(plant)) {
+          if (plant[key] == null) continue;
+          if (Array.isArray(plant[key])) {
+            existing[key] = Array.isArray(existing[key]) ? [...existing[key], ...plant[key]].filter(Boolean) : [...plant[key]];
+          } else if (typeof plant[key] === 'object' && plant[key] !== null) {
+            existing[key] = { ...plant[key], ...existing[key] };
+          } else if (!existing[key]) {
+            existing[key] = plant[key];
+          }
+        }
+      }
+    }
+  }
+  // Normalize field names for popup
+  return Array.from(plantMap.values()).map(p => ({
+    ...p,
+    common: p.common || p.name || '',
+    scientific: p.scientific || p.scientific_name || '',
+    image: p.image || p.photo || '',
+    about: p.about || p.blurb || '',
+    classification: p.classification || null,
+    wiki: p.wiki || '',
+    // Add/normalize more fields as needed
+  }));
+}
 
 function CanopyLayer({ onPlantClick }) {
   const [plants, setPlants] = useState([]);
 
   useEffect(() => {
-    // Merge all sources, deduplicate by scientific name
-    const allPlants = [...canopyJson, ...canopyWiki, ...canopyEnsembl];
-    const seen = new Set();
-    const merged = allPlants.filter(p => {
-      if (!p.scientific) return false;
-      if (seen.has(p.scientific)) return false;
-      seen.add(p.scientific);
-      return true;
-    });
+    const merged = mergePlantsByScientificName(canopyJson, canopyWiki, canopyEnsembl);
     setPlants(merged);
   }, []);
 
   return (
-  <div style={{ padding: '1rem', minWidth: '500px', width: '500px', maxWidth: '500px', minHeight: '720px', height: '720px', maxHeight: '720px', boxSizing: 'border-box' }}>
+  <div style={{ padding: '1rem', minWidth: '400px', width: '400px', maxWidth: '400px', minHeight: '720px', height: '720px', maxHeight: '720px', boxSizing: 'border-box' }}>
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {plants.map((plant, idx) => (
           <li key={idx} style={{ marginBottom: '1.2rem', padding: 0 }}>

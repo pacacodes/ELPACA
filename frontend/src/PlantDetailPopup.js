@@ -24,13 +24,15 @@ function PlantDetailPopup({ open, pos, plant, onClose }) {
     <div
       style={{
         position: 'absolute',
-        left: pos.x + 130,
+  left: pos.x + 400 + 15 - 400 + 10 + 5 + 100, // shift right by 100px for better alignment
         top: pos.y,
         background: '#333333',
         borderRadius: '12px',
         boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
-  padding: '2rem 2.5rem 2rem 2.5rem',
-        minWidth: '500px',
+        padding: '2rem 2.5rem 2rem 2.5rem',
+  minWidth: '500px',
+  width: '500px',
+  maxWidth: '500px',
         minHeight: '720px',
         height: '720px',
         maxHeight: '720px',
@@ -100,6 +102,20 @@ function PlantDetailPopup({ open, pos, plant, onClose }) {
                   field.value ? <img src={field.value} alt={field.label} style={{maxHeight:'3.2em',maxWidth:'120px',borderRadius:'4px',objectFit:'cover'}} /> : <span style={{color:'#aaa'}}>No Image</span>
                 ) : field.type === 'link' ? (
                   field.value ? <a href={field.value} target="_blank" rel="noopener noreferrer" style={{ color: '#a8be96', textDecoration: 'underline', fontSize: '0.95rem' }}>Wikipedia</a> : <span style={{color:'#aaa'}}>No Link</span>
+                ) : Array.isArray(field.value) ? (
+                  // Render arrays as comma-separated or as lists of objects
+                  field.value.length === 0 ? <span style={{color:'#aaa'}}>None</span> :
+                  typeof field.value[0] === 'object' ? (
+                    <ul style={{margin:0,paddingLeft:'1em'}}>
+                      {field.value.map((item, i) => (
+                        <li key={i} style={{color:'#fff',fontSize:'0.98em'}}>
+                          {Object.entries(item).map(([k,v]) => `${k}: ${Array.isArray(v) ? v.join(', ') : v}`).join('; ')}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    field.value.join(', ')
+                  )
                 ) : (
                   field.value ? field.value : <span style={{color:'#aaa'}}>None</span>
                 )}

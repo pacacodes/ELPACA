@@ -1,20 +1,20 @@
 [
   {
-    "name": "common bird-of-paradise flower",
-    "scientific": "Strelitzia reginae",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/375256909/medium.jpg",
-    "wikipedia": "Strelitzia reginae"
+    "name": "Bluecrown passionflower",
+    "scientific": "Passiflora caerulea",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/40082393/medium.jpg",
+    "wikipedia": "Passiflora caerulea"
   },
   {
-    "name": "laurel sumac",
-    "scientific": "Malosma laurina",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/2121812/medium.JPG",
-    "wikipedia": "Malosma"
+    "name": "Aleppo pine",
+    "scientific": "Pinus halepensis",
+    "image": "https://static.inaturalist.org/photos/5810251/medium.jpg",
+    "wikipedia": "Pinus halepensis"
   },
   {
-    "name": "Silver Dollar Gum",
-    "scientific": "Eucalyptus polyanthemos",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/150097925/medium.jpeg",
-    "wikipedia": "Eucalyptus polyanthemos"
+    "name": "Australian Cheesewood",
+    "scientific": "Pittosporum undulatum",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/46938687/medium.jpeg",
+    "wikipedia": "Pittosporum undulatum"
   }
 ]
