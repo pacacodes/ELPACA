@@ -14,10 +14,28 @@ function mergeVineData() {
     const ensembl = vineEnsembl.find(e => (e.scientific_name || '').toLowerCase() === (sci || '').toLowerCase() || (e.name || '').toLowerCase() === (common || '').toLowerCase());
     // Try to find matching in vineList
     const list = vineList.find(l => (l.scientific || '').toLowerCase() === (sci || '').toLowerCase() || (l.common || '').toLowerCase() === (common || '').toLowerCase());
+    // Normalize classification field
+    let classification = null;
+    if (ensembl && ensembl.classification) {
+      classification = ensembl.classification;
+    } else if (wikiPlant.classification) {
+      classification = wikiPlant.classification;
+    } else if (ensembl) {
+      classification = {
+        kingdom: ensembl.kingdom,
+        phylum: ensembl.phylum,
+        class: ensembl.class,
+        order: ensembl.order,
+        family: ensembl.family,
+        genus: ensembl.genus,
+        species: ensembl.species
+      };
+    }
     merged.push({
       ...wikiPlant,
       ...ensembl,
-      ...list
+      ...list,
+      classification
     });
   });
   return merged;

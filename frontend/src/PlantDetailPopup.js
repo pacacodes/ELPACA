@@ -3,6 +3,19 @@ import React from 'react';
 function PlantDetailPopup({ open, pos, plant, onClose }) {
   if (!open || !plant) return null;
   // Normalize possible field names from all sources
+  // Normalize classification from all possible sources
+  const classification = plant.classification
+    || plant.taxonomy
+    || {
+      kingdom: plant.kingdom,
+      phylum: plant.phylum,
+      class: plant.class,
+      order: plant.order,
+      family: plant.family,
+      genus: plant.genus,
+      species: plant.species
+    };
+
   const fields = [
     { label: 'Climate Zone', value: plant.climate_zone || plant.climate || plant.zone || '' },
     { label: 'Native Region', value: plant.native_region || plant.region || plant.origin || '' },
@@ -13,7 +26,7 @@ function PlantDetailPopup({ open, pos, plant, onClose }) {
     { label: 'Growth Rate', value: plant.growth_rate || plant.growth || '' },
     { label: 'Life Cycle', value: plant.lifecycle || plant.life || '' },
     { label: 'Root Type', value: plant.root_type || plant.root || '' },
-    { label: 'Classification', value: plant.classification || null },
+    { label: 'Classification', value: classification },
     { label: 'Typical Use', value: plant.typical_use || plant.use || '' },
     { label: 'Toxicity', value: plant.toxicity || '' },
     { label: 'Companion Plants', value: plant.companion_plants || plant.companion || '' },
