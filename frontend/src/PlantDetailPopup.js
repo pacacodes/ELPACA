@@ -2,23 +2,24 @@ import React from 'react';
 
 function PlantDetailPopup({ open, pos, plant, onClose }) {
   if (!open || !plant) return null;
+  // Normalize possible field names from all sources
   const fields = [
-    { label: 'Climate Zone', value: plant.climate },
-    { label: 'Native Region', value: plant.region },
-    { label: 'Soil Type', value: plant.soil },
-    { label: 'Watering', value: plant.watering },
-    { label: 'Sun', value: plant.sun },
-    { label: 'Blurb', value: plant.about },
-    { label: 'Growth Rate', value: plant.growth },
-    { label: 'Life Cycle', value: plant.life },
-    { label: 'Root Type', value: plant.root },
-    { label: 'Classification', value: plant.classification },
-    { label: 'Typical Use', value: plant.use },
-    { label: 'Toxicity', value: plant.toxicity },
-    { label: 'Companion Plants', value: plant.companion },
-    { label: 'Antagonistic Plants', value: plant.antagonistic },
-    { label: 'Genetic Code', value: plant.genetic },
-    { label: 'Wiki Link', value: plant.wiki, type: 'link' },
+    { label: 'Climate Zone', value: plant.climate_zone || plant.climate || plant.zone || '' },
+    { label: 'Native Region', value: plant.native_region || plant.region || plant.origin || '' },
+    { label: 'Soil Type', value: plant.soil_type || plant.soil || '' },
+    { label: 'Watering', value: plant.watering || '' },
+    { label: 'Sun', value: plant.sun || '' },
+    { label: 'Blurb', value: plant.about || plant.blurb || '' },
+    { label: 'Growth Rate', value: plant.growth_rate || plant.growth || '' },
+    { label: 'Life Cycle', value: plant.lifecycle || plant.life || '' },
+    { label: 'Root Type', value: plant.root_type || plant.root || '' },
+    { label: 'Classification', value: plant.classification || null },
+    { label: 'Typical Use', value: plant.typical_use || plant.use || '' },
+    { label: 'Toxicity', value: plant.toxicity || '' },
+    { label: 'Companion Plants', value: plant.companion_plants || plant.companion || '' },
+    { label: 'Antagonistic Plants', value: plant.antagonistic_plants || plant.antagonistic || '' },
+    { label: 'Genetic Code', value: plant.genetic_code || plant.genetic || '' },
+    { label: 'Wiki Link', value: plant.wiki || '', type: 'link' },
   ];
   return (
     <div
@@ -98,7 +99,18 @@ function PlantDetailPopup({ open, pos, plant, onClose }) {
             <div key={field.label} style={{marginBottom:'1.1rem',display:'flex',alignItems:'center'}}>
               <div style={{width:'160px',fontWeight:'bold',color:'#a8be96',fontSize:'1.01em'}}>{field.label}:</div>
               <div style={{flex:1,minHeight:'2.2em',color:'#fff'}}>
-                {field.type === 'image' ? (
+                {field.label === 'Classification' && field.value && typeof field.value === 'object' ? (
+                  <div style={{display:'flex',flexDirection:'column',gap:'0.2em'}}>
+                    {['kingdom','phylum','class','order','family','genus','species'].map(key => (
+                      field.value[key] ? (
+                        <div key={key} style={{fontSize:'0.98em',color:'#c2e0b2'}}>
+                          <span style={{fontWeight:'bold',color:'#a8be96',marginRight:'0.5em'}}>{key.charAt(0).toUpperCase() + key.slice(1)}:</span>
+                          <span style={{color:'#fff'}}>{field.value[key]}</span>
+                        </div>
+                      ) : null
+                    ))}
+                  </div>
+                ) : field.type === 'image' ? (
                   field.value ? <img src={field.value} alt={field.label} style={{maxHeight:'3.2em',maxWidth:'120px',borderRadius:'4px',objectFit:'cover'}} /> : <span style={{color:'#aaa'}}>No Image</span>
                 ) : field.type === 'link' ? (
                   field.value ? <a href={field.value} target="_blank" rel="noopener noreferrer" style={{ color: '#a8be96', textDecoration: 'underline', fontSize: '0.95rem' }}>Wikipedia</a> : <span style={{color:'#aaa'}}>No Link</span>
