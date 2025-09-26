@@ -1,20 +1,20 @@
 [
   {
-    "name": "Bluecrown passionflower",
-    "scientific": "Passiflora caerulea",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/40082393/medium.jpg",
-    "wikipedia": "Passiflora caerulea"
+    "name": "Silk floss tree",
+    "scientific": "Ceiba speciosa",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/5169184/medium.jpeg",
+    "wikipedia": "Ceiba speciosa"
   },
   {
-    "name": "Aleppo pine",
-    "scientific": "Pinus halepensis",
-    "image": "https://static.inaturalist.org/photos/5810251/medium.jpg",
-    "wikipedia": "Pinus halepensis"
+    "name": "red osier dogwood",
+    "scientific": "Cornus sericea",
+    "image": "https://static.inaturalist.org/photos/16633753/medium.jpg",
+    "wikipedia": "Cornus sericea"
   },
   {
-    "name": "Australian Cheesewood",
-    "scientific": "Pittosporum undulatum",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/46938687/medium.jpeg",
-    "wikipedia": "Pittosporum undulatum"
+    "name": "ivy geranium",
+    "scientific": "Pelargonium peltatum",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/23162928/medium.jpg",
+    "wikipedia": "Pelargonium peltatum"
   }
 ]

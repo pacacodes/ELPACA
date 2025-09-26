@@ -4,7 +4,24 @@ import shrubPlants from './plants/shrub_wiki.json';
 function ShrubLayer() {
   const [plants, setPlants] = useState([]);
   useEffect(() => {
-    setPlants(shrubPlants.slice(0, 3));
+    setPlants(
+      shrubPlants.slice(0, 3).map(p => ({
+        ...p,
+        photo: p.photo || p.image || '',
+        flower: p.flower || '',
+        leaf: p.leaf || '',
+        stem: p.stem || '',
+        classification: p.classification || {
+          kingdom: p.kingdom,
+          phylum: p.phylum,
+          class: p.class,
+          order: p.order,
+          family: p.family,
+          genus: p.genus,
+          species: p.species
+        }
+      }))
+    );
   }, []);
   return (
   <div style={{ padding: '1rem', minWidth: '500px', width: '500px', maxWidth: '500px', minHeight: '720px', height: '720px', maxHeight: '720px', boxSizing: 'border-box' }}>
