@@ -17,6 +17,7 @@
     "draco3dgltf": "^1.5.7",
     "express": "^5.1.0",
     "meshoptimizer": "^0.25.0",
+    "react-dom": "^19.1.1",
     "three": "^0.180.0",
     "three-mesh-bvh": "^0.9.1",
     "web-ifc": "^0.0.71"
