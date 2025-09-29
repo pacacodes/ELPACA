@@ -1,20 +1,20 @@
 [
   {
-    "name": "Silk floss tree",
-    "scientific": "Ceiba speciosa",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/5169184/medium.jpeg",
-    "wikipedia": "Ceiba speciosa"
+    "name": "plants",
+    "scientific": "Plantae",
+    "image": "https://static.inaturalist.org/photos/221143410/medium.jpeg",
+    "wikipedia": "Plant"
   },
   {
-    "name": "red osier dogwood",
-    "scientific": "Cornus sericea",
-    "image": "https://static.inaturalist.org/photos/16633753/medium.jpg",
-    "wikipedia": "Cornus sericea"
+    "name": "Beefwoods",
+    "scientific": "Casuarina",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/329633502/medium.jpg",
+    "wikipedia": "Casuarina"
   },
   {
-    "name": "ivy geranium",
-    "scientific": "Pelargonium peltatum",
-    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/23162928/medium.jpg",
-    "wikipedia": "Pelargonium peltatum"
+    "name": "southern magnolia",
+    "scientific": "Magnolia grandiflora",
+    "image": "https://inaturalist-open-data.s3.amazonaws.com/photos/82254330/medium.jpg",
+    "wikipedia": "Magnolia grandiflora"
   }
 ]
