@@ -1,6 +1,6 @@
 import React from 'react';
+import alpacaLogo from './alpaca.ico';
 import { AppShellNavbar, Box, Stack, Text, Divider, Center, ThemeIcon } from '@mantine/core';
-import alpacaLogo from './alpaca_silhouette.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLightbulb, faMap, faPen, faDraftingCompass, faHardHat, faTasks, faFolderOpen,
@@ -33,12 +33,12 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
 
   return (
     <AppShellNavbar
-      style={{ width: 260, height: '100%', background: 'var(--mantine-color-body)', borderRight: '1px solid var(--mantine-color-gray-3)', display: 'flex', flexDirection: 'column', padding: 0 }}
+      style={{ width: '20vw', minWidth: 180, maxWidth: 400, height: '100vh', background: 'var(--mantine-color-body)', borderRight: '1px solid var(--mantine-color-gray-3)', display: 'flex', flexDirection: 'column', padding: 0, position: 'fixed', left: 0, top: 0, zIndex: 100 }}
     >
       {/* Logo and Title */}
       <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 'var(--mantine-spacing-md)', borderBottom: '1px solid var(--mantine-color-gray-3)' }}>
-        <ThemeIcon size={48} radius="xl" variant="light" style={{ marginBottom: 12 }}>
-          <img src={alpacaLogo} alt="Alpaca" style={{ width: 32, height: 32 }} />
+        <ThemeIcon size={48} radius="xl" variant="light" style={{ marginBottom: 12, background: 'transparent' }}>
+          <img src={alpacaLogo} alt="Alpaca" style={{ width: 40, height: 40, borderRadius: 12 }} />
         </ThemeIcon>
         <Text size="lg" fw={700} style={{ marginBottom: 4 }}>
           {navIcons[activeIndex].label}
