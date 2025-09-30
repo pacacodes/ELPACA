@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import MantineNavbar from './MantineNavbar';
+import { AppShell } from '@mantine/core';
 import BIMApp from './bim/BIMApp';
 
 function App() {
@@ -11,17 +12,19 @@ function App() {
   const [activeLayout, setActiveLayout] = useState('Worksheets');
 
   return (
-    <div style={{ display: 'flex', height: '100vh' }}>
-      <MantineNavbar
-        setActiveNav={setActiveNav}
-        setAlpacaPopupOpen={setAlpacaPopupOpen}
-        setActiveLayout={setActiveLayout}
-      />
-      <div style={{ flex: 1, height: '100%' }}>
+    <AppShell>
+      <AppShell.Navbar>
+        <MantineNavbar
+          setActiveNav={setActiveNav}
+          setAlpacaPopupOpen={setAlpacaPopupOpen}
+          setActiveLayout={setActiveLayout}
+        />
+      </AppShell.Navbar>
+      <AppShell.Main>
         {/* Render main content based on navigation/layout selection */}
         <BIMApp />
-      </div>
-    </div>
+      </AppShell.Main>
+    </AppShell>
   );
 }
 
