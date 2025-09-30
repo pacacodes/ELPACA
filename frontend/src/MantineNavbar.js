@@ -36,17 +36,17 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
       style={{ width: '20vw', minWidth: 180, maxWidth: 400, height: '100vh', background: 'var(--mantine-color-body)', borderRight: '1px solid var(--mantine-color-gray-3)', display: 'flex', flexDirection: 'column', padding: 0, position: 'fixed', left: 0, top: 0, zIndex: 100 }}
     >
       {/* Logo and Title */}
-      <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: 'var(--mantine-spacing-md)', borderBottom: '1px solid var(--mantine-color-gray-3)' }}>
-        <ThemeIcon size={48} radius="xl" variant="light" style={{ marginBottom: 12, background: 'transparent' }}>
+      <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', padding: 'var(--mantine-spacing-md)', borderBottom: '1px solid var(--mantine-color-gray-3)' }}>
+        <ThemeIcon size={48} radius="xl" variant="light" style={{ marginBottom: 24, background: 'transparent', alignSelf: 'flex-start' }}>
           <img src={alpacaLogo} alt="Alpaca" style={{ width: 40, height: 40, borderRadius: 12 }} />
         </ThemeIcon>
-        <Text size="lg" fw={700} style={{ marginBottom: 4 }}>
+        <Text size="lg" fw={700} style={{ marginBottom: 4, marginLeft: 4 }}>
           {navIcons[activeIndex].label}
         </Text>
       </Box>
       {/* Vertical Icon Nav */}
-      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 'var(--mantine-spacing-md)', background: 'var(--mantine-color-body)' }}>
-        <Stack gap="md" style={{ width: '100%' }}>
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', paddingTop: 'var(--mantine-spacing-md)', background: 'var(--mantine-color-body)' }}>
+        <Stack gap={32} style={{ width: '100%' }}>
           {navIcons.map((nav, idx) => (
             <ThemeIcon
               key={nav.label}
@@ -54,7 +54,7 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
               radius="md"
               variant={activeIndex === idx ? 'filled' : 'light'}
               color={activeIndex === idx ? 'blue' : 'gray'}
-              style={{ cursor: 'pointer', margin: '0 auto' }}
+              style={{ cursor: 'pointer', marginLeft: 0 }}
               onClick={() => handleNavClick(idx)}
             >
               <FontAwesomeIcon icon={nav.icon} size="lg" />
