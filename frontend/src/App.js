@@ -12,7 +12,10 @@ function App() {
   const [activeLayout, setActiveLayout] = useState('Worksheets');
 
   return (
-    <AppShell>
+    <AppShell
+      layout="default"
+      style={{ height: '100vh', overflow: 'hidden' }}
+    >
       <AppShell.Navbar>
         <MantineNavbar
           setActiveNav={setActiveNav}
@@ -20,7 +23,7 @@ function App() {
           setActiveLayout={setActiveLayout}
         />
       </AppShell.Navbar>
-      <AppShell.Main>
+      <AppShell.Main style={{ height: '100vh', overflow: 'hidden', padding: 0 }}>
         {/* Render main content based on navigation/layout selection */}
         <BIMApp />
       </AppShell.Main>

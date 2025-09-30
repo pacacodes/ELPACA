@@ -9,7 +9,7 @@ import { Group } from '@mantine/core';
  */
 export default function BIMApp() {
   return (
-    <div style={{ width: '100%', height: '100%' }}>
+    <div style={{ width: '100%', height: '100%', minHeight: 0, overflow: 'hidden' }}>
       <BIMViewer />
     </div>
   );
