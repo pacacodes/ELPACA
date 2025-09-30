@@ -46,7 +46,7 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
       </Box>
       {/* Vertical Icon Nav */}
       <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', paddingTop: 'var(--mantine-spacing-md)', background: 'var(--mantine-color-body)' }}>
-        <Stack gap={32} style={{ width: '100%' }}>
+  <Stack gap={48} style={{ width: '100%' }}>
           {navIcons.map((nav, idx) => (
             <ThemeIcon
               key={nav.label}
@@ -54,7 +54,7 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
               radius="md"
               variant={activeIndex === idx ? 'filled' : 'light'}
               color={activeIndex === idx ? 'blue' : 'gray'}
-              style={{ cursor: 'pointer', marginLeft: 0 }}
+              style={{ cursor: 'pointer', marginLeft: 0, marginBottom: 24 }}
               onClick={() => handleNavClick(idx)}
             >
               <FontAwesomeIcon icon={nav.icon} size="lg" />
