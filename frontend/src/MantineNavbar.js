@@ -8,13 +8,13 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const navIcons = [
-  { icon: faLightbulb, label: 'Ideas |\nProject Analysis' },
-  { icon: faMap, label: 'Existing Info |\nSite Analysis' },
-  { icon: faPen, label: 'Design |\nSchematic Design' },
-  { icon: faDraftingCompass, label: 'Documents |\nDesign Development & Construction Docs' },
-  { icon: faHardHat, label: 'Construction |\nBidding & Construction Management' },
-  { icon: faTasks, label: 'Management |\nDaily Management & Analytics' },
-  { icon: faFolderOpen, label: 'Projects' },
+  { icon: faLightbulb, label: 'Ideas | Project Analysis' },
+  { icon: faMap, label: 'Existing Info | Site Analysis' },
+  { icon: faPen, label: 'Design | Schematic Design' },
+  { icon: faDraftingCompass, label: 'Documents | Design Development & Construction Docs' },
+  { icon: faHardHat, label: 'Construction | Bidding & Construction Management' },
+  { icon: faTasks, label: 'Management | Daily Management & Analytics' },
+  { icon: faFolderOpen, label: 'Home | Projects & Project Analysis' },
 ];
 
 export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setActiveLayout }) {
@@ -40,7 +40,7 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
         <ThemeIcon size={48} radius="xl" variant="light" style={{ background: 'transparent', alignSelf: 'flex-start', marginRight: 16, marginLeft: 12, marginTop: 12 }}>
           <img src={alpacaLogo} alt="Alpaca" style={{ width: 40, height: 40, borderRadius: 12 }} />
         </ThemeIcon>
-        <Text size="lg" fw={700} style={{ marginBottom: 0, whiteSpace: 'pre-line' }}>
+        <Text size="lg" fw={700} style={{ marginBottom: 0, whiteSpace: 'normal', overflowWrap: 'break-word' }}>
           {navIcons[activeIndex].label}
         </Text>
       </Box>
