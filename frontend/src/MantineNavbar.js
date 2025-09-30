@@ -8,12 +8,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const navIcons = [
-  { icon: faLightbulb, label: 'Ideas' },
-  { icon: faMap, label: 'Maps' },
-  { icon: faPen, label: 'Sketch' },
-  { icon: faDraftingCompass, label: 'Design' },
-  { icon: faHardHat, label: 'BIM' },
-  { icon: faTasks, label: 'Tasks' },
+  { icon: faLightbulb, label: 'Ideas |\nProject Analysis' },
+  { icon: faMap, label: 'Existing Info |\nSite Analysis' },
+  { icon: faPen, label: 'Design |\nSchematic Design' },
+  { icon: faDraftingCompass, label: 'Documents |\nDesign Development & Construction Docs' },
+  { icon: faHardHat, label: 'Construction |\nBidding & Construction Management' },
+  { icon: faTasks, label: 'Management |\nDaily Management & Analytics' },
   { icon: faFolderOpen, label: 'Projects' },
 ];
 
@@ -40,13 +40,13 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
         <ThemeIcon size={48} radius="xl" variant="light" style={{ background: 'transparent', alignSelf: 'flex-start', marginRight: 16, marginLeft: 12, marginTop: 12 }}>
           <img src={alpacaLogo} alt="Alpaca" style={{ width: 40, height: 40, borderRadius: 12 }} />
         </ThemeIcon>
-        <Text size="lg" fw={700} style={{ marginBottom: 0 }}>
+        <Text size="lg" fw={700} style={{ marginBottom: 0, whiteSpace: 'pre-line' }}>
           {navIcons[activeIndex].label}
         </Text>
       </Box>
       {/* Vertical Icon Nav */}
-      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', paddingTop: 'var(--mantine-spacing-md)', background: 'var(--mantine-color-body)', marginLeft: 12 }}>
-        <Stack gap={48} style={{ width: '100%', alignItems: 'center' }}>
+      <Box style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', paddingTop: 'var(--mantine-spacing-md)', background: 'var(--mantine-color-body)', marginLeft: 0 }}>
+        <Stack gap={48} style={{ width: '100%', alignItems: 'flex-start' }}>
           {navIcons.map((nav, idx) => (
             <ThemeIcon
               key={nav.label}
