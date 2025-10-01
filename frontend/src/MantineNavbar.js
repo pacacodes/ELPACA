@@ -1,6 +1,6 @@
 import React from 'react';
 import alpacaLogo from './alpaca.ico';
-import { AppShellNavbar, Box, Stack, Text, Divider, Center, ThemeIcon } from '@mantine/core';
+import { AppShellNavbar, Box, Stack, Text, Divider, Center, ThemeIcon, Card, Button, Group } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLightbulb, faMap, faPen, faDraftingCompass, faHardHat, faTasks, faHome,
@@ -42,9 +42,42 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
   };
 
   return (
-    <AppShellNavbar
-  style={{ width: '72px', minWidth: 56, maxWidth: 120, height: '100vh', background: 'rgba(0,0,0,0.05)', borderRight: '1px solid var(--mantine-color-gray-3)', display: 'flex', flexDirection: 'row', padding: 0, position: 'fixed', left: 0, top: 0, zIndex: 100 }}
-    >
+    <>
+      {/* Mantine Card with actions grid at top right */}
+      <Card shadow="sm" padding="lg" radius="md" withBorder style={{ position: 'fixed', top: 24, right: 24, width: 320, zIndex: 200 }}>
+  {/* Removed title and description above icons */}
+        <Box style={{ display: 'grid', gridTemplateRows: 'repeat(5, auto)', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginTop: 8, justifyItems: 'center', alignItems: 'center' }}>
+          {/* Top row: 1 icon (Ideas) */}
+          <ThemeIcon size={36} radius="md" variant="light" color="#23272A" style={{ gridRow: 1, gridColumn: '1 / span 2', justifySelf: 'center' }}>
+            <FontAwesomeIcon icon={faLightbulb} size="lg" color="#23272A" />
+          </ThemeIcon>
+          {/* Second row: 2 icons (Tasks, Map) */}
+          <ThemeIcon size={36} radius="md" variant="light" color="#23272A" style={{ gridRow: 2, gridColumn: 1 }}>
+            <FontAwesomeIcon icon={faTasks} size="lg" color="#23272A" />
+          </ThemeIcon>
+          <ThemeIcon size={36} radius="md" variant="light" color="#23272A" style={{ gridRow: 2, gridColumn: 2 }}>
+            <FontAwesomeIcon icon={faMap} size="lg" color="#23272A" />
+          </ThemeIcon>
+          {/* Third row: 1 icon (Alpaca) */}
+          <ThemeIcon size={40} radius="md" variant="light" color="#23272A" style={{ gridRow: 3, gridColumn: '1 / span 2', justifySelf: 'center' }}>
+            <img src={alpacaLogo} alt="Alpaca" style={{ width: 36, height: 36, borderRadius: 10 }} />
+          </ThemeIcon>
+          {/* Fourth row: 2 icons (HardHat, Pen) */}
+          <ThemeIcon size={36} radius="md" variant="light" color="#23272A" style={{ gridRow: 4, gridColumn: 1 }}>
+            <FontAwesomeIcon icon={faHardHat} size="lg" color="#23272A" />
+          </ThemeIcon>
+          <ThemeIcon size={36} radius="md" variant="light" color="#23272A" style={{ gridRow: 4, gridColumn: 2 }}>
+            <FontAwesomeIcon icon={faPen} size="lg" color="#23272A" />
+          </ThemeIcon>
+          {/* Fifth row: 1 icon (Compass) */}
+          <ThemeIcon size={36} radius="md" variant="light" color="#23272A" style={{ gridRow: 5, gridColumn: '1 / span 2', justifySelf: 'center' }}>
+            <FontAwesomeIcon icon={faDraftingCompass} size="lg" color="#23272A" />
+          </ThemeIcon>
+        </Box>
+      </Card>
+      <AppShellNavbar
+        style={{ width: '72px', minWidth: 56, maxWidth: 120, height: '100vh', background: 'rgba(0,0,0,0.05)', borderRight: '1px solid var(--mantine-color-gray-3)', display: 'flex', flexDirection: 'row', padding: 0, position: 'fixed', left: 0, top: 0, zIndex: 100 }}
+      >
       {/* Left: Logo/Title and Icon Nav */}
   <Box style={{ width: '64px', minWidth: 56, maxWidth: 120, height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', paddingLeft: 0, paddingRight: 0, background: 'transparent' }}>
         <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', padding: 'var(--mantine-spacing-md)', borderBottom: '1px solid var(--mantine-color-gray-3)', paddingLeft: 0 }}>
@@ -115,6 +148,7 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
         </Box>
       </Box>
     </AppShellNavbar>
+    </>
   );
 }
 
