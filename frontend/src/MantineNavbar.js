@@ -46,7 +46,7 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
   style={{ width: '24vw', minWidth: 320, maxWidth: 520, height: '100vh', background: 'var(--mantine-color-body)', borderRight: '1px solid var(--mantine-color-gray-3)', display: 'flex', flexDirection: 'row', padding: 0, position: 'fixed', left: 0, top: 0, zIndex: 100 }}
     >
       {/* Left: Logo/Title and Icon Nav */}
-      <Box style={{ width: '50%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+  <Box style={{ width: '50%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', paddingLeft: 16 }}>
         <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', padding: 'var(--mantine-spacing-md)', borderBottom: '1px solid var(--mantine-color-gray-3)', paddingLeft: 0 }}>
           <ThemeIcon size={48} radius="xl" variant="light" style={{ background: 'transparent', alignSelf: 'flex-start', marginRight: 12, marginLeft: 0, marginTop: 12 }}>
             <img src={alpacaLogo} alt="Alpaca" style={{ width: 40, height: 40, borderRadius: 12 }} />
@@ -90,6 +90,7 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
           alignItems: 'flex-start',
           padding: 'var(--mantine-spacing-xl)',
           position: 'relative',
+          paddingLeft: 8,
         }}
       >
         <Box
