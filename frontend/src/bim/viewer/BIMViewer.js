@@ -13,7 +13,12 @@ export default function BIMViewer() {
       <Canvas camera={{ position: [10, 10, 10], fov: 45 }} shadows style={{ background: '#fff' }}>
         <ambientLight intensity={0.7} />
         <directionalLight position={[10, 20, 10]} intensity={1.2} castShadow />
-  <Grid args={[100, 100]} cellColor="#e0e0e0" sectionColor="#cccccc" fadeDistance={40} />
+        <Grid args={[100, 100]} cellColor="#e0e0e0" sectionColor="#cccccc" fadeDistance={40} />
+        {/* Simple Cube */}
+        <mesh position={[0, 1, 0]} castShadow receiveShadow>
+          <boxGeometry args={[2, 2, 2]} />
+          <meshStandardMaterial color="#1976d2" />
+        </mesh>
         {/* IFC model(s) will be loaded here in future */}
         <OrbitControls makeDefault />
       </Canvas>

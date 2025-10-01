@@ -3,18 +3,18 @@ import alpacaLogo from './alpaca.ico';
 import { AppShellNavbar, Box, Stack, Text, Divider, Center, ThemeIcon } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faLightbulb, faMap, faPen, faDraftingCompass, faHardHat, faTasks, faFolderOpen,
+  faLightbulb, faMap, faPen, faDraftingCompass, faHardHat, faTasks, faHome,
   faThLarge, faLaptop, faList, faEye, faDollarSign, faPaperclip, faCalendarAlt, faCommentDots, faArrowsRotate
 } from '@fortawesome/free-solid-svg-icons';
 
 const navIcons = [
-  { icon: faLightbulb, label: 'Ideas | Project Analysis' },
-  { icon: faMap, label: 'Existing Info | Site Analysis' },
-  { icon: faPen, label: 'Design | Schematic Design' },
-  { icon: faDraftingCompass, label: 'Documents | Design Development & Construction Docs' },
-  { icon: faHardHat, label: 'Construction | Bidding & Construction Management' },
-  { icon: faTasks, label: 'Management | Daily Management & Analytics' },
-  { icon: faFolderOpen, label: 'Home | Projects & Project Analysis' },
+  { icon: faHome, label: 'Projects' },
+  { icon: faLightbulb, label: 'Ideas' },
+  { icon: faMap, label: 'Existing Info' },
+  { icon: faPen, label: 'Design' },
+  { icon: faDraftingCompass, label: 'Construction Documents' },
+  { icon: faHardHat, label: 'Construction Management' },
+  { icon: faTasks, label: 'Daily Management' },
 ];
 
 export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setActiveLayout }) {
@@ -33,14 +33,14 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
 
   return (
     <AppShellNavbar
-      style={{ width: '20vw', minWidth: 180, maxWidth: 400, height: '100vh', background: 'var(--mantine-color-body)', borderRight: '1px solid var(--mantine-color-gray-3)', display: 'flex', flexDirection: 'column', padding: 0, position: 'fixed', left: 0, top: 0, zIndex: 100 }}
+      style={{ width: '24vw', minWidth: 320, maxWidth: 520, height: '100vh', background: 'var(--mantine-color-body)', borderRight: '1px solid var(--mantine-color-gray-3)', display: 'flex', flexDirection: 'column', padding: 0, position: 'fixed', left: 0, top: 0, zIndex: 100 }}
     >
       {/* Logo and Title */}
       <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', padding: 'var(--mantine-spacing-md)', borderBottom: '1px solid var(--mantine-color-gray-3)' }}>
         <ThemeIcon size={48} radius="xl" variant="light" style={{ background: 'transparent', alignSelf: 'flex-start', marginRight: 16, marginLeft: 12, marginTop: 12 }}>
           <img src={alpacaLogo} alt="Alpaca" style={{ width: 40, height: 40, borderRadius: 12 }} />
         </ThemeIcon>
-        <Text size="lg" fw={700} style={{ marginBottom: 0, whiteSpace: 'normal', overflowWrap: 'break-word' }}>
+        <Text size="lg" fw={700} style={{ marginBottom: 0, whiteSpace: 'pre', overflow: 'visible' }}>
           {navIcons[activeIndex].label}
         </Text>
       </Box>
@@ -65,3 +65,4 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
     </AppShellNavbar>
   );
 }
+
