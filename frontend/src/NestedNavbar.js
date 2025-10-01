@@ -20,7 +20,15 @@ const navSubtitles = [
     ], // Map
   ['New Project', 'Select Project', 'Import Project', 'Export Project'], // Alpaca
   ['Construction Management 1', 'Construction Management 2'], // HardHat
-  ['Design 1', 'Design 2'], // Pen
+  [
+    'Worksheets',
+    'Presentation Sheets',
+    'Schedules & Specifications',
+    'Design Diagrams',
+    'Budgets',
+    'Project Files',
+    'Calendar & Timelines'
+  ], // Pen
   ['Documents 1', 'Documents 2'], // Compass
 ];
 
