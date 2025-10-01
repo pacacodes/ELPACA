@@ -2,27 +2,23 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
-import MantineNavbar from './MantineNavbar';
+import MainNavigation from './MainNavigation';
+import Layouts from './NestedNavbar';
 import { AppShell } from '@mantine/core';
 import BIMApp from './bim/BIMApp';
 
 function App() {
-  const [activeNav, setActiveNav] = useState('Ideas');
-  const [alpacaPopupOpen, setAlpacaPopupOpen] = useState(false);
-  const [activeLayout, setActiveLayout] = useState('Worksheets');
+  const [activeService, setActiveService] = useState(0);
 
   return (
     <AppShell
       layout="default"
       style={{ height: '100vh', overflow: 'hidden' }}
     >
-      <AppShell.Navbar>
-        <MantineNavbar
-          setActiveNav={setActiveNav}
-          setAlpacaPopupOpen={setAlpacaPopupOpen}
-          setActiveLayout={setActiveLayout}
-        />
-      </AppShell.Navbar>
+      {/* Main Navigation (Service Card) */}
+      <MainNavigation activeService={activeService} setActiveService={setActiveService} />
+      {/* Layouts (Nested Navbar) below MainNavigation */}
+      <Layouts activeService={activeService} />
       <AppShell.Main style={{ height: '100vh', overflow: 'hidden', padding: 0 }}>
         {/* Render main content based on navigation/layout selection */}
         <BIMApp />
