@@ -43,15 +43,15 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
 
   return (
     <AppShellNavbar
-  style={{ width: '24vw', minWidth: 320, maxWidth: 520, height: '100vh', background: 'var(--mantine-color-body)', borderRight: '1px solid var(--mantine-color-gray-3)', display: 'flex', flexDirection: 'row', padding: 0, position: 'fixed', left: 0, top: 0, zIndex: 100 }}
+  style={{ width: '72px', minWidth: 56, maxWidth: 120, height: '100vh', background: 'rgba(0,0,0,0.05)', borderRight: '1px solid var(--mantine-color-gray-3)', display: 'flex', flexDirection: 'row', padding: 0, position: 'fixed', left: 0, top: 0, zIndex: 100 }}
     >
       {/* Left: Logo/Title and Icon Nav */}
-  <Box style={{ width: '50%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', paddingLeft: 16 }}>
+  <Box style={{ width: '64px', minWidth: 56, maxWidth: 120, height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', paddingLeft: 0, paddingRight: 0, background: 'transparent' }}>
         <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', padding: 'var(--mantine-spacing-md)', borderBottom: '1px solid var(--mantine-color-gray-3)', paddingLeft: 0 }}>
           <ThemeIcon size={48} radius="xl" variant="light" style={{ background: 'transparent', alignSelf: 'flex-start', marginRight: 12, marginLeft: 0, marginTop: 12 }}>
             <img src={alpacaLogo} alt="Alpaca" style={{ width: 40, height: 40, borderRadius: 12 }} />
           </ThemeIcon>
-          <Text size="lg" fw={700} style={{ marginBottom: 0, whiteSpace: 'pre', overflow: 'visible', marginLeft: 0 }}>
+          <Text size="lg" fw={700} style={{ marginBottom: 0, whiteSpace: 'pre', overflow: 'visible', marginLeft: 24 }}>
             {navIcons[activeIndex].label}
           </Text>
         </Box>
@@ -83,14 +83,17 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
       {/* Right: Dynamic Subtitle Section */}
       <Box
         style={{
-          width: '50%',
+          width: '220px',
+          minWidth: 140,
+          maxWidth: 340,
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'flex-start',
           padding: 'var(--mantine-spacing-xl)',
           position: 'relative',
-          paddingLeft: 8,
+          paddingLeft: 24,
+          background: 'rgba(0,0,0,0.05)'
         }}
       >
         <Box
@@ -104,9 +107,9 @@ export default function MantineNavbar({ setActiveNav, setAlpacaPopupOpen, setAct
         >
           <Stack gap={24} style={{ width: '100%' }}>
             {navSubtitles[activeIndex].map((subtitle) => (
-              <Text key={subtitle} size="md" fw={500} c="#23272A" style={{ paddingLeft: 8 }}>
-                {subtitle}
-              </Text>
+                    <Text key={subtitle} size="md" fw={500} c="#23272A" style={{ paddingLeft: 8 }}>
+                      {subtitle}
+                    </Text>
             ))}
           </Stack>
         </Box>
