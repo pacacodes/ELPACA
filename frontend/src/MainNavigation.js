@@ -19,8 +19,8 @@ const serviceIcons = [
 export default function MainNavigation({ activeService, setActiveService }) {
   // Grid layout: top row 1, second row 2, third row 1 (alpaca), fourth row 2, fifth row 1
   return (
-    <Card shadow="sm" padding="lg" radius="md" withBorder style={{ position: 'fixed', top: 34, right: 8, width: 320, zIndex: 200 }}>
-      <Box style={{ display: 'grid', gridTemplateRows: 'repeat(5, auto)', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginTop: 8, justifyItems: 'center', alignItems: 'center' }}>
+    <Card shadow="sm" padding="lg" radius="md" withBorder style={{ position: 'fixed', top: 34, right: 29, width: 280, zIndex: 200, fontFamily: 'inherit', fontWeight: 400 }}>
+      <Box style={{ display: 'grid', gridTemplateRows: 'repeat(5, auto)', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16, marginTop: 8, justifyItems: 'center', alignItems: 'center', fontFamily: 'inherit', fontWeight: 400 }}>
         {/* Top row: 1 icon (Ideas) */}
         <ThemeIcon size={36} radius="md" variant="light" color={activeService === 0 ? 'teal' : '#23272A'} style={{ gridRow: 1, gridColumn: '1 / span 2', justifySelf: 'center', cursor: 'pointer' }} onClick={() => setActiveService(0)}>
           <FontAwesomeIcon icon={faLightbulb} size="lg" color="#23272A" />

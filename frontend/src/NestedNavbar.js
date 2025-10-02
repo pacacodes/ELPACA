@@ -83,11 +83,28 @@ export default function NestedNavbar({ activeService }) {
   ];
 
   return (
-    <Box style={{ position: 'fixed', top: 270, right: 29, width: 240, minWidth: 140, maxWidth: 320, zIndex: 199, background: 'rgba(0,0,0,0.03)', borderRadius: 8, padding: 16 }}>
-      <Text size="lg" fw={700} c="#23272A" style={{ marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>{sectionTitles[activeService]}</Text>
-      <Stack gap={12}>
+  <Box style={{ position: 'fixed', top: 270, right: 29, width: 260, minWidth: 180, maxWidth: 340, zIndex: 199, background: 'rgba(0,0,0,0.03)', borderRadius: 8, padding: 16 }}>
+      <Text
+        fw={400}
+        c="#23272A"
+        style={{
+          fontSize: '0.90rem',
+          marginBottom: 18,
+          marginLeft: 10,
+          textTransform: 'uppercase',
+          letterSpacing: 1,
+          fontFamily: 'inherit',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          width: '100%'
+        }}
+      >
+        {sectionTitles[activeService]}
+      </Text>
+  <Stack gap={12}>
         {navSubtitles[activeService].map((subtitle, idx) => (
-          <Text key={subtitle} size="md" fw={500} c="#23272A" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <Text key={subtitle} fw={400} c="#23272A" style={{ fontSize: '0.90rem', display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'inherit', marginLeft: 10 }}>
             <FontAwesomeIcon icon={subtitleIcons[activeService][idx] || faFile} style={{ marginRight: 6 }} />
             {subtitle}
           </Text>
