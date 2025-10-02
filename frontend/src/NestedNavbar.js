@@ -83,7 +83,7 @@ export default function NestedNavbar({ activeService }) {
   ];
 
   return (
-  <Box style={{ position: 'fixed', top: 270, right: 29, width: 260, minWidth: 180, maxWidth: 340, zIndex: 199, background: 'rgba(0,0,0,0.03)', borderRadius: 8, padding: 16 }}>
+  <Box style={{ position: 'fixed', top: 270, right: 29, width: 260, minWidth: 180, maxWidth: 340, height: '310px', zIndex: 199, background: 'rgba(0,0,0,0.03)', borderRadius: 8, padding: 16 }}>
       <Text
         fw={400}
         c="#23272A"
@@ -102,7 +102,7 @@ export default function NestedNavbar({ activeService }) {
       >
         {sectionTitles[activeService]}
       </Text>
-      <Stack gap={12} style={{ marginTop: 10 }}>
+  <Stack gap={12} style={{ marginTop: 28 }}>
         {navSubtitles[activeService].map((subtitle, idx) => (
           <Text key={subtitle} fw={400} c="#23272A" style={{ fontSize: '0.90rem', display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'inherit', marginLeft: 10 }}>
             <FontAwesomeIcon icon={subtitleIcons[activeService][idx] || faFile} style={{ marginRight: 6 }} />
