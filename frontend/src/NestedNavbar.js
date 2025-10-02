@@ -64,16 +64,27 @@ export default function NestedNavbar({ activeService }) {
   // Map subtitles to icons for each service
   const subtitleIcons = [
     [faUsers, faLightbulb, faChartPie, faCalendar], // Lightbulb
-    [faUsers, faDiagramProject, faImage, faFile, faListCheck, faCalendar, faTasks], // Tasks
+    [faUsers, faDiagramProject, faImage, faFile, faListCheck, faCalendar, faListCheck], // Tasks (last item is now faListCheck)
     [faFile, faFile, faListCheck, faDiagramProject, faChartPie, faFolder, faCalendar], // Map
     [faFile, faFile, faFile, faFile], // Alpaca (generic file icon)
-    [faUsers, faDiagramProject, faImage, faFolder, faListCheck, faCalendar, faTasks], // HardHat
+    [faUsers, faDiagramProject, faImage, faFolder, faListCheck, faCalendar, faListCheck], // HardHat (last item is now faListCheck)
     [faFile, faFile, faListCheck, faDiagramProject, faChartPie, faFolder, faCalendar], // Pen
     [faFile, faFile, faListCheck, faChartPie, faFolder, faUser, faCalendar], // Compass
+  ];
+  // Titles for each navigation button
+  const sectionTitles = [
+    'Ideas',        // Lightbulb
+    'Daily Management', // Tasks
+    'Existing Info', // Map
+    'Projects',     // Alpaca
+    'Construction Management', // HardHat
+    'Design',       // Pen
+    'Construction Documents' // Compass
   ];
 
   return (
     <Box style={{ position: 'fixed', top: 270, right: 29, width: 240, minWidth: 140, maxWidth: 320, zIndex: 199, background: 'rgba(0,0,0,0.03)', borderRadius: 8, padding: 16 }}>
+      <Text size="lg" fw={700} c="#23272A" style={{ marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>{sectionTitles[activeService]}</Text>
       <Stack gap={12}>
         {navSubtitles[activeService].map((subtitle, idx) => (
           <Text key={subtitle} size="md" fw={500} c="#23272A" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
