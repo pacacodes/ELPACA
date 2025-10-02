@@ -102,7 +102,7 @@ export default function NestedNavbar({ activeService }) {
       >
         {sectionTitles[activeService]}
       </Text>
-  <Stack gap={12}>
+      <Stack gap={12} style={{ marginTop: 10 }}>
         {navSubtitles[activeService].map((subtitle, idx) => (
           <Text key={subtitle} fw={400} c="#23272A" style={{ fontSize: '0.90rem', display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'inherit', marginLeft: 10 }}>
             <FontAwesomeIcon icon={subtitleIcons[activeService][idx] || faFile} style={{ marginRight: 6 }} />
