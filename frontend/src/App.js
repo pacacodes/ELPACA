@@ -4,6 +4,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import MainNavigation from './MainNavigation';
 import Layouts from './NestedNavbar';
+import CommunicationNavbar from './CommunicationNavbar';
 import { AppShell } from '@mantine/core';
 import BIMApp from './bim/BIMApp';
 
@@ -17,8 +18,10 @@ function App() {
     >
       {/* Main Navigation (Service Card) */}
       <MainNavigation activeService={activeService} setActiveService={setActiveService} />
-      {/* Layouts (Nested Navbar) below MainNavigation */}
-      <Layouts activeService={activeService} />
+  {/* Layouts (Nested Navbar) below MainNavigation */}
+  <Layouts activeService={activeService} />
+  {/* Communication section below Layouts */}
+  <CommunicationNavbar />
       <AppShell.Main style={{ height: '100vh', overflow: 'hidden', padding: 0 }}>
         {/* Render main content based on navigation/layout selection */}
         <BIMApp />
