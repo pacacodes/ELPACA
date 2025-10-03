@@ -271,5 +271,6 @@ export default function CommunicationNavbar() {
         </Button>
       </Stack>
     </Box>
+
   );
 }
