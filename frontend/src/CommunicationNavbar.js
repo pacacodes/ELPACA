@@ -55,7 +55,7 @@ export default function CommunicationNavbar() {
             color: '#23272A',
             border: 'none',
             boxShadow: 'none',
-            width: '250px',
+            width: '270px',
             background: 'rgba(0,0,0,0.03)',
             display: 'flex',
             flexDirection: 'row',
@@ -70,7 +70,7 @@ export default function CommunicationNavbar() {
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>Jordan Avery</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Architect</span>
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 32, height: 32, marginLeft: '-68px', alignSelf: 'center', marginTop: '-90px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 32, height: 32, marginLeft: '-68px', alignSelf: 'center', marginTop: '-100px' }}>
             <span style={{
               position: 'absolute',
               left: 0,
