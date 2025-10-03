@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Text } from '@mantine/core';
+import { Box, Text, Button } from '@mantine/core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faLayerGroup, faMap, faChartBar, faThLarge, faCubes, faCamera } from '@fortawesome/free-solid-svg-icons';
 import './CommunicationNavbar.css';
 
 export default function ViewsSection() {
@@ -25,7 +27,16 @@ export default function ViewsSection() {
         >
           Views
         </Text>
-        {/* Add content for Views section here */}
+        {/* Row of buttons below the title */}
+  <div style={{ display: 'flex', flexDirection: 'row', gap: 0, marginLeft: 0, marginBottom: 8 }}>
+          <Button variant="subtle" radius="md" size="sm" style={{ padding: '6px 10px', border: 'none', boxShadow: 'none', background: 'none' }}><FontAwesomeIcon icon={faEye} color="#23272A" /></Button>
+          <Button variant="subtle" radius="md" size="sm" style={{ padding: '6px 10px', border: 'none', boxShadow: 'none', background: 'none' }}><FontAwesomeIcon icon={faLayerGroup} color="#23272A" /></Button>
+          <Button variant="subtle" radius="md" size="sm" style={{ padding: '6px 10px', border: 'none', boxShadow: 'none', background: 'none' }}><FontAwesomeIcon icon={faMap} color="#23272A" /></Button>
+          <Button variant="subtle" radius="md" size="sm" style={{ padding: '6px 10px', border: 'none', boxShadow: 'none', background: 'none' }}><FontAwesomeIcon icon={faChartBar} color="#23272A" /></Button>
+          <Button variant="subtle" radius="md" size="sm" style={{ padding: '6px 10px', border: 'none', boxShadow: 'none', background: 'none' }}><FontAwesomeIcon icon={faThLarge} color="#23272A" /></Button>
+          <Button variant="subtle" radius="md" size="sm" style={{ padding: '6px 10px', border: 'none', boxShadow: 'none', background: 'none' }}><FontAwesomeIcon icon={faCubes} color="#23272A" /></Button>
+          <Button variant="subtle" radius="md" size="sm" style={{ padding: '6px 10px', border: 'none', boxShadow: 'none', background: 'none' }}><FontAwesomeIcon icon={faCamera} color="#23272A" /></Button>
+        </div>
       </Box>
     </>
   );
