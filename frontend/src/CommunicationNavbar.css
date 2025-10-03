@@ -1,0 +1,19 @@
+.communication-navbar-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.communication-navbar-scroll::-webkit-scrollbar-thumb {
+  background: #bfc2c7;
+  border-radius: 8px;
+}
+
+.communication-navbar-scroll::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.08);
+  border-radius: 8px;
+}
+
+/* For Firefox */
+.communication-navbar-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #bfc2c7 rgba(0,0,0,0.08);
+}
