@@ -31,7 +31,7 @@ export default function PermacultureServiceButton() {
               width: '100%'
             }}
           >
-            Permaculture Layers
+            Objects & Systems
           </Text>
           {/* Add popup content here */}
           <button
