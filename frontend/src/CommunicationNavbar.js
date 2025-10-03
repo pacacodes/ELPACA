@@ -44,28 +44,33 @@ export default function CommunicationNavbar() {
           </Button>
         ))}
       </Group>
-      <Stack gap={12} style={{ marginTop: 10 }}>
-        {/* Button with only text */}
+  <Stack gap={12} style={{ marginTop: 10, alignItems: 'center' }}>
+        {/* Combined user button: name/title left, icon group right */}
         <Button
           variant="subtle"
           radius="md"
           size="sm"
-          style={{ fontFamily: 'inherit', color: '#23272A', alignSelf: 'flex-start', border: 'none', boxShadow: 'none', width: '120px', background: 'none', display: 'flex', flexDirection: 'row', alignItems: 'center', padding: 0, borderRadius: '18px', marginLeft: '20px' }}
+          style={{
+            fontFamily: 'inherit',
+            color: '#23272A',
+            border: 'none',
+            boxShadow: 'none',
+            width: '250px',
+            background: 'rgba(0,0,0,0.03)',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            padding: 0,
+            borderRadius: '18px',
+            justifyContent: 'space-between',
+            marginLeft: '5px'
+          }}
         >
-          <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', marginLeft: '18px', height: '100%' }}>
+          <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '60px', marginTop: '10px' }}>
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>Jordan Avery</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Architect</span>
           </span>
-        </Button>
-
-        {/* Button with only icon group */}
-        <Button
-          variant="subtle"
-          radius="md"
-          size="sm"
-          style={{ fontFamily: 'inherit', color: '#23272A', alignSelf: 'flex-start', border: 'none', boxShadow: 'none', width: '120px', background: 'none', display: 'flex', flexDirection: 'row', alignItems: 'center', padding: 0, borderRadius: '18px' }}
-        >
-          <span style={{ position: 'relative', display: 'inline-block', width: 32, height: 32, marginRight: '10px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 32, height: 32, marginLeft: '-68px', alignSelf: 'center', marginTop: '-90px' }}>
             <span style={{
               position: 'absolute',
               left: 0,
