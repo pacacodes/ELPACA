@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Card, ThemeIcon, Paper, Text } from '@mantine/core';
+import OrganicCollapsibleLinks from './OrganicCollapsibleLinks';
+import InorganicCollapsibleLinks from './InorganicCollapsibleLinks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -14,14 +16,15 @@ export default function ObjectsAndSystemsServiceButton() {
         </ThemeIcon>
       </Card>
       {open && (
-  <Paper shadow="md" radius="md" style={{ position: 'fixed', left: 32, bottom: 120, minWidth: 340, minHeight: 830, zIndex: 1201, padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(245,245,245,0.5)', borderRadius: '8px' }}>
+  <Paper shadow="md" radius="md" style={{ position: 'fixed', left: 32, bottom: 120, minWidth: 400, minHeight: 830, zIndex: 1201, padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(245,245,245,0.5)', borderRadius: '8px' }}>
           <Text
             fw={400}
             c="#23272A"
             style={{
               fontSize: '0.90rem',
               marginBottom: 18,
-              marginLeft: 10,
+              marginLeft: 2,
+              marginTop: 3,
               textTransform: 'uppercase',
               letterSpacing: 1,
               fontFamily: 'inherit',
@@ -34,6 +37,8 @@ export default function ObjectsAndSystemsServiceButton() {
             Objects & Systems
           </Text>
           {/* Add popup content here */}
+          <OrganicCollapsibleLinks />
+          <InorganicCollapsibleLinks />
           <button
             style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '1.5rem', cursor: 'pointer' }}
             aria-label="Close"
