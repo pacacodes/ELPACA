@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import LayerButtons from './LayerButtons';
@@ -88,51 +88,86 @@ function PermaculturePopup({
 
   // Removed broken sectionIcons and stray JSX that caused unterminated JSX error
 
-  if (!popupOpen) return null;
+  const [open, setOpen] = useState(false);
+
   return (
-    <div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        background: 'rgba(0,0,0,0.3)',
-        zIndex: 1000,
-      }}
-    >
-      {/* Main Permaculture Popup */}
-      <div
+    <>
+      {/* Service Button in bottom left */}
+      <button
         style={{
-          position: 'absolute',
-          left: popupPos.x,
-          top: popupPos.y,
-          background: '#666666', // slightly darker
-          padding: collapsed ? '0' : '2rem',
-          borderRadius: '12px',
-          boxShadow: '0 4px 24px rgba(0,0,0,0.2)',
-          minWidth: collapsed ? '48px' : '340px',
-          width: collapsed ? '48px' : undefined,
-          minHeight: collapsed ? '785px' : '720px',
-          height: collapsed ? '785px' : '720px',
-          maxHeight: collapsed ? '785px' : '720px',
-          overflowY: 'auto',
-          userSelect: 'none',
-          cursor: dragging ? 'grabbing' : 'grab',
-          position: 'absolute',
-          zIndex: 1100,
+          position: 'fixed',
+          left: 32,
+          bottom: 32,
+          zIndex: 1200,
+          background: '#fff',
+          border: 'none',
+          borderRadius: '50%',
+          width: 56,
+          height: 56,
+          boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
           display: 'flex',
-          flexDirection: 'column',
-          alignItems: collapsed ? 'stretch' : 'center',
-          justifyContent: 'flex-start',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
         }}
-        onMouseDown={e => {
-          const closeBtn = document.querySelector('button[aria-label="Close layer detail"]');
-          if (closeBtn && (e.target === closeBtn || closeBtn.contains(e.target))) return;
-          setDragging(true);
-          setDragOffset({ x: e.clientX - popupPos.x, y: e.clientY - popupPos.y });
-        }}
+        onClick={() => setOpen(true)}
+        aria-label="Open Permaculture Popup"
       >
+        <FontAwesomeIcon icon={faPlus} color="#23272A" style={{ fontSize: '1.6em' }} />
+      </button>
+
+      {/* Paper background popup section */}
+      {open && (
+        <div
+          style={{
+            position: 'fixed',
+            left: 80,
+            bottom: 100,
+            zIndex: 1201,
+            background: '#f5f5f5',
+            borderRadius: '16px',
+            boxShadow: '0 4px 24px rgba(0,0,0,0.18)',
+            minWidth: '340px',
+            minHeight: '320px',
+            padding: '2rem',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <div style={{ fontWeight: 'bold', fontSize: '1.25rem', marginBottom: '1.5rem', color: '#23272A' }}>
+            Permaculture Layers
+          </div>
+          {/* Add popup content here */}
+          <button
+            onClick={() => setOpen(false)}
+            style={{
+              position: 'absolute',
+              top: 18,
+              right: 18,
+              width: '28px',
+              height: '28px',
+              border: 'none',
+              background: 'transparent',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: 0,
+              pointerEvents: 'auto',
+              zIndex: 1202,
+            }}
+            aria-label="Close popup"
+          >
+            <svg width="18" height="18" viewBox="0 0 18 18">
+              <line x1="3" y1="3" x2="15" y2="15" stroke="#23272A" strokeWidth="2" />
+              <line x1="15" y1="3" x2="3" y2="15" stroke="#23272A" strokeWidth="2" />
+            </svg>
+          </button>
+        </div>
+      )}
+    </>
+  );
         {/* Title or rotated bar */}
         {!collapsed && (
           <div style={{
@@ -280,7 +315,7 @@ function PermaculturePopup({
             </svg>
           </button>
         )}
-      </div>
+  // Removed unreachable legacy popup code
       {/* Layer Detail Popup, always fixed to the right of the main popup, outside the main popup div */}
       {detailOpen && (
         <LayerDetailPopup

@@ -83,7 +83,7 @@ export default function NestedNavbar({ activeService }) {
   ];
 
   return (
-  <Box style={{ position: 'fixed', top: 270, right: 29, width: 260, minWidth: 180, maxWidth: 340, height: '310px', zIndex: 199, background: 'rgba(0,0,0,0.03)', borderRadius: 8, padding: 16 }}>
+  <Box style={{ position: 'fixed', top: 270, right: 29, width: 260, minWidth: 180, maxWidth: 340, height: '310px', zIndex: 199, background: 'rgba(245,245,245,0.5)', borderRadius: 8, padding: 16 }}>
       <Text
         fw={400}
         c="#23272A"
