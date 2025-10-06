@@ -12,8 +12,8 @@ export default function ToolsCollapsibleLinks() {
     <Box style={{ width: 'calc(100% + 15px)', height: 'calc(100% - 20px)', marginTop: 13, marginLeft: -8, marginRight: 'auto', background: 'rgba(0,0,0,0.03)', borderRadius: 8, padding: '8px 0', display: 'block' }}>
       <Group position="apart" style={{ cursor: 'pointer', flexDirection: 'column', alignItems: 'flex-start', marginLeft: 20, width: 'calc(100% + 20px)' }} onClick={() => setOpened((o) => !o)}>
         <Text fw={500} c="#23272A" style={{ fontSize: '0.90rem', fontFamily: 'inherit', letterSpacing: 1, marginBottom: 0, marginLeft: 0, lineHeight: 1.1, display: 'flex', alignItems: 'center', gap: 10 }}>
-          <FontAwesomeIcon icon={faPenFancy} style={{ color: '#23272A', fontSize: '1.2em', marginLeft: -16, marginRight: 8 }} />
-          <span style={{marginLeft: 8}}>Documenting Tools</span>
+          <FontAwesomeIcon icon={faPenFancy} style={{ color: '#23272A', fontSize: '1.2em' }} />
+          Documenting Tools
         </Text>
         <Text fw={400} c="#6c757d" style={{ fontSize: '0.80rem', fontFamily: 'inherit', letterSpacing: 1, marginTop: 2, marginLeft: 31, lineHeight: 1.1 }}>
           Drawing & Editing

@@ -5,6 +5,7 @@ import { faHouse, faGripHorizontal, faSquare, faMinus, faLayerGroup, faTh, faHom
 import { faPagelines } from '@fortawesome/free-brands-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import ToolsCollapsibleLinks from './ToolsCollapsibleLinks';
+import ViewpointToolsCollapsibleLinks from './ViewpointToolsCollapsibleLinks';
 
 export default function InorganicCollapsibleLinks() {
   const [opened, setOpened] = React.useState(false);
@@ -45,8 +46,9 @@ export default function InorganicCollapsibleLinks() {
           </Box>
         </Collapse>
       </Box>
-      {/* Add ToolsCollapsibleLinks below */}
-      <ToolsCollapsibleLinks />
+  {/* Add ToolsCollapsibleLinks and ViewpointToolsCollapsibleLinks below */}
+  <ToolsCollapsibleLinks />
+  <ViewpointToolsCollapsibleLinks />
     </>
   );
 }
