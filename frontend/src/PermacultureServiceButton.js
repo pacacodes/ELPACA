@@ -31,7 +31,7 @@ export default function PermacultureServiceButton() {
               width: '100%'
             }}
           >
-            Tool Box
+            Toolbox
           </Text>
           {/* Add popup content here */}
           <button
