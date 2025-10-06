@@ -2,6 +2,7 @@ import React from 'react';
 import { Collapse, Group, Text, Box } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faPenNib, faHighlighter, faMarker, faDrawPolygon, faEraser, faRuler, faPen } from '@fortawesome/free-solid-svg-icons';
+import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 export default function DiagramToolsCollapsibleLinks() {
@@ -29,6 +30,7 @@ export default function DiagramToolsCollapsibleLinks() {
           <Text fw={400} c="#23272A" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16 }}><FontAwesomeIcon icon={faEraser} style={{marginRight:8}}/>Eraser</Text>
           <Text fw={400} c="#23272A" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16 }}><FontAwesomeIcon icon={faRuler} style={{marginRight:8}}/>Ruler</Text>
           <Text fw={400} c="#23272A" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16 }}><FontAwesomeIcon icon={faHighlighter} style={{marginRight:8}}/>Highlighter</Text>
+          <Text fw={400} c="#23272A" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16 }}><FontAwesomeIcon icon={faFileAlt} style={{marginRight:8}}/>Trace Paper</Text>
         </Box>
       </Collapse>
     </Box>
