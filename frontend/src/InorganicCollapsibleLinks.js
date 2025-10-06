@@ -9,7 +9,7 @@ export default function InorganicCollapsibleLinks() {
   const [opened, setOpened] = React.useState(false);
 
   return (
-  <Box style={{ width: 'calc(100% - 80px)', height: 'calc(100% - 20px)', marginTop: 13, marginLeft: -8, marginRight: 'auto', background: 'rgba(0,0,0,0.03)', borderRadius: 8, padding: '8px 0', display: 'block' }}>
+  <Box style={{ width: 'calc(100% - 60px)', height: 'calc(100% - 20px)', marginTop: 13, marginLeft: -8, marginRight: 'auto', background: 'rgba(0,0,0,0.03)', borderRadius: 8, padding: '8px 0', display: 'block' }}>
   <Group position="apart" style={{ cursor: 'pointer', flexDirection: 'column', alignItems: 'flex-start', marginLeft: 20, width: 'calc(100% + 20px)' }} onClick={() => setOpened((o) => !o)}>
         <Text fw={500} c="#23272A" style={{ fontSize: '0.90rem', fontFamily: 'inherit', letterSpacing: 1, marginBottom: 0, marginLeft: 0, lineHeight: 1.1, display: 'flex', alignItems: 'center', gap: 10 }}>
           <FontAwesomeIcon icon={faHouse} style={{ color: '#23272A', fontSize: '1.2em' }} />
@@ -19,7 +19,7 @@ export default function InorganicCollapsibleLinks() {
           Building Materials
         </Text>
       </Group>
-  <FontAwesomeIcon icon={opened ? faMinus : faPlus} style={{ color: '#23272A', fontSize: '0.7em', position: 'relative', top: '-32px', right: '-260px' }} />
+  <FontAwesomeIcon icon={opened ? faMinus : faPlus} style={{ color: '#23272A', fontSize: '0.7em', position: 'relative', top: '-32px', right: '-220px' }} />
       <Collapse in={opened} transitionDuration={200}>
         <Box style={{ padding: '12px 0' }}>
           {/* Inorganic subtitles */}
