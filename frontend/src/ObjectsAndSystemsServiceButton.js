@@ -17,7 +17,7 @@ export default function ObjectsAndSystemsServiceButton() {
         </ThemeIcon>
       </Card>
       {open && (
-  <Paper shadow="md" radius="md" className="communication-navbar-scroll" style={{ position: 'fixed', left: 32, bottom: 120, minWidth: 320, width: '320px', minHeight: 830, zIndex: 1201, padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(245,245,245,0.5)', borderRadius: '8px', overflowY: 'auto', maxHeight: '830px' }}>
+  <Paper shadow="md" radius="md" className="communication-navbar-scroll" style={{ position: 'fixed', left: 32, bottom: 120, minWidth: 245, width: '245px', minHeight: 830, zIndex: 1201, padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(245,245,245,0.5)', borderRadius: '8px', overflowY: 'auto', maxHeight: '830px' }}>
           <Text
             fw={400}
             c="#23272A"

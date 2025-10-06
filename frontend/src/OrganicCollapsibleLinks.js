@@ -11,7 +11,7 @@ export default function OrganicCollapsibleLinks() {
 
   return (
     <>
-  <Box style={{ width: 'calc(100% - 60px)', height: 'calc(100% - 20px)', marginTop: 22, marginLeft: -8, marginRight: 'auto', background: 'rgba(0,0,0,0.03)', borderRadius: 8, padding: '8px 0', display: 'block' }}>
+  <Box style={{ width: 'calc(100% + 15px)', height: 'calc(100% - 20px)', marginTop: 22, marginLeft: -8, marginRight: 'auto', background: 'rgba(0,0,0,0.03)', borderRadius: 8, padding: '8px 0', display: 'block' }}>
   <Group position="apart" style={{ cursor: 'pointer', flexDirection: 'column', alignItems: 'flex-start', marginLeft: 20, width: 'calc(100% + 20px)' }} onClick={() => setOpened((o) => !o)}>
           <Text fw={500} c="#23272A" style={{ fontSize: '0.90rem', fontFamily: 'inherit', letterSpacing: 1, marginBottom: 0, marginLeft: 0, lineHeight: 1.1, display: 'flex', alignItems: 'center', gap: 10 }}>
             <FontAwesomeIcon icon={faTree} style={{ color: '#23272A', fontSize: '1.2em' }} />
@@ -30,38 +30,38 @@ export default function OrganicCollapsibleLinks() {
                 <FontAwesomeIcon icon={faTree} style={{fontSize:'1.2em', color:'#4a4a4a'}} />
                 <FontAwesomeIcon icon={faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#bdbdbd'}} />
               </span>
-              Canopy Layer
+                Canopy
             </Text>
             <Text fw={400} c="#23272A" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16 }}>
               <span style={{display:'flex',alignItems:'flex-end',gap:'0'}}>
                 <FontAwesomeIcon icon={faTree} style={{fontSize:'1.2em', color:'#4a4a4a'}} />
                 <FontAwesomeIcon icon={faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#bdbdbd'}} />
               </span>
-              Understory Layer
+                Understory
             </Text>
             <Text fw={400} c="#23272A" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16 }}>
               <FontAwesomeIcon icon={faCloud} style={{color:'#4a4a4a'}} />
-              Shrub Layer
+                Shrub
             </Text>
             <Text fw={400} c="#23272A" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16 }}>
               <FontAwesomeIcon icon={faLeaf} style={{color:'#4a4a4a'}} />
-              Herbaceous Layer
+                Herbaceous
             </Text>
             <Text fw={400} c="#23272A" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16 }}>
               <FontAwesomeIcon icon={faClover} style={{color:'#4a4a4a'}} />
-              Ground Cover Layer
+                Ground Cover
             </Text>
             <Text fw={400} c="#23272A" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16 }}>
               <FontAwesomeIcon icon={faCarrot} style={{color:'#4a4a4a'}} />
-              Root Crop Layer
+                Root Crop
             </Text>
             <Text fw={400} c="#23272A" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16 }}>
               <FontAwesomeIcon icon={faPagelines} style={{color:'#4a4a4a'}} />
-              Vine Layer
+                Vine
             </Text>
             <Text fw={400} c="#23272A" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16 }}>
               <FontAwesomeIcon icon={faDisease} style={{color:'#4a4a4a'}} />
-              Fungi Layer
+                Fungi
             </Text>
           </Box>
         </Collapse>
