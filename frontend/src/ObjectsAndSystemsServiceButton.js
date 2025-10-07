@@ -96,7 +96,13 @@ export default function ObjectsAndSystemsServiceButton() {
               textOverflow: 'ellipsis',
               width: collapsed ? '40px' : '100%',
               transition: 'transform 0.3s',
-              transform: collapsed ? 'rotate(-90deg) translateY(300px)' : 'none',
+              transform: collapsed ? 'rotate(-90deg)' : 'none',
+              position: collapsed ? 'absolute' : 'static',
+              top: collapsed ? '50%' : 'auto',
+              left: collapsed ? '50%' : 'auto',
+              marginTop: collapsed ? 0 : '3px',
+              marginLeft: collapsed ? 0 : '2px',
+              transform: collapsed ? 'translate(-50%, -50%) rotate(-90deg)' : 'none',
             }}
           >
             Toolbox
