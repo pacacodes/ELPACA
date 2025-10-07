@@ -6,7 +6,7 @@ import SoilTypeSection from './ToolboxDetailOrganicSoilTypeSection';
 
 export default function ToolboxDetailOrganicLayout() {
   return (
-    <div style={{ width: '100%', marginTop: 32 }}>
+    <div style={{ width: '100%', marginTop: 56 }}>
       <SunSection />
       <WateringSection />
       <SoilTypeSection />
