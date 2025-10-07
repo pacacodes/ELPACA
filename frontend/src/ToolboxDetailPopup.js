@@ -9,7 +9,7 @@ export default function ToolboxDetailPopup({ open, subtitle, onClose, shift = 0 
       radius="md"
       style={{
         position: 'fixed',
-        left: 358 - shift,
+        left: 373 - shift,
         bottom: 101,
         minWidth: 245,
         width: '245px',
