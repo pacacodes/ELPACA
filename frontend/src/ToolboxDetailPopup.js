@@ -3,13 +3,7 @@ import { Paper, Text, Breadcrumbs } from '@mantine/core';
 
 export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onGroupClick }) {
   if (!open || !subtitle) return null;
-  // Breadcrumbs logic
-  const items = [
-    { title: 'TOOLBOX', onClick: onClose },
-    ...(group ? [{ title: group.toUpperCase(), onClick: () => onGroupClick && onGroupClick(group) }] : []),
-    { title: subtitle }
-  ];
-  // Match Toolbox popup position and size
+  // Breadcrumb: TOOLBOX | [SUBTITLE] in one row, TOOLBOX and | lighter grey
   return (
     <Paper
       shadow="md"
@@ -17,7 +11,7 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
       style={{
         position: 'fixed',
         left: 32,
-        bottom: -70,
+        bottom: 95,
         minWidth: 245,
         width: '245px',
         minHeight: 830,
@@ -32,20 +26,20 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
         overflowY: 'auto',
       }}
     >
-      <Breadcrumbs
-        separator="|"
-        style={{ marginBottom: 18, width: '100%', fontSize: '0.90rem', textTransform: 'uppercase', letterSpacing: 1, fontFamily: 'inherit', color: '#23272A' }}
-      >
-        {items.map((item, idx) => (
-          <span
-            key={idx}
-            style={{ cursor: item.onClick ? 'pointer' : 'default', color: item.onClick ? '#007bff' : '#23272A', fontWeight: item.onClick ? 500 : 400 }}
-            onClick={item.onClick}
-          >
-            {item.title}
-          </span>
-        ))}
-      </Breadcrumbs>
+      <div style={{ display: 'flex', alignItems: 'center', width: '100%', marginBottom: 18, fontSize: '0.90rem', textTransform: 'uppercase', letterSpacing: 1, fontFamily: 'inherit', fontWeight: 400, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+        <span
+          style={{ color: '#bdbdbd', fontWeight: 400, cursor: 'pointer', transition: 'color 0.2s' }}
+          onClick={onClose}
+          tabIndex={0}
+          role="button"
+          aria-label="Back to Toolbox"
+          onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') onClose(); }}
+        >
+          TOOLBOX
+        </span>
+        <span style={{ color: '#bdbdbd', margin: '0 8px', fontWeight: 400 }}>|</span>
+        <span style={{ color: '#23272A', fontWeight: 400 }}>{subtitle}</span>
+      </div>
       {/* Add more detail content here if needed */}
       <button
         style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '1.5rem', cursor: 'pointer' }}

@@ -35,12 +35,12 @@ export default function ObjectsAndSystemsServiceButton() {
             position: 'fixed',
             left: 32,
             bottom: -70,
-            minWidth: collapsed ? 80 : 245,
-            width: collapsed ? '80px' : '245px',
+            minWidth: 245,
+            width: '245px',
             minHeight: 830,
             maxHeight: '830px',
             zIndex: 1201,
-            padding: collapsed ? '2px' : '2rem',
+            padding: '2rem',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -51,29 +51,15 @@ export default function ObjectsAndSystemsServiceButton() {
             transition: 'width 0.3s',
           }}
         >
-          {/* Collapse/expand button in top right when detail popup is open */}
-          {toolboxDetailOpen ? null : (
-            collapsed ? (
-              <div style={{ width: '100%', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', position: 'absolute', top: 20, left: 0, zIndex: 2 }}>
-                <button
-                  style={{ background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '0.9rem', cursor: 'pointer', padding: 0, margin: 0, lineHeight: 1 }}
-                  aria-label="Expand"
-                  onClick={() => setCollapsed(false)}
-                >
-                  <FontAwesomeIcon icon={faPlus} style={{ fontSize: '0.9em' }} />
-                </button>
-              </div>
-            ) : (
-              <button
-                style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '0.9rem', cursor: 'pointer', zIndex: 2, padding: 0, margin: 0, lineHeight: 1 }}
-                aria-label="Collapse"
-                onClick={() => setCollapsed(true)}
-              >
-                <FontAwesomeIcon icon={faMinus} style={{ fontSize: '0.9em' }} />
-              </button>
-            )
-          )}
-          {/* Title, centered and rotated when collapsed */}
+          {/* Always show close button in top right */}
+          <button
+            style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '1.5rem', cursor: 'pointer', zIndex: 2 }}
+            aria-label="Close"
+            onClick={() => setOpen(false)}
+          >
+            ×
+          </button>
+          {/* Title */}
           <Text
             fw={400}
             c="#23272A"
@@ -88,29 +74,18 @@ export default function ObjectsAndSystemsServiceButton() {
               whiteSpace: 'nowrap',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
-              width: collapsed ? '80px' : '100%',
+              width: '100%',
               transition: 'transform 0.3s',
-              transform: collapsed ? 'rotate(-90deg)' : 'none',
-              position: collapsed ? 'absolute' : 'static',
-              top: collapsed ? '50%' : 'auto',
-              left: collapsed ? '50%' : 'auto',
-              marginTop: collapsed ? 0 : '3px',
-              marginLeft: collapsed ? 0 : '2px',
-              transform: collapsed ? 'translate(-50%, -50%) rotate(-90deg)' : 'none',
             }}
           >
             Toolbox
           </Text>
-          {/* Only show content when not collapsed */}
-          {!collapsed && (
-            <>
-              <OrganicCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Organic Objects'); setToolboxDetailOpen(true); }} />
-              <InorganicCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Inorganic Objects'); setToolboxDetailOpen(true); }} />
-              <ToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Documenting Tools'); setToolboxDetailOpen(true); }} />
-              <ViewpointToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Viewpoint Tools'); setToolboxDetailOpen(true); }} />
-              <DiagramToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Diagram Tools'); setToolboxDetailOpen(true); }} />
-            </>
-          )}
+          {/* Collapsible link groups */}
+          <OrganicCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Organic Objects'); setToolboxDetailOpen(true); }} />
+          <InorganicCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Inorganic Objects'); setToolboxDetailOpen(true); }} />
+          <ToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Documenting Tools'); setToolboxDetailOpen(true); }} />
+          <ViewpointToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Viewpoint Tools'); setToolboxDetailOpen(true); }} />
+          <DiagramToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Diagram Tools'); setToolboxDetailOpen(true); }} />
         </Paper>
       )}
   {/* Toolbox detail popup to the right, same height/width as toolbox */}
