@@ -33,31 +33,43 @@ export default function ObjectsAndSystemsServiceButton() {
             position: 'fixed',
             left: 32,
             bottom: -70,
-            minWidth: collapsed ? 30 : 245,
-            width: collapsed ? '30px' : '245px',
+            minWidth: collapsed ? 40 : 245,
+            width: collapsed ? '40px' : '245px',
             minHeight: 830,
+            maxHeight: '830px',
             zIndex: 1201,
-            padding: '2rem',
+            padding: collapsed ? '2px' : '2rem',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             background: 'rgba(245,245,245,0.5)',
             borderRadius: '8px',
             overflowY: 'auto',
-            maxHeight: '830px',
             position: 'relative',
             transition: 'width 0.3s',
           }}
         >
           {/* Collapse/expand button in top right when detail popup is open */}
           {toolboxDetailOpen ? (
-            <button
-              style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '0.9rem', cursor: 'pointer', zIndex: 2, padding: 0, margin: 0, lineHeight: 1 }}
-              aria-label={collapsed ? 'Expand' : 'Collapse'}
-              onClick={() => setCollapsed(c => !c)}
-            >
-              <FontAwesomeIcon icon={collapsed ? faPlus : faMinus} style={{ fontSize: '0.9em' }} />
-            </button>
+            collapsed ? (
+              <div style={{ width: '100%', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', position: 'absolute', top: 20, left: 0, zIndex: 2 }}>
+                <button
+                  style={{ background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '0.9rem', cursor: 'pointer', padding: 0, margin: 0, lineHeight: 1 }}
+                  aria-label="Expand"
+                  onClick={() => setCollapsed(false)}
+                >
+                  <FontAwesomeIcon icon={faPlus} style={{ fontSize: '0.9em' }} />
+                </button>
+              </div>
+            ) : (
+              <button
+                style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '0.9rem', cursor: 'pointer', zIndex: 2, padding: 0, margin: 0, lineHeight: 1 }}
+                aria-label="Collapse"
+                onClick={() => setCollapsed(true)}
+              >
+                <FontAwesomeIcon icon={faMinus} style={{ fontSize: '0.9em' }} />
+              </button>
+            )
           ) : (
             <button
               style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '1.5rem', cursor: 'pointer', zIndex: 2 }}
@@ -82,9 +94,9 @@ export default function ObjectsAndSystemsServiceButton() {
               whiteSpace: 'nowrap',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
-              width: collapsed ? '30px' : '100%',
+              width: collapsed ? '40px' : '100%',
               transition: 'transform 0.3s',
-              // Remove centering and absolute positioning for normal and collapsed states
+              transform: collapsed ? 'rotate(-90deg) translateY(300px)' : 'none',
             }}
           >
             Toolbox
@@ -102,7 +114,7 @@ export default function ObjectsAndSystemsServiceButton() {
         </Paper>
       )}
   {/* Toolbox detail popup to the right, same height/width as toolbox */}
-  <ToolboxDetailPopup open={toolboxDetailOpen} subtitle={selectedSubtitle} onClose={() => { setToolboxDetailOpen(false); setCollapsed(false); }} />
+    <ToolboxDetailPopup open={toolboxDetailOpen} subtitle={selectedSubtitle} onClose={() => { setToolboxDetailOpen(false); setCollapsed(false); }} shift={collapsed ? 265 : 0} />
     </>
   );
 }
