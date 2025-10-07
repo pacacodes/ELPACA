@@ -5,11 +5,17 @@ import { faPencilAlt, faPenNib, faHighlighter, faMarker, faDrawPolygon, faEraser
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
-export default function DiagramToolsCollapsibleLinks() {
+export default function DiagramToolsCollapsibleLinks(props) {
   const [opened, setOpened] = React.useState(false);
-
   // Accept onSubtitleClick prop
-  const onSubtitleClick = typeof arguments[0] === 'object' && arguments[0].onSubtitleClick ? arguments[0].onSubtitleClick : undefined;
+  const onSubtitleClick = props && props.onSubtitleClick ? props.onSubtitleClick : undefined;
+  React.useEffect(() => {
+    const handler = e => {
+      if (e.detail === 'diagram') setOpened(true);
+    };
+    window.addEventListener('openToolboxGroup', handler);
+    return () => window.removeEventListener('openToolboxGroup', handler);
+  }, []);
   return (
     <Box style={{ width: 'calc(100% + 15px)', height: 'calc(100% - 20px)', marginTop: 13, marginLeft: -8, marginRight: 'auto', background: 'rgba(0,0,0,0.03)', borderRadius: 8, padding: '8px 0', display: 'block' }}>
       <Group position="apart" style={{ cursor: 'pointer', flexDirection: 'column', alignItems: 'flex-start', marginLeft: 20, width: 'calc(100% + 20px)' }} onClick={() => setOpened((o) => !o)}>

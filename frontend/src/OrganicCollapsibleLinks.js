@@ -5,12 +5,18 @@ import { faTree, faCloud, faLeaf, faClover, faCarrot, faDisease } from '@fortawe
 import { faPagelines } from '@fortawesome/free-brands-svg-icons';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
-export default function OrganicCollapsibleLinks() {
+export default function OrganicCollapsibleLinks(props) {
   const [opened, setOpened] = React.useState(false);
   const [opened2, setOpened2] = React.useState(false);
-
   // Accept onSubtitleClick prop
-  const onSubtitleClick = typeof arguments[0] === 'object' && arguments[0].onSubtitleClick ? arguments[0].onSubtitleClick : undefined;
+  const onSubtitleClick = props && props.onSubtitleClick ? props.onSubtitleClick : undefined;
+  React.useEffect(() => {
+    const handler = e => {
+      if (e.detail === 'organic') setOpened(true);
+    };
+    window.addEventListener('openToolboxGroup', handler);
+    return () => window.removeEventListener('openToolboxGroup', handler);
+  }, []);
   return (
     <>
   <Box style={{ width: 'calc(100% + 15px)', height: 'calc(100% - 20px)', marginTop: 22, marginLeft: -8, marginRight: 'auto', background: 'rgba(0,0,0,0.03)', borderRadius: 8, padding: '8px 0', display: 'block' }}>

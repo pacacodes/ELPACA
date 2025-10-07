@@ -15,6 +15,7 @@ export default function ObjectsAndSystemsServiceButton() {
   const [open, setOpen] = useState(false);
   const [toolboxDetailOpen, setToolboxDetailOpen] = useState(false);
   const [selectedSubtitle, setSelectedSubtitle] = useState(null);
+  const [selectedGroup, setSelectedGroup] = useState(null);
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -24,7 +25,8 @@ export default function ObjectsAndSystemsServiceButton() {
           <FontAwesomeIcon icon={faPlus} style={{ fontSize: '1.8em', fontWeight: 300 }} color="#23272A" />
         </ThemeIcon>
       </Card>
-      {open && (
+      {/* Only show Toolbox popup when detail popup is NOT open */}
+      {open && !toolboxDetailOpen && (
         <Paper
           shadow="md"
           radius="md"
@@ -50,7 +52,7 @@ export default function ObjectsAndSystemsServiceButton() {
           }}
         >
           {/* Collapse/expand button in top right when detail popup is open */}
-          {toolboxDetailOpen ? (
+          {toolboxDetailOpen ? null : (
             collapsed ? (
               <div style={{ width: '100%', display: 'flex', alignItems: 'flex-start', justifyContent: 'center', position: 'absolute', top: 20, left: 0, zIndex: 2 }}>
                 <button
@@ -70,14 +72,6 @@ export default function ObjectsAndSystemsServiceButton() {
                 <FontAwesomeIcon icon={faMinus} style={{ fontSize: '0.9em' }} />
               </button>
             )
-          ) : (
-            <button
-              style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '1.5rem', cursor: 'pointer', zIndex: 2 }}
-              aria-label="Close"
-              onClick={() => setOpen(false)}
-            >
-              ×
-            </button>
           )}
           {/* Title, centered and rotated when collapsed */}
           <Text
@@ -110,17 +104,26 @@ export default function ObjectsAndSystemsServiceButton() {
           {/* Only show content when not collapsed */}
           {!collapsed && (
             <>
-              <OrganicCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
-              <InorganicCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
-              <ToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
-              <ViewpointToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
-              <DiagramToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
+              <OrganicCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Organic Objects'); setToolboxDetailOpen(true); }} />
+              <InorganicCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Inorganic Objects'); setToolboxDetailOpen(true); }} />
+              <ToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Documenting Tools'); setToolboxDetailOpen(true); }} />
+              <ViewpointToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Viewpoint Tools'); setToolboxDetailOpen(true); }} />
+              <DiagramToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Diagram Tools'); setToolboxDetailOpen(true); }} />
             </>
           )}
         </Paper>
       )}
   {/* Toolbox detail popup to the right, same height/width as toolbox */}
-    <ToolboxDetailPopup open={toolboxDetailOpen} subtitle={selectedSubtitle} onClose={() => { setToolboxDetailOpen(false); setCollapsed(false); }} shift={collapsed ? 265 : 0} />
+    {/* When detail popup is open, hide Toolbox popup and show only detail popup */}
+    {toolboxDetailOpen && (
+      <ToolboxDetailPopup
+        open={toolboxDetailOpen}
+        subtitle={selectedSubtitle}
+        group={selectedGroup}
+        onClose={() => { setToolboxDetailOpen(false); setCollapsed(false); setSelectedSubtitle(null); setSelectedGroup(null); }}
+        shift={collapsed ? 265 : 0}
+      />
+    )}
     </>
   );
 }

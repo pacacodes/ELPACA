@@ -1,16 +1,23 @@
 import React from 'react';
-import { Paper, Text } from '@mantine/core';
+import { Paper, Text, Breadcrumbs } from '@mantine/core';
 
-export default function ToolboxDetailPopup({ open, subtitle, onClose, shift = 0 }) {
+export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onGroupClick }) {
   if (!open || !subtitle) return null;
+  // Breadcrumbs logic
+  const items = [
+    { title: 'TOOLBOX', onClick: onClose },
+    ...(group ? [{ title: group.toUpperCase(), onClick: () => onGroupClick && onGroupClick(group) }] : []),
+    { title: subtitle }
+  ];
+  // Match Toolbox popup position and size
   return (
     <Paper
       shadow="md"
       radius="md"
       style={{
         position: 'fixed',
-        left: 373 - shift,
-        bottom: 101,
+        left: 32,
+        bottom: -70,
         minWidth: 245,
         width: '245px',
         minHeight: 830,
@@ -25,25 +32,20 @@ export default function ToolboxDetailPopup({ open, subtitle, onClose, shift = 0 
         overflowY: 'auto',
       }}
     >
-      <Text
-        fw={400}
-        c="#23272A"
-        style={{
-          fontSize: '0.90rem',
-          marginBottom: 18,
-          marginLeft: 2,
-          marginTop: 3,
-          textTransform: 'uppercase',
-          letterSpacing: 1,
-          fontFamily: 'inherit',
-          whiteSpace: 'nowrap',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          width: '100%'
-        }}
+      <Breadcrumbs
+        separator="|"
+        style={{ marginBottom: 18, width: '100%', fontSize: '0.90rem', textTransform: 'uppercase', letterSpacing: 1, fontFamily: 'inherit', color: '#23272A' }}
       >
-        {subtitle}
-      </Text>
+        {items.map((item, idx) => (
+          <span
+            key={idx}
+            style={{ cursor: item.onClick ? 'pointer' : 'default', color: item.onClick ? '#007bff' : '#23272A', fontWeight: item.onClick ? 500 : 400 }}
+            onClick={item.onClick}
+          >
+            {item.title}
+          </span>
+        ))}
+      </Breadcrumbs>
       {/* Add more detail content here if needed */}
       <button
         style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '1.5rem', cursor: 'pointer' }}
