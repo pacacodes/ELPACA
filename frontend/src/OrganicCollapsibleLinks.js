@@ -61,7 +61,7 @@ export default function OrganicCollapsibleLinks() {
               <FontAwesomeIcon icon={faPagelines} style={{color:'#4a4a4a'}} />
                 Vine
             </Text>
-            <Text fw={400} c="#23272A" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16 }}>
+            <Text fw={400} c="#23272A" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Fungi')}>
               <FontAwesomeIcon icon={faDisease} style={{color:'#4a4a4a'}} />
                 Fungi
             </Text>

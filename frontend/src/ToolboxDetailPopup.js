@@ -4,7 +4,7 @@ import { Paper, Text } from '@mantine/core';
 export default function ToolboxDetailPopup({ open, subtitle, onClose }) {
   if (!open || !subtitle) return null;
   return (
-    <Paper shadow="md" radius="md" style={{ position: 'fixed', left: 358, bottom: 120, minWidth: 245, width: '245px', minHeight: 830, maxHeight: '830px', zIndex: 1202, padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(245,245,245,0.5)', borderRadius: '8px', overflowY: 'auto' }}>
+  <Paper shadow="md" radius="md" style={{ position: 'fixed', left: 358, bottom: 101, minWidth: 245, width: '245px', minHeight: 830, maxHeight: '830px', zIndex: 1202, padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(245,245,245,0.5)', borderRadius: '8px', overflowY: 'auto' }}>
       <Text
         fw={400}
         c="#23272A"

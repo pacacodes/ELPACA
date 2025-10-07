@@ -9,11 +9,13 @@ import ViewpointToolsCollapsibleLinks from './ViewpointToolsCollapsibleLinks';
 import DiagramToolsCollapsibleLinks from './DiagramToolsCollapsibleLinks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faMinus } from '@fortawesome/free-solid-svg-icons';
 
 export default function ObjectsAndSystemsServiceButton() {
   const [open, setOpen] = useState(false);
   const [toolboxDetailOpen, setToolboxDetailOpen] = useState(false);
   const [selectedSubtitle, setSelectedSubtitle] = useState(null);
+  const [collapsed, setCollapsed] = useState(false);
 
   return (
     <>
@@ -23,43 +25,102 @@ export default function ObjectsAndSystemsServiceButton() {
         </ThemeIcon>
       </Card>
       {open && (
-        <Paper shadow="md" radius="md" className="communication-navbar-scroll" style={{ position: 'fixed', left: 32, bottom: 120, minWidth: 245, width: '245px', minHeight: 830, zIndex: 1201, padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(245,245,245,0.5)', borderRadius: '8px', overflowY: 'auto', maxHeight: '830px' }}>
-          <Text
-            fw={400}
-            c="#23272A"
+        <Paper
+          shadow="md"
+          radius="md"
+          className="communication-navbar-scroll"
+          style={{
+            position: 'fixed',
+            left: 32,
+            bottom: -70,
+            minWidth: collapsed ? 30 : 245,
+            width: collapsed ? '30px' : '245px',
+            minHeight: 830,
+            zIndex: 1201,
+            padding: '2rem',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            background: 'rgba(245,245,245,0.5)',
+            borderRadius: '8px',
+            overflowY: 'auto',
+            maxHeight: '830px',
+            position: 'relative',
+            transition: 'width 0.3s',
+          }}
+        >
+          {/* Collapse/expand button in top right when detail popup is open */}
+          {toolboxDetailOpen ? (
+            <button
+              style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '0.9rem', cursor: 'pointer', zIndex: 2, padding: 0, margin: 0, lineHeight: 1 }}
+              aria-label={collapsed ? 'Expand' : 'Collapse'}
+              onClick={() => setCollapsed(c => !c)}
+            >
+              <FontAwesomeIcon icon={collapsed ? faPlus : faMinus} style={{ fontSize: '0.9em' }} />
+            </button>
+          ) : (
+            <button
+              style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '1.5rem', cursor: 'pointer', zIndex: 2 }}
+              aria-label="Close"
+              onClick={() => setOpen(false)}
+            >
+              ×
+            </button>
+          )}
+          {/* Title, centered and rotated when collapsed */}
+          <div
             style={{
-              fontSize: '0.90rem',
-              marginBottom: 18,
-              marginLeft: 2,
-              marginTop: 3,
-              textTransform: 'uppercase',
-              letterSpacing: 1,
-              fontFamily: 'inherit',
-              whiteSpace: 'nowrap',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              width: '100%'
+              width: '100%',
+              height: collapsed ? '100%' : 'auto',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flex: 1,
+              position: 'relative',
             }}
           >
-            Toolbox
-          </Text>
-          {/* Add popup content here */}
-          <OrganicCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
-          <InorganicCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
-          <ToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
-          <ViewpointToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
-          <DiagramToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
-          <button
-            style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '1.5rem', cursor: 'pointer' }}
-            aria-label="Close"
-            onClick={() => setOpen(false)}
-          >
-            ×
-          </button>
+            <Text
+              fw={400}
+              c="#23272A"
+              style={{
+                fontSize: '0.90rem',
+                textTransform: 'uppercase',
+                letterSpacing: 1,
+                fontFamily: 'inherit',
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                width: collapsed ? '30px' : '100%',
+                transform: collapsed ? 'translate(-50%, -50%) rotate(-90deg)' : 'none',
+                textAlign: 'center',
+                margin: '0 auto',
+                transition: 'transform 0.3s',
+                position: collapsed ? 'absolute' : 'static',
+                top: collapsed ? '50%' : 'auto',
+                left: collapsed ? '50%' : 'auto',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: collapsed ? '30px' : 'auto',
+              }}
+            >
+              Toolbox
+            </Text>
+          </div>
+          {/* Only show content when not collapsed */}
+          {!collapsed && (
+            <>
+              <OrganicCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
+              <InorganicCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
+              <ToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
+              <ViewpointToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
+              <DiagramToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setToolboxDetailOpen(true); }} />
+            </>
+          )}
         </Paper>
       )}
   {/* Toolbox detail popup to the right, same height/width as toolbox */}
-  <ToolboxDetailPopup open={toolboxDetailOpen} subtitle={selectedSubtitle} onClose={() => setToolboxDetailOpen(false)} />
+  <ToolboxDetailPopup open={toolboxDetailOpen} subtitle={selectedSubtitle} onClose={() => { setToolboxDetailOpen(false); setCollapsed(false); }} />
     </>
   );
 }
