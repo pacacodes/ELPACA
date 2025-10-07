@@ -1,5 +1,6 @@
 import React from 'react';
 import { Paper, Text, Breadcrumbs } from '@mantine/core';
+import ToolboxDetailOrganicLayout from './ToolboxDetailOrganicLayout';
 
 export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onGroupClick }) {
   if (!open || !subtitle) return null;
@@ -26,7 +27,24 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
         overflowY: 'auto',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', width: '100%', marginBottom: 18, fontSize: '0.90rem', textTransform: 'uppercase', letterSpacing: 1, fontFamily: 'inherit', fontWeight: 400, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+      <Text
+        fw={400}
+        style={{
+          fontSize: '0.90rem',
+          marginBottom: 18,
+          marginLeft: 2,
+          marginTop: 3,
+          textTransform: 'uppercase',
+          letterSpacing: 1,
+          fontFamily: 'inherit',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          width: '100%',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
         <span
           style={{ color: '#bdbdbd', fontWeight: 400, cursor: 'pointer', transition: 'color 0.2s' }}
           onClick={onClose}
@@ -39,8 +57,9 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
         </span>
         <span style={{ color: '#bdbdbd', margin: '0 8px', fontWeight: 400 }}>|</span>
         <span style={{ color: '#23272A', fontWeight: 400 }}>{subtitle}</span>
-      </div>
-      {/* Add more detail content here if needed */}
+      </Text>
+  {/* Organic group layout example */}
+  {group === 'Organic Objects' && <ToolboxDetailOrganicLayout />}
       <button
         style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '1.5rem', cursor: 'pointer' }}
         aria-label="Close"
