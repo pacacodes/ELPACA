@@ -68,45 +68,27 @@ export default function ObjectsAndSystemsServiceButton() {
             </button>
           )}
           {/* Title, centered and rotated when collapsed */}
-          <div
+          <Text
+            fw={400}
+            c="#23272A"
             style={{
-              width: '100%',
-              height: collapsed ? '100%' : 'auto',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flex: 1,
-              position: 'relative',
+              fontSize: '0.90rem',
+              marginBottom: 18,
+              marginLeft: 2,
+              marginTop: 3,
+              textTransform: 'uppercase',
+              letterSpacing: 1,
+              fontFamily: 'inherit',
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              width: collapsed ? '30px' : '100%',
+              transition: 'transform 0.3s',
+              // Remove centering and absolute positioning for normal and collapsed states
             }}
           >
-            <Text
-              fw={400}
-              c="#23272A"
-              style={{
-                fontSize: '0.90rem',
-                textTransform: 'uppercase',
-                letterSpacing: 1,
-                fontFamily: 'inherit',
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                width: collapsed ? '30px' : '100%',
-                transform: collapsed ? 'translate(-50%, -50%) rotate(-90deg)' : 'none',
-                textAlign: 'center',
-                margin: '0 auto',
-                transition: 'transform 0.3s',
-                position: collapsed ? 'absolute' : 'static',
-                top: collapsed ? '50%' : 'auto',
-                left: collapsed ? '50%' : 'auto',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: collapsed ? '30px' : 'auto',
-              }}
-            >
-              Toolbox
-            </Text>
-          </div>
+            Toolbox
+          </Text>
           {/* Only show content when not collapsed */}
           {!collapsed && (
             <>
