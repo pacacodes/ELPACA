@@ -44,6 +44,9 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
           width: '100%',
           display: 'flex',
           alignItems: 'center',
+          background: 'rgba(0,0,0,0.1)', /* Added background for visibility */
+          padding: '4px 8px', /* Added padding for better appearance */
+          borderRadius: '4px' /* Added border radius for aesthetics */
         }}
       >
         <span
@@ -57,7 +60,7 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
           TOOLBOX
         </span>
         <span style={{ color: '#bdbdbd', margin: '0 8px', fontWeight: 400 }}>|</span>
-        <span style={{ color: '#23272A', fontWeight: 400 }}>{subtitle}</span>
+        <span style={{ color: '#23272A', fontWeight: 400 }}>{subtitle || group}</span> {/* Ensure subtitle or group is displayed */}
       </Text>
   {/* Organic group layout example */}
   {group === 'Organic Objects' && <ToolboxDetailOrganicLayout />}
