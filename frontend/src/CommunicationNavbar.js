@@ -74,11 +74,11 @@ export default function CommunicationNavbar() {
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Architect</span>
             <span style={{ fontWeight: 400, fontSize: '0.75rem', color: '#23272A', marginTop: 2, textAlign: 'left' }}>Subject</span> {/* Made Subject copy darker */}
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved circle up by an additional 10px */}
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved icon group up by 10px */}
             <span style={{
               position: 'absolute',
               left: 0,
-              top: -2.88,
+              top: -12.88, /* Adjusted top to move the icon group up */
               width: 25.92, // Reduced by 10%
               height: 25.92, // Reduced by 10%
               borderRadius: '50%',
@@ -86,7 +86,7 @@ export default function CommunicationNavbar() {
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 17.28, top: 12.36, zIndex: 2, transform: 'translateY(-100%)' }}> {/* Moved envelope icon up by 15px */}
+            <span style={{ position: 'absolute', left: 17.28, top: 17.36, zIndex: 2, transform: 'translateY(-100%)' }}>
               <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
@@ -121,11 +121,11 @@ export default function CommunicationNavbar() {
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
             <span style={{ fontWeight: 400, fontSize: '0.75rem', color: '#23272A', marginTop: 2, textAlign: 'left' }}>Subject</span> {/* Made Subject copy darker */}
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved circle up by an additional 10px */}
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved icon group up by 10px */}
             <span style={{
               position: 'absolute',
               left: 0,
-              top: -2.88,
+              top: -12.88, /* Adjusted top to move the icon group up */
               width: 25.92, // Reduced by 10%
               height: 25.92, // Reduced by 10%
               borderRadius: '50%',
@@ -133,7 +133,7 @@ export default function CommunicationNavbar() {
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 17.28, top: 12.36, zIndex: 2, transform: 'translateY(-100%)' }}>
+            <span style={{ position: 'absolute', left: 17.28, top: 17.36, zIndex: 2, transform: 'translateY(-100%)' }}>
               <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
@@ -168,11 +168,11 @@ export default function CommunicationNavbar() {
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
             <span style={{ fontWeight: 400, fontSize: '0.75rem', color: '#23272A', marginTop: 2, textAlign: 'left' }}>Subject</span> {/* Made Subject copy darker */}
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved circle up by an additional 10px */}
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved icon group up by 10px */}
             <span style={{
               position: 'absolute',
               left: 0,
-              top: -2.88,
+              top: -12.88, /* Adjusted top to move the icon group up */
               width: 25.92, // Reduced by 10%
               height: 25.92, // Reduced by 10%
               borderRadius: '50%',
@@ -180,7 +180,7 @@ export default function CommunicationNavbar() {
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 17.28, top: 12.36, zIndex: 2, transform: 'translateY(-100%)' }}>
+            <span style={{ position: 'absolute', left: 17.28, top: 17.36, zIndex: 2, transform: 'translateY(-100%)' }}>
               <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
@@ -215,11 +215,11 @@ export default function CommunicationNavbar() {
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
             <span style={{ fontWeight: 400, fontSize: '0.75rem', color: '#23272A', marginTop: 2, textAlign: 'left' }}>Subject</span> {/* Made Subject copy darker */}
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved circle up by an additional 10px */}
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved icon group up by 10px */}
             <span style={{
               position: 'absolute',
               left: 0,
-              top: -2.88,
+              top: -12.88, /* Adjusted top to move the icon group up */
               width: 25.92, // Reduced by 10%
               height: 25.92, // Reduced by 10%
               borderRadius: '50%',
@@ -227,7 +227,7 @@ export default function CommunicationNavbar() {
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 17.28, top: 12.36, zIndex: 2, transform: 'translateY(-100%)' }}>
+            <span style={{ position: 'absolute', left: 17.28, top: 17.36, zIndex: 2, transform: 'translateY(-100%)' }}>
               <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
@@ -262,11 +262,11 @@ export default function CommunicationNavbar() {
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
             <span style={{ fontWeight: 400, fontSize: '0.75rem', color: '#23272A', marginTop: 2, textAlign: 'left' }}>Subject</span> {/* Made Subject copy darker */}
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved circle up by an additional 10px */}
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved icon group up by 10px */}
             <span style={{
               position: 'absolute',
               left: 0,
-              top: -2.88,
+              top: -12.88, /* Adjusted top to move the icon group up */
               width: 25.92, // Reduced by 10%
               height: 25.92, // Reduced by 10%
               borderRadius: '50%',
@@ -274,7 +274,7 @@ export default function CommunicationNavbar() {
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 17.28, top: 12.36, zIndex: 2, transform: 'translateY(-100%)' }}>
+            <span style={{ position: 'absolute', left: 17.28, top: 17.36, zIndex: 2, transform: 'translateY(-100%)' }}>
               <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
