@@ -73,20 +73,20 @@ export default function CommunicationNavbar() {
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>Jordan Avery</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Architect</span>
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 38.4, height: 38.4, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
             <span style={{
               position: 'absolute',
               left: 0,
-              top: -3.2,
-              width: 28.8,
-              height: 28.8,
+              top: -2.88,
+              width: 25.92, // Reduced by 10%
+              height: 25.92, // Reduced by 10%
               borderRadius: '50%',
               background: '#d3d3d3',
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 19.2, top: 30.4, zIndex: 2, transform: 'translateY(-100%)' }}>
-              <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.96em' }} />
+            <span style={{ position: 'absolute', left: 17.28, top: 27.36, zIndex: 2, transform: 'translateY(-100%)' }}>
+              <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
         </Button>
@@ -119,20 +119,20 @@ export default function CommunicationNavbar() {
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>User Button 2</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 38.4, height: 38.4, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
             <span style={{
               position: 'absolute',
               left: 0,
-              top: -3.2,
-              width: 28.8,
-              height: 28.8,
+              top: -2.88,
+              width: 25.92, // Reduced by 10%
+              height: 25.92, // Reduced by 10%
               borderRadius: '50%',
               background: '#d3d3d3',
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 19.2, top: 30.4, zIndex: 2, transform: 'translateY(-100%)' }}>
-              <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.96em' }} />
+            <span style={{ position: 'absolute', left: 17.28, top: 27.36, zIndex: 2, transform: 'translateY(-100%)' }}>
+              <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
         </Button>
@@ -165,20 +165,20 @@ export default function CommunicationNavbar() {
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>User Button 3</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 38.4, height: 38.4, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
             <span style={{
               position: 'absolute',
               left: 0,
-              top: -3.2,
-              width: 28.8,
-              height: 28.8,
+              top: -2.88,
+              width: 25.92, // Reduced by 10%
+              height: 25.92, // Reduced by 10%
               borderRadius: '50%',
               background: '#d3d3d3',
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 19.2, top: 30.4, zIndex: 2, transform: 'translateY(-100%)' }}>
-              <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.96em' }} />
+            <span style={{ position: 'absolute', left: 17.28, top: 27.36, zIndex: 2, transform: 'translateY(-100%)' }}>
+              <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
         </Button>
@@ -211,20 +211,20 @@ export default function CommunicationNavbar() {
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>User Button 4</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 38.4, height: 38.4, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
             <span style={{
               position: 'absolute',
               left: 0,
-              top: -3.2,
-              width: 28.8,
-              height: 28.8,
+              top: -2.88,
+              width: 25.92, // Reduced by 10%
+              height: 25.92, // Reduced by 10%
               borderRadius: '50%',
               background: '#d3d3d3',
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 19.2, top: 30.4, zIndex: 2, transform: 'translateY(-100%)' }}>
-              <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.96em' }} />
+            <span style={{ position: 'absolute', left: 17.28, top: 27.36, zIndex: 2, transform: 'translateY(-100%)' }}>
+              <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
         </Button>
@@ -257,20 +257,20 @@ export default function CommunicationNavbar() {
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>User Button 5</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 38.4, height: 38.4, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
             <span style={{
               position: 'absolute',
               left: 0,
-              top: -3.2,
-              width: 28.8,
-              height: 28.8,
+              top: -2.88,
+              width: 25.92, // Reduced by 10%
+              height: 25.92, // Reduced by 10%
               borderRadius: '50%',
               background: '#d3d3d3',
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 19.2, top: 30.4, zIndex: 2, transform: 'translateY(-100%)' }}>
-              <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.96em' }} />
+            <span style={{ position: 'absolute', left: 17.28, top: 27.36, zIndex: 2, transform: 'translateY(-100%)' }}>
+              <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
         </Button>
