@@ -28,13 +28,14 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
         pointerEvents: 'auto', // Ensure it does not block interactions with other elements
       }}
     >
+      {/* Adjusted margins and layout to ensure the title is consistent with other collapsible link groups */}
       <Text
         fw={400}
         style={{
           fontSize: '0.90rem',
           marginBottom: 18,
-          marginLeft: 2,
-          marginTop: 3,
+          marginLeft: 0, /* Adjusted margin to align with other groups */
+          marginTop: 0, /* Adjusted margin to align with other groups */
           textTransform: 'uppercase',
           letterSpacing: 1,
           fontFamily: 'inherit',
@@ -44,9 +45,9 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
           width: '100%',
           display: 'flex',
           alignItems: 'center',
-          background: 'rgba(0,0,0,0.1)', /* Added background for visibility */
-          padding: '4px 8px', /* Added padding for better appearance */
-          borderRadius: '4px' /* Added border radius for aesthetics */
+          background: 'rgba(0,0,0,0.1)',
+          padding: '6px 12px', /* Adjusted padding for better alignment */
+          borderRadius: '4px'
         }}
       >
         <span
