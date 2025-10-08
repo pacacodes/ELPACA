@@ -28,14 +28,14 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
         pointerEvents: 'auto', // Ensure it does not block interactions with other elements
       }}
     >
-      {/* Adjusted margins and layout to ensure the title is consistent with other collapsible link groups */}
+      {/* Adjusted margins and padding to ensure the title/breadcrumb appears consistent across all toolbox detailed popups */}
       <Text
         fw={400}
         style={{
-          fontSize: '0.90rem',
-          marginBottom: 18,
-          marginLeft: 0, /* Adjusted margin to align with other groups */
-          marginTop: 0, /* Adjusted margin to align with other groups */
+          fontSize: '0.90rem', /* Matched font size to the main Toolbox title */
+          marginBottom: 12, /* Adjusted marginBottom for consistency */
+          marginLeft: 0, /* Ensured alignment with other popups */
+          marginTop: 12, /* Added marginTop for spacing */
           textTransform: 'uppercase',
           letterSpacing: 1,
           fontFamily: 'inherit',
@@ -46,7 +46,7 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
           display: 'flex',
           alignItems: 'center',
           background: 'rgba(0,0,0,0.1)',
-          padding: '6px 12px', /* Adjusted padding for better alignment */
+          padding: '12px 16px', /* Further increased padding for a larger background */
           borderRadius: '4px'
         }}
       >
@@ -61,7 +61,7 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
           TOOLBOX
         </span>
         <span style={{ color: '#bdbdbd', margin: '0 8px', fontWeight: 400 }}>|</span>
-        <span style={{ color: '#23272A', fontWeight: 400 }}>{subtitle || group}</span> {/* Ensure subtitle or group is displayed */}
+        <span style={{ color: '#23272A', fontWeight: 400 }}>{subtitle || group}</span>
       </Text>
   {/* Organic group layout example */}
   {group === 'Organic Objects' && <ToolboxDetailOrganicLayout />}
