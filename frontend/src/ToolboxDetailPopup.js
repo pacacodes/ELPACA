@@ -45,7 +45,7 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
           width: '100%',
           display: 'flex',
           alignItems: 'center',
-          background: 'rgba(0,0,0,0.1)',
+          background: 'transparent', /* Made background fully transparent */
           padding: '12px 16px', /* Further increased padding for a larger background */
           borderRadius: '4px'
         }}
