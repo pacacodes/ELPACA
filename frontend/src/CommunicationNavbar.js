@@ -69,11 +69,11 @@ export default function CommunicationNavbar() {
             marginRight: 'auto' // Centered horizontally
           }}
         >
-          <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '70px', marginTop: '10px' }}>
+          <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '60px', marginTop: '10px' }}>
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>Jordan Avery</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Architect</span>
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-140px' }}>
             <span style={{
               position: 'absolute',
               left: 0,
@@ -115,11 +115,11 @@ export default function CommunicationNavbar() {
             marginRight: 'auto' // Centered horizontally
           }}
         >
-          <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '70px', marginTop: '10px' }}>
+          <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '60px', marginTop: '10px' }}>
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>User Button 2</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-140px' }}>
             <span style={{
               position: 'absolute',
               left: 0,
@@ -161,11 +161,11 @@ export default function CommunicationNavbar() {
             marginRight: 'auto' // Centered horizontally
           }}
         >
-          <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '70px', marginTop: '10px' }}>
+          <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '60px', marginTop: '10px' }}>
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>User Button 3</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-140px' }}>
             <span style={{
               position: 'absolute',
               left: 0,
@@ -207,11 +207,11 @@ export default function CommunicationNavbar() {
             marginRight: 'auto' // Centered horizontally
           }}
         >
-          <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '70px', marginTop: '10px' }}>
+          <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '60px', marginTop: '10px' }}>
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>User Button 4</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-140px' }}>
             <span style={{
               position: 'absolute',
               left: 0,
@@ -253,11 +253,11 @@ export default function CommunicationNavbar() {
             marginRight: 'auto' // Centered horizontally
           }}
         >
-          <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '70px', marginTop: '10px' }}>
+          <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '60px', marginTop: '10px' }}>
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>User Button 5</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-78px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-140px' }}>
             <span style={{
               position: 'absolute',
               left: 0,
