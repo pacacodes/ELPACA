@@ -57,7 +57,7 @@ export default function CommunicationNavbar() {
             border: 'none',
             boxShadow: 'none',
             width: '170px', // Reduced from 210px to 170px
-            height: '60px',
+            height: '80px', // Increased height to accommodate the third row
             background: 'rgba(0,0,0,0.03)',
             display: 'flex',
             flexDirection: 'row',
@@ -72,8 +72,9 @@ export default function CommunicationNavbar() {
           <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '60px', marginTop: '10px' }}>
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>Jordan Avery</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Architect</span>
+            <span style={{ fontWeight: 400, fontSize: '0.75rem', color: '#23272A', marginTop: 2, textAlign: 'left' }}>Subject</span> {/* Made Subject copy darker */}
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved circle up by an additional 10px */}
             <span style={{
               position: 'absolute',
               left: 0,
@@ -85,7 +86,7 @@ export default function CommunicationNavbar() {
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 17.28, top: 27.36, zIndex: 2, transform: 'translateY(-100%)' }}>
+            <span style={{ position: 'absolute', left: 17.28, top: 12.36, zIndex: 2, transform: 'translateY(-100%)' }}> {/* Moved envelope icon up by 15px */}
               <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
@@ -103,7 +104,7 @@ export default function CommunicationNavbar() {
             border: 'none',
             boxShadow: 'none',
             width: '170px', // Reduced from 210px to 170px
-            height: '60px',
+            height: '80px', // Increased height to accommodate the third row
             background: 'rgba(0,0,0,0.03)',
             display: 'flex',
             flexDirection: 'row',
@@ -118,8 +119,9 @@ export default function CommunicationNavbar() {
           <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '60px', marginTop: '10px' }}>
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>User Button 2</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
+            <span style={{ fontWeight: 400, fontSize: '0.75rem', color: '#23272A', marginTop: 2, textAlign: 'left' }}>Subject</span> {/* Made Subject copy darker */}
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved circle up by an additional 10px */}
             <span style={{
               position: 'absolute',
               left: 0,
@@ -131,7 +133,7 @@ export default function CommunicationNavbar() {
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 17.28, top: 27.36, zIndex: 2, transform: 'translateY(-100%)' }}>
+            <span style={{ position: 'absolute', left: 17.28, top: 12.36, zIndex: 2, transform: 'translateY(-100%)' }}>
               <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
@@ -149,7 +151,7 @@ export default function CommunicationNavbar() {
             border: 'none',
             boxShadow: 'none',
             width: '170px', // Reduced from 210px to 170px
-            height: '60px',
+            height: '80px', // Increased height to accommodate the third row
             background: 'rgba(0,0,0,0.03)',
             display: 'flex',
             flexDirection: 'row',
@@ -164,8 +166,9 @@ export default function CommunicationNavbar() {
           <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '60px', marginTop: '10px' }}>
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>User Button 3</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
+            <span style={{ fontWeight: 400, fontSize: '0.75rem', color: '#23272A', marginTop: 2, textAlign: 'left' }}>Subject</span> {/* Made Subject copy darker */}
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved circle up by an additional 10px */}
             <span style={{
               position: 'absolute',
               left: 0,
@@ -177,7 +180,7 @@ export default function CommunicationNavbar() {
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 17.28, top: 27.36, zIndex: 2, transform: 'translateY(-100%)' }}>
+            <span style={{ position: 'absolute', left: 17.28, top: 12.36, zIndex: 2, transform: 'translateY(-100%)' }}>
               <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
@@ -195,7 +198,7 @@ export default function CommunicationNavbar() {
             border: 'none',
             boxShadow: 'none',
             width: '170px', // Reduced from 210px to 170px
-            height: '60px',
+            height: '80px', // Increased height to accommodate the third row
             background: 'rgba(0,0,0,0.03)',
             display: 'flex',
             flexDirection: 'row',
@@ -210,8 +213,9 @@ export default function CommunicationNavbar() {
           <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '60px', marginTop: '10px' }}>
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>User Button 4</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
+            <span style={{ fontWeight: 400, fontSize: '0.75rem', color: '#23272A', marginTop: 2, textAlign: 'left' }}>Subject</span> {/* Made Subject copy darker */}
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved circle up by an additional 10px */}
             <span style={{
               position: 'absolute',
               left: 0,
@@ -223,7 +227,7 @@ export default function CommunicationNavbar() {
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 17.28, top: 27.36, zIndex: 2, transform: 'translateY(-100%)' }}>
+            <span style={{ position: 'absolute', left: 17.28, top: 12.36, zIndex: 2, transform: 'translateY(-100%)' }}>
               <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
@@ -241,7 +245,7 @@ export default function CommunicationNavbar() {
             border: 'none',
             boxShadow: 'none',
             width: '170px', // Reduced from 210px to 170px
-            height: '60px',
+            height: '80px', // Increased height to accommodate the third row
             background: 'rgba(0,0,0,0.03)',
             display: 'flex',
             flexDirection: 'row',
@@ -256,8 +260,9 @@ export default function CommunicationNavbar() {
           <span style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', height: '100%', alignSelf: 'center', marginLeft: '60px', marginTop: '10px' }}>
             <span style={{ fontWeight: 500, fontSize: '0.90rem', lineHeight: 1, textAlign: 'left' }}>User Button 5</span>
             <span style={{ fontWeight: 400, fontSize: '0.80rem', color: '#A0A0A0', marginTop: 2, textAlign: 'left' }}>Role</span>
+            <span style={{ fontWeight: 400, fontSize: '0.75rem', color: '#23272A', marginTop: 2, textAlign: 'left' }}>Subject</span> {/* Made Subject copy darker */}
           </span>
-          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-140px' }}>
+          <span style={{ position: 'relative', display: 'inline-block', width: 34.56, height: 34.56, marginLeft: '-88px', alignSelf: 'center', marginTop: '-175px' }}> {/* Moved circle up by an additional 10px */}
             <span style={{
               position: 'absolute',
               left: 0,
@@ -269,7 +274,7 @@ export default function CommunicationNavbar() {
               zIndex: 1,
               boxShadow: '0 0 2px #bbb'
             }} />
-            <span style={{ position: 'absolute', left: 17.28, top: 27.36, zIndex: 2, transform: 'translateY(-100%)' }}>
+            <span style={{ position: 'absolute', left: 17.28, top: 12.36, zIndex: 2, transform: 'translateY(-100%)' }}>
               <FontAwesomeIcon icon={faEnvelope} color="#23272A" style={{ fontSize: '0.864em' }} />
             </span>
           </span>
