@@ -2,75 +2,91 @@ import React from 'react';
 import { Box, Stack, Text } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faUser, faUsers, faLightbulb, faTasks, faMap, faHardHat, faPen, faDraftingCompass, faFile, faCalendar, faImage, faFolder, faDiagramProject, faListCheck, faChartPie
+  faUser, faUsers, faLightbulb, faTasks, faMap, faHardHat, faPen, faDraftingCompass, faFile, faCalendar, faImage, faFolder, faDiagramProject, faListCheck, faChartPie,
+  faUserTie, faFileAlt, faClock
 } from '@fortawesome/free-solid-svg-icons';
 
+// Separate combined items into individual line items with icons
 const navSubtitles = [
   [
-    'Users & Professionals',
+    'Users',
+    'Professionals',
     'Ideas',
     'Budgets',
-    'Calendar & Timelines'
+    'Calendar',
+    'Timelines'
   ], // Lightbulb
-    [
-      'Users & Professionals',
-      'Spaces',
-      'Photos',
-      'Files',
-      'Schedules & Specifications',
-      'Calendar & Timelines',
-      'Tasks'
-    ], // Tasks
-    [
-      'Worksheets',
-      'Presentation Sheets',
-      'Schedules & Specifications',
-      'Site Diagrams',
-      'Budgets',
-      'Project Files',
-      'Calendar & Timelines'
-    ], // Map
+  [
+    'Users',
+    'Professionals',
+    'Spaces',
+    'Photos',
+    'Files',
+    'Schedules',
+    'Specifications',
+    'Calendar',
+    'Timelines',
+    'Tasks'
+  ], // Tasks
+  [
+    'Worksheets',
+    'Presentation Sheets',
+    'Schedules',
+    'Specifications',
+    'Site Diagrams',
+    'Budgets',
+    'Project Files',
+    'Calendar',
+    'Timelines'
+  ], // Map
   ['New Project', 'Select Project', 'Import Project', 'Export Project'], // Alpaca
   [
-    'Users & Professionals',
+    'Users',
+    'Professionals',
     'Spaces',
     'Photos',
     'Project Files',
-    'Schedules & Specifications',
-    'Calendar & Timelines',
+    'Schedules',
+    'Specifications',
+    'Calendar',
+    'Timelines',
     'Tasks'
   ], // HardHat
   [
     'Worksheets',
     'Presentation Sheets',
-    'Schedules & Specifications',
+    'Schedules',
+    'Specifications',
     'Design Diagrams',
     'Budgets',
     'Project Files',
-    'Calendar & Timelines'
+    'Calendar',
+    'Timelines'
   ], // Pen
   [
     'Worksheets',
     'Presentation Sheets',
-    'Schedules & Specifications',
+    'Schedules',
+    'Specifications',
     'Budgets',
     'Project Files',
     'User Interface',
-    'Calendar & Timelines'
+    'Calendar',
+    'Timelines'
   ], // Compass
 ];
 
+const subtitleIcons = [
+  [faUser, faUsers, faLightbulb, faChartPie, faCalendar, faDiagramProject], // Lightbulb
+  [faUser, faUserTie, faDiagramProject, faImage, faFile, faListCheck, faFileAlt, faCalendar, faClock, faListCheck], // Tasks
+  [faFile, faFile, faListCheck, faFileAlt, faDiagramProject, faChartPie, faFolder, faCalendar, faClock], // Map
+  [faFile, faFile, faFile, faFile], // Alpaca
+  [faUser, faUserTie, faDiagramProject, faImage, faFolder, faListCheck, faFileAlt, faCalendar, faClock, faListCheck], // HardHat
+  [faFile, faFile, faListCheck, faFileAlt, faDiagramProject, faChartPie, faFolder, faCalendar, faClock], // Pen
+  [faFile, faFile, faListCheck, faFileAlt, faChartPie, faFolder, faUser, faCalendar, faClock], // Compass
+];
+
 export default function NestedNavbar({ activeService }) {
-  // Map subtitles to icons for each service
-  const subtitleIcons = [
-    [faUsers, faLightbulb, faChartPie, faCalendar], // Lightbulb
-    [faUsers, faDiagramProject, faImage, faFile, faListCheck, faCalendar, faListCheck], // Tasks (last item is now faListCheck)
-    [faFile, faFile, faListCheck, faDiagramProject, faChartPie, faFolder, faCalendar], // Map
-    [faFile, faFile, faFile, faFile], // Alpaca (generic file icon)
-    [faUsers, faDiagramProject, faImage, faFolder, faListCheck, faCalendar, faListCheck], // HardHat (last item is now faListCheck)
-    [faFile, faFile, faListCheck, faDiagramProject, faChartPie, faFolder, faCalendar], // Pen
-    [faFile, faFile, faListCheck, faChartPie, faFolder, faUser, faCalendar], // Compass
-  ];
   // Titles for each navigation button
   const sectionTitles = [
     'Ideas',        // Lightbulb
@@ -83,7 +99,7 @@ export default function NestedNavbar({ activeService }) {
   ];
 
   return (
-  <Box style={{ position: 'fixed', top: 270, right: 29, width: 260, minWidth: 180, maxWidth: 340, height: '310px', zIndex: 199, background: 'rgba(245,245,245,0.5)', borderRadius: 8, padding: 16 }}>
+  <Box style={{ position: 'fixed', top: 270, right: 29, width: 180, minWidth: 100, maxWidth: 260, height: '310px', zIndex: 199, background: 'rgba(245,245,245,0.5)', borderRadius: 8, padding: 16, overflowY: 'auto' }}>
       <Text
         fw={400}
         c="#23272A"
@@ -94,7 +110,7 @@ export default function NestedNavbar({ activeService }) {
           textTransform: 'uppercase',
           letterSpacing: 1,
           fontFamily: 'inherit',
-          whiteSpace: 'nowrap',
+          whiteSpace: 'normal',
           overflow: 'hidden',
           textOverflow: 'ellipsis',
           width: '100%'

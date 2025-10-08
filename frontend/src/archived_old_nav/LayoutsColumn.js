@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThLarge, faLaptop, faList, faEye, faDollarSign, faPaperclip, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { faThLarge, faLaptop, faList, faEye, faDollarSign, faPaperclip, faCalendarAlt, faUser, faUserTie, faCalendar, faClock, faListAlt, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
 function LayoutsColumn({ setActiveLayout }) {
   return (
@@ -16,8 +16,8 @@ function LayoutsColumn({ setActiveLayout }) {
       borderRadius: '8px',
       padding: '0.25rem 0.7rem',
       boxShadow: 'none',
-      minWidth: '60px',
-      maxWidth: '140px',
+      minWidth: '20px', // Reduced by 40px
+      maxWidth: '100px', // Reduced by 40px
       zIndex: 1000,
     }}>
       <div style={{width:'100%',display:'flex',justifyContent:'flex-start',marginBottom:'0.38rem'}}>
@@ -31,6 +31,12 @@ function LayoutsColumn({ setActiveLayout }) {
         <button style={{display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'}} onClick={() => setActiveLayout('Budgets')}><FontAwesomeIcon icon={faDollarSign} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} /><span style={{fontSize:'0.78rem', color: '#888'}}>Budgets</span></button>
         <button style={{display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'}} onClick={() => setActiveLayout('Project Files')}><FontAwesomeIcon icon={faPaperclip} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} /><span style={{fontSize:'0.78rem', color: '#888'}}>Project Files</span></button>
         <button style={{display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'}} onClick={() => setActiveLayout('Calendar & Timelines')}><FontAwesomeIcon icon={faCalendarAlt} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} /><span style={{fontSize:'0.78rem', color: '#888'}}>Calendar &amp; Timelines</span></button>
+        <button style={{display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'}} onClick={() => setActiveLayout('Users')}><FontAwesomeIcon icon={faUser} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} /><span style={{fontSize:'0.78rem', color: '#888'}}>Users</span></button>
+        <button style={{display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'}} onClick={() => setActiveLayout('Professionals')}><FontAwesomeIcon icon={faUserTie} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} /><span style={{fontSize:'0.78rem', color: '#888'}}>Professionals</span></button>
+        <button style={{display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'}} onClick={() => setActiveLayout('Calendar')}><FontAwesomeIcon icon={faCalendar} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} /><span style={{fontSize:'0.78rem', color: '#888'}}>Calendar</span></button>
+        <button style={{display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'}} onClick={() => setActiveLayout('Timelines')}><FontAwesomeIcon icon={faClock} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} /><span style={{fontSize:'0.78rem', color: '#888'}}>Timelines</span></button>
+        <button style={{display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'}} onClick={() => setActiveLayout('Schedules')}><FontAwesomeIcon icon={faListAlt} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} /><span style={{fontSize:'0.78rem', color: '#888'}}>Schedules</span></button>
+        <button style={{display: 'flex', alignItems: 'center', gap: '0.7rem', background: 'rgba(60,60,60,0)', color: '#888', border: 'none', borderRadius: '6px', padding: '0.32rem 0.5rem', fontSize: '0.78rem', cursor: 'pointer', boxShadow: 'none', whiteSpace: 'nowrap', minWidth: '0'}} onClick={() => setActiveLayout('Specifications')}><FontAwesomeIcon icon={faFileAlt} style={{fontSize:'1.09em', marginLeft: '-0.5rem', color: '#888'}} /><span style={{fontSize:'0.78rem', color: '#888'}}>Specifications</span></button>
       </div>
     </div>
   );
