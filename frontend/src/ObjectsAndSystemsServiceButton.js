@@ -34,7 +34,7 @@ export default function ObjectsAndSystemsServiceButton() {
           style={{
             position: 'fixed',
             left: 32,
-            bottom: 32, // Changed from -70 to 32 to align with the viewer
+            bottom: -68, // Adjusted to move the popup down by 100px
             minWidth: 245,
             width: '245px',
             minHeight: 830,
