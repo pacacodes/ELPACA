@@ -13,7 +13,7 @@ const communicationLinks = [
 
 export default function CommunicationNavbar() {
   return (
-  <Box className="communication-navbar-scroll" style={{ position: 'fixed', top: 630, right: 29, width: 260, minWidth: 180, maxWidth: 340, height: '270px', zIndex: 198, background: 'rgba(245,245,245,0.5)', borderRadius: 8, padding: 16, overflowY: 'auto' }}>
+  <Box className="communication-navbar-scroll" style={{ position: 'fixed', top: 630, right: 29, width: 180, minWidth: 180, maxWidth: 340, height: '270px', zIndex: 198, background: 'rgba(245,245,245,0.5)', borderRadius: 8, padding: 16, overflowY: 'auto' }}>
       <Text
         fw={400}
         c="#23272A"
@@ -56,7 +56,7 @@ export default function CommunicationNavbar() {
             color: '#23272A',
             border: 'none',
             boxShadow: 'none',
-            width: '250px',
+            width: '210px',
             height: '60px',
             background: 'rgba(0,0,0,0.03)',
             display: 'flex',
@@ -101,7 +101,7 @@ export default function CommunicationNavbar() {
             color: '#23272A',
             border: 'none',
             boxShadow: 'none',
-            width: '250px',
+            width: '210px',
             height: '60px',
             background: 'rgba(0,0,0,0.03)',
             display: 'flex',
@@ -146,7 +146,7 @@ export default function CommunicationNavbar() {
             color: '#23272A',
             border: 'none',
             boxShadow: 'none',
-            width: '250px',
+            width: '210px',
             height: '60px',
             background: 'rgba(0,0,0,0.03)',
             display: 'flex',
@@ -191,7 +191,7 @@ export default function CommunicationNavbar() {
             color: '#23272A',
             border: 'none',
             boxShadow: 'none',
-            width: '250px',
+            width: '210px',
             height: '60px',
             background: 'rgba(0,0,0,0.03)',
             display: 'flex',
@@ -236,7 +236,7 @@ export default function CommunicationNavbar() {
             color: '#23272A',
             border: 'none',
             boxShadow: 'none',
-            width: '250px',
+            width: '210px',
             height: '60px',
             background: 'rgba(0,0,0,0.03)',
             display: 'flex',

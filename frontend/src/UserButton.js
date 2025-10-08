@@ -14,7 +14,7 @@ export default function UserButton({ name, role }) {
         color: '#23272A',
         border: 'none',
         boxShadow: 'none',
-        width: '250px',
+        width: '210px', // Reduced from 250px to 210px
         height: '60px',
         background: 'rgba(0,0,0,0.03)',
         display: 'flex',
