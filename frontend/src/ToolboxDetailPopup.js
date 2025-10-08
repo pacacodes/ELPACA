@@ -25,6 +25,7 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
         background: 'rgba(245,245,245,0.5)',
         borderRadius: '8px',
         overflowY: 'auto',
+        pointerEvents: 'auto', // Ensure it does not block interactions with other elements
       }}
     >
       <Text

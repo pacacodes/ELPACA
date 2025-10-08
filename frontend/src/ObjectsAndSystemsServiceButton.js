@@ -34,7 +34,7 @@ export default function ObjectsAndSystemsServiceButton() {
           style={{
             position: 'fixed',
             left: 32,
-            bottom: -70,
+            bottom: 32, // Changed from -70 to 32 to align with the viewer
             minWidth: 245,
             width: '245px',
             minHeight: 830,

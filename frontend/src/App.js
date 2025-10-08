@@ -30,7 +30,7 @@ function App() {
   {/* PermaculturePopup removed/commented out */}
   {/* <PermaculturePopup /> */}
     <ObjectsAndSystemsServiceButton />
-  <AppShell.Main style={{ height: '100vh', overflow: 'hidden', padding: 0 }}>
+  <AppShell.Main style={{ height: '100vh', overflow: 'hidden', padding: 0, position: 'absolute', top: 0, left: 0, width: '100%' }}>
         {/* Render main content based on navigation/layout selection */}
         <BIMApp />
       </AppShell.Main>
