@@ -7,7 +7,7 @@ function CommunicationColumn() {
     <div style={{
       position: 'fixed',
       right: '4.1rem',
-      top: 'calc(2rem + 475px)',
+      top: 'calc(2rem + 435px)',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'flex-start',
@@ -18,6 +18,7 @@ function CommunicationColumn() {
       boxShadow: 'none',
       minWidth: '60px',
       maxWidth: '140px',
+      height: 'calc(100% - 40px)',
       zIndex: 1000,
     }}>
       <div style={{width:'100%',display:'flex',justifyContent:'flex-start',marginBottom:'0.38rem'}}>
