@@ -16,7 +16,7 @@ const sectionIcons = {
       <FontAwesomeIcon icon={faTree} style={{fontSize:'0.88em', marginLeft: '-0.6em', marginTop: '0.32em', color:'#fff'}} />
     </span>
   ),
-  'Shrub': <FontAwesomeIcon icon={faCloud} style={{color:'#4a4a4a'}} />, 
+  'Shrub': <FontAwesomeIcon icon={faCloud} style={{color:'#8FBC8F'}} />, 
   'Herbaceous': <FontAwesomeIcon icon={faLeaf} style={{color:'#4a4a4a'}} />, 
   'Ground Cover': <FontAwesomeIcon icon={faClover} style={{color:'#4a4a4a'}} />, 
   'Root Crop': <FontAwesomeIcon icon={faCarrot} style={{color:'#4a4a4a'}} />, 
