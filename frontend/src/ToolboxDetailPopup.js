@@ -12,7 +12,7 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
       style={{
         position: 'fixed',
         left: 32,
-        bottom: 95,
+        bottom: 90,
         minWidth: 345,
         width: '345px',
         minHeight: 830,

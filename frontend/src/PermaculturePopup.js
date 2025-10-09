@@ -128,7 +128,7 @@ function PermaculturePopup({
             borderRadius: '16px',
             boxShadow: '0 4px 24px rgba(0,0,0,0.18)',
             minWidth: '340px',
-            minHeight: '320px',
+            minHeight: '240px', // Reduced from 320px to 240px
             padding: '2rem',
             display: 'flex',
             flexDirection: 'column',
