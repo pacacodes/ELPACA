@@ -44,7 +44,7 @@ export default function ObjectsAndSystemsServiceButton() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            background: 'rgba(245,245,245,0.5)',
+            background: 'rgba(26, 26, 26, 0.9)', // Slightly transparent dark grey
             borderRadius: '8px',
             overflowY: 'auto',
             position: 'relative',
@@ -53,7 +53,7 @@ export default function ObjectsAndSystemsServiceButton() {
         >
           {/* Always show close button in top right */}
           <button
-            style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '1.5rem', cursor: 'pointer', zIndex: 2 }}
+            style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#ffffff', border: 'none', fontWeight: 500, fontSize: '1.5rem', cursor: 'pointer', zIndex: 2 }}
             aria-label="Close"
             onClick={() => setOpen(false)}
           >
@@ -62,7 +62,7 @@ export default function ObjectsAndSystemsServiceButton() {
           {/* Title */}
           <Text
             fw={400}
-            c="#23272A"
+            c="#ffffff" // Updated to white text
             style={{
               fontSize: '0.90rem',
               marginBottom: 18,

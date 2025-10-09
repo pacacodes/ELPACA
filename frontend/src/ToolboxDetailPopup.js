@@ -13,8 +13,8 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
         position: 'fixed',
         left: 32,
         bottom: 95,
-  minWidth: 345,
-  width: '345px',
+        minWidth: 345,
+        width: '345px',
         minHeight: 830,
         maxHeight: '830px',
         zIndex: 1202,
@@ -22,7 +22,7 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        background: 'rgba(245,245,245,0.5)',
+        background: 'rgba(26, 26, 26, 0.9)', // Slightly transparent dark grey
         borderRadius: '8px',
         overflowY: 'auto',
         pointerEvents: 'auto', // Ensure it does not block interactions with other elements
@@ -45,9 +45,7 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
           width: '100%',
           display: 'flex',
           alignItems: 'center',
-          background: 'transparent', /* Made background fully transparent */
-          padding: '12px 16px', /* Further increased padding for a larger background */
-          borderRadius: '4px'
+          color: '#ffffff', // White text
         }}
       >
         <span
@@ -61,7 +59,7 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
           TOOLBOX
         </span>
         <span style={{ color: '#bdbdbd', margin: '0 8px', fontWeight: 400 }}>|</span>
-        <span style={{ color: '#23272A', fontWeight: 400 }}>{subtitle || group}</span>
+        <span style={{ color: '#ffffff', fontWeight: 400 }}>{subtitle || group}</span>
       </Text>
   {/* Organic group layout example */}
   {group === 'Organic Objects' && <ToolboxDetailOrganicLayout />}
