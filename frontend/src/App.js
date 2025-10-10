@@ -7,7 +7,6 @@ import Layouts from './NestedNavbar';
 import CommunicationNavbar from './CommunicationNavbar';
 import ViewsSection from './ViewsSection';
 import ObjectsAndSystemsServiceButton from './ObjectsAndSystemsServiceButton';
-// import PermaculturePopup from './PermaculturePopup';
 import { AppShell } from '@mantine/core';
 import BIMApp from './bim/BIMApp';
 
@@ -27,8 +26,6 @@ function App() {
   <CommunicationNavbar />
   {/* Views section below Communication */}
   <ViewsSection />
-  {/* PermaculturePopup removed/commented out */}
-  {/* <PermaculturePopup /> */}
     <ObjectsAndSystemsServiceButton />
   <AppShell.Main style={{ height: '100vh', overflow: 'hidden', padding: 0, position: 'absolute', top: 0, left: 0, width: '100%' }}>
         {/* Render main content based on navigation/layout selection */}
