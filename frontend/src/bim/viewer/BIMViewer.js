@@ -9,8 +9,8 @@ import { OrbitControls, Grid, Environment } from '@react-three/drei';
  */
 export default function BIMViewer() {
   return (
-    <div style={{ width: '100%', height: '100%', minHeight: 400, background: '#fff' }}>
-      <Canvas camera={{ position: [10, 10, 10], fov: 45 }} shadows style={{ background: '#fff' }}>
+    <div style={{ width: '100%', height: '100%', minHeight: 400, background: '#fbfaf5' }}>
+      <Canvas camera={{ position: [10, 10, 10], fov: 45 }} shadows style={{ background: '#fbfaf5' }}>
         <ambientLight intensity={0.7} />
         <directionalLight position={[10, 20, 10]} intensity={1.2} castShadow />
         <Grid args={[100, 100]} cellColor="#e0e0e0" sectionColor="#cccccc" fadeDistance={40} />

@@ -8,7 +8,7 @@ export default function ViewsSection() {
   return (
     <>
       <Box style={{ height: '24px' }} />
-      <Box className="communication-navbar-scroll" style={{ position: 'fixed', top: 910, right: 29, width: 180, minWidth: 180, maxWidth: 340, height: '90px', zIndex: 197, background: 'rgba(245,245,245,0.5)', borderRadius: 8, padding: 16, overflowY: 'auto' }}>
+      <Box className="communication-navbar-scroll" style={{ position: 'fixed', top: 910, right: 29, width: 180, minWidth: 180, maxWidth: 340, height: '90px', zIndex: 197, background: 'rgba(246,244,241,0.6)', borderRadius: 8, padding: 16, overflowY: 'auto' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
           <Text
             fw={400}
