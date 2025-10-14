@@ -8,13 +8,13 @@ export default function SunSection() {
   const [opened, setOpened] = useState(true);
 
   return (
-    <div style={{ marginBottom: 24, backgroundColor: 'rgba(255, 255, 255, 0.02)', padding: '16px', borderRadius: '8px' }}>
+    <div style={{ marginBottom: 24, backgroundColor: 'rgba(255, 255, 255, 0.02)', padding: '16px', borderRadius: '8px', position: 'relative' }}>
       <Text fw={400} style={{ fontSize: '0.90rem', marginBottom: 12, textTransform: 'capitalize', letterSpacing: 1, fontFamily: 'inherit', color: '#ffffff' }}>Sun</Text>
       <ActionIcon
         onClick={() => setOpened((o) => !o)}
         style={{ position: 'absolute', top: 16, right: 16, background: 'none', border: 'none' }}
       >
-        {opened ? <IconMinus size={14} style={{ position: 'absolute', top: 16, right: 16, color: '#ffffff', zIndex: 10, cursor: 'pointer' }} /> : <IconPlus size={14} style={{ position: 'absolute', top: 16, right: 16, color: '#ffffff', zIndex: 10, cursor: 'pointer' }} />}
+        {opened ? <IconMinus size={14} style={{ color: '#ffffff', cursor: 'pointer' }} /> : <IconPlus size={14} style={{ color: '#ffffff', cursor: 'pointer' }} />}
       </ActionIcon>
       <Collapse in={opened}>
         <Grid gutter={16}>
