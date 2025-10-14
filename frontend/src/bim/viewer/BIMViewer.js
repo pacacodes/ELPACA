@@ -17,7 +17,7 @@ export default function BIMViewer() {
         {/* Simple Cube */}
         <mesh position={[0, 1, 0]} castShadow receiveShadow>
           <boxGeometry args={[2, 2, 2]} />
-          <meshStandardMaterial color="#1976d2" />
+          <meshStandardMaterial color="#ADD8E6" />
         </mesh>
         {/* IFC model(s) will be loaded here in future */}
         <OrbitControls makeDefault />
