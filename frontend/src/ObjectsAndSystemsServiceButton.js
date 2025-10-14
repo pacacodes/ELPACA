@@ -34,7 +34,7 @@ export default function ObjectsAndSystemsServiceButton() {
           style={{
             position: 'fixed',
             left: 32,
-            bottom: -10, // Adjusted to move the popup up by 20px
+            bottom: -80, // Adjusted to move the popup down by 200px
             minWidth: 245,
             width: '245px',
             minHeight: 830,

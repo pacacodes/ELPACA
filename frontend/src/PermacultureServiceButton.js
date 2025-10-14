@@ -14,7 +14,7 @@ export default function PermacultureServiceButton() {
         </ThemeIcon>
       </Card>
       {open && (
-  <Paper shadow="md" radius="md" style={{ position: 'fixed', left: 32, bottom: 120, minWidth: 340, minHeight: 630, zIndex: 1201, padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(245,245,245,0.5)', borderRadius: '8px' }}>
+  <Paper shadow="md" radius="md" style={{ position: 'fixed', left: 32, bottom: 20, minWidth: 340, minHeight: 630, zIndex: 1201, padding: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', background: 'rgba(245,245,245,0.5)', borderRadius: '8px' }}>
           <Text
             fw={400}
             c="#23272A"
