@@ -18,28 +18,22 @@ export default function SunSection() {
       </ActionIcon>
       <Collapse in={opened}>
         <Grid gutter={16}>
-          <Grid.Col span={4}>
-            <Card shadow="sm" padding="md" radius="md" withBorder style={{ alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
-              <Group position="apart" spacing={10} style={{ display: 'flex', alignItems: 'center' }}>
-                <FontAwesomeIcon icon={faSun} style={{ fontSize: '1.05em', color: '#ffffff' }} />
-                <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Full Sun</Text>
-              </Group>
+          <Grid.Col span={4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', paddingLeft: '23px' }}>
+            <Card shadow="sm" padding="md" radius="md" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+              <FontAwesomeIcon icon={faSun} style={{ fontSize: '1.05em', color: '#ffffff', marginRight: '10px' }} />
+              <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Full Sun</Text>
             </Card>
           </Grid.Col>
-          <Grid.Col span={4}>
-            <Card shadow="sm" padding="md" radius="md" withBorder style={{ alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
-              <Group position="apart" spacing={10} style={{ display: 'flex', alignItems: 'center' }}>
-                <FontAwesomeIcon icon={faCloudSun} style={{ fontSize: '1.5em', color: '#F4E285' }} />
-                <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Partial Sun</Text>
-              </Group>
+          <Grid.Col span={4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', paddingLeft: '20px' }}>
+            <Card shadow="sm" padding="md" radius="md" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+              <FontAwesomeIcon icon={faCloudSun} style={{ fontSize: '1.2em', color: '#F4E285', marginRight: '10px' }} />
+              <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Partial Sun</Text>
             </Card>
           </Grid.Col>
-          <Grid.Col span={4}>
-            <Card shadow="sm" padding="md" radius="md" withBorder style={{ alignItems: 'center', justifyContent: 'center', display: 'flex' }}>
-              <Group position="apart" spacing={10} style={{ display: 'flex', alignItems: 'center' }}>
-                <FontAwesomeIcon icon={faCloud} style={{ fontSize: '1.5em', color: '#B0C4DE' }} />
-                <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Shade</Text>
-              </Group>
+          <Grid.Col span={4} style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', paddingLeft: '20px' }}>
+            <Card shadow="sm" padding="md" radius="md" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+              <FontAwesomeIcon icon={faCloud} style={{ fontSize: '1.2em', color: '#B0C4DE', marginRight: '10px' }} />
+              <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Shade</Text>
             </Card>
           </Grid.Col>
         </Grid>
