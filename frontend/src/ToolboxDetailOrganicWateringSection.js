@@ -8,7 +8,7 @@ export default function WateringSection() {
   const [opened, setOpened] = useState(true);
 
   return (
-    <div style={{ marginBottom: 24, backgroundColor: 'rgba(255, 255, 255, 0.02)', padding: '16px', borderRadius: '8px', position: 'relative' }}>
+    <div style={{ marginBottom: 24, backgroundColor: 'rgba(255, 255, 255, 0.02)', padding: '16px', borderRadius: '8px', position: 'relative', width: 'calc(100% - 80px)' }}>
       <Text fw={400} style={{ fontSize: '0.90rem', marginBottom: 12, textTransform: 'capitalize', letterSpacing: 1, fontFamily: 'inherit', color: '#ffffff' }}>Watering</Text>
       <ActionIcon
         onClick={() => setOpened((o) => !o)}
