@@ -5,14 +5,14 @@ import { faSun, faCloudSun, faCloud } from '@fortawesome/free-solid-svg-icons';
 import { IconPlus, IconMinus } from '@tabler/icons-react';
 
 export default function SunSection() {
-  const [opened, setOpened] = useState(true);
+  const [opened, setOpened] = useState(false);
 
   return (
-    <div style={{ marginBottom: 24, backgroundColor: 'rgba(255, 255, 255, 0.02)', padding: '16px', borderRadius: '8px', position: 'relative', width: 'calc(100% - 80px)' }}>
+    <div style={{ marginBottom: 24, backgroundColor: 'rgba(255, 255, 255, 0.02)', padding: '16px', borderRadius: '8px', position: 'relative', width: 'calc(100% - 140px)', margin: '20px auto', overflow: 'auto', maxHeight: 'calc(100vh - 100px)' }}>
       <Text fw={400} style={{ fontSize: '0.90rem', marginBottom: 12, textTransform: 'capitalize', letterSpacing: 1, fontFamily: 'inherit', color: '#ffffff' }}>Sun</Text>
       <ActionIcon
         onClick={() => setOpened((o) => !o)}
-        style={{ position: 'absolute', top: 16, right: 16, background: 'none', border: 'none' }}
+        style={{ position: 'absolute', top: 26, right: 16, background: 'none', border: 'none' }}
       >
         {opened ? <IconMinus size={14} style={{ color: '#ffffff', cursor: 'pointer' }} /> : <IconPlus size={14} style={{ color: '#ffffff', cursor: 'pointer' }} />}
       </ActionIcon>
