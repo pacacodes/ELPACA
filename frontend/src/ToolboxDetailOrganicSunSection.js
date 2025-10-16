@@ -9,7 +9,10 @@ export default function SunSection() {
 
   return (
     <div style={{ marginBottom: 24, backgroundColor: 'rgba(255, 255, 255, 0.02)', padding: '16px', borderRadius: '8px', position: 'relative', width: 'calc(100% - 140px)', margin: '20px auto', overflow: 'auto', maxHeight: 'calc(100vh - 100px)' }}>
-      <Text fw={400} style={{ fontSize: '0.90rem', marginBottom: 12, textTransform: 'capitalize', letterSpacing: 1, fontFamily: 'inherit', color: '#ffffff' }}>Sun</Text>
+      <Text fw={400} style={{ fontSize: '0.90rem', marginBottom: 12, textTransform: 'capitalize', letterSpacing: 1, fontFamily: 'inherit', color: '#ffffff', display: 'flex', alignItems: 'center' }}>
+        <FontAwesomeIcon icon={faSun} style={{ fontSize: '1.32em', color: '#F4E285', marginRight: '8px' }} />
+        Sun
+      </Text>
       <ActionIcon
         onClick={() => setOpened((o) => !o)}
         style={{ position: 'absolute', top: 26, right: 16, background: 'none', border: 'none' }}
@@ -20,7 +23,7 @@ export default function SunSection() {
         <Grid gutter={16}>
           <Grid.Col span={4} style={{ paddingLeft: '20px' }}>
             <Card shadow="sm" padding="md" radius="lg" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-              <FontAwesomeIcon icon={faSun} style={{ fontSize: '1.05em', color: '#ffffff', marginRight: '10px' }} />
+              <FontAwesomeIcon icon={faSun} style={{ fontSize: '1.2em', color: '#F4E285', marginRight: '10px' }} />
               <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Full Sun</Text>
             </Card>
             <div style={{ marginTop: '-20px', marginBottom: '-20px', overflowX: 'auto', overflowY: 'hidden', maxHeight: '720px', width: '100%', maxWidth: '600px', padding: '-20px', borderRadius: '8px', display: 'flex', flexWrap: 'nowrap', justifyContent: 'flex-start', transform: 'translate(-20px, -20px)' }}>
@@ -36,7 +39,7 @@ export default function SunSection() {
           </Grid.Col>
           <Grid.Col span={4} style={{ paddingLeft: '20px' }}>
             <Card shadow="sm" padding="md" radius="lg" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-              <FontAwesomeIcon icon={faCloudSun} style={{ fontSize: '1.2em', color: '#F4E285', marginRight: '10px' }} />
+              <FontAwesomeIcon icon={faCloudSun} style={{ fontSize: '1.2em', color: 'rgba(244, 226, 133, 0.5)', marginRight: '10px' }} />
               <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Partial Sun</Text>
             </Card>
             <div style={{ marginTop: '-20px', marginBottom: '-20px', overflowX: 'auto', overflowY: 'hidden', maxHeight: '720px', width: '100%', maxWidth: '600px', padding: '-20px', borderRadius: '8px', display: 'flex', flexWrap: 'nowrap', justifyContent: 'flex-start', transform: 'translate(-20px, -20px)' }}>
