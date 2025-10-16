@@ -10,7 +10,7 @@ export default function WateringSection() {
   return (
     <div style={{ marginBottom: 24, backgroundColor: 'rgba(255, 255, 255, 0.02)', padding: '16px', borderRadius: '8px', position: 'relative', width: 'calc(100% - 140px)', margin: '20px auto' }}>
       <Text fw={400} style={{ fontSize: '0.90rem', marginBottom: 12, textTransform: 'capitalize', letterSpacing: 1, fontFamily: 'inherit', color: '#ffffff', display: 'flex', alignItems: 'center' }}>
-        <FontAwesomeIcon icon={faTint} style={{ fontSize: '1.32em', color: '#ffffff', marginRight: '8px' }} />
+        <FontAwesomeIcon icon={faTint} style={{ fontSize: '1.32em', color: '#4FC3F7', marginRight: '8px' }} />
         Watering
       </Text>
       <ActionIcon
@@ -23,8 +23,10 @@ export default function WateringSection() {
         <Grid gutter={16}>
           <Grid.Col span={4} style={{ paddingLeft: '20px' }}>
             <Card shadow="sm" padding="md" radius="lg" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-              <FontAwesomeIcon icon={faTint} style={{ fontSize: '1.2em', color: '#ffffff', marginRight: '10px' }} />
-              <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Low</Text>
+              <Group position="apart" spacing={10} style={{ display: 'flex', alignItems: 'center' }}>
+                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#4FC3F7' }} />
+                <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Low</Text>
+              </Group>
             </Card>
             <div style={{ marginTop: '-20px', marginBottom: '-20px', overflowX: 'auto', overflowY: 'hidden', maxHeight: '720px', width: '100%', maxWidth: '600px', padding: '-20px', borderRadius: '8px', display: 'flex', flexWrap: 'nowrap', justifyContent: 'flex-start', transform: 'translate(-20px, -20px)' }}>
               {Array.from({ length: 12 }).map((_, index) => (
@@ -39,8 +41,11 @@ export default function WateringSection() {
           </Grid.Col>
           <Grid.Col span={4} style={{ paddingLeft: '20px' }}>
             <Card shadow="sm" padding="md" radius="lg" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-              <FontAwesomeIcon icon={faWater} style={{ fontSize: '1.2em', color: '#ffffff', marginRight: '10px' }} />
-              <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Medium</Text>
+              <Group position="apart" spacing={10} style={{ display: 'flex', alignItems: 'center' }}>
+                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#0288D1' }} />
+                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#0288D1' }} />
+                <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Medium</Text>
+              </Group>
             </Card>
             <div style={{ marginTop: '-20px', marginBottom: '-20px', overflowX: 'auto', overflowY: 'hidden', maxHeight: '720px', width: '100%', maxWidth: '600px', padding: '-20px', borderRadius: '8px', display: 'flex', flexWrap: 'nowrap', justifyContent: 'flex-start', transform: 'translate(-20px, -20px)' }}>
               {Array.from({ length: 12 }).map((_, index) => (
@@ -55,8 +60,12 @@ export default function WateringSection() {
           </Grid.Col>
           <Grid.Col span={4} style={{ paddingLeft: '20px' }}>
             <Card shadow="sm" padding="md" radius="lg" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-              <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#ffffff', marginRight: '10px' }} />
-              <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>High</Text>
+              <Group position="apart" spacing={10} style={{ display: 'flex', alignItems: 'center' }}>
+                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#01579B' }} />
+                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#01579B' }} />
+                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#01579B' }} />
+                <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>High</Text>
+              </Group>
             </Card>
             <div style={{ marginTop: '-20px', marginBottom: '-20px', overflowX: 'auto', overflowY: 'hidden', maxHeight: '720px', width: '100%', maxWidth: '600px', padding: '-20px', borderRadius: '8px', display: 'flex', flexWrap: 'nowrap', justifyContent: 'flex-start', transform: 'translate(-20px, -20px)' }}>
               {Array.from({ length: 12 }).map((_, index) => (
