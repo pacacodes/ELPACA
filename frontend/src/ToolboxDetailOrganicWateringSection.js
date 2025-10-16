@@ -23,8 +23,8 @@ export default function WateringSection() {
         <Grid gutter={16}>
           <Grid.Col span={4} style={{ paddingLeft: '20px' }}>
             <Card shadow="sm" padding="md" radius="lg" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-              <Group position="apart" spacing={10} style={{ display: 'flex', alignItems: 'center' }}>
-                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#4FC3F7' }} />
+              <Group position="apart" spacing={8} style={{ display: 'flex', alignItems: 'center' }}>
+                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#4FC3F7', marginRight: '8px' }} />
                 <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Low</Text>
               </Group>
             </Card>
@@ -41,9 +41,9 @@ export default function WateringSection() {
           </Grid.Col>
           <Grid.Col span={4} style={{ paddingLeft: '20px' }}>
             <Card shadow="sm" padding="md" radius="lg" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-              <Group position="apart" spacing={10} style={{ display: 'flex', alignItems: 'center' }}>
-                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#0288D1' }} />
-                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#0288D1' }} />
+              <Group position="apart" spacing={8} style={{ display: 'flex', alignItems: 'center' }}>
+                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#0288D1', marginRight: '8px' }} />
+                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#0288D1', marginRight: '8px' }} />
                 <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Medium</Text>
               </Group>
             </Card>
@@ -60,10 +60,10 @@ export default function WateringSection() {
           </Grid.Col>
           <Grid.Col span={4} style={{ paddingLeft: '20px' }}>
             <Card shadow="sm" padding="md" radius="lg" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-              <Group position="apart" spacing={10} style={{ display: 'flex', alignItems: 'center' }}>
-                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#01579B' }} />
-                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#01579B' }} />
-                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#01579B' }} />
+              <Group position="apart" spacing={8} style={{ display: 'flex', alignItems: 'center' }}>
+                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#01579B', marginRight: '8px' }} />
+                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#01579B', marginRight: '8px' }} />
+                <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#01579B', marginRight: '8px' }} />
                 <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>High</Text>
               </Group>
             </Card>
