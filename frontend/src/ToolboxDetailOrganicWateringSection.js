@@ -26,18 +26,48 @@ export default function WateringSection() {
               <FontAwesomeIcon icon={faTint} style={{ fontSize: '1.2em', color: '#ffffff', marginRight: '10px' }} />
               <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Low</Text>
             </Card>
+            <div style={{ marginTop: '-20px', marginBottom: '-20px', overflowX: 'auto', overflowY: 'hidden', maxHeight: '720px', width: '100%', maxWidth: '600px', padding: '-20px', borderRadius: '8px', display: 'flex', flexWrap: 'nowrap', justifyContent: 'flex-start', transform: 'translate(-20px, -20px)' }}>
+              {Array.from({ length: 12 }).map((_, index) => (
+                <div key={index} style={{ flex: '0 0 calc(50% - 8px)', maxWidth: 'calc(50% - 8px)', display: 'flex', justifyContent: 'center', transform: 'rotate(90deg)', marginRight: '-40px' }}>
+                  <Card shadow="sm" padding={0} radius={8} withBorder style={{ backgroundColor: 'rgba(200, 200, 200, 0.4)', borderRadius: '8px', width: '140px', height: '220px', padding: '1px 1px 1px 1px' }}>
+                    <Text fw={500} style={{ fontSize: '0.85rem', marginBottom: 8 }}>Card Title {index + 1}</Text>
+                    <Text fw={400} style={{ fontSize: '0.75rem', color: '#666' }}>Card description goes here.</Text>
+                  </Card>
+                </div>
+              ))}
+            </div>
           </Grid.Col>
           <Grid.Col span={4} style={{ paddingLeft: '20px' }}>
             <Card shadow="sm" padding="md" radius="lg" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
               <FontAwesomeIcon icon={faWater} style={{ fontSize: '1.2em', color: '#ffffff', marginRight: '10px' }} />
               <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Medium</Text>
             </Card>
+            <div style={{ marginTop: '-20px', marginBottom: '-20px', overflowX: 'auto', overflowY: 'hidden', maxHeight: '720px', width: '100%', maxWidth: '600px', padding: '-20px', borderRadius: '8px', display: 'flex', flexWrap: 'nowrap', justifyContent: 'flex-start', transform: 'translate(-20px, -20px)' }}>
+              {Array.from({ length: 12 }).map((_, index) => (
+                <div key={index} style={{ flex: '0 0 calc(50% - 8px)', maxWidth: 'calc(50% - 8px)', display: 'flex', justifyContent: 'center', transform: 'rotate(90deg)', marginRight: '-40px' }}>
+                  <Card shadow="sm" padding={0} radius={8} withBorder style={{ backgroundColor: 'rgba(200, 200, 200, 0.4)', borderRadius: '8px', width: '140px', height: '220px', padding: '1px 1px 1px 1px' }}>
+                    <Text fw={500} style={{ fontSize: '0.85rem', marginBottom: 8 }}>Card Title {index + 1}</Text>
+                    <Text fw={400} style={{ fontSize: '0.75rem', color: '#666' }}>Card description goes here.</Text>
+                  </Card>
+                </div>
+              ))}
+            </div>
           </Grid.Col>
           <Grid.Col span={4} style={{ paddingLeft: '20px' }}>
             <Card shadow="sm" padding="md" radius="lg" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
               <FontAwesomeIcon icon={faDroplet} style={{ fontSize: '1.2em', color: '#ffffff', marginRight: '10px' }} />
               <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>High</Text>
             </Card>
+            <div style={{ marginTop: '-20px', marginBottom: '-20px', overflowX: 'auto', overflowY: 'hidden', maxHeight: '720px', width: '100%', maxWidth: '600px', padding: '-20px', borderRadius: '8px', display: 'flex', flexWrap: 'nowrap', justifyContent: 'flex-start', transform: 'translate(-20px, -20px)' }}>
+              {Array.from({ length: 12 }).map((_, index) => (
+                <div key={index} style={{ flex: '0 0 calc(50% - 8px)', maxWidth: 'calc(50% - 8px)', display: 'flex', justifyContent: 'center', transform: 'rotate(90deg)', marginRight: '-40px' }}>
+                  <Card shadow="sm" padding={0} radius={8} withBorder style={{ backgroundColor: 'rgba(200, 200, 200, 0.4)', borderRadius: '8px', width: '140px', height: '220px', padding: '1px 1px 1px 1px' }}>
+                    <Text fw={500} style={{ fontSize: '0.85rem', marginBottom: 8 }}>Card Title {index + 1}</Text>
+                    <Text fw={400} style={{ fontSize: '0.75rem', color: '#666' }}>Card description goes here.</Text>
+                  </Card>
+                </div>
+              ))}
+            </div>
           </Grid.Col>
         </Grid>
       </Collapse>
