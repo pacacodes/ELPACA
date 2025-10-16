@@ -27,13 +27,13 @@ export default function SoilTypeSection() {
               <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Sandy</Text>
             </Card>
           </Grid.Col>
-          <Grid.Col span={4}>
+          <Grid.Col span={4} style={{ paddingLeft: '20px' }}>
             <Card shadow="sm" padding="md" radius="lg" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
               <FontAwesomeIcon icon={faLeaf} style={{ fontSize: '1.2em', color: '#ffffff', marginRight: '10px' }} />
               <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Loamy</Text>
             </Card>
           </Grid.Col>
-          <Grid.Col span={4}>
+          <Grid.Col span={4} style={{ paddingLeft: '20px' }}>
             <Card shadow="sm" padding="md" radius="lg" withBorder style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
               <FontAwesomeIcon icon={faSeedling} style={{ fontSize: '1.2em', color: '#ffffff', marginRight: '10px' }} />
               <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Clay</Text>
