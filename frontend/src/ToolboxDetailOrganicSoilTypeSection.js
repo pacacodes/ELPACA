@@ -29,9 +29,11 @@ export default function SoilTypeSection() {
             <div style={{ marginTop: '5px', marginBottom: '-10px', overflowX: 'auto', overflowY: 'hidden', maxHeight: '720px', width: '100%', maxWidth: '620px', padding: '-20px', borderRadius: '8px', display: 'flex', flexWrap: 'nowrap', justifyContent: 'flex-start', transform: 'translate(-20px, -20px)' }}>
               {Array.from({ length: 12 }).map((_, index) => (
                 <div key={index} style={{ flex: '0 0 calc(50% - 8px)', maxWidth: 'calc(50% - 8px)', display: 'flex', justifyContent: 'center', transform: 'rotate(90deg)', marginRight: '-40px' }}>
-                  <Card shadow="sm" padding={0} radius={8} withBorder style={{ background: 'rgba(26, 26, 26, 0.15)', borderRadius: '8px', width: '160px', height: '230px', padding: '1px 1px 1px 1px' }}>
-                    <Text fw={500} style={{ fontSize: '0.85rem', marginBottom: 8 }}>Card Title {index + 1}</Text>
-                    <Text fw={400} style={{ fontSize: '0.75rem', color: '#666' }}>Card description goes here.</Text>
+                  <Card shadow="sm" padding={0} radius={8} withBorder style={{ background: 'rgba(26, 26, 26, 0.15)', borderRadius: '8px', width: '230px', height: '160px', padding: '1px 1px 1px 1px', position: 'relative', transform: 'rotate(270deg)' }}>
+                    <div style={{ position: 'absolute', bottom: '10px', left: '10px', textAlign: 'left' }}>
+                      <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit', marginBottom: 4 }}>Card Title</Text>
+                      <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Card description</Text>
+                    </div>
                   </Card>
                 </div>
               ))}
@@ -45,9 +47,11 @@ export default function SoilTypeSection() {
             <div style={{ marginTop: '5px', marginBottom: '-10px', overflowX: 'auto', overflowY: 'hidden', maxHeight: '720px', width: '100%', maxWidth: '620px', padding: '-20px', borderRadius: '8px', display: 'flex', flexWrap: 'nowrap', justifyContent: 'flex-start', transform: 'translate(-20px, -20px)' }}>
               {Array.from({ length: 12 }).map((_, index) => (
                 <div key={index} style={{ flex: '0 0 calc(50% - 8px)', maxWidth: 'calc(50% - 8px)', display: 'flex', justifyContent: 'center', transform: 'rotate(90deg)', marginRight: '-40px' }}>
-                  <Card shadow="sm" padding={0} radius={8} withBorder style={{ background: 'rgba(26, 26, 26, 0.15)', borderRadius: '8px', width: '160px', height: '230px', padding: '1px 1px 1px 1px' }}>
-                    <Text fw={500} style={{ fontSize: '0.85rem', marginBottom: 8 }}>Card Title {index + 1}</Text>
-                    <Text fw={400} style={{ fontSize: '0.75rem', color: '#666' }}>Card description goes here.</Text>
+                  <Card shadow="sm" padding={0} radius={8} withBorder style={{ background: 'rgba(26, 26, 26, 0.15)', borderRadius: '8px', width: '230px', height: '160px', padding: '1px 1px 1px 1px', position: 'relative', transform: 'rotate(270deg)' }}>
+                    <div style={{ position: 'absolute', bottom: '10px', left: '10px', textAlign: 'left' }}>
+                      <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit', marginBottom: 4 }}>Card Title</Text>
+                      <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Card description</Text>
+                    </div>
                   </Card>
                 </div>
               ))}
@@ -61,9 +65,11 @@ export default function SoilTypeSection() {
             <div style={{ marginTop: '5px', marginBottom: '-10px', overflowX: 'auto', overflowY: 'hidden', maxHeight: '720px', width: '100%', maxWidth: '620px', padding: '-20px', borderRadius: '8px', display: 'flex', flexWrap: 'nowrap', justifyContent: 'flex-start', transform: 'translate(-20px, -20px)' }}>
               {Array.from({ length: 12 }).map((_, index) => (
                 <div key={index} style={{ flex: '0 0 calc(50% - 8px)', maxWidth: 'calc(50% - 8px)', display: 'flex', justifyContent: 'center', transform: 'rotate(90deg)', marginRight: '-40px' }}>
-                  <Card shadow="sm" padding={0} radius={8} withBorder style={{ background: 'rgba(26, 26, 26, 0.15)', borderRadius: '8px', width: '160px', height: '230px', padding: '1px 1px 1px 1px' }}>
-                    <Text fw={500} style={{ fontSize: '0.85rem', marginBottom: 8 }}>Card Title {index + 1}</Text>
-                    <Text fw={400} style={{ fontSize: '0.75rem', color: '#666' }}>Card description goes here.</Text>
+                  <Card shadow="sm" padding={0} radius={8} withBorder style={{ background: 'rgba(26, 26, 26, 0.15)', borderRadius: '8px', width: '230px', height: '160px', padding: '1px 1px 1px 1px', position: 'relative', transform: 'rotate(270deg)' }}>
+                    <div style={{ position: 'absolute', bottom: '10px', left: '10px', textAlign: 'left' }}>
+                      <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit', marginBottom: 4 }}>Card Title</Text>
+                      <Text fw={400} style={{ fontSize: '0.90rem', color: '#ffffff', fontFamily: 'inherit' }}>Card description</Text>
+                    </div>
                   </Card>
                 </div>
               ))}
