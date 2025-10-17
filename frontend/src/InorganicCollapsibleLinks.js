@@ -1,7 +1,7 @@
 import React from 'react';
 import { Collapse, Group, Text, Box } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faGripHorizontal, faSquare, faMinus, faLayerGroup, faTh, faHome, faCircle, faShapes, faBorderAll, faStairs, faBars, faDoorOpen, faWindowMaximize, faSun, faCouch, faWrench, faBlender } from '@fortawesome/free-solid-svg-icons';
+import { faHouse, faGripHorizontal, faSquare, faMinus, faLayerGroup, faTh, faHome, faCircle, faShapes, faBorderAll, faStairs, faBars, faDoorOpen, faWindowMaximize, faSun, faCouch, faWrench, faBlender, faBolt, faCogs, faFaucet } from '@fortawesome/free-solid-svg-icons';
 import { faPagelines } from '@fortawesome/free-brands-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import ToolsCollapsibleLinks from './ToolsCollapsibleLinks';
@@ -49,8 +49,9 @@ export default function InorganicCollapsibleLinks(props) {
           <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Window')}><FontAwesomeIcon icon={faWindowMaximize} style={{marginRight:8, color:'#87CEEB'}}/>Window</Text>
           <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Skylight')}><FontAwesomeIcon icon={faSun} style={{marginRight:8, color:'#87CEEB'}}/>Skylight</Text>
           <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Furniture')}><FontAwesomeIcon icon={faCouch} style={{marginRight:8, color:'#87CEEB'}}/>Furniture</Text>
-          <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Fixtures')}><FontAwesomeIcon icon={faWrench} style={{marginRight:8, color:'#87CEEB'}}/>Fixtures</Text>
-          <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Appliances')}><FontAwesomeIcon icon={faBlender} style={{marginRight:8, color:'#87CEEB'}}/>Appliances</Text>
+          <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Electrical')}><FontAwesomeIcon icon={faBolt} style={{marginRight:8, color:'#87CEEB'}}/>Electrical</Text>
+          <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Mechanical')}><FontAwesomeIcon icon={faCogs} style={{marginRight:8, color:'#87CEEB'}}/>Mechanical</Text>
+          <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Plumbing')}><FontAwesomeIcon icon={faFaucet} style={{marginRight:8, color:'#87CEEB'}}/>Plumbing</Text>
         </Box>
       </Collapse>
     </Box>
