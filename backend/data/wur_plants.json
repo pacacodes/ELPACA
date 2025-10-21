@@ -1,137 +1,137 @@
 [
   {
-    "id": "sample_1",
+    "id": "1256",
     "name": "Quercus robur",
     "commonName": "English Oak",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1000/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1000/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1000",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1256/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1256/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1256/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   },
   {
-    "id": "sample_2",
+    "id": "1257",
     "name": "Acer platanoides",
     "commonName": "Norway Maple",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1001/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1001/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1001",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1257/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1257/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1257/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   },
   {
-    "id": "sample_3",
+    "id": "1258",
     "name": "Betula pendula",
     "commonName": "Silver Birch",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1002/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1002/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1002",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1258/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1258/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1258/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   },
   {
-    "id": "sample_4",
+    "id": "1259",
     "name": "Fagus sylvatica",
     "commonName": "European Beech",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1003/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1003/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1003",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1259/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1259/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1259/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   },
   {
-    "id": "sample_5",
+    "id": "1260",
     "name": "Pinus sylvestris",
     "commonName": "Scots Pine",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1004/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1004/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1004",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1260/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1260/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1260/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   },
   {
-    "id": "sample_6",
+    "id": "1261",
     "name": "Fraxinus excelsior",
     "commonName": "European Ash",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1005/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1005/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1005",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1261/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1261/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1261/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   },
   {
-    "id": "sample_7",
+    "id": "1262",
     "name": "Tilia cordata",
     "commonName": "Small-leaved Lime",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1006/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1006/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1006",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1262/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1262/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1262/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   },
   {
-    "id": "sample_8",
+    "id": "1263",
     "name": "Ulmus glabra",
     "commonName": "Wych Elm",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1007/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1007/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1007",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1263/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1263/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1263/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   },
   {
-    "id": "sample_9",
+    "id": "1264",
     "name": "Carpinus betulus",
     "commonName": "European Hornbeam",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1008/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1008/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1008",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1264/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1264/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1264/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   },
   {
-    "id": "sample_10",
+    "id": "1265",
     "name": "Alnus glutinosa",
     "commonName": "Common Alder",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1009/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1009/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1009",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1265/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1265/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1265/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   },
   {
-    "id": "sample_11",
+    "id": "1266",
     "name": "Castanea sativa",
     "commonName": "Sweet Chestnut",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1010/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1010/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1010",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1266/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1266/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1266/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   },
   {
-    "id": "sample_12",
+    "id": "1267",
     "name": "Populus tremula",
     "commonName": "Aspen",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1011/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1011/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1011",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1267/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1267/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1267/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   },
   {
-    "id": "sample_13",
+    "id": "1268",
     "name": "Salix alba",
     "commonName": "White Willow",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1012/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1012/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1012",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1268/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1268/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1268/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   },
   {
-    "id": "sample_14",
+    "id": "1269",
     "name": "Prunus avium",
     "commonName": "Wild Cherry",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1013/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1013/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1013",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1269/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1269/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1269/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   },
   {
-    "id": "sample_15",
+    "id": "1270",
     "name": "Sorbus aucuparia",
     "commonName": "Rowan",
-    "imageUrl": "https://images.wur.nl/digital/iiif/coll13/1014/full/!800,800/0/default.jpg",
-    "thumbnailUrl": "https://images.wur.nl/digital/iiif/coll13/1014/full/!200,200/0/default.jpg",
-    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1014",
-    "note": "Sample data - replace with actual scraper when website is accessible"
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1270/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1270/default.jpg",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1270/rec/1",
+    "note": "Sample data - URLs updated to use correct WUR API format"
   }
 ]

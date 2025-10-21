@@ -69,14 +69,14 @@ async function scrapePlantImages() {
         const name = match[2].trim();
         
         if (id && imageIds.has(id)) {
-          // Construct the image URL
-          const imageUrl = `https://images.wur.nl/digital/iiif/coll13/${id}/full/!800,800/0/default.jpg`;
+          // Construct the image URL using the correct WUR API format
+          const imageUrl = `https://images.wur.nl/digital/api/singleitem/image/coll13/${id}/default.jpg`;
           plants.push({
             id: id,
             name: name || `Plant ${id}`,
             imageUrl: imageUrl,
-            thumbnailUrl: `https://images.wur.nl/digital/iiif/coll13/${id}/full/!200,200/0/default.jpg`,
-            detailUrl: `https://images.wur.nl/digital/collection/coll13/id/${id}`
+            thumbnailUrl: `https://images.wur.nl/digital/api/singleitem/image/coll13/${id}/default.jpg`,
+            detailUrl: `https://images.wur.nl/digital/collection/coll13/id/${id}/rec/1`
           });
         }
       }
@@ -90,9 +90,9 @@ async function scrapePlantImages() {
           plants.push({
             id: id,
             name: `Plant Specimen ${id}`,
-            imageUrl: `https://images.wur.nl/digital/iiif/coll13/${id}/full/!800,800/0/default.jpg`,
-            thumbnailUrl: `https://images.wur.nl/digital/iiif/coll13/${id}/full/!200,200/0/default.jpg`,
-            detailUrl: `https://images.wur.nl/digital/collection/coll13/id/${id}`
+            imageUrl: `https://images.wur.nl/digital/api/singleitem/image/coll13/${id}/default.jpg`,
+            thumbnailUrl: `https://images.wur.nl/digital/api/singleitem/image/coll13/${id}/default.jpg`,
+            detailUrl: `https://images.wur.nl/digital/collection/coll13/id/${id}/rec/1`
           });
         }
       }
@@ -121,13 +121,13 @@ async function scrapePlantImages() {
       ];
       
       plants = samplePlants.map((plant, index) => ({
-        id: `sample_${index + 1}`,
+        id: `${1256 + index}`,
         name: plant.name,
         commonName: plant.commonName,
-        imageUrl: `https://images.wur.nl/digital/iiif/coll13/${1000 + index}/full/!800,800/0/default.jpg`,
-        thumbnailUrl: `https://images.wur.nl/digital/iiif/coll13/${1000 + index}/full/!200,200/0/default.jpg`,
-        detailUrl: `https://images.wur.nl/digital/collection/coll13/id/${1000 + index}`,
-        note: 'Sample data - replace with actual scraper when website is accessible'
+        imageUrl: `https://images.wur.nl/digital/api/singleitem/image/coll13/${1256 + index}/default.jpg`,
+        thumbnailUrl: `https://images.wur.nl/digital/api/singleitem/image/coll13/${1256 + index}/default.jpg`,
+        detailUrl: `https://images.wur.nl/digital/collection/coll13/id/${1256 + index}/rec/1`,
+        note: 'Sample data - URLs updated to use correct WUR API format'
       }));
     }
     
