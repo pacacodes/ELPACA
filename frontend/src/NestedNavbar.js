@@ -11,7 +11,7 @@ const navSubtitles = [
   [
     'Users',
     'Professionals',
-    'Ideas',
+    'Idea Boards',
     'Budgets',
     'Calendar',
     'Timelines'
@@ -39,7 +39,7 @@ const navSubtitles = [
     'Calendar',
     'Timelines'
   ], // Map
-  ['New Project', 'Select Project', 'Import Project', 'Export Project'], // Alpaca
+  ['Sample Project', 'New Project', 'Select Project', 'Import Project', 'Export Project'], // Alpaca
   [
     'Users',
     'Professionals',
