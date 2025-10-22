@@ -22,14 +22,15 @@ export default function CommunicationNavbar() {
       style={{
         position: 'fixed',
         top: isCollapsed
-          ? 34 + 280 + 10 + (sectionsState.nestedNavbar ? 0 : 200)
+          ? 34 + 280 + 10 + (sectionsState.nestedNavbar ? 60 : 0) // Add gap for collapsed sections
           : 550, // Ensure original position when expanded
+        height: isCollapsed ? 20 : 'auto', // Set height to 20px when collapsed
+        background: 'rgba(200,200,200,0.2)', // Keep some background when collapsed
         right: 19,
         width: 190,
         minWidth: 180,
         maxWidth: 340,
         zIndex: 198,
-        background: 'rgba(200,200,200,0.2)',
         borderRadius: 8,
         padding: 16
       }}

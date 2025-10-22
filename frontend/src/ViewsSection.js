@@ -17,14 +17,15 @@ export default function ViewsSection() {
         style={{
           position: 'fixed',
           top: isCollapsed
-            ? 34 + 280 + 10 + (sectionsState.nestedNavbar ? 0 : 200) + (sectionsState.communicationNavbar ? 0 : 200)
-            : 895, // Ensure original position when expanded
+            ? 34 + 280 + 10 + (sectionsState.nestedNavbar ? 60 : 0) + (sectionsState.communicationNavbar ? 60 : 0)
+            : 895,
+          height: isCollapsed ? 20 : 'auto', // Set height to 20px when collapsed
+          background: 'rgba(200,200,200,0.2)', // Keep some background when collapsed
           right: 19,
           width: 190,
           minWidth: 190,
           maxWidth: 340,
           zIndex: 197,
-          background: 'rgba(200,200,200,0.2)',
           borderRadius: 8,
           padding: 16,
         }}

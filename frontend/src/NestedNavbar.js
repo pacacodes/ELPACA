@@ -126,13 +126,14 @@ export default function NestedNavbar({ activeService }) {
     <Box
       style={{
         position: 'fixed',
-        top: isCollapsed ? 34 + 280 + 10 : 270, // Ensure original position when expanded
+        top: isCollapsed ? 34 + 280 + 10 : 270,
+        height: isCollapsed ? 20 : 'auto', // Set height to 20px when collapsed
+        background: 'rgba(200,200,200,0.2)', // Keep some background when collapsed
         right: 19,
         width: 190,
         minWidth: 100,
         maxWidth: 260,
         zIndex: 199,
-        background: 'rgba(200,200,200,0.2)',
         borderRadius: 8,
         padding: 16
       }}
