@@ -3,7 +3,7 @@ import { Box, Stack, Text } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faUser, faUsers, faLightbulb, faTasks, faMap, faHardHat, faPen, faDraftingCompass, faFile, faCalendar, faImage, faFolder, faDiagramProject, faListCheck, faChartPie,
-  faUserTie, faFileAlt, faClock
+  faUserTie, faFileAlt, faClock, faFileContract
 } from '@fortawesome/free-solid-svg-icons';
 
 // Separate combined items into individual line items with icons
@@ -45,6 +45,7 @@ const navSubtitles = [
     'Professionals',
     'Spaces',
     'Photos',
+    'Permits', // Added Permits
     'Project Files',
     'Schedules',
     'Specifications',
@@ -69,11 +70,25 @@ const navSubtitles = [
     'Schedules',
     'Specifications',
     'Budgets',
+    'Permits', // Added Permits
     'Project Files',
     'User Interface',
     'Calendar',
-    'Timelines'
+    'Timelines',
   ], // Compass
+  [
+    'Users',
+    'Professionals',
+    'Spaces',
+    'Photos',
+    'Project Files',
+    'Schedules',
+    'Specifications',
+    'Calendar',
+    'Timelines',
+    'Tasks',
+    'Permits' // Added Permits
+  ], // HardHat
 ];
 
 const subtitleIcons = [
@@ -83,7 +98,12 @@ const subtitleIcons = [
   [faFile, faFile, faFile, faFile], // Alpaca
   [faUser, faUserTie, faDiagramProject, faImage, faFolder, faListCheck, faFileAlt, faCalendar, faClock, faListCheck], // HardHat
   [faFile, faFile, faListCheck, faFileAlt, faDiagramProject, faChartPie, faFolder, faCalendar, faClock], // Pen
-  [faFile, faFile, faListCheck, faFileAlt, faChartPie, faFolder, faUser, faCalendar, faClock], // Compass
+  [
+    faFile, faFile, faListCheck, faFileAlt, faChartPie, faFolder, faUser, faCalendar, faClock, faFileContract // Added icon for Permits
+  ], // Compass
+  [
+    faUser, faUserTie, faDiagramProject, faImage, faFolder, faListCheck, faFileAlt, faCalendar, faClock, faListCheck, faFileContract // Added icon for Permits
+  ], // HardHat
 ];
 
 export default function NestedNavbar({ activeService }) {
