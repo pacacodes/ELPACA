@@ -10,6 +10,7 @@ import ToolboxServiceButton from './ToolboxServiceButton';
 import { AppShell } from '@mantine/core';
 import BIMApp from './bim/BIMApp';
 import { SectionProvider } from './SectionContext';
+import AIChatBotSection from './AIChatBotSection';
 
 function App() {
   const [activeService, setActiveService] = useState(0);
@@ -28,6 +29,8 @@ function App() {
         <CommunicationNavbar />
         {/* Views section below Communication */}
         <ViewsSection />
+        {/* AI Chat Bot section below Views */}
+        <AIChatBotSection />
         <ToolboxServiceButton />
         <AppShell.Main style={{ height: '100vh', overflow: 'hidden', padding: 0, position: 'absolute', top: 0, left: 0, width: '100%' }}>
           {/* Render main content based on navigation/layout selection */}

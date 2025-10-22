@@ -7,6 +7,7 @@ export const SectionProvider = ({ children }) => {
     nestedNavbar: false,
     communicationNavbar: false,
     viewsSection: false,
+    aiChatBotSection: false, // Added AI Chat Bot section state
   });
 
   const toggleSection = (section) => {
