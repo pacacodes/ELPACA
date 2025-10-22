@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Stack, Text } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faUser, faUsers, faLightbulb, faTasks, faMap, faHardHat, faPen, faDraftingCompass, faFile, faCalendar, faImage, faFolder, faDiagramProject, faListCheck, faChartPie,
-  faUserTie, faFileAlt, faClock, faFileContract
+  faUserTie, faFileAlt, faClock, faFileContract, faPlus, faMinus
 } from '@fortawesome/free-solid-svg-icons';
 
 // Separate combined items into individual line items with icons
@@ -107,6 +107,8 @@ const subtitleIcons = [
 ];
 
 export default function NestedNavbar({ activeService }) {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
   // Titles for each navigation button
   const sectionTitles = [
     'Ideas',        // Lightbulb
@@ -119,33 +121,54 @@ export default function NestedNavbar({ activeService }) {
   ];
 
   return (
-  <Box style={{ position: 'fixed', top: 270, right: 29, width: 180, minWidth: 100, maxWidth: 260, height: '270px', zIndex: 199, background: 'rgba(200,200,200,0.2)', borderRadius: 8, padding: 16, overflowY: 'auto' }}>
+    <Box
+      style={{
+        position: 'fixed',
+        top: isCollapsed ? 270 : 255, // Adjusted to shift up or down based on collapsed state
+        right: 19,
+        width: 190,
+        minWidth: 100,
+        maxWidth: 260,
+        zIndex: 199,
+        background: 'rgba(200,200,200,0.2)',
+        borderRadius: 8,
+        padding: 16
+      }}
+    >
       <Text
         fw={400}
         c="#23272A"
         style={{
           fontSize: '0.90rem',
           marginBottom: 18,
-          marginLeft: 10,
+          marginLeft: 0, // Adjusted from 10px to 0 to move left
           textTransform: 'uppercase',
           letterSpacing: 1,
           fontFamily: 'inherit',
           whiteSpace: 'normal',
           overflow: 'hidden',
           textOverflow: 'ellipsis',
-          width: '100%'
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          cursor: 'pointer',
         }}
+        onClick={() => setIsCollapsed(!isCollapsed)}
       >
         {sectionTitles[activeService]}
+        <FontAwesomeIcon icon={isCollapsed ? faPlus : faMinus} style={{ fontSize: '0.8rem', marginLeft: '-30px' }} />
       </Text>
-  <Stack gap={12} style={{ marginTop: 28 }}>
-        {navSubtitles[activeService].map((subtitle, idx) => (
-          <Text key={subtitle} fw={400} c="#23272A" style={{ fontSize: '0.90rem', display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'inherit', marginLeft: 10 }}>
-            <FontAwesomeIcon icon={subtitleIcons[activeService][idx] || faFile} style={{ marginRight: 6 }} />
-            {subtitle}
-          </Text>
-        ))}
-      </Stack>
+      {!isCollapsed && (
+        <Stack gap={12} style={{ marginTop: 28 }}>
+          {navSubtitles[activeService].map((subtitle, idx) => (
+            <Text key={subtitle} fw={400} c="#23272A" style={{ fontSize: '0.90rem', display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'inherit', marginLeft: 10 }}>
+              <FontAwesomeIcon icon={subtitleIcons[activeService][idx] || faFile} style={{ marginRight: 6 }} />
+              {subtitle}
+            </Text>
+          ))}
+        </Stack>
+      )}
     </Box>
   );
 }

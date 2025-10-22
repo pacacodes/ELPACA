@@ -1,7 +1,7 @@
 import React from 'react';
 import { Collapse, Group, Text, Box } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencilAlt, faPenNib, faHighlighter, faMarker, faDrawPolygon, faEraser, faRuler, faPen } from '@fortawesome/free-solid-svg-icons';
+import { faPencilAlt, faPenNib, faHighlighter, faMarker, faDrawPolygon, faEraser, faRuler, faPen, faRobot } from '@fortawesome/free-solid-svg-icons';
 import { faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
@@ -30,7 +30,9 @@ export default function DiagramToolsCollapsibleLinks(props) {
       <FontAwesomeIcon icon={opened ? faMinus : faPlus} style={{ color: '#ffffff', fontSize: '0.7em', position: 'relative', top: '-32px', right: '-220px' }} />
       <Collapse in={opened} transitionDuration={200}>
         <Box style={{ padding: '12px 0' }}>
-          <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Pen')}><FontAwesomeIcon icon={faPen} style={{ color: '#FFD700', marginRight:8 }}/>Pen</Text>
+          {/* AI generation actions */}
+          <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('AI Sketch')}><FontAwesomeIcon icon={faRobot} style={{ color: '#FFD700', marginRight:8 }}/>AI Sketch</Text>
+          <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('AI Diagram')}><FontAwesomeIcon icon={faRobot} style={{ color: '#FFD700', marginRight:8 }}/>AI Diagram</Text>
           <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Pencil')}><FontAwesomeIcon icon={faPencilAlt} style={{ color: '#FFD700', marginRight:8 }}/>Pencil</Text>
           <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Marker')}><FontAwesomeIcon icon={faMarker} style={{ color: '#FFD700', marginRight:8 }}/>Marker</Text>
           <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Drafting Pen')}><FontAwesomeIcon icon={faPenNib} style={{ color: '#FFD700', marginRight:8 }}/>Drafting Pen</Text>
