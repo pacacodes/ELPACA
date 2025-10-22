@@ -1,12 +1,15 @@
-import React from 'react';
-import { Grid, Card, Text, Group } from '@mantine/core';
+import React, { useState } from 'react';
+import { Grid, Card, Text, Group, Button } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTree } from '@fortawesome/free-solid-svg-icons';
+import { faTree, faImages } from '@fortawesome/free-solid-svg-icons';
 import SunSection from './ToolboxDetailOrganicSunSection';
 import WateringSection from './ToolboxDetailOrganicWateringSection';
 import SoilTypeSection from './ToolboxDetailOrganicSoilTypeSection';
+import WURPlantBrowser from './WURPlantBrowser';
 
 export default function ToolboxDetailOrganicLayout() {
+  const [browserOpened, setBrowserOpened] = useState(false);
+
   return (
     <div style={{ width: 'calc(100% + 100px)', marginTop: 16, display: 'flex', flexDirection: 'column', alignItems: 'center' }}> {/* Centered content */}
       <div style={{ marginBottom: 16, padding: 8, background: 'rgba(255, 255, 255, 0.05)', borderRadius: 8, maxWidth: 'calc(80% - 100px)', wordWrap: 'break-word', overflowWrap: 'break-word', textAlign: 'center' }}> {/* Centered text box */}
@@ -18,9 +21,35 @@ export default function ToolboxDetailOrganicLayout() {
           Canopy refers to the upper layer of vegetation in a forest, formed by mature tree crowns.
         </Text>
       </div>
+      
+      {/* Temporary button to browse WUR plant images */}
+      <div style={{ marginBottom: 16, width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <Button
+          leftIcon={<FontAwesomeIcon icon={faImages} />}
+          onClick={() => setBrowserOpened(true)}
+          variant="light"
+          color="cyan"
+          size="sm"
+          styles={{
+            root: {
+              backgroundColor: 'rgba(0, 206, 209, 0.1)',
+              border: '1px solid rgba(0, 206, 209, 0.3)',
+              '&:hover': {
+                backgroundColor: 'rgba(0, 206, 209, 0.2)',
+              },
+            },
+          }}
+        >
+          Browse WUR Plant Images
+        </Button>
+      </div>
+
       <SunSection style={{ width: 'calc(100% + 100px)' }} /> {/* Increased section width by 100px */}
       <WateringSection style={{ width: 'calc(100% + 100px)' }} /> {/* Increased section width by 100px */}
       <SoilTypeSection style={{ width: 'calc(100% + 100px)' }} /> {/* Increased section width by 100px */}
+      
+      {/* WUR Plant Browser Modal */}
+      <WURPlantBrowser opened={browserOpened} onClose={() => setBrowserOpened(false)} />
     </div>
   );
 }

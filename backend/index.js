@@ -284,6 +284,27 @@ app.post('/api/native-plants', async (req, res) => {
 });
 
 
+// API: Get WUR plant images (GET /api/wur-plants)
+app.get('/api/wur-plants', async (req, res) => {
+  try {
+    const plants = await readJsonFromFile('wur_plants.json');
+    res.json(plants);
+  } catch (err) {
+    res.status(404).json({ error: 'WUR plant data not found', details: err.message });
+  }
+});
+
+// API: Trigger scraper to update WUR plant data (POST /api/wur-plants/scrape)
+app.post('/api/wur-plants/scrape', async (req, res) => {
+  try {
+    const { scrapePlantImages } = require('./scraper');
+    const plants = await scrapePlantImages();
+    res.json({ success: true, count: plants.length, plants });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to scrape plant images', details: err.message });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Backend server running on port ${PORT}`);
 });
