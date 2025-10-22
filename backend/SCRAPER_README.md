@@ -1,7 +1,7 @@
 # WUR Plant Image Scraper
 
 ## Overview
-This scraper fetches plant images and names from the Wageningen University & Research (WUR) Digital Collections at https://images.wur.nl/digital/collection/coll13/search.
+This scraper fetches plant images and names from the Wageningen University & Research (WUR) Digital Collections at https://images.wur.nl/digital/collection/coll13/search. The scraper uses Puppeteer to navigate the React-based CONTENTdm interface and extract plant data, including automatic categorization into permaculture layers.
 
 ## Files
 
@@ -67,11 +67,14 @@ npm start
 ```
 
 ## Features
-- **Automatic Fallback**: When the WUR website is not accessible, generates sample data
-- **Structured JSON Output**: Saves plant data with IDs, names, image URLs, and detail links
+- **Puppeteer-Based Scraping**: Uses headless Chrome to navigate and extract data from React SPA
+- **Permaculture Layer Categorization**: Automatically categorizes plants into layers (canopy, understory, shrub, herbaceous, groundcover)
+- **Intelligent Fallback**: When the WUR website is not accessible, generates sample data with proper structure
+- **Structured JSON Output**: Saves plant data with IDs, names, image URLs, detail links, and permaculture layers
 - **Frontend Integration**: Modal component displays plant images in a grid layout
-- **Re-scrape Functionality**: Button in UI to trigger fresh data fetch
+- **Re-scrape Functionality**: Button in UI to trigger fresh data fetch via API
 - **Responsive Design**: Grid adapts to screen size with hover effects
+- **Timestamped Records**: Each plant record includes a scrapedAt timestamp
 
 ## Sample Data
 The scraper includes 15 sample plants when the WUR website is not accessible:
@@ -97,9 +100,25 @@ The scraper includes 15 sample plants when the WUR website is not accessible:
 - Images are served via IIIF (International Image Interoperability Framework)
 - Each plant card in the UI is clickable and links to the WUR detail page
 
+## Permaculture Layer Categorization
+The scraper automatically categorizes plants into permaculture layers based on botanical name patterns:
+- **Canopy**: Large trees (9m+) - Oak, Maple, Beech, Ash, Pine, etc.
+- **Understory**: Small trees (3-9m) - Cherry, Plum, Rowan, Hawthorn, etc.
+- **Shrub**: Woody plants (1-3m) - Currant, Rose, Raspberry, Elder, etc.
+- **Herbaceous**: Non-woody plants, grasses, and general vegetation
+- **Groundcover**: Low-growing spreading plants - Strawberry, Thyme, Sedum, etc.
+
+## Technical Details
+- **Browser**: Uses system Chromium/Chrome via Puppeteer
+- **Timeout**: 60s for page load, 30s for content rendering
+- **Selectors**: Multiple fallback selectors for CONTENTdm structure
+- **Error Handling**: Graceful fallback to sample data on network errors
+- **Export**: Both module export and CLI execution modes
+
 ## Future Improvements
-- Add more sophisticated HTML parsing when website becomes accessible
-- Implement pagination for large datasets
+- Add pagination support for scraping multiple pages
+- Enhance layer categorization with ML-based classification
 - Add filtering and search capabilities in the UI
 - Cache images locally to reduce external requests
-- Add plant metadata (family, height, growing conditions)
+- Extract additional plant metadata (family, height, growing conditions)
+- Implement incremental updates (only fetch new plants)

@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "id": "sample_1",
+    "name": "Quercus robur (English Oak)",
+    "layer": "canopy",
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1000/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1000/default.jpg?height=200",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1000",
+    "source": "WUR Root System Drawings (Sample)",
+    "scrapedAt": "2025-10-22T18:23:05.951Z"
+  },
+  {
+    "id": "sample_2",
+    "name": "Acer platanoides (Norway Maple)",
+    "layer": "canopy",
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1001/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1001/default.jpg?height=200",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1001",
+    "source": "WUR Root System Drawings (Sample)",
+    "scrapedAt": "2025-10-22T18:23:05.952Z"
+  },
+  {
+    "id": "sample_3",
+    "name": "Fagus sylvatica (European Beech)",
+    "layer": "canopy",
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1002/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1002/default.jpg?height=200",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1002",
+    "source": "WUR Root System Drawings (Sample)",
+    "scrapedAt": "2025-10-22T18:23:05.952Z"
+  },
+  {
+    "id": "sample_4",
+    "name": "Prunus avium (Wild Cherry)",
+    "layer": "understory",
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1003/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1003/default.jpg?height=200",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1003",
+    "source": "WUR Root System Drawings (Sample)",
+    "scrapedAt": "2025-10-22T18:23:05.952Z"
+  },
+  {
+    "id": "sample_5",
+    "name": "Sorbus aucuparia (Rowan)",
+    "layer": "understory",
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1004/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1004/default.jpg?height=200",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1004",
+    "source": "WUR Root System Drawings (Sample)",
+    "scrapedAt": "2025-10-22T18:23:05.952Z"
+  },
+  {
+    "id": "sample_6",
+    "name": "Corylus avellana (Hazel)",
+    "layer": "shrub",
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1005/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1005/default.jpg?height=200",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1005",
+    "source": "WUR Root System Drawings (Sample)",
+    "scrapedAt": "2025-10-22T18:23:05.952Z"
+  },
+  {
+    "id": "sample_7",
+    "name": "Sambucus nigra (Elder)",
+    "layer": "shrub",
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1006/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1006/default.jpg?height=200",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1006",
+    "source": "WUR Root System Drawings (Sample)",
+    "scrapedAt": "2025-10-22T18:23:05.952Z"
+  },
+  {
+    "id": "sample_8",
+    "name": "Triticum aestivum (Wheat)",
+    "layer": "herbaceous",
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1007/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1007/default.jpg?height=200",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1007",
+    "source": "WUR Root System Drawings (Sample)",
+    "scrapedAt": "2025-10-22T18:23:05.952Z"
+  },
+  {
+    "id": "sample_9",
+    "name": "Avena sativa (Oats)",
+    "layer": "herbaceous",
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1008/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1008/default.jpg?height=200",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1008",
+    "source": "WUR Root System Drawings (Sample)",
+    "scrapedAt": "2025-10-22T18:23:05.952Z"
+  },
+  {
+    "id": "sample_10",
+    "name": "Fragaria vesca (Wild Strawberry)",
+    "layer": "groundcover",
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1009/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1009/default.jpg?height=200",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1009",
+    "source": "WUR Root System Drawings (Sample)",
+    "scrapedAt": "2025-10-22T18:23:05.952Z"
+  },
+  {
+    "id": "sample_11",
+    "name": "Thymus vulgaris (Common Thyme)",
+    "layer": "groundcover",
+    "imageUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1010/default.jpg",
+    "thumbnailUrl": "https://images.wur.nl/digital/api/singleitem/image/coll13/1010/default.jpg?height=200",
+    "detailUrl": "https://images.wur.nl/digital/collection/coll13/id/1010",
+    "source": "WUR Root System Drawings (Sample)",
+    "scrapedAt": "2025-10-22T18:23:05.952Z"
+  }
+]
