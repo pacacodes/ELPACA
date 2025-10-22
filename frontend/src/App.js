@@ -9,29 +9,32 @@ import ViewsSection from './ViewsSection';
 import ToolboxServiceButton from './ToolboxServiceButton';
 import { AppShell } from '@mantine/core';
 import BIMApp from './bim/BIMApp';
+import { SectionProvider } from './SectionContext';
 
 function App() {
   const [activeService, setActiveService] = useState(0);
 
   return (
-    <AppShell
-      layout="default"
-      style={{ height: '100vh', overflow: 'hidden' }}
-    >
-      {/* Main Navigation (Service Card) */}
-      <MainNavigation activeService={activeService} setActiveService={setActiveService} />
-  {/* Layouts (Nested Navbar) below MainNavigation */}
-  <Layouts activeService={activeService} />
-  {/* Communication section below Layouts */}
-  <CommunicationNavbar />
-  {/* Views section below Communication */}
-  <ViewsSection />
-    <ToolboxServiceButton />
-  <AppShell.Main style={{ height: '100vh', overflow: 'hidden', padding: 0, position: 'absolute', top: 0, left: 0, width: '100%' }}>
-        {/* Render main content based on navigation/layout selection */}
-        <BIMApp />
-      </AppShell.Main>
-    </AppShell>
+    <SectionProvider>
+      <AppShell
+        layout="default"
+        style={{ height: '100vh', overflow: 'hidden' }}
+      >
+        {/* Main Navigation (Service Card) */}
+        <MainNavigation activeService={activeService} setActiveService={setActiveService} />
+        {/* Layouts (Nested Navbar) below MainNavigation */}
+        <Layouts activeService={activeService} />
+        {/* Communication section below Layouts */}
+        <CommunicationNavbar />
+        {/* Views section below Communication */}
+        <ViewsSection />
+        <ToolboxServiceButton />
+        <AppShell.Main style={{ height: '100vh', overflow: 'hidden', padding: 0, position: 'absolute', top: 0, left: 0, width: '100%' }}>
+          {/* Render main content based on navigation/layout selection */}
+          <BIMApp />
+        </AppShell.Main>
+      </AppShell>
+    </SectionProvider>
   );
 }
 

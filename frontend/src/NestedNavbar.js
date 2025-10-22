@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Box, Stack, Text } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faUser, faUsers, faLightbulb, faTasks, faMap, faHardHat, faPen, faDraftingCompass, faFile, faCalendar, faImage, faFolder, faDiagramProject, faListCheck, faChartPie,
   faUserTie, faFileAlt, faClock, faFileContract, faPlus, faMinus
 } from '@fortawesome/free-solid-svg-icons';
+import { SectionContext } from './SectionContext';
 
 // Separate combined items into individual line items with icons
 const navSubtitles = [
@@ -107,7 +108,8 @@ const subtitleIcons = [
 ];
 
 export default function NestedNavbar({ activeService }) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const { sectionsState, toggleSection } = useContext(SectionContext);
+  const isCollapsed = sectionsState.nestedNavbar;
 
   // Titles for each navigation button
   const sectionTitles = [
@@ -124,7 +126,7 @@ export default function NestedNavbar({ activeService }) {
     <Box
       style={{
         position: 'fixed',
-        top: isCollapsed ? 270 : 255, // Adjusted to shift up or down based on collapsed state
+        top: isCollapsed ? 34 + 280 + 10 : 270, // Ensure original position when expanded
         right: 19,
         width: 190,
         minWidth: 100,
@@ -154,7 +156,7 @@ export default function NestedNavbar({ activeService }) {
           alignItems: 'center',
           cursor: 'pointer',
         }}
-        onClick={() => setIsCollapsed(!isCollapsed)}
+        onClick={() => toggleSection('nestedNavbar')}
       >
         {sectionTitles[activeService]}
         <FontAwesomeIcon icon={isCollapsed ? faPlus : faMinus} style={{ fontSize: '0.8rem', marginLeft: '-30px' }} />

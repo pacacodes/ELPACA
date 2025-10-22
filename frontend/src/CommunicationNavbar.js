@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import './CommunicationNavbar.css';
 import { Box, Stack, Text, Group, Button } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faCommentDots, faPhone, faPaperPlane, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { SectionContext } from './SectionContext';
 
 export default function CommunicationNavbar() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const { sectionsState, toggleSection } = useContext(SectionContext);
+  const isCollapsed = sectionsState.communicationNavbar;
 
   const communicationLinks = [
     { label: 'Email', icon: faEnvelope },
@@ -19,7 +21,9 @@ export default function CommunicationNavbar() {
       className="communication-navbar-scroll"
       style={{
         position: 'fixed',
-        top: isCollapsed ? 590 : 575, // Adjusted to shift up or down based on collapsed state
+        top: isCollapsed
+          ? 34 + 280 + 10 + (sectionsState.nestedNavbar ? 0 : 200)
+          : 550, // Ensure original position when expanded
         right: 19,
         width: 190,
         minWidth: 180,
@@ -49,7 +53,7 @@ export default function CommunicationNavbar() {
           alignItems: 'center',
           cursor: 'pointer',
         }}
-        onClick={() => setIsCollapsed(!isCollapsed)}
+        onClick={() => toggleSection('communicationNavbar')}
       >
         Communication
         <FontAwesomeIcon icon={isCollapsed ? faPlus : faMinus} style={{ fontSize: '0.8rem', marginLeft: '-30px' }} />

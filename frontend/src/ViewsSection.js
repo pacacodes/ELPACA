@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Box, Text, Button } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStop, faArrowsRotate, faVideo, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import './CommunicationNavbar.css';
+import { SectionContext } from './SectionContext';
 
 export default function ViewsSection() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const { sectionsState, toggleSection } = useContext(SectionContext);
+  const isCollapsed = sectionsState.viewsSection;
 
   return (
     <>
@@ -14,7 +16,9 @@ export default function ViewsSection() {
         className="communication-navbar-scroll"
         style={{
           position: 'fixed',
-          top: isCollapsed ? 910 : 895, // Adjusted to shift up or down based on collapsed state
+          top: isCollapsed
+            ? 34 + 280 + 10 + (sectionsState.nestedNavbar ? 0 : 200) + (sectionsState.communicationNavbar ? 0 : 200)
+            : 895, // Ensure original position when expanded
           right: 19,
           width: 190,
           minWidth: 190,
@@ -25,7 +29,7 @@ export default function ViewsSection() {
           padding: 16,
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8, cursor: 'pointer' }} onClick={() => setIsCollapsed(!isCollapsed)}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8, cursor: 'pointer' }} onClick={() => toggleSection('viewsSection')}>
           <Text
             fw={400}
             c="#23272A"
