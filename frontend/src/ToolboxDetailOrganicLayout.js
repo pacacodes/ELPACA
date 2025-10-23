@@ -34,6 +34,7 @@ export default function ToolboxDetailOrganicLayout() {
             root: {
               backgroundColor: 'rgba(0, 206, 209, 0.1)',
               border: '1px solid rgba(0, 206, 209, 0.3)',
+              cursor: 'pointer', /* Ensures the cursor changes to pointer */
               '&:hover': {
                 backgroundColor: 'rgba(0, 206, 209, 0.2)',
               },

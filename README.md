@@ -9,7 +9,9 @@ A dynamic web application for sourcing and organizing plant information, with a 
 - **Custom SVG Icons**: Unique icons for grass, roots, and carrot layers, visually representing plant structures.
 - **Layouts Section**: Clearly defined section for managing worksheets, presentation sheets, schedules, site diagrams, budgets, project files, and calendars.
 - **Responsive Design**: UI adapts to various screen sizes and devices.
-- **Backend API**: Express server (Node.js) for future integration with plant databases and Wikipedia scraping (proxy-ready).
+- **Backend API**: Express server (Node.js) for integration with plant databases and external APIs.
+- **WUR Plant Scraper**: Puppeteer-based scraper for extracting plant data from Wageningen University & Research Digital Collections with automatic permaculture layer categorization.
+- **Native Plant Integration**: API for fetching native plants by location using iNaturalist and geocoding services.
 
 ## Technologies Used
 

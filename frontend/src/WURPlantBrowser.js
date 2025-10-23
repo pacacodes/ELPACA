@@ -156,7 +156,6 @@ export default function WURPlantBrowser({ opened, onClose }) {
                           alt={plant.name}
                           height={200}
                           fit="cover"
-                          withPlaceholder
                           placeholder={
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
                               <FontAwesomeIcon icon={faLeaf} size="3x" color="rgba(255, 255, 255, 0.2)" />
