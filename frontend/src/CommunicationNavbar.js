@@ -21,25 +21,23 @@ export default function CommunicationNavbar() {
       className="communication-navbar-scroll"
       style={{
         position: 'fixed',
-        top: isCollapsed
-          ? 34 + 280 + 10 + (sectionsState.nestedNavbar ? 60 : 0) // Keep current location if NestedNavbar is open
-          : 550 - 5, // Move up by 5px when expanded
-        height: isCollapsed ? '35px' : '250px', // Set collapsed height to 35px
-        overflowY: 'auto', // Enable vertical scrolling
-        background: 'rgba(200,200,200,0.2)', // Keep some background when collapsed
+        top: 34 + 275 + 10 - 20 - 80 + 20 + (isCollapsed ? 35 : 290) + 15 + (sectionsState.nestedNavbar ? 10 : 0), // Move down by 20px when NestedNavbar is open
+        height: isCollapsed ? '35px' : '250px', // Match collapsed height to NestedNavbar
+        overflowY: isCollapsed ? 'hidden' : 'auto', // Match scrolling behavior
+        background: 'rgba(200,200,200,0.2)', // Match background style
         right: 19,
         width: 190,
-        minWidth: 180,
-        maxWidth: 340,
-        zIndex: 198,
+        minWidth: 100,
+        maxWidth: 260,
+        zIndex: 199,
         borderRadius: 8,
-        padding: 16
+        padding: isCollapsed ? '0 16px' : '16px', // Match padding for collapsed view
       }}
     >
       <Box
         style={{
           position: 'relative',
-          top: '-10px', // Move content up by 10px
+          top: '-5px', // Move content up by 10px
         }}
       >
         <Text
