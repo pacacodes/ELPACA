@@ -16,24 +16,23 @@ export default function ViewsSection() {
         className="communication-navbar-scroll"
         style={{
           position: 'fixed',
-          top: isCollapsed
-            ? 34 + 280 + 10 + (sectionsState.nestedNavbar ? 60 : 0) + (sectionsState.communicationNavbar ? 60 : 0)
-            : 895,
-          height: isCollapsed ? '35px' : 'auto', // Set collapsed height to 35px
-          background: 'rgba(200,200,200,0.2)', // Keep some background when collapsed
+          top: 34 + 275 + 10 - 20 - 80 + 20 + (isCollapsed ? 35 + 15 : 290 + 200) + 15 + (sectionsState.nestedNavbar ? 10 : 0), // Maintain 15px gap in collapsed state
+          height: isCollapsed ? '35px' : '60px', // Match collapsed height to CommunicationNavbar
+          overflowY: isCollapsed ? 'hidden' : 'auto', // Match scrolling behavior
+          background: 'rgba(200,200,200,0.2)', // Match background style
           right: 19,
           width: 190,
-          minWidth: 190,
-          maxWidth: 340,
-          zIndex: 197,
+          minWidth: 100,
+          maxWidth: 260,
+          zIndex: 199,
           borderRadius: 8,
-          padding: 16,
+          padding: isCollapsed ? '0 16px' : '16px', // Match padding for collapsed view
         }}
       >
         <Box
           style={{
             position: 'relative',
-            top: '-10px', // Move content up by 10px
+            top: '-5px', // Move content up by 10px
           }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8, cursor: 'pointer' }} onClick={() => toggleSection('viewsSection')}>
