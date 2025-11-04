@@ -13,7 +13,7 @@ const navSubtitles = [
     'Users',
     'Professionals',
     'Idea Boards',
-    'Feed'
+    'Feed', // Added missing comma
     'Budgets',
     'Calendar',
     'Timelines'
@@ -53,7 +53,7 @@ const navSubtitles = [
     'Professionals',
     'Spaces',
     'Photos',
-    'Codes'
+    'Codes', // Added missing comma
     'Permits', // Added Permits
     'Project Files',
     'Schedules',
@@ -80,7 +80,7 @@ const navSubtitles = [
     'Schedules',
     'Specifications',
     'Budgets',
-    'Codes'
+    'Codes',
     'Permits', // Added Permits
     'Project Files',
     'User Interface',
@@ -137,8 +137,9 @@ export default function NestedNavbar({ activeService }) {
     <Box
       style={{
         position: 'fixed',
-        top: isCollapsed ? 34 + 280 + 10 : 270,
-        height: isCollapsed ? 20 : 'auto', // Set height to 20px when collapsed
+        top: isCollapsed ? 34 + 280 + 10 - 20 : 270 - 20, // Moved up by 20px
+        height: '250px', // Fixed height
+        overflowY: 'auto', // Enable vertical scrolling
         background: 'rgba(200,200,200,0.2)', // Keep some background when collapsed
         right: 19,
         width: 190,
@@ -149,40 +150,47 @@ export default function NestedNavbar({ activeService }) {
         padding: 16
       }}
     >
-      <Text
-        fw={400}
-        c="#23272A"
+      <Box
         style={{
-          fontSize: '0.90rem',
-          marginBottom: 18,
-          marginLeft: 0, // Adjusted from 10px to 0 to move left
-          textTransform: 'uppercase',
-          letterSpacing: 1,
-          fontFamily: 'inherit',
-          whiteSpace: 'normal',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          cursor: 'pointer',
+          position: 'relative',
+          top: '-10px', // Move content up by 10px
         }}
-        onClick={() => toggleSection('nestedNavbar')}
       >
-        {sectionTitles[activeService]}
-        <FontAwesomeIcon icon={isCollapsed ? faPlus : faMinus} style={{ fontSize: '0.8rem', marginLeft: '-30px' }} />
-      </Text>
-      {!isCollapsed && (
-        <Stack gap={12} style={{ marginTop: 28 }}>
-          {navSubtitles[activeService].map((subtitle, idx) => (
-            <Text key={subtitle} fw={400} c="#23272A" style={{ fontSize: '0.90rem', display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'inherit', marginLeft: 10 }}>
-              <FontAwesomeIcon icon={subtitleIcons[activeService][idx] || faFile} style={{ marginRight: 6 }} />
-              {subtitle}
-            </Text>
-          ))}
-        </Stack>
-      )}
+        <Text
+          fw={400}
+          c="#23272A"
+          style={{
+            fontSize: '0.90rem',
+            marginBottom: 18,
+            marginLeft: 0, // Adjusted from 10px to 0 to move left
+            textTransform: 'uppercase',
+            letterSpacing: 1,
+            fontFamily: 'inherit',
+            whiteSpace: 'normal',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            cursor: 'pointer',
+          }}
+          onClick={() => toggleSection('nestedNavbar')}
+        >
+          {sectionTitles[activeService]}
+          <FontAwesomeIcon icon={isCollapsed ? faPlus : faMinus} style={{ fontSize: '0.8rem', marginLeft: '-30px' }} />
+        </Text>
+        {!isCollapsed && (
+          <Stack gap={12} style={{ marginTop: 28 }}>
+            {navSubtitles[activeService].map((subtitle, idx) => (
+              <Text key={subtitle} fw={400} c="#23272A" style={{ fontSize: '0.90rem', display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'inherit', marginLeft: 10 }}>
+                <FontAwesomeIcon icon={subtitleIcons[activeService][idx] || faFile} style={{ marginRight: 6 }} />
+                {subtitle}
+              </Text>
+            ))}
+          </Stack>
+        )}
+      </Box>
     </Box>
   );
 }
