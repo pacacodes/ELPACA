@@ -22,9 +22,9 @@ export default function CommunicationNavbar() {
       style={{
         position: 'fixed',
         top: isCollapsed
-          ? 34 + 280 + 10 + (sectionsState.nestedNavbar ? 60 : 0) // Add gap for collapsed sections
-          : 550, // Ensure original position when expanded
-        height: '250px', // Fixed height
+          ? 34 + 280 + 10 + (sectionsState.nestedNavbar ? 60 : 0) // Keep current location if NestedNavbar is open
+          : 550 - 5, // Move up by 5px when expanded
+        height: isCollapsed ? '35px' : '250px', // Set collapsed height to 35px
         overflowY: 'auto', // Enable vertical scrolling
         background: 'rgba(200,200,200,0.2)', // Keep some background when collapsed
         right: 19,
@@ -52,7 +52,7 @@ export default function CommunicationNavbar() {
             textTransform: 'uppercase',
             letterSpacing: 1,
             fontFamily: 'inherit',
-            whiteSpace: 'nowrap',
+            whiteSpace: 'nowrap', // Fix unterminated string
             overflow: 'hidden',
             textOverflow: 'ellipsis',
             width: '100%',

@@ -137,9 +137,9 @@ export default function NestedNavbar({ activeService }) {
     <Box
       style={{
         position: 'fixed',
-        top: isCollapsed ? 34 + 280 + 10 - 20 : 270 - 20, // Moved up by 20px
-        height: '250px', // Fixed height
-        overflowY: 'auto', // Enable vertical scrolling
+        top: 34 + 280 + 10 - 20 - 80 + 20, // Adjust the navbar position down by 20px
+        height: isCollapsed ? '35px' : '250px', // Set collapsed height to 35px
+        overflowY: isCollapsed ? 'hidden' : 'auto', // Disable scrolling when collapsed
         background: 'rgba(200,200,200,0.2)', // Keep some background when collapsed
         right: 19,
         width: 190,
@@ -147,13 +147,13 @@ export default function NestedNavbar({ activeService }) {
         maxWidth: 260,
         zIndex: 199,
         borderRadius: 8,
-        padding: 16
+        padding: isCollapsed ? '0 16px' : '16px', // Adjust padding for collapsed view
       }}
     >
       <Box
         style={{
           position: 'relative',
-          top: '-10px', // Move content up by 10px
+          top: '-5px', // Move content up by 10px
         }}
       >
         <Text
@@ -161,7 +161,7 @@ export default function NestedNavbar({ activeService }) {
           c="#23272A"
           style={{
             fontSize: '0.90rem',
-            marginBottom: 18,
+            marginBottom: isCollapsed ? 10 : 10, // Move title and + button down by 10px in collapsed state
             marginLeft: 0, // Adjusted from 10px to 0 to move left
             textTransform: 'uppercase',
             letterSpacing: 1,

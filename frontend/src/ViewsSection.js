@@ -19,7 +19,7 @@ export default function ViewsSection() {
           top: isCollapsed
             ? 34 + 280 + 10 + (sectionsState.nestedNavbar ? 60 : 0) + (sectionsState.communicationNavbar ? 60 : 0)
             : 895,
-          height: isCollapsed ? 20 : 'auto', // Set height to 20px when collapsed
+          height: isCollapsed ? '35px' : 'auto', // Set collapsed height to 35px
           background: 'rgba(200,200,200,0.2)', // Keep some background when collapsed
           right: 19,
           width: 190,
