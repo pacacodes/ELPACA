@@ -13,6 +13,7 @@ const navSubtitles = [
     'Users',
     'Professionals',
     'Idea Boards',
+    'Feed'
     'Budgets',
     'Calendar',
     'Timelines'
@@ -40,12 +41,19 @@ const navSubtitles = [
     'Calendar',
     'Timelines'
   ], // Map
-  ['Sample Project', 'New Project', 'Select Project', 'Import Project', 'Export Project'], // Alpaca
+  [ 
+    'Sample Project', 
+    'New Project', 
+    'Select Project', 
+    'Import Project', 
+    'Export Project'
+  ], // Alpaca
   [
     'Users',
     'Professionals',
     'Spaces',
     'Photos',
+    'Codes'
     'Permits', // Added Permits
     'Project Files',
     'Schedules',
@@ -57,6 +65,7 @@ const navSubtitles = [
   [
     'Worksheets',
     'Presentation Sheets',
+    'Codes',
     'Schedules',
     'Specifications',
     'Design Diagrams',
@@ -71,6 +80,7 @@ const navSubtitles = [
     'Schedules',
     'Specifications',
     'Budgets',
+    'Codes'
     'Permits', // Added Permits
     'Project Files',
     'User Interface',
@@ -82,13 +92,14 @@ const navSubtitles = [
     'Professionals',
     'Spaces',
     'Photos',
+    'Codes',
+    'Permits', // Added Permits
     'Project Files',
     'Schedules',
     'Specifications',
     'Calendar',
     'Timelines',
     'Tasks',
-    'Permits' // Added Permits
   ], // HardHat
 ];
 
