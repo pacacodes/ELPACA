@@ -16,8 +16,8 @@ export default function ViewsSection() {
         className="communication-navbar-scroll"
         style={{
           position: 'fixed',
-          top: 34 + 275 + 10 - 20 - 80 + 20 + (isCollapsed ? 35 + 15 : 290 + 200) + 15 + (sectionsState.nestedNavbar ? 10 : 0), // Maintain 15px gap in collapsed state
-          height: isCollapsed ? '35px' : '60px', // Match collapsed height to CommunicationNavbar
+          top: 34 + 275 + 10 - 10 - 80 + 10 + (isCollapsed ? 35 + 15 + 40 : 290 + 200) + 15 + (sectionsState.nestedNavbar ? 10 : 0), // Maintain 15px gap in collapsed state and move down by an additional 15px
+          height: isCollapsed ? '35px' : '80px', // Match collapsed height to CommunicationNavbar
           overflowY: isCollapsed ? 'hidden' : 'auto', // Match scrolling behavior
           background: 'rgba(200,200,200,0.2)', // Match background style
           right: 19,

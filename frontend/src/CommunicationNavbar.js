@@ -21,7 +21,7 @@ export default function CommunicationNavbar() {
       className="communication-navbar-scroll"
       style={{
         position: 'fixed',
-        top: 34 + 275 + 10 - 20 - 80 + 20 + (isCollapsed ? 35 : 290) + 15 + (sectionsState.nestedNavbar ? 10 : 0), // Move down by 20px when NestedNavbar is open
+        top: 34 + 275 + 10 - 10 - 80 + 10 + (isCollapsed ? 35 : 290) + 15 + (sectionsState.nestedNavbar ? 10 : 0), // Move down by 20px when NestedNavbar is open
         height: isCollapsed ? '35px' : '250px', // Match collapsed height to NestedNavbar
         overflowY: isCollapsed ? 'hidden' : 'auto', // Match scrolling behavior
         background: 'rgba(200,200,200,0.2)', // Match background style
