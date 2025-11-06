@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './CommunicationNavbar.css';
 import { Box, Stack, Text, Group, Button } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,6 +7,11 @@ import { SectionContext } from './SectionContext';
 
 export default function CommunicationNavbar() {
   const { sectionsState, toggleSection } = useContext(SectionContext);
+
+  useEffect(() => {
+    toggleSection('communicationNavbar'); // Ensure this section is open by default
+  }, [toggleSection]);
+
   const isCollapsed = sectionsState.communicationNavbar;
 
   const communicationLinks = [
@@ -21,8 +26,8 @@ export default function CommunicationNavbar() {
       className="communication-navbar-scroll"
       style={{
         position: 'fixed',
-        top: 34 + 275 + 10 - 10 - 80 + 10 + (isCollapsed ? 35 : 290) + 15 + (sectionsState.nestedNavbar ? 10 : 0), // Move down by 20px when NestedNavbar is open
-        height: isCollapsed ? '35px' : '250px', // Match collapsed height to NestedNavbar
+        top: 34 + 340 + 10 - 10 - 100 + 10 + (isCollapsed ? 35 : 290 - 100) + 15 + (sectionsState.nestedNavbar ? 10 : 0), // Move up by 100px when opened
+        height: isCollapsed ? '35px' : '200px', // Match collapsed height to NestedNavbar
         overflowY: isCollapsed ? 'hidden' : 'auto', // Match scrolling behavior
         background: 'rgba(200,200,200,0.2)', // Match background style
         right: 19,

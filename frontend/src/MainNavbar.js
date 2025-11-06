@@ -1,42 +1,68 @@
-import React, { useContext } from 'react';
-import { Box, Paper } from '@mantine/core';
+import React, { useState } from 'react';
+import { Navbar, ScrollArea, Box } from '@mantine/core';
 import NestedNavbar from './NestedNavbar';
 import CommunicationNavbar from './CommunicationNavbar';
 import ViewsSection from './ViewsSection';
 import AIChatBotSection from './AIChatBotSection';
-import { SectionContext } from './SectionContext';
 
 export default function MainNavbar() {
-  const { sectionsState } = useContext(SectionContext);
+  const [activeSections, setActiveSections] = useState({
+    nestedNavbar: true,
+    communicationNavbar: true,
+    viewsSection: true,
+    aiChatBotSection: true,
+  });
+
+  const toggleSection = (section) => {
+    setActiveSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
 
   return (
-    <Paper
-      shadow="md"
-      radius="md"
+    <Navbar
+      width={{ base: 320 }} // Increased width to be 20px wider than sections
+      height={650} // Set height to 650px
+      p="md"
       style={{
         position: 'fixed',
         left: 32,
         bottom: 90,
-        width: '260px',
-        zIndex: 1202,
-        padding: '1rem',
+        zIndex: 1300, // Increased z-index to ensure visibility
         background: 'rgba(26, 26, 26, 0.9)',
         borderRadius: '8px',
-        overflowY: 'auto',
+        overflow: 'hidden',
+        border: '2px solid red', // Added border to visualize the MainNavbar
       }}
     >
-      <Box style={{ marginBottom: sectionsState.nestedNavbar ? '10px' : '20px' }}>
-        <NestedNavbar activeService={0} />
-      </Box>
-      <Box style={{ marginBottom: sectionsState.communicationNavbar ? '10px' : '20px' }}>
-        <CommunicationNavbar />
-      </Box>
-      <Box style={{ marginBottom: sectionsState.viewsSection ? '10px' : '20px' }}>
-        <ViewsSection />
-      </Box>
-      <Box>
-        <AIChatBotSection />
-      </Box>
-    </Paper>
+      <ScrollArea style={{ height: '100%' }}>
+        {[
+          { id: 'nestedNavbar', label: 'Nested Navbar', Component: NestedNavbar },
+          { id: 'communicationNavbar', label: 'Communication', Component: CommunicationNavbar },
+          { id: 'viewsSection', label: 'Views', Component: ViewsSection },
+          { id: 'aiChatBotSection', label: 'AI Chat Bot', Component: AIChatBotSection },
+        ].map(({ id, label, Component }) => (
+          <Box key={id} style={{ marginBottom: '10px' }}>
+            <Box
+              onClick={() => toggleSection(id)}
+              style={{
+                cursor: 'pointer',
+                padding: '10px',
+                background: activeSections[id] ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
+                borderRadius: '4px',
+              }}
+            >
+              {label}
+            </Box>
+            {activeSections[id] && (
+              <Box style={{ marginTop: '10px', paddingLeft: '10px' }}>
+                <Component />
+              </Box>
+            )}
+          </Box>
+        ))}
+      </ScrollArea>
+    </Navbar>
   );
 }

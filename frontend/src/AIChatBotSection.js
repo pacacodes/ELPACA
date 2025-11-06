@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Box, Text, Button } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
@@ -6,6 +6,11 @@ import { SectionContext } from './SectionContext';
 
 export default function AIChatBotSection() {
   const { sectionsState, toggleSection } = useContext(SectionContext);
+
+  useEffect(() => {
+    toggleSection('aiChatBotSection'); // Ensure this section is open by default
+  }, [toggleSection]);
+
   const isCollapsed = sectionsState.aiChatBotSection;
 
   return (
@@ -13,8 +18,8 @@ export default function AIChatBotSection() {
       className="communication-navbar-scroll"
       style={{
         position: 'fixed',
-        top: 10 + 275 + 10 - 35 - 80 + 20 + (isCollapsed ? 35 + 15 + 40 : 290 + 200 - 100) + 15 + (sectionsState.nestedNavbar ? 10 : 0) + (sectionsState.viewsSection ? 80 : 35) + 15, // Adjust position below ViewsSection and move up 100px when expanded
-        height: isCollapsed ? '35px' : '300px', // Set height to 300px when expanded
+        top: 10 + 480 + 10 - 35 - 80 + 20 + (isCollapsed ? 35 + 15 + 40 : 290 + 200 - 100) + 15 + (sectionsState.nestedNavbar ? 10 : 0) + (sectionsState.viewsSection ? 80 : 35) + 15, // Adjust position below ViewsSection and move up 100px when expanded
+        height: isCollapsed ? '35px' : '200px', // Set height to 300px when expanded
         overflowY: isCollapsed ? 'hidden' : 'auto', // Add scrollbar when expanded
         background: 'rgba(200,200,200,0.2)', // Match background style
         right: 19,

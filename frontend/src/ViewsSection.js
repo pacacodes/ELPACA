@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Box, Text, Button } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStop, faArrowsRotate, faVideo, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +7,11 @@ import { SectionContext } from './SectionContext';
 
 export default function ViewsSection() {
   const { sectionsState, toggleSection } = useContext(SectionContext);
+
+  useEffect(() => {
+    toggleSection('viewsSection'); // Ensure this section is open by default
+  }, [toggleSection]);
+
   const isCollapsed = sectionsState.viewsSection;
 
   return (
@@ -16,7 +21,7 @@ export default function ViewsSection() {
         className="communication-navbar-scroll"
         style={{
           position: 'fixed',
-          top: 34 + 275 + 10 - 10 - 80 + 10 + (isCollapsed ? 35 + 15 + 40 : 290 + 200) + 15 + (sectionsState.nestedNavbar ? 10 : 0), // Maintain 15px gap in collapsed state and move down by an additional 15px
+          top: 34 + 265 + 10 - 10 - 80 + 10 + (isCollapsed ? 35 + 15 + 40 : 290 + 200) + 15 + (sectionsState.nestedNavbar ? 10 : 0), // Maintain 15px gap in collapsed state and move down by an additional 15px
           height: isCollapsed ? '35px' : '80px', // Match collapsed height to CommunicationNavbar
           overflowY: isCollapsed ? 'hidden' : 'auto', // Match scrolling behavior
           background: 'rgba(200,200,200,0.2)', // Match background style
