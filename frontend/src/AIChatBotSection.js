@@ -64,7 +64,7 @@ export default function AIChatBotSection() {
               </Text>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', padding: '8px', borderTop: '1px solid #ccc', position: 'relative', height: '100px' }}>
-              <select style={{ position: 'absolute', left: '8px', bottom: '8px', padding: '4px', border: '1px solid #ccc', borderRadius: '4px' }}>
+              <select style={{ position: 'absolute', left: '8px', bottom: '8px', padding: '4px', border: 'none', borderRadius: '4px' }}>
                 <option value="agent">Agent</option>
                 <option value="ask">Ask</option>
               </select>
