@@ -33,12 +33,12 @@ export default function ObjectsAndSystemsServiceButton() {
           className="communication-navbar-scroll"
           style={{
             position: 'fixed',
-            left: 32,
-            bottom: -80, // Adjusted to move the popup down by 200px
+            left: 252, // Adjusted to move the popup 20px further to the right
+            bottom: -35, // Adjusted to move the popup down by an additional 5px
             minWidth: 245,
             width: '245px',
-            minHeight: 830,
-            maxHeight: '830px',
+            minHeight: 870, // Increased height by 40px
+            maxHeight: '870px', // Increased height by 40px
             zIndex: 1201,
             padding: '2rem',
             display: 'flex',
@@ -48,7 +48,7 @@ export default function ObjectsAndSystemsServiceButton() {
             borderRadius: '8px',
             overflowY: 'auto',
             position: 'relative',
-            transition: 'width 0.3s',
+            transition: 'width 0.3s, bottom 0.3s', // Added transition for smooth movement
           }}
         >
           {/* Always show close button in top right */}
@@ -97,6 +97,24 @@ export default function ObjectsAndSystemsServiceButton() {
         group={selectedGroup}
         onClose={() => { setToolboxDetailOpen(false); setCollapsed(false); setSelectedSubtitle(null); setSelectedGroup(null); }}
         shift={collapsed ? 265 : 0}
+        style={{
+          position: 'fixed',
+          left: 252, // Adjusted to match the placement of the toolbox popup
+          bottom: -35, // Same bottom alignment as the toolbox popup
+          minWidth: 245,
+          width: '245px',
+          minHeight: 870, // Same height as the toolbox popup
+          maxHeight: '870px',
+          zIndex: 1201,
+          padding: '2rem',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          background: 'rgba(26, 26, 26, 0.9)',
+          borderRadius: '8px',
+          overflowY: 'auto',
+          transition: 'width 0.3s, bottom 0.3s',
+        }}
       />
     )}
     </>

@@ -11,11 +11,11 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
       radius="md"
       style={{
         position: 'fixed',
-        left: 32,
-        bottom: 90, // Increased height by 100px at the top
+        left: 252, // Moved to the right by 200px
+        bottom: 90, // Moved down by an additional 5px
         minWidth: 545, // Increased width by 100px
         width: '645px', // Increased width by 100px
-        minHeight: 860, // Increased height by 100px
+        minHeight: 870, // Increased height by 100px
         maxHeight: '900px', // Increased height by 100px
         zIndex: 1202,
         padding: '2rem',
