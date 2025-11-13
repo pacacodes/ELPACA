@@ -26,11 +26,11 @@ export default function CommunicationNavbar() {
       className="communication-navbar-scroll"
       style={{
         position: 'fixed',
-        top: 34, // Align with the top of MainNavigation
+        top: 34 + 25 - 10 + 5, // Moved down by 5px
         height: isCollapsed ? '35px' : '400px', // Increased height by 200px
         overflowY: isCollapsed ? 'hidden' : 'auto', // Match scrolling behavior
         background: 'rgba(200,200,200,0.2)', // Match background style
-        right: 19,
+        right: 9, // Moved to the right by 10px
         width: 190,
         minWidth: 100,
         maxWidth: 260,

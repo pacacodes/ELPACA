@@ -11,6 +11,7 @@ import { AppShell } from '@mantine/core';
 import BIMApp from './bim/BIMApp';
 import { SectionProvider } from './SectionContext';
 import AIChatBotSection from './AIChatBotSection';
+import TopBar from './TopBar';
 
 function App() {
   const [activeService, setActiveService] = useState(0);
@@ -21,6 +22,7 @@ function App() {
         layout="default"
         style={{ height: '100vh', overflow: 'hidden' }}
       >
+        <TopBar />
         {/* Main Navigation (Service Card) */}
         <MainNavigation activeService={activeService} setActiveService={setActiveService} />
         {/* Layouts (Nested Navbar) below MainNavigation */}

@@ -21,7 +21,7 @@ export default function ViewsSection() {
         className="communication-navbar-scroll"
         style={{
           position: 'fixed',
-          top: 34 + 280 + 10 - 20 - 80 + 20 + 600 + 10 + 30, // Move down by an additional 30px
+          top: 34 + 280 + 10 - 20 - 80 + 20 + 600 + 10 + 30 + 25 + 5 + 40 + 5, // Adjusted position down by 5px
           height: isCollapsed ? '35px' : '80px', // Match collapsed height to CommunicationNavbar
           overflowY: isCollapsed ? 'hidden' : 'auto', // Match scrolling behavior
           background: 'rgba(200,200,200,0.2)', // Match background style
