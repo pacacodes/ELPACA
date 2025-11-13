@@ -59,17 +59,17 @@ export default function AIChatBotSection() {
               Welcome to the Chat Bot! How can I assist you today?
             </Text>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', padding: '8px', borderTop: '1px solid #ccc', position: 'relative', height: '100px' }}>
-            <select style={{ position: 'absolute', left: '8px', bottom: '8px', padding: '4px', border: 'none', borderRadius: '4px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', padding: '8px', borderTop: '1px solid #ccc', position: 'relative', height: '100px', bottom: '-280px' }}>
+            <select style={{ position: 'absolute', left: '8px', bottom: '3px', padding: '4px', border: 'none', borderRadius: '4px', transform: 'scale(0.8)' }}>
               <option value="agent">Agent</option>
               <option value="ask">Ask</option>
             </select>
             <input
               type="text"
               placeholder="Type your message..."
-              style={{ flex: 1, padding: '8px', border: '1px solid #ccc', borderRadius: '4px', marginRight: '8px', height: '100%', width: 'calc(100% - 60px)' }}
+              style={{ flex: 1, padding: '8px', border: '1px solid #ccc', borderRadius: '4px', marginRight: '8px', height: '100%', width: 'calc(100% - 30px)' }} // Increased width by 20px
             />
-            <Button variant="filled" color="blue" size="sm" style={{ position: 'absolute', right: '8px', bottom: '8px', padding: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'none', boxShadow: 'none', background: 'none' }}>
+            <Button variant="filled" color="blue" size="sm" style={{ position: 'absolute', right: '13px', bottom: '0px', padding: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'none', boxShadow: 'none', background: 'none', transform: 'scale(0.8)' }}>
               <FontAwesomeIcon icon={faPaperPlane} style={{ fontSize: '1rem', color: '#4A4A4A' }} />
             </Button>
           </div>
