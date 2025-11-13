@@ -14,7 +14,7 @@ export default function SearchBar() {
           color: '#ffffff',
           fontSize: '0.9rem',
           outline: 'none',
-          width: '200px',
+          width: '260px', // Increased width by 60px
         }}
       />
     </div>

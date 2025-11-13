@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SaveButton() {
   return (
-    <div style={{ position: 'fixed', left: 'calc(50% + 200px)', bottom: '32px', zIndex: 1200 }}>
+    <div style={{ position: 'fixed', left: 'calc(50% + 140px)', bottom: '32px', zIndex: 1200 }}>
       <button
         style={{
           padding: '0.5rem 1rem',

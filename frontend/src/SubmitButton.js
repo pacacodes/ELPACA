@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function SubmitButton() {
   return (
-    <div style={{ position: 'fixed', left: 'calc(50% + 300px)', bottom: '32px', zIndex: 1200 }}>
+    <div style={{ position: 'fixed', left: 'calc(50% + 220px)', bottom: '32px', zIndex: 1200 }}>
       <button
         style={{
           padding: '0.5rem 1rem',
