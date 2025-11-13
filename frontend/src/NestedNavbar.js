@@ -125,8 +125,6 @@ export default function NestedNavbar({ activeService }) {
     toggleSection('nestedNavbar'); // Ensure this section is open by default
   }, [toggleSection]);
 
-  const isCollapsed = sectionsState.nestedNavbar;
-
   // Titles for each navigation button
   const sectionTitles = [
     'Ideas',        // Lightbulb
@@ -143,8 +141,8 @@ export default function NestedNavbar({ activeService }) {
       style={{
         position: 'fixed',
         top: 34 + 280 + 10 - 20 - 80 + 20 + 25 + 5, // Adjusted position down by 5px
-        height: isCollapsed ? '35px' : '640px', // Increased height by 10px
-        overflowY: isCollapsed ? 'hidden' : 'auto', // Disable scrolling when collapsed
+        height: '640px', // Increased height by 10px
+        overflowY: 'auto', // Disable scrolling when collapsed
         background: 'rgba(200,200,200,0.2)', // Keep some background when collapsed
         left: '10px', // Align to the left under MainNavigation
         width: 190,
@@ -152,7 +150,7 @@ export default function NestedNavbar({ activeService }) {
         maxWidth: 260,
         zIndex: 199,
         borderRadius: 8,
-        padding: isCollapsed ? '0 16px' : '16px', // Adjust padding for collapsed view
+        padding: '16px', // Adjust padding for collapsed view
       }}
     >
       <Box
@@ -166,7 +164,7 @@ export default function NestedNavbar({ activeService }) {
           c="#23272A"
           style={{
             fontSize: '0.90rem',
-            marginBottom: isCollapsed ? 10 : 10, // Move title and + button down by 10px in collapsed state
+            marginBottom: 10, // Move title and + button down by 10px in collapsed state
             marginLeft: 0, // Adjusted from 10px to 0 to move left
             textTransform: 'uppercase',
             letterSpacing: 1,
@@ -183,18 +181,15 @@ export default function NestedNavbar({ activeService }) {
           onClick={() => toggleSection('nestedNavbar')}
         >
           {sectionTitles[activeService]}
-          <FontAwesomeIcon icon={isCollapsed ? faPlus : faMinus} style={{ fontSize: '0.8rem', marginLeft: '-30px' }} />
         </Text>
-        {!isCollapsed && (
-          <Stack gap={12} style={{ marginTop: 28 }}>
-            {navSubtitles[activeService].map((subtitle, idx) => (
-              <Text key={subtitle} fw={400} c="#23272A" style={{ fontSize: '0.90rem', display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'inherit', marginLeft: 10 }}>
-                <FontAwesomeIcon icon={subtitleIcons[activeService][idx] || faFile} style={{ marginRight: 6 }} />
-                {subtitle}
-              </Text>
-            ))}
-          </Stack>
-        )}
+        <Stack gap={12} style={{ marginTop: 28 }}>
+          {navSubtitles[activeService].map((subtitle, idx) => (
+            <Text key={subtitle} fw={400} c="#23272A" style={{ fontSize: '0.90rem', display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'inherit', marginLeft: 10 }}>
+              <FontAwesomeIcon icon={subtitleIcons[activeService][idx] || faFile} style={{ marginRight: 6 }} />
+              {subtitle}
+            </Text>
+          ))}
+        </Stack>
       </Box>
     </Box>
   );
