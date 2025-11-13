@@ -10,6 +10,10 @@ import DiagramToolsCollapsibleLinks from './DiagramToolsCollapsibleLinks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
+import SearchBar from './SearchBar';
+import CartButton from './CartButton';
+import SaveButton from './SaveButton';
+import SubmitButton from './SubmitButton';
 
 export default function ObjectsAndSystemsServiceButton() {
   const [open, setOpen] = useState(false);
@@ -20,6 +24,9 @@ export default function ObjectsAndSystemsServiceButton() {
 
   return (
     <>
+      <div style={{ position: 'fixed', left: '200px', bottom: '32px', zIndex: 1200 }}>
+        <SearchBar />
+      </div>
       <Card shadow="sm" padding="lg" radius="md" style={{ position: 'fixed', left: '50%', transform: 'translateX(-50%)', bottom: 32, width: 72, zIndex: 1200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <ThemeIcon size={48} radius="md" variant="light" color="#fff" style={{ cursor: 'pointer', background: 'transparent' }} onClick={() => setOpen(true)}>
           <FontAwesomeIcon icon={faPlus} style={{ fontSize: '1.8em', fontWeight: 300 }} color="#23272A" />
@@ -117,6 +124,9 @@ export default function ObjectsAndSystemsServiceButton() {
         }}
       />
     )}
+    <CartButton />
+    <SaveButton />
+    <SubmitButton />
     </>
   );
 }
