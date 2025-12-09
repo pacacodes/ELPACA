@@ -6,6 +6,7 @@ import {
   faUserTie, faFileAlt, faClock, faFileContract, faPlus, faMinus
 } from '@fortawesome/free-solid-svg-icons';
 import { SectionContext } from './SectionContext';
+import ImportProjectButton from './ImportProjectButton';
 
 // Separate combined items into individual line items with icons
 const navSubtitles = [
@@ -184,10 +185,29 @@ export default function NestedNavbar({ activeService }) {
         </Text>
         <Stack gap={12} style={{ marginTop: 28 }}>
           {navSubtitles[activeService].map((subtitle, idx) => (
-            <Text key={subtitle} fw={400} c="#23272A" style={{ fontSize: '0.90rem', display: 'flex', alignItems: 'center', gap: 10, fontFamily: 'inherit', marginLeft: 10 }}>
-              <FontAwesomeIcon icon={subtitleIcons[activeService][idx] || faFile} style={{ marginRight: 6 }} />
-              {subtitle}
-            </Text>
+            subtitle === 'Import Project' ? (
+              <ImportProjectButton key={subtitle} />
+            ) : (
+              <Text
+                key={subtitle}
+                fw={400}
+                c="#23272A"
+                style={{
+                  fontSize: '0.90rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 10,
+                  fontFamily: 'inherit',
+                  marginLeft: 10,
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={subtitleIcons[activeService][idx] || faFile}
+                  style={{ marginRight: 6 }}
+                />
+                {subtitle}
+              </Text>
+            )
           ))}
         </Stack>
       </Box>

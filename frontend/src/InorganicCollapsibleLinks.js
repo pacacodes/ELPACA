@@ -7,6 +7,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import ToolsCollapsibleLinks from './ToolsCollapsibleLinks';
 import ViewpointToolsCollapsibleLinks from './ViewpointToolsCollapsibleLinks';
 import DiagramToolsCollapsibleLinks from './DiagramToolsCollapsibleLinks';
+import WallButton from './inorganic-collapsible-link-buttons/WallButton';
 
 export default function InorganicCollapsibleLinks(props) {
   const [opened, setOpened] = React.useState(false);
@@ -34,7 +35,7 @@ export default function InorganicCollapsibleLinks(props) {
       <Collapse in={opened} transitionDuration={200}>
         <Box style={{ padding: '12px 0' }}>
           {/* Inorganic subtitles */}
-          <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Wall')}><FontAwesomeIcon icon={faGripHorizontal} style={{marginRight:8, color:'#87CEEB'}}/>Wall</Text>
+          <WallButton onClick={() => onSubtitleClick && onSubtitleClick('Wall')} />
           <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Column')}><FontAwesomeIcon icon={faSquare} style={{marginRight:8, color:'#87CEEB'}}/>Column</Text>
           <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Beam')}><FontAwesomeIcon icon={faMinus} style={{marginRight:8, color:'#87CEEB'}}/>Beam</Text>
           <Text fw={400} c="#ffffff" style={{ fontSize: '0.90rem', marginBottom: 8, marginLeft: 57, fontFamily: 'inherit', letterSpacing: 1, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer' }} onClick={() => onSubtitleClick && onSubtitleClick('Slab')}><FontAwesomeIcon icon={faLayerGroup} style={{marginRight:8, color:'#87CEEB'}}/>Slab</Text>

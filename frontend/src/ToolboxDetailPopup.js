@@ -1,8 +1,12 @@
-import React from 'react';
-import { Paper, Text, Breadcrumbs } from '@mantine/core';
+import React, { useContext } from 'react';
+import { Paper, Text } from '@mantine/core';
 import ToolboxDetailOrganicLayout from './ToolboxDetailOrganicLayout';
+import InorganicWallForm from './inorganic-collapsible-link-buttons/InorganicWallForm';
+import ViewerContext from './ViewerContext';
 
 export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onGroupClick }) {
+  const { setWallDimensions } = useContext(ViewerContext);
+
   if (!open || !subtitle) return null;
   // Breadcrumb: TOOLBOX | [SUBTITLE] in one row, TOOLBOX and | lighter grey
   return (
@@ -63,6 +67,18 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
       </Text>
   {/* Organic group layout example */}
   {group === 'Organic Objects' && <ToolboxDetailOrganicLayout />}
+  {/* Inorganic Objects wall parameters form */}
+  {group === 'Inorganic Objects' && (
+    <InorganicWallForm onSubmit={(e) => {
+      e.preventDefault();
+      const height = parseFloat(e.target.height.value);
+      const width = parseFloat(e.target.width.value);
+      console.log('Wall parameters submitted:', { height, width });
+
+      // Store dimensions in context
+      setWallDimensions({ height, width });
+    }} />
+  )}
       <button
         style={{ position: 'absolute', top: 20, right: 20, background: 'none', color: '#23272A', border: 'none', fontWeight: 500, fontSize: '1.5rem', cursor: 'pointer' }}
         aria-label="Close"
