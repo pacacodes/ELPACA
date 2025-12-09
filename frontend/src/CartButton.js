@@ -4,7 +4,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 export default function CartButton() {
   return (
-    <div style={{ position: 'fixed', left: 'calc(50% + 80px)', bottom: '32px', zIndex: 1200, transform: 'translateY(0)' }}>
+    <div style={{ position: 'fixed', left: 'calc(50% + 40px)', bottom: '32px', zIndex: 1200, transform: 'translateY(0)' }}>
       <button
         style={{
           padding: '0.5rem 1rem',

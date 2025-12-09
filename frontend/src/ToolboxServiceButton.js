@@ -28,8 +28,8 @@ export default function ObjectsAndSystemsServiceButton() {
         <SearchBar />
       </div>
       <Card shadow="sm" padding="lg" radius="md" style={{ position: 'fixed', left: '50%', transform: 'translateX(-50%)', bottom: 32, width: 72, zIndex: 1200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <ThemeIcon size={48} radius="md" variant="light" color="#fff" style={{ cursor: 'pointer', background: 'transparent' }} onClick={() => setOpen(true)}>
-          <FontAwesomeIcon icon={faPlus} style={{ fontSize: '1.8em', fontWeight: 300 }} color="#23272A" />
+        <ThemeIcon size={56} radius="md" variant="light" color="#fff" style={{ cursor: 'pointer', background: 'transparent', marginBottom: '20px' }} onClick={() => setOpen(true)}>
+          <FontAwesomeIcon icon={faPlus} style={{ fontSize: '2.2em', fontWeight: 300 }} color="#23272A" />
         </ThemeIcon>
       </Card>
       {/* Only show Toolbox popup when detail popup is NOT open */}
