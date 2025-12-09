@@ -137,6 +137,12 @@ export default function NestedNavbar({ activeService }) {
     'Construction Documents' // Compass
   ];
 
+  const handleSubtitleClick = (subtitle) => {
+    // Handle the click event for subtitles
+    console.log(`Clicked on ${subtitle}`);
+    // Add your navigation or action logic here
+  };
+
   return (
     <Box
       style={{
@@ -199,7 +205,9 @@ export default function NestedNavbar({ activeService }) {
                   gap: 10,
                   fontFamily: 'inherit',
                   marginLeft: 10,
+                  cursor: 'pointer', // Added pointer cursor to make it clear the button is clickable
                 }}
+                onClick={() => handleSubtitleClick(subtitle)} // Added click handler
               >
                 <FontAwesomeIcon
                   icon={subtitleIcons[activeService][idx] || faFile}
