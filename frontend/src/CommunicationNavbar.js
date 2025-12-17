@@ -3,7 +3,7 @@ import './CommunicationNavbar.css';
 import { Box, Stack, Text, Group, Button } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faCommentDots, faPhone, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { SectionContext } from './SectionContext';
+import { SectionContext } from './chatbot/SectionContext';
 
 export default function CommunicationNavbar() {
   const { sectionsState, toggleSection } = useContext(SectionContext);

@@ -3,6 +3,7 @@ import { Card, ThemeIcon, Paper, Text } from '@mantine/core';
 import './CommunicationNavbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import ToolboxDetailPopup from './ToolboxDetailPopup';
 
 export default function ObjectsAndSystemsServiceButton() {
   const [open, setOpen] = useState(false);
