@@ -4,21 +4,50 @@ import '../../communication/CommunicationNavbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import ToolboxDetailPopup from './ToolboxDetailPopup';
+import OrganicCollapsibleLinks from './OrganicCollapsibleLinks';
+import InorganicCollapsibleLinks from './InorganicCollapsibleLinks';
+import ToolsCollapsibleLinks from './ToolsCollapsibleLinks';
+import DiagramToolsCollapsibleLinks from './DiagramToolsCollapsibleLinks';
+import ViewpointToolsCollapsibleLinks from './ViewpointToolsCollapsibleLinks';
+import DocumentingToolsCollapsibleLinks from './DocumentingToolsCollapsibleLinks';
 
-export default function ObjectsAndSystemsServiceButton() {
+export default function ObjectsAndSystemsServiceButton({ inline = false }) {
   const [open, setOpen] = useState(false);
   const [toolboxDetailOpen, setToolboxDetailOpen] = useState(false);
   const [selectedSubtitle, setSelectedSubtitle] = useState(null);
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [collapsed, setCollapsed] = useState(false);
 
+  const openDetail = (group, subtitle) => {
+    console.log('[ToolboxServiceButton] Open detail:', group, subtitle);
+    setSelectedGroup(group);
+    setSelectedSubtitle(subtitle);
+    setToolboxDetailOpen(true);
+  };
+
   return (
     <>
-      <Card shadow="sm" padding="lg" radius="md" style={{ position: 'fixed', left: '50%', transform: 'translateX(-50%)', bottom: 32, width: 72, zIndex: 1200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <ThemeIcon size={56} radius="md" variant="light" color="#fff" style={{ cursor: 'pointer', background: 'transparent', marginBottom: '20px' }} onClick={() => setOpen(true)}>
+      {inline ? (
+        <button
+          style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '20px' }}
+          onClick={() => {
+            console.log('[ToolboxServiceButton] Inline trigger clicked');
+            setOpen(true);
+            try {
+              window.dispatchEvent(new CustomEvent('openToolboxGroup', { detail: 'documenting' }));
+            } catch (e) {}
+          }}
+          aria-label="Open Toolbox"
+        >
           <FontAwesomeIcon icon={faPlus} style={{ fontSize: '2.2em', fontWeight: 300 }} color="#23272A" />
-        </ThemeIcon>
-      </Card>
+        </button>
+      ) : (
+        <Card shadow="sm" padding="lg" radius="md" style={{ position: 'fixed', left: '50%', transform: 'translateX(-50%)', bottom: 32, width: 72, zIndex: 1200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <ThemeIcon size={56} radius="md" variant="light" color="#fff" style={{ cursor: 'pointer', background: 'transparent', marginBottom: '20px' }} onClick={() => setOpen(true)}>
+            <FontAwesomeIcon icon={faPlus} style={{ fontSize: '2.2em', fontWeight: 300 }} color="#23272A" />
+          </ThemeIcon>
+        </Card>
+      )}
       {/* Only show Toolbox popup when detail popup is NOT open */}
       {open && !toolboxDetailOpen && (
         <Paper
@@ -27,13 +56,13 @@ export default function ObjectsAndSystemsServiceButton() {
           className="communication-navbar-scroll"
           style={{
             position: 'fixed',
-            left: 252, // Adjusted to move the popup 20px further to the right
-            bottom: -35, // Adjusted to move the popup down by an additional 5px
+            left: 210,
+            top: 324,
             minWidth: 245,
             width: '245px',
             minHeight: 870, // Increased height by 40px
             maxHeight: '870px', // Increased height by 40px
-            zIndex: 1201,
+            zIndex: 3000,
             padding: '2rem',
             display: 'flex',
             flexDirection: 'column',
@@ -41,8 +70,7 @@ export default function ObjectsAndSystemsServiceButton() {
             background: 'rgba(26, 26, 26, 0.9)', // Slightly transparent dark grey
             borderRadius: '8px',
             overflowY: 'auto',
-            position: 'relative',
-            transition: 'width 0.3s, bottom 0.3s', // Added transition for smooth movement
+            transition: 'width 0.3s, top 0.3s',
           }}
         >
           {/* Always show close button in top right */}
@@ -74,8 +102,24 @@ export default function ObjectsAndSystemsServiceButton() {
           >
             Toolbox
           </Text>
+
+          {/* Collapsible link groups */}
+          <ToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Documenting Tools', subtitle)} />
+          <DocumentingToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Documenting Tools', subtitle)} />
+          <OrganicCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Organic Objects', subtitle)} />
+          <InorganicCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Inorganic Objects', subtitle)} />
+          <DiagramToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Diagram Tools', subtitle)} />
+          <ViewpointToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Viewpoint Tools', subtitle)} />
         </Paper>
       )}
+
+      {/* Detail popup rendered separately */}
+      <ToolboxDetailPopup
+        open={toolboxDetailOpen}
+        subtitle={selectedSubtitle}
+        group={selectedGroup}
+        onClose={() => setToolboxDetailOpen(false)}
+      />
     </>
   );
 }

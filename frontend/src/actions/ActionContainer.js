@@ -3,7 +3,7 @@ import SearchBar from '../actions/SearchBar';
 import CartButton from '../actions/CartButton';
 import SaveButton from '../actions/SaveButton';
 import SubmitButton from '../actions/SubmitButton';
-import ToolboxButton from '../actions/toolbox/ToolboxButton';
+import ToolboxServiceButton from '../actions/toolbox/ToolboxServiceButton';
 
 const ActionContainer = () => {
   console.log('Rendering ActionContainer');
@@ -25,7 +25,7 @@ const ActionContainer = () => {
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
     }}>
       <SearchBar />
-      <ToolboxButton />
+      <ToolboxServiceButton inline />
       <CartButton />
       <SaveButton />
       <SubmitButton />
