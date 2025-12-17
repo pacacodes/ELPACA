@@ -4,14 +4,14 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import MainNavigation from './Navigation/MainNavigation';
 import NestedNavbar from './Navigation/NestedNavbar';
-import CommunicationNavbar from './CommunicationNavbar';
-import ViewsSection from './ViewsSection';
-import ToolboxServiceButton from './ToolboxServiceButton';
+import CommunicationNavbar from './communication/CommunicationNavbar';
+import ViewsSection from './Navigation/views/ViewsSection';
+import ToolboxServiceButton from './actions/toolbox/ToolboxServiceButton';
 import { AppShell } from '@mantine/core';
 import BIMApp from './bim/BIMApp';
 import { SectionProvider, SectionContext } from './chatbot/SectionContext';
 import AIChatBotSection from './chatbot/AIChatBotSection';
-import TopBar from './TopBar';
+import TopBar from './Navigation/TopBar';
 import Actions from './actions/Actions';
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
         <ViewsSection />
         {/* AI Chat Bot section below Views */}
         <AIChatBotSection />
-        <ToolboxServiceButton />
+        {/* <ToolboxServiceButton /> */}
         <AppShell.Main style={{ height: '100vh', overflow: 'hidden', padding: 0, position: 'absolute', top: 0, left: 0, width: '100%' }}>
           {/* Render main content based on navigation/layout selection */}
           <BIMApp />

@@ -2,8 +2,8 @@ import React, { useContext, useEffect } from 'react';
 import { Box, Text, Button } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStop } from '@fortawesome/free-solid-svg-icons';
-import './CommunicationNavbar.css';
-import { SectionContext } from './chatbot/SectionContext';
+import '../../communication/CommunicationNavbar.css';
+import { SectionContext } from '../../chatbot/SectionContext';
 
 export default function ViewsSection() {
   const { sectionsState, toggleSection } = useContext(SectionContext);

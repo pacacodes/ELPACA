@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Grid } from '@react-three/drei';
-import drawWall from '../../inorganic-collapsible-link-buttons/DrawWall';
-import { ViewerProvider, ViewerContext } from '../../ViewerContext';
+import drawWall from '../../navigation/Project Nav/inorganic-collapsible-link-buttons/DrawWall';
+import { ViewerProvider, ViewerContext } from '../../navigation/Project Nav/ViewerContext';
 
 /**
  * BIMViewer

@@ -1,6 +1,6 @@
 import React from 'react';
-import BackToProjectsButton from './BackToProjectsButton';
-import ProjectsPopup from './ProjectsPopup';
+import BackToProjectsButton from '../navigation/Project Nav/BackToProjectsButton';
+import ProjectsPopup from '../navigation/Project Nav/ProjectsPopup';
 
 function AlpacaPopup({
   alpacaPopupOpen,

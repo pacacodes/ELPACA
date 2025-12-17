@@ -5,7 +5,7 @@ import { faTree, faImages } from '@fortawesome/free-solid-svg-icons';
 import SunSection from './ToolboxDetailOrganicSunSection';
 import WateringSection from './ToolboxDetailOrganicWateringSection';
 import SoilTypeSection from './ToolboxDetailOrganicSoilTypeSection';
-import WURPlantBrowser from './WURPlantBrowser';
+import WURPlantBrowser from '../../plants/WURPlantBrowser';
 
 export default function ToolboxDetailOrganicLayout() {
   const [browserOpened, setBrowserOpened] = useState(false);

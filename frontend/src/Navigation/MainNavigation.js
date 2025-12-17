@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faLightbulb, faHardHat, faDraftingCompass, faPen, faTasks, faMap
 } from '@fortawesome/free-solid-svg-icons';
-import alpacaLogo from '../alpaca.ico';
+import alpacaLogo from './alpaca.ico';
 
 const serviceIcons = [
   { icon: faLightbulb, label: 'IDEAS' },
