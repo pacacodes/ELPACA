@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import drawWall from './inorganic-collapsible-link-buttons/DrawWall';
+import drawWall from '../../actions/toolbox/inorganic-collapsible-link-buttons/DrawWall';
 
 const ViewerContext = createContext({
   drawWall: () => {},

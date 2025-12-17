@@ -3,32 +3,29 @@ import SearchBar from '../actions/SearchBar';
 import CartButton from '../actions/CartButton';
 import SaveButton from '../actions/SaveButton';
 import SubmitButton from '../actions/SubmitButton';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import ToolboxButton from '../actions/toolbox/ToolboxButton';
 
 const ActionContainer = () => {
+  console.log('Rendering ActionContainer');
+
   return (
     <div style={{
       position: 'fixed',
       bottom: '20px',
-      right: '20px',
-      backgroundColor: 'rgba(255, 255, 255, 0.8)',
-      borderRadius: '8px',
-      padding: '10px',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: '600px',
+      backgroundColor: 'rgba(200, 200, 200, 0.2)',
+      borderRadius: '12px',
+      padding: '15px',
       display: 'flex',
       alignItems: 'center',
-      gap: '10px',
+      justifyContent: 'center',
+      gap: '15px',
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
     }}>
       <SearchBar />
-      <button style={{
-        background: 'none',
-        border: 'none',
-        cursor: 'pointer',
-        fontSize: '20px',
-      }}>
-        <FontAwesomeIcon icon={faPlus} />
-      </button>
+      <ToolboxButton />
       <CartButton />
       <SaveButton />
       <SubmitButton />

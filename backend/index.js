@@ -1,14 +1,36 @@
-
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const WebSocket = require('ws');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+// CORS configuration
+const corsOptions = {
+  origin: 'https://cautious-halibut-wrjp674q9vq9254pj-3000.app.github.dev', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true, // Allow cookies and credentials
+};
+app.use(cors(corsOptions));
+
 app.use(express.json());
+
+// WebSocket server
+const server = app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+const wss = new WebSocket.Server({ server });
+
+wss.on('connection', (ws) => {
+  console.log('WebSocket connection established');
+  ws.on('message', (message) => {
+    console.log('Received:', message);
+    ws.send(`Echo: ${message}`);
+  });
+});
 
 // Utility: Append a new user to users.json
 async function appendUser(user) {
@@ -303,9 +325,5 @@ app.post('/api/wur-plants/scrape', async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: 'Failed to scrape plant images', details: err.message });
   }
-});
-
-app.listen(PORT, () => {
-  console.log(`Backend server running on port ${PORT}`);
 });
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, ThemeIcon, Paper, Text } from '@mantine/core';
-import '../communication/CommunicationNavbar.css';
+import '../../communication/CommunicationNavbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import ToolboxDetailPopup from './ToolboxDetailPopup';

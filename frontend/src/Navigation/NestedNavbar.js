@@ -6,7 +6,7 @@ import {
   faUserTie, faFileAlt, faClock, faFileContract, faPlus, faMinus
 } from '@fortawesome/free-solid-svg-icons';
 import { SectionContext } from '../chatbot/SectionContext';
-import ImportProjectButton from '../ImportProjectButton';
+import ImportProjectButton from './Project Nav/ImportProjectButton';
 
 // Separate combined items into individual line items with icons
 const navSubtitles = [
