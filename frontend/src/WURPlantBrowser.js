@@ -10,6 +10,7 @@ export default function WURPlantBrowser({ opened, onClose }) {
   const [scraping, setScraping] = useState(false);
 
   useEffect(() => {
+    console.log('Modal opened:', opened); // Debugging log to check if modal is triggered
     if (opened) {
       fetchPlants();
     }

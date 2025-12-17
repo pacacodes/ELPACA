@@ -26,7 +26,10 @@ export default function ToolboxDetailOrganicLayout() {
       <div style={{ marginBottom: 16, width: '100%', display: 'flex', justifyContent: 'center' }}>
         <Button
           leftIcon={<FontAwesomeIcon icon={faImages} />}
-          onClick={() => setBrowserOpened(true)}
+          onClick={() => {
+            console.log('Browse WUR Plant Images button clicked'); // Debugging log
+            setBrowserOpened(true);
+          }}
           variant="light"
           color="cyan"
           size="sm"

@@ -12,6 +12,7 @@ import BIMApp from './bim/BIMApp';
 import { SectionProvider } from './SectionContext';
 import AIChatBotSection from './AIChatBotSection';
 import TopBar from './TopBar';
+import Actions from './Actions';
 
 function App() {
   const [activeService, setActiveService] = useState(0);
@@ -38,6 +39,8 @@ function App() {
           {/* Render main content based on navigation/layout selection */}
           <BIMApp />
         </AppShell.Main>
+        {/* Actions Component */}
+        <Actions />
       </AppShell>
     </SectionProvider>
   );

@@ -1,19 +1,8 @@
 import React, { useState } from 'react';
 import { Card, ThemeIcon, Paper, Text } from '@mantine/core';
 import './CommunicationNavbar.css';
-import OrganicCollapsibleLinks from './OrganicCollapsibleLinks';
-import InorganicCollapsibleLinks from './InorganicCollapsibleLinks';
-import ToolsCollapsibleLinks from './ToolsCollapsibleLinks';
-import ToolboxDetailPopup from './ToolboxDetailPopup';
-import ViewpointToolsCollapsibleLinks from './ViewpointToolsCollapsibleLinks';
-import DiagramToolsCollapsibleLinks from './DiagramToolsCollapsibleLinks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { faMinus } from '@fortawesome/free-solid-svg-icons';
-import SearchBar from './SearchBar';
-import CartButton from './CartButton';
-import SaveButton from './SaveButton';
-import SubmitButton from './SubmitButton';
 
 export default function ObjectsAndSystemsServiceButton() {
   const [open, setOpen] = useState(false);
@@ -24,9 +13,6 @@ export default function ObjectsAndSystemsServiceButton() {
 
   return (
     <>
-      <div style={{ position: 'fixed', left: '200px', bottom: '32px', zIndex: 1200 }}>
-        <SearchBar />
-      </div>
       <Card shadow="sm" padding="lg" radius="md" style={{ position: 'fixed', left: '50%', transform: 'translateX(-50%)', bottom: 32, width: 72, zIndex: 1200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <ThemeIcon size={56} radius="md" variant="light" color="#fff" style={{ cursor: 'pointer', background: 'transparent', marginBottom: '20px' }} onClick={() => setOpen(true)}>
           <FontAwesomeIcon icon={faPlus} style={{ fontSize: '2.2em', fontWeight: 300 }} color="#23272A" />
@@ -87,46 +73,8 @@ export default function ObjectsAndSystemsServiceButton() {
           >
             Toolbox
           </Text>
-          {/* Collapsible link groups */}
-          <OrganicCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Organic Objects'); setToolboxDetailOpen(true); }} />
-          <InorganicCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Inorganic Objects'); setToolboxDetailOpen(true); }} />
-          <ToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Documenting Tools'); setToolboxDetailOpen(true); }} />
-          <ViewpointToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Viewpoint Tools'); setToolboxDetailOpen(true); }} />
-          <DiagramToolsCollapsibleLinks onSubtitleClick={subtitle => { setSelectedSubtitle(subtitle); setSelectedGroup('Diagram Tools'); setToolboxDetailOpen(true); }} />
         </Paper>
       )}
-  {/* Toolbox detail popup to the right, same height/width as toolbox */}
-    {/* When detail popup is open, hide Toolbox popup and show only detail popup */}
-    {toolboxDetailOpen && (
-      <ToolboxDetailPopup
-        open={toolboxDetailOpen}
-        subtitle={selectedSubtitle}
-        group={selectedGroup}
-        onClose={() => { setToolboxDetailOpen(false); setCollapsed(false); setSelectedSubtitle(null); setSelectedGroup(null); }}
-        shift={collapsed ? 265 : 0}
-        style={{
-          position: 'fixed',
-          left: 252, // Adjusted to match the placement of the toolbox popup
-          bottom: -35, // Same bottom alignment as the toolbox popup
-          minWidth: 245,
-          width: '245px',
-          minHeight: 870, // Same height as the toolbox popup
-          maxHeight: '870px',
-          zIndex: 1201,
-          padding: '2rem',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          background: 'rgba(26, 26, 26, 0.9)',
-          borderRadius: '8px',
-          overflowY: 'auto',
-          transition: 'width 0.3s, bottom 0.3s',
-        }}
-      />
-    )}
-    <CartButton />
-    <SaveButton />
-    <SubmitButton />
     </>
   );
 }
