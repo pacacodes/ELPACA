@@ -11,7 +11,6 @@ import { AppShell } from '@mantine/core';
 import BIMApp from './bim/BIMApp';
 import { SectionProvider, SectionContext } from './chatbot/SectionContext';
 import AIChatBotSection from './chatbot/AIChatBotSection';
-import TopBar from './Navigation/TopBar';
 import Actions from './actions/Actions';
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
         layout="default"
         style={{ height: '100vh', overflow: 'hidden' }}
       >
-        <TopBar />
         {/* Main Navigation (Service Card) */}
         <MainNavigation activeService={activeService} setActiveService={setActiveService} />
         {/* Layouts (Nested Navbar) below MainNavigation */}

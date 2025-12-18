@@ -24,7 +24,7 @@ export default function CommunicationNavbar() {
       className="communication-navbar-scroll"
       style={{
         position: 'fixed',
-        top: 34 + 25 - 10 + 5, // Moved down by 5px
+        top: 34 + 25 - 10 + 5 - 40, // Moved up by 40px total
         height: '400px', // Increased height by 200px
         overflowY: 'auto', // Match scrolling behavior
         background: 'rgba(200,200,200,0.2)', // Match background style
