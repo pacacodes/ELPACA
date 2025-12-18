@@ -29,7 +29,7 @@ export default function ObjectsAndSystemsServiceButton({ inline = false }) {
     <>
       {inline ? (
         <button
-          style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '20px', position: 'relative', left: '-200px' }}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           onClick={() => {
             console.log('[ToolboxServiceButton] Inline trigger clicked');
             setOpen(true);

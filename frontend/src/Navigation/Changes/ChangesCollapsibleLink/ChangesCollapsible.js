@@ -19,7 +19,7 @@ const ChangesCollapsible = () => {
   };
 
   return (
-    <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 8, marginLeft: -26, paddingLeft: 28 }}>
+    <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 8, marginLeft: -29, paddingLeft: 28 }}>
       {changeItems.map((item) => {
         const meta = typeToIcon[item.type];
         return (

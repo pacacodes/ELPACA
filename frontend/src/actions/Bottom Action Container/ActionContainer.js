@@ -12,17 +12,21 @@ const ActionContainer = () => {
       bottom: '20px',
       left: '50%',
       transform: 'translateX(-50%)',
-      width: '1400px',
+      width: '100%',
+      maxWidth: '1200px',
       borderRadius: '8px',
       padding: '15px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      gap: '15px',
+      gap: '12px',
+      pointerEvents: 'none',
     }}>
-      <SearchBar />
-      <ToolboxServiceButton inline />
-      <CartButton />
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', pointerEvents: 'auto' }}>
+        <ToolboxServiceButton inline />
+        <SearchBar />
+        <CartButton />
+      </div>
     </div>
   );
 };

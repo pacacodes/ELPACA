@@ -13,9 +13,9 @@ const SearchBar = () => {
         color: '#fff',
         fontSize: '14px',
         fontWeight: '500',
-        position: 'relative',
-        left: '-300px',
         width: '500px',
+        maxWidth: '70vw',
+        boxShadow: '0 6px 18px rgba(0, 0, 0, 0.25)',
       }}
     />
   );

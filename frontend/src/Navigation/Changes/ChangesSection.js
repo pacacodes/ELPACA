@@ -71,7 +71,7 @@ export default function ChangesSection() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                marginLeft: '-5px',
+                marginLeft: '-8px',
               }}
             >
               <FontAwesomeIcon icon={faSave} color="#23272A" style={{ fontSize: '22px' }} />

@@ -11,7 +11,7 @@ const submitButtonStyle = {
   fontFamily: 'inherit',
   cursor: 'pointer',
   minWidth: '158px',
-  marginLeft: '-5px',
+  marginLeft: '-8px',
 };
 
 const SubmitButton = () => {
