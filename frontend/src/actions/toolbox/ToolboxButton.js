@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Paper, Text } from '@mantine/core';
 import '../../communication/CommunicationNavbar.css';
-import OrganicCollapsibleLinks from './OrganicCollapsibleLinks';
+import OrganicCollapsibleLinks from './organic/OrganicCollapsibleLinks';
 import InorganicCollapsibleLinks from './InorganicCollapsibleLinks';
 import ToolsCollapsibleLinks from './ToolsCollapsibleLinks';
 import DiagramToolsCollapsibleLinks from './DiagramToolsCollapsibleLinks';

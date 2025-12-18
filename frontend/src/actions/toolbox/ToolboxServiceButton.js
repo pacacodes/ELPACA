@@ -4,7 +4,7 @@ import '../../communication/CommunicationNavbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import ToolboxDetailPopup from './ToolboxDetailPopup';
-import OrganicCollapsibleLinks from './OrganicCollapsibleLinks';
+import OrganicCollapsibleLinks from './organic/OrganicCollapsibleLinks';
 import InorganicCollapsibleLinks from './InorganicCollapsibleLinks';
 import ToolsCollapsibleLinks from './ToolsCollapsibleLinks';
 import DiagramToolsCollapsibleLinks from './DiagramToolsCollapsibleLinks';

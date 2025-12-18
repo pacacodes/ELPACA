@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Paper, Text } from '@mantine/core';
-import ToolboxDetailOrganicLayout from './ToolboxDetailOrganicLayout';
+import ToolboxDetailOrganicLayout from './organic/ToolboxDetailOrganicLayout';
 import InorganicWallForm from './inorganic-collapsible-link-buttons/InorganicWallForm';
 import ViewerContext from '../../Navigation/views/ViewerContext';
 
