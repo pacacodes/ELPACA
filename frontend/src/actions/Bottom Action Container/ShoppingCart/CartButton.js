@@ -10,9 +10,12 @@ const CartButton = () => {
         border: 'none',
         cursor: 'pointer',
         fontSize: '20px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
-      <FontAwesomeIcon icon={faShoppingCart} />
+      <FontAwesomeIcon icon={faShoppingCart} style={{ fontSize: '1.32em' }} color="#23272A" />
     </button>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, ThemeIcon, Paper, Text } from '@mantine/core';
 import '../../../communication/CommunicationNavbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faToolbox } from '@fortawesome/free-solid-svg-icons';
 import ToolboxDetailPopup from './ToolboxDetailPopup';
 import OrganicCollapsibleLinks from './organic/OrganicCollapsibleLinks';
 import InorganicCollapsibleLinks from './InorganicCollapsibleLinks';
@@ -39,12 +39,12 @@ export default function ObjectsAndSystemsServiceButton({ inline = false }) {
           }}
           aria-label="Open Toolbox"
         >
-          <FontAwesomeIcon icon={faPlus} style={{ fontSize: '2.2em', fontWeight: 300 }} color="#23272A" />
+          <FontAwesomeIcon icon={faToolbox} style={{ fontSize: '1.32em', fontWeight: 300 }} color="#23272A" />
         </button>
       ) : (
         <Card shadow="sm" padding="lg" radius="md" style={{ position: 'fixed', left: '50%', transform: 'translateX(-50%)', bottom: 32, width: 72, zIndex: 1200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <ThemeIcon size={56} radius="md" variant="light" color="#fff" style={{ cursor: 'pointer', background: 'transparent', marginBottom: '20px' }} onClick={() => setOpen(true)}>
-            <FontAwesomeIcon icon={faPlus} style={{ fontSize: '2.2em', fontWeight: 300 }} color="#23272A" />
+            <FontAwesomeIcon icon={faToolbox} style={{ fontSize: '1.32em', fontWeight: 300 }} color="#23272A" />
           </ThemeIcon>
         </Card>
       )}
