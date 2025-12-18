@@ -1,8 +1,6 @@
 import React from 'react';
 import SearchBar from './Search/SearchBar';
 import CartButton from './ShoppingCart/CartButton';
-import SaveButton from '../../Navigation/Changes/Save/SaveButton';
-import SubmitButton from '../../Navigation/Changes/Submit/SubmitButton';
 import ToolboxServiceButton from './toolbox/ToolboxServiceButton';
 
 const ActionContainer = () => {
@@ -25,8 +23,6 @@ const ActionContainer = () => {
       <SearchBar />
       <ToolboxServiceButton inline />
       <CartButton />
-      <SaveButton />
-      <SubmitButton />
     </div>
   );
 };

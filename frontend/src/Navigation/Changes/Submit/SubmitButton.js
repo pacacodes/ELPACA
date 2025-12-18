@@ -1,20 +1,21 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+
+const submitButtonStyle = {
+  padding: '10px 15px',
+  borderRadius: '8px',
+  border: 'none',
+  backgroundColor: 'rgba(26, 26, 26, 0.9)',
+  color: '#fff',
+  fontSize: '14px',
+  fontWeight: '500',
+  fontFamily: 'inherit',
+  cursor: 'pointer',
+  minWidth: '158px',
+  marginLeft: '-5px',
+};
 
 const SubmitButton = () => {
-  return (
-    <button
-      style={{
-        background: 'none',
-        border: 'none',
-        cursor: 'pointer',
-        fontSize: '20px',
-      }}
-    >
-      <FontAwesomeIcon icon={faPaperPlane} />
-    </button>
-  );
+  return <button style={submitButtonStyle}>Submit</button>;
 };
 
 export default SubmitButton;

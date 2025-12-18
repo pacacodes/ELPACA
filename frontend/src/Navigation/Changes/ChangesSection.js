@@ -1,7 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import { Box, Text, Button } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSave, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faSave } from '@fortawesome/free-solid-svg-icons';
+import SubmitButton from './Submit/SubmitButton';
+import ChangesCollapsible from './ChangesCollapsibleLink/ChangesCollapsible';
 import '../../communication/CommunicationNavbar.css';
 import { SectionContext } from '../../chatbot/SectionContext';
 
@@ -55,13 +57,28 @@ export default function ChangesSection() {
             </Text>
           </div>
           <div style={{ display: 'flex', flexDirection: 'row', gap: 0, marginLeft: 0, marginBottom: 8, justifyContent: 'space-between' }}>
-            <Button variant="subtle" radius="md" size="sm" style={{ padding: '6px 10px', border: 'none', boxShadow: 'none', background: 'none' }}>
-              <FontAwesomeIcon icon={faSave} color="#23272A" />
+            <Button
+              variant="subtle"
+              radius="md"
+              style={{
+                padding: 0,
+                height: '36px',
+                width: '36px',
+                border: 'none',
+                boxShadow: 'none',
+                background: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                marginLeft: '-5px',
+              }}
+            >
+              <FontAwesomeIcon icon={faSave} color="#23272A" style={{ fontSize: '22px' }} />
             </Button>
-            <Button variant="subtle" radius="md" size="sm" style={{ padding: '6px 10px', border: 'none', boxShadow: 'none', background: 'none' }}>
-              <FontAwesomeIcon icon={faPaperPlane} color="#23272A" />
-            </Button>
+            <SubmitButton />
           </div>
+          <ChangesCollapsible />
         </Box>
       </Box>
     </>
