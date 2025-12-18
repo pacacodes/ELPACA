@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Paper, Text } from '@mantine/core';
 import ToolboxDetailOrganicLayout from './organic/ToolboxDetailOrganicLayout';
 import InorganicWallForm from './inorganic-collapsible-link-buttons/InorganicWallForm';
-import ViewerContext from '../../Navigation/views/ViewerContext';
+import ViewerContext from '../../../Navigation/views/ViewerContext';
 
 export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onGroupClick }) {
   const { setWallDimensions } = useContext(ViewerContext);

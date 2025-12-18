@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Grid } from '@react-three/drei';
-import drawWall from '../../actions/toolbox/inorganic-collapsible-link-buttons/DrawWall';
+import drawWall from '../../actions/Bottom Action Container/toolbox/inorganic-collapsible-link-buttons/DrawWall';
 import { ViewerProvider, ViewerContext } from '../../Navigation/views/ViewerContext';
 
 /**

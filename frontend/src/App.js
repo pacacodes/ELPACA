@@ -6,12 +6,12 @@ import MainNavigation from './Navigation/MainNavigation';
 import NestedNavbar from './Navigation/NestedNavbar';
 import CommunicationNavbar from './communication/CommunicationNavbar';
 import ViewsSection from './Navigation/views/ViewsSection';
-import ToolboxServiceButton from './actions/toolbox/ToolboxServiceButton';
+import ToolboxServiceButton from './actions/Bottom Action Container/toolbox/ToolboxServiceButton';
 import { AppShell } from '@mantine/core';
 import BIMApp from './bim/BIMApp';
 import { SectionProvider, SectionContext } from './chatbot/SectionContext';
 import AIChatBotSection from './chatbot/AIChatBotSection';
-import Actions from './actions/Actions';
+import Actions from './actions/Bottom Action Container/Actions';
 
 function App() {
   const [activeService, setActiveService] = useState(0);

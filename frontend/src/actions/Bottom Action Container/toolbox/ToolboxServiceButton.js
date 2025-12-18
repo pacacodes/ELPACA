@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, ThemeIcon, Paper, Text } from '@mantine/core';
-import '../../communication/CommunicationNavbar.css';
+import '../../../communication/CommunicationNavbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import ToolboxDetailPopup from './ToolboxDetailPopup';
@@ -29,7 +29,7 @@ export default function ObjectsAndSystemsServiceButton({ inline = false }) {
     <>
       {inline ? (
         <button
-          style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '20px' }}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '20px', position: 'relative', left: '-200px' }}
           onClick={() => {
             console.log('[ToolboxServiceButton] Inline trigger clicked');
             setOpen(true);
@@ -56,7 +56,8 @@ export default function ObjectsAndSystemsServiceButton({ inline = false }) {
           className="communication-navbar-scroll"
           style={{
             position: 'fixed',
-            left: 210,
+            left: '50%',
+            transform: 'translateX(-50%)',
             top: 324,
             minWidth: 245,
             width: '245px',

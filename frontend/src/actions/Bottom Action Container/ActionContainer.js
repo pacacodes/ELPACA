@@ -1,9 +1,9 @@
 import React from 'react';
-import SearchBar from '../actions/SearchBar';
-import CartButton from '../actions/CartButton';
-import SaveButton from '../actions/SaveButton';
-import SubmitButton from '../actions/SubmitButton';
-import ToolboxServiceButton from '../actions/toolbox/ToolboxServiceButton';
+import SearchBar from './Search/SearchBar';
+import CartButton from './ShoppingCart/CartButton';
+import SaveButton from './Save/SaveButton';
+import SubmitButton from './Submit/SubmitButton';
+import ToolboxServiceButton from './toolbox/ToolboxServiceButton';
 
 const ActionContainer = () => {
   console.log('Rendering ActionContainer');
@@ -14,9 +14,9 @@ const ActionContainer = () => {
       bottom: '20px',
       left: '50%',
       transform: 'translateX(-50%)',
-      width: '600px',
+      width: '1400px',
       backgroundColor: 'rgba(200, 200, 200, 0.2)',
-      borderRadius: '12px',
+      borderRadius: '8px',
       padding: '15px',
       display: 'flex',
       alignItems: 'center',
