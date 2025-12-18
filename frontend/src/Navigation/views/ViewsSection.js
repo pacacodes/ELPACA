@@ -19,7 +19,7 @@ export default function ViewsSection() {
         className="communication-navbar-scroll"
         style={{
           position: 'fixed',
-          top: 34 + 280 + 10 - 20 - 80 + 20 + 600 + 10 + 30 + 25 + 5 + 40 + 5, // Adjusted position down by 5px
+          top: 34 + 280 + 10 - 20 - 80 + 20 + 600 + 10 + 30 + 25 + 5 + 40 + 5 - 200, // moved up by 200px
           height: '80px', // Fixed height
           overflowY: 'auto', // Match scrolling behavior
           background: 'rgba(200,200,200,0.2)', // Match background style

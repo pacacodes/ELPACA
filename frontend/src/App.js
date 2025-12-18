@@ -6,6 +6,7 @@ import MainNavigation from './Navigation/MainNavigation';
 import NestedNavbar from './Navigation/NestedNavbar';
 import CommunicationNavbar from './communication/CommunicationNavbar';
 import ViewsSection from './Navigation/views/ViewsSection';
+import ChangesSection from './Navigation/Changes/ChangesSection';
 import ToolboxServiceButton from './actions/Bottom Action Container/toolbox/ToolboxServiceButton';
 import { AppShell } from '@mantine/core';
 import BIMApp from './bim/BIMApp';
@@ -30,6 +31,8 @@ function App() {
         <CommunicationNavbar />
         {/* Views section below Communication */}
         <ViewsSection />
+        {/* Changes section below Views */}
+        <ChangesSection />
         {/* AI Chat Bot section below Views */}
         <AIChatBotSection />
         {/* <ToolboxServiceButton /> */}

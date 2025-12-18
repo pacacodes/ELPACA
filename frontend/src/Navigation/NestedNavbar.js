@@ -148,7 +148,7 @@ export default function NestedNavbar({ activeService }) {
       style={{
         position: 'fixed',
         top: 34 + 280 + 10 - 20 - 80 + 20 + 25 + 5 - 40, // Moved up by 40px
-        height: '680px', // Increased height by 40px (total 680px)
+        height: '480px', // Reduced height by 200px
         overflowY: 'auto', // Disable scrolling when collapsed
         background: 'rgba(200,200,200,0.2)', // Keep some background when collapsed
         left: '10px', // Align to the left under MainNavigation
