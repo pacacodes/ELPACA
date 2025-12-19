@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Paper, Text } from '@mantine/core';
+import { Paper, Text, Portal } from '@mantine/core';
 import ToolboxDetailOrganicLayout from './organic/ToolboxDetailOrganicLayout';
 import InorganicWallForm from './inorganic-collapsible-link-buttons/InorganicWallForm';
 import ViewerContext from '../../../Navigation/views/ViewerContext';
@@ -10,18 +10,19 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
   if (!open || !subtitle) return null;
   // Breadcrumb: TOOLBOX | [SUBTITLE] in one row, TOOLBOX and | lighter grey
   return (
+    <Portal>
     <Paper
       shadow="md"
       radius="md"
-      style={{
+       style={{
         position: 'fixed',
-        left: 252, // Moved to the right by 200px
-        bottom: 90, // Moved down by an additional 5px
-        minWidth: 545, // Increased width by 100px
-        width: '645px', // Increased width by 100px
-        minHeight: 870, // Increased height by 100px
-        maxHeight: '900px', // Increased height by 100px
-        zIndex: 1202,
+        left: '50%',
+        transform: 'translateX(calc(-50% - clamp(260px, 30vw, 520px)))',
+        top: 'clamp(12px, 2vh, 15px)',
+        bottom: 'clamp(12px, 2vh, 15px)',
+        minWidth: 250,
+        width: 'clamp(250px, 24vw, 320px)',
+        zIndex: 3000,
         padding: '2rem',
         display: 'flex',
         flexDirection: 'column',
@@ -29,6 +30,7 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
         background: 'rgba(26, 26, 26, 0.9)', // Slightly transparent dark grey
         borderRadius: '8px',
         overflowY: 'auto',
+        transition: 'width 0.3s, top 0.3s, bottom 0.3s, transform 0.3s',
         pointerEvents: 'auto', // Ensure it does not block interactions with other elements
       }}
     >
@@ -87,5 +89,6 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
         ×
       </button>
     </Paper>
+    </Portal>
   );
 }

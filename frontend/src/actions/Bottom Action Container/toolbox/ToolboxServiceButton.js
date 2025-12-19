@@ -6,10 +6,9 @@ import { faToolbox } from '@fortawesome/free-solid-svg-icons';
 import ToolboxDetailPopup from './ToolboxDetailPopup';
 import OrganicCollapsibleLinks from './organic/OrganicCollapsibleLinks';
 import InorganicCollapsibleLinks from './InorganicCollapsibleLinks';
-import ToolsCollapsibleLinks from './ToolsCollapsibleLinks';
-import DiagramToolsCollapsibleLinks from './DiagramToolsCollapsibleLinks';
-import ViewpointToolsCollapsibleLinks from './ViewpointToolsCollapsibleLinks';
-import DocumentingToolsCollapsibleLinks from './DocumentingToolsCollapsibleLinks';
+import ToolsCollapsibleLinks from './Documenting Tools/ToolsCollapsibleLinks';
+import DiagramToolsCollapsibleLinks from './Diagram Tools/DiagramToolsCollapsibleLinks';
+import ViewpointToolsCollapsibleLinks from './View Tools/ViewpointToolsCollapsibleLinks';
 
 export default function ObjectsAndSystemsServiceButton({ inline = false }) {
   const [open, setOpen] = useState(false);
@@ -56,12 +55,11 @@ export default function ObjectsAndSystemsServiceButton({ inline = false }) {
           style={{
             position: 'fixed',
             left: '50%',
-            transform: 'translateX(calc(-50% - 520px))',
-            top: 19,
-            minWidth: 330,
-            width: '330px',
-              minHeight: 985, // Increased height by 30px
-              maxHeight: '985px', // Increased height by 30px
+            transform: 'translateX(calc(-50% - clamp(260px, 30vw, 520px)))',
+            top: 'clamp(12px, 2vh, 15px)',
+            bottom: 'clamp(12px, 2vh, 15px)',
+            minWidth: 250,
+            width: 'clamp(250px, 24vw, 320px)',
             zIndex: 3000,
             padding: '2rem',
             display: 'flex',
@@ -70,7 +68,7 @@ export default function ObjectsAndSystemsServiceButton({ inline = false }) {
             background: 'rgba(26, 26, 26, 0.9)', // Slightly transparent dark grey
             borderRadius: '8px',
             overflowY: 'auto',
-            transition: 'width 0.3s, top 0.3s',
+            transition: 'width 0.3s, top 0.3s, bottom 0.3s, transform 0.3s',
             pointerEvents: 'auto',
           }}
         >
@@ -84,13 +82,13 @@ export default function ObjectsAndSystemsServiceButton({ inline = false }) {
           </button>
           {/* Title */}
           <Text
-            fw={400}
-            c="#ffffff" // Updated to white text
+            fw={500}
+            c="#ffffff"
             style={{
-              fontSize: '0.90rem',
-              marginBottom: 18,
+              fontSize: '1.0rem',
+              marginBottom: 14,
               marginLeft: 2,
-              marginTop: 3,
+              marginTop: 0,
               textTransform: 'uppercase',
               letterSpacing: 1,
               fontFamily: 'inherit',
@@ -98,19 +96,17 @@ export default function ObjectsAndSystemsServiceButton({ inline = false }) {
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               width: '100%',
-              transition: 'transform 0.3s',
             }}
           >
             Toolbox
           </Text>
 
-          {/* Collapsible link groups */}
-          <ToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Documenting Tools', subtitle)} />
-          <DocumentingToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Documenting Tools', subtitle)} />
+          {/* Collapsible link groups (ordered): Organic, Inorganic, Documenting, Viewpoint, Diagram */}
           <OrganicCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Organic Objects', subtitle)} />
           <InorganicCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Inorganic Objects', subtitle)} />
-          <DiagramToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Diagram Tools', subtitle)} />
+          <ToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Documenting Tools', subtitle)} />
           <ViewpointToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Viewpoint Tools', subtitle)} />
+          <DiagramToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Diagram Tools', subtitle)} />
         </Paper>
         </Portal>
       )}
