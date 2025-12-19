@@ -19,7 +19,7 @@ const ChangesCollapsible = () => {
   };
 
   return (
-    <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 8, marginLeft: -29, paddingLeft: 28 }}>
+    <div style={{ marginTop: 0, display: 'flex', flexDirection: 'column', gap: 0, marginLeft: -29, paddingLeft: 28 }}>
       {changeItems.map((item) => {
         const meta = typeToIcon[item.type];
         return (
@@ -29,20 +29,24 @@ const ChangesCollapsible = () => {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: 10,
-              padding: '8px 10px',
+              gap: 6,
+              padding: '0px 0px',
               borderRadius: 8,
               border: 'none',
-              backgroundColor: 'rgba(26, 26, 26, 0.05)',
+              backgroundColor: 'transparent',
               cursor: 'pointer',
               textAlign: 'left',
+              lineHeight: 0,
+              minHeight: 0,
+              height: 'auto',
+              margin: 0,
             }}
           >
-            <FontAwesomeIcon icon={meta.icon} color={meta.color} style={{ fontSize: '14px', minWidth: 14 }} />
+            <FontAwesomeIcon icon={meta.icon} color={meta.color} style={{ fontSize: '13px', minWidth: 14, marginLeft: '-2px' }} />
             <Text
               fw={400}
               c="#23272A"
-              style={{ fontSize: '0.86rem', lineHeight: 1.3, fontFamily: 'inherit', wordBreak: 'break-word' }}
+              style={{ fontSize: '0.84rem', lineHeight: 1.18, fontFamily: 'inherit', wordBreak: 'break-word', marginLeft: '2px' }}
             >
               {item.label}
             </Text>

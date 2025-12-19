@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, ThemeIcon, Paper, Text } from '@mantine/core';
+import { Card, ThemeIcon, Paper, Text, Portal } from '@mantine/core';
 import '../../../communication/CommunicationNavbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faToolbox } from '@fortawesome/free-solid-svg-icons';
@@ -33,9 +33,7 @@ export default function ObjectsAndSystemsServiceButton({ inline = false }) {
           onClick={() => {
             console.log('[ToolboxServiceButton] Inline trigger clicked');
             setOpen(true);
-            try {
-              window.dispatchEvent(new CustomEvent('openToolboxGroup', { detail: 'documenting' }));
-            } catch (e) {}
+            setToolboxDetailOpen(false);
           }}
           aria-label="Open Toolbox"
         >
@@ -43,13 +41,14 @@ export default function ObjectsAndSystemsServiceButton({ inline = false }) {
         </button>
       ) : (
         <Card shadow="sm" padding="lg" radius="md" style={{ position: 'fixed', left: '50%', transform: 'translateX(-50%)', bottom: 32, width: 72, zIndex: 1200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <ThemeIcon size={56} radius="md" variant="light" color="#fff" style={{ cursor: 'pointer', background: 'transparent', marginBottom: '20px' }} onClick={() => setOpen(true)}>
+          <ThemeIcon size={56} radius="md" variant="light" color="#fff" style={{ cursor: 'pointer', background: 'transparent', marginBottom: '20px' }} onClick={() => { setOpen(true); setToolboxDetailOpen(false); }}>
             <FontAwesomeIcon icon={faToolbox} style={{ fontSize: '1.32em', fontWeight: 300 }} color="#23272A" />
           </ThemeIcon>
         </Card>
       )}
       {/* Only show Toolbox popup when detail popup is NOT open */}
       {open && !toolboxDetailOpen && (
+        <Portal>
         <Paper
           shadow="md"
           radius="md"
@@ -57,12 +56,12 @@ export default function ObjectsAndSystemsServiceButton({ inline = false }) {
           style={{
             position: 'fixed',
             left: '50%',
-            transform: 'translateX(-50%)',
-            top: 324,
-            minWidth: 245,
-            width: '245px',
-            minHeight: 870, // Increased height by 40px
-            maxHeight: '870px', // Increased height by 40px
+            transform: 'translateX(calc(-50% - 520px))',
+            top: 19,
+            minWidth: 330,
+            width: '330px',
+              minHeight: 985, // Increased height by 30px
+              maxHeight: '985px', // Increased height by 30px
             zIndex: 3000,
             padding: '2rem',
             display: 'flex',
@@ -72,6 +71,7 @@ export default function ObjectsAndSystemsServiceButton({ inline = false }) {
             borderRadius: '8px',
             overflowY: 'auto',
             transition: 'width 0.3s, top 0.3s',
+            pointerEvents: 'auto',
           }}
         >
           {/* Always show close button in top right */}
@@ -112,6 +112,7 @@ export default function ObjectsAndSystemsServiceButton({ inline = false }) {
           <DiagramToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Diagram Tools', subtitle)} />
           <ViewpointToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Viewpoint Tools', subtitle)} />
         </Paper>
+        </Portal>
       )}
 
       {/* Detail popup rendered separately */}

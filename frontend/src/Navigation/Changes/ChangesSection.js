@@ -16,13 +16,13 @@ export default function ChangesSection() {
 
   return (
     <>
-      <Box style={{ height: '24px' }} />
+      <Box style={{ height: '14px' }} />
       <Box
         className="communication-navbar-scroll"
         style={{
           position: 'fixed',
           top: (34 + 280 + 10 - 20 - 80 + 20 + 600 + 10 + 30 + 25 + 5 + 40 + 5 - 200) + 80 + 10 + 35, // moved up an additional 5px
-          height: '155px', // adjusted height
+          height: '155px', // reduced height to match condensed list
           overflowY: 'auto',
           background: 'rgba(200,200,200,0.2)',
           left: '10px',
@@ -71,7 +71,7 @@ export default function ChangesSection() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                marginLeft: '-8px',
+                marginLeft: '-12px',
               }}
             >
               <FontAwesomeIcon icon={faSave} color="#23272A" style={{ fontSize: '22px' }} />
