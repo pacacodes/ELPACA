@@ -76,13 +76,13 @@ export default function ObjectsAndSystemsServiceButton({ inline = false }) {
           </>
         ) : (
           // Main list of collapsible groups
-          <>
+          <div style={{ marginTop: 8 }}>
             <OrganicCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Organic Objects', subtitle)} />
             <InorganicCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Inorganic Objects', subtitle)} />
             <ToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Documenting Tools', subtitle)} />
             <ViewpointToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Viewpoint Tools', subtitle)} />
             <DiagramToolsCollapsibleLinks onSubtitleClick={(subtitle) => openDetail('Diagram Tools', subtitle)} />
-          </>
+          </div>
         )}
       </ToolboxPopupContainer>
     </>
