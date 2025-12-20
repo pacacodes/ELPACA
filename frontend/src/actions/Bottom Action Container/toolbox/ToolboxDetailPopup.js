@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { Paper, Text, Portal } from '@mantine/core';
 import ToolboxDetailOrganicLayout from './organic/ToolboxDetailOrganicLayout';
-import InorganicWallForm from './inorganic-collapsible-link-buttons/InorganicWallForm';
+import InorganicWallForm from './Inorganic Objects/Wall/InorganicWallForm';
+import BreadcrumbHeader from './BreadcrumbHeader';
 import ViewerContext from '../../../Navigation/views/ViewerContext';
 
 export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onGroupClick }) {
@@ -34,39 +35,8 @@ export default function ToolboxDetailPopup({ open, subtitle, group, onClose, onG
         pointerEvents: 'auto', // Ensure it does not block interactions with other elements
       }}
     >
-      {/* Adjusted margins and padding to ensure the title/breadcrumb appears consistent across all toolbox detailed popups */}
-      <Text
-        fw={400}
-        style={{
-          fontSize: '0.90rem', /* Matched font size to the main Toolbox title */
-          marginBottom: 12, /* Adjusted marginBottom for consistency */
-          marginLeft: 0, /* Ensured alignment with other popups */
-          marginTop: 12, /* Added marginTop for spacing */
-          textTransform: 'uppercase',
-          letterSpacing: 1,
-          fontFamily: 'inherit',
-          whiteSpace: 'nowrap',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          width: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          color: '#ffffff', // White text
-        }}
-      >
-        <span
-          style={{ color: '#bdbdbd', fontWeight: 400, cursor: 'pointer', transition: 'color 0.2s' }}
-          onClick={onClose}
-          tabIndex={0}
-          role="button"
-          aria-label="Back to Toolbox"
-          onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') onClose(); }}
-        >
-          TOOLBOX
-        </span>
-        <span style={{ color: '#bdbdbd', margin: '0 8px', fontWeight: 400 }}>|</span>
-        <span style={{ color: '#ffffff', fontWeight: 400 }}>{subtitle || group}</span>
-      </Text>
+      {/* Consistent breadcrumb header */}
+      <BreadcrumbHeader subtitle={subtitle || group} onBack={onClose} />
   {/* Organic group layout example */}
   {group === 'Organic Objects' && <ToolboxDetailOrganicLayout />}
   {/* Inorganic Objects wall parameters form */}

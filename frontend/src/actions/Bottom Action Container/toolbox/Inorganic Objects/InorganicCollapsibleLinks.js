@@ -1,13 +1,9 @@
 import React from 'react';
 import { Collapse, Group, Text, Box } from '@mantine/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faGripHorizontal, faSquare, faMinus, faLayerGroup, faTh, faHome, faCircle, faShapes, faBorderAll, faStairs, faBars, faDoorOpen, faWindowMaximize, faSun, faCouch, faWrench, faBlender, faBolt, faCogs, faFaucet } from '@fortawesome/free-solid-svg-icons';
-import { faPagelines } from '@fortawesome/free-brands-svg-icons';
+import { faHouse, faSquare, faMinus, faLayerGroup, faTh, faHome, faCircle, faShapes, faBorderAll, faStairs, faBars, faDoorOpen, faWindowMaximize, faSun, faCouch, faBolt, faCogs, faFaucet } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import ToolsCollapsibleLinks from './Documenting Tools/ToolsCollapsibleLinks';
-import ViewpointToolsCollapsibleLinks from './View Tools/ViewpointToolsCollapsibleLinks';
-import DiagramToolsCollapsibleLinks from './Diagram Tools/DiagramToolsCollapsibleLinks';
-import WallButton from './inorganic-collapsible-link-buttons/WallButton';
+import WallButton from './Wall/WallButton';
 
 export default function InorganicCollapsibleLinks(props) {
   const [opened, setOpened] = React.useState(false);
