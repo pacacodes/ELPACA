@@ -29,9 +29,9 @@ const ChangesCollapsible = () => {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: 6,
+              gap: 20,
               padding: '0px 0px',
-              borderRadius: 8,
+              borderRadius: 0,
               border: 'none',
               backgroundColor: 'transparent',
               cursor: 'pointer',
