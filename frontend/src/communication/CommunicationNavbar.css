@@ -17,3 +17,18 @@
   scrollbar-width: thin;
   scrollbar-color: #bfc2c7 rgba(0,0,0,0.08);
 }
+
+/* Title styling to match other sections */
+.communication-title {
+  color: #23272A;
+  font-weight: 400;
+  font-size: 0.90rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
