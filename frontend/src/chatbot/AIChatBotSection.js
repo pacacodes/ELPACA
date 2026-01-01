@@ -16,8 +16,8 @@ export default function AIChatBotSection() {
       className="communication-navbar-scroll"
       style={{
         position: 'fixed',
-        top: 34 + 400 + 10 + 30 + 25 - 10 + 5 + 5 - 40, // Moved up by 40px
-        height: '580px', // Increased height by 40px (total 580px)
+        top: 38 + 400 + 10 + 30 + 25 - 10 + 5 + 5 - 100, // Moved up by 40px
+        height: '636px', // Increased height by 40px (total 580px)
         overflowY: 'auto', // Add scrollbar when expanded
         background: 'rgba(200,200,200,0.2)', // Match background style
         right: 9, // Moved to the right by 10px
